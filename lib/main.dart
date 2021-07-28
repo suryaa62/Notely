@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: myTheme(),
-      home: Consumer(
+      home: Consumer<Login_state>(
         builder: (context, value, child) => LoginPage(
           state: value,
         ),
