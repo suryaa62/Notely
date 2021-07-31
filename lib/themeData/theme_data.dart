@@ -14,27 +14,48 @@ ThemeData myTheme() {
       ),
       fontFamily: 'Metropolis',
       textTheme: TextTheme(
-        headline1: TextStyle(
-            color: Colors.black,
-            fontFamily: 'Metropolis',
-            fontWeight: FontWeight.w900,
-            fontSize: 35),
-        bodyText1: TextStyle(
-            fontFamily: 'Metropolis',
-            fontSize: 16,
-            height: 1.3,
-            color: Color(0xFF535353)),
-        button: TextStyle(
-            fontFamily: 'Metropolis',
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-            color: Colors.white),
+          headline1: TextStyle(
+              color: Colors.black,
+              fontFamily: 'Metropolis',
+              fontWeight: FontWeight.w900,
+              fontSize: 35),
+          headline2: TextStyle(
+              color: Colors.black,
+              fontFamily: 'Metropolis',
+              fontWeight: FontWeight.w700,
+              fontSize: 23),
+          bodyText1: TextStyle(
+              fontFamily: 'Metropolis',
+              fontSize: 16,
+              height: 1.3,
+              color: Color(0xFF535353)),
+          bodyText2: TextStyle(
+              fontFamily: 'Metropolis', fontSize: 16, color: Color(0xFF535353)),
+          button: TextStyle(
+              fontFamily: 'Metropolis',
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              color: Colors.white),
+          subtitle1: TextStyle(
+              fontFamily: 'Metropolis',
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              color: Colors.black),
+          subtitle2: TextStyle(
+              fontFamily: 'Metropolis',
+              fontSize: 12,
+              fontWeight: FontWeight.w300,
+              color: Colors.black)),
+      inputDecorationTheme: InputDecorationTheme(
+        fillColor: color_data['greyColor'],
+        filled: true,
+        border: InputBorder.none,
       ));
 }
 
 var color_data = {
   "buttonColor": Color(0xFF6273ED),
-  "AudioColor": Color(0xffFC6B6B),
+  "audioColor": Color(0xffFC6B6B),
   "reminderColor": Color(0xff4DC992),
   "imageColor": Color(0xff4DC992),
   "checklistColor": Color(0xffFFA726),

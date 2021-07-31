@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/pages/homePage.dart';
 import 'package:notes_app/pages/loginPage.dart';
 import 'package:notes_app/themeData/theme_data.dart';
 import 'package:provider/provider.dart';
@@ -17,11 +18,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: myTheme(),
-      home: Consumer<Login_state>(
-        builder: (context, value, child) => LoginPage(
+      home: Consumer<Login_state>(builder: (context, value, child) {
+        if (value.status == loginStatus.loggedIn) return HomePage();
+        return LoginPage(
           state: value,
-        ),
-      ),
+        );
+      }),
     );
   }
 }
