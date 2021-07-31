@@ -4,6 +4,9 @@ import 'package:notes_app/themeData/theme_data.dart';
 import 'package:notes_app/widgets/customFAB.dart';
 
 class HomePage extends StatelessWidget {
+  HomePage(this.func);
+  void Function() func;
+
   List<String> labels = ['All Notes', 'Reminder', 'Audio', 'Image'];
   @override
   Widget build(BuildContext context) {
@@ -126,9 +129,10 @@ class HomePage extends StatelessWidget {
       floatingActionButton: CustomFAB(
         width: 100,
         onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => DetailsPage(),
-          ));
+          // Navigator.of(context).push(MaterialPageRoute(
+          //   builder: (context) => DetailsPage(),
+          //  ));
+          func();
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
