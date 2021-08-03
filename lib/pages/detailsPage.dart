@@ -3,51 +3,55 @@ import 'package:notes_app/themeData/theme_data.dart';
 import 'package:notes_app/widgets/detailPageWidgets.dart';
 
 class DetailsPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: Container(
-        height: 60,
-        child: ClipRRect(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(21), topRight: Radius.circular(21)),
-          child: BottomAppBar(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                IconButton(
-                    icon: Icon(
-                      Icons.music_note,
-                      color: Colors.red,
-                      size: 24,
-                    ),
-                    onPressed: () {}),
-                IconButton(
-                    icon: Icon(
-                      Icons.photo_outlined,
-                      color: color_data['reminderColor'],
-                      size: 24,
-                    ),
-                    onPressed: () {}),
-                IconButton(
-                    icon: Icon(
-                      Icons.notifications_outlined,
-                      color: color_data['buttonColor'],
-                      size: 24,
-                    ),
-                    onPressed: () {}),
-                IconButton(
-                    icon: Icon(
-                      Icons.check_circle_outline,
-                      color: color_data['checklistColor'],
-                      size: 24,
-                    ),
-                    onPressed: () {}),
-              ],
-            ),
+  Widget _bottomNagivgationBar() {
+    return Container(
+      height: 60,
+      child: ClipRRect(
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(21), topRight: Radius.circular(21)),
+        child: BottomAppBar(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
+                  icon: Icon(
+                    Icons.music_note,
+                    color: Colors.red,
+                    size: 24,
+                  ),
+                  onPressed: () {}),
+              IconButton(
+                  icon: Icon(
+                    Icons.photo_outlined,
+                    color: color_data['reminderColor'],
+                    size: 24,
+                  ),
+                  onPressed: () {}),
+              IconButton(
+                  icon: Icon(
+                    Icons.notifications_outlined,
+                    color: color_data['buttonColor'],
+                    size: 24,
+                  ),
+                  onPressed: () {}),
+              IconButton(
+                  icon: Icon(
+                    Icons.check_circle_outline,
+                    color: color_data['checklistColor'],
+                    size: 24,
+                  ),
+                  onPressed: () {}),
+            ],
           ),
         ),
       ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: _bottomNagivgationBar(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),

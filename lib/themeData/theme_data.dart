@@ -6,6 +6,7 @@ ThemeData myTheme() {
       primaryColor: Color(0xFF6273ED),
       primaryColorDark: Color(0xff1f48ba),
       primaryColorLight: Color(0xff99a1ff),
+      accentColor: Color(0xFF6273ED),
       scaffoldBackgroundColor: Color(0xFFFBFCFF),
       cardColor: Color(0xffffffff),
       floatingActionButtonTheme: FloatingActionButtonThemeData(

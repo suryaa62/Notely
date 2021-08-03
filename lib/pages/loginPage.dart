@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/core/Notifiers/loginPageNotifier.dart';
 import 'package:notes_app/themeData/theme_data.dart';
 import 'package:notes_app/widgets/customFAB.dart';
+import 'package:notes_app/widgets/progressIndicator.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({this.state});
@@ -64,41 +65,44 @@ class _LoginPageState extends State<LoginPage> {
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
         body: SafeArea(
-          child: Stack(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    height: 116,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20, bottom: 22),
-                    child: Text(
-                      _headingText(),
-                      style: Theme.of(context).textTheme.headline1,
+          child: Progress(
+            busy: widget.state.busy,
+            child: Stack(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 116,
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 50),
-                    child: Text(
-                      _subtitleText(),
-                      style: Theme.of(context).textTheme.bodyText1,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, bottom: 22),
+                      child: Text(
+                        _headingText(),
+                        style: Theme.of(context).textTheme.headline1,
+                      ),
                     ),
-                  ),
-                  _phoneField(context),
-                ],
-              ),
-              Positioned(
-                  bottom: 0,
-                  left: -50,
-                  child: Image.asset(
-                    'lib/assets/images/landing.png',
-                    width: 736,
-                    height: 473,
-                    fit: BoxFit.cover,
-                  )),
-            ],
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 50),
+                      child: Text(
+                        _subtitleText(),
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                    ),
+                    _phoneField(context),
+                  ],
+                ),
+                Positioned(
+                    bottom: 0,
+                    left: -50,
+                    child: Image.asset(
+                      'lib/assets/images/landing.png',
+                      width: 736,
+                      height: 473,
+                      fit: BoxFit.cover,
+                    )),
+              ],
+            ),
           ),
         ),
         floatingActionButton: CustomFAB(

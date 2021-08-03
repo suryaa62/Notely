@@ -1,5 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
+import 'package:notes_app/core/models/userModel.dart';
 import 'package:notes_app/core/services/FAuth.dart';
+import 'package:notes_app/core/services/Fstore.dart';
+import 'package:notes_app/locator.dart';
 
 enum statesLogin {
   loggedIn,
@@ -8,14 +13,24 @@ enum statesLogin {
   registering,
   code,
   codeEntered,
+  addData,
 }
 
 class LoginPageNotifier extends ChangeNotifier {
   statesLogin _status = statesLogin.loggedOut;
   statesLogin get status => _status;
+  bool busy;
   FAuthenticate fAuth;
   LoginPageNotifier() {
-    fAuth = FAuthenticate(logOutCallback, loginCallback);
+    busy = false;
+    fAuth = locator.get<FAuthenticate>();
+    init();
+  }
+
+  void init() async {
+    isBusy(true);
+    await fAuth.init(logOutCallback, loginCallback);
+    isBusy(false);
   }
 
   void letsStart() {
@@ -28,8 +43,10 @@ class LoginPageNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  void signOut() {
-    fAuth.logOut();
+  void signOut() async {
+    isBusy(true);
+    await fAuth.logOut();
+    isBusy(false);
   }
 
   void loginCallback() {
@@ -40,15 +57,37 @@ class LoginPageNotifier extends ChangeNotifier {
   void code() {
     if (status != statesLogin.loggedIn) {
       _status = statesLogin.code;
-      notifyListeners();
+      isBusy(false);
     }
   }
 
   void verifyCode(String code) async {
-    fAuth.verifyCode(code);
+    isBusy(true);
+    if (!kIsWeb) {
+      await fAuth.verifyCode(code);
+    } else if (kIsWeb) {
+      await fAuth.verifyCodeWeb(code);
+    }
+    isBusy(false);
   }
 
   void phoneFieldContinue(String phone_no, void Function() code) async {
-    fAuth.phoneAuth(phone_no, code);
+    isBusy(true);
+    if (!kIsWeb) {
+      await fAuth.phoneAuth(phone_no, code);
+    } else if (kIsWeb) {
+      await fAuth.phoneAuthWeb(phone_no);
+
+      code();
+    }
+    isBusy(false);
+  }
+
+  void isBusy(bool b) {
+    if (busy != b) {
+      busy = b;
+      print(b);
+      notifyListeners();
+    }
   }
 }

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/core/Notifiers/profilePageNotifier.dart';
 import 'package:notes_app/pages/detailsPage.dart';
+import 'package:notes_app/pages/profilePage.dart';
 import 'package:notes_app/themeData/theme_data.dart';
 import 'package:notes_app/widgets/customFAB.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   HomePage(this.func);
@@ -28,14 +31,22 @@ class HomePage extends StatelessWidget {
                   "My Notes",
                   style: Theme.of(context).textTheme.headline2,
                 ),
-                Container(
-                  clipBehavior: Clip.antiAlias,
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(5)),
-                  child: Image.asset(
-                    'lib/assets/images/profile.jpeg',
-                    width: 25,
-                    height: 25,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => Consumer<ProfilePageNotifier>(
+                            builder: (context, value, child) =>
+                                ProfilePage(value))));
+                  },
+                  child: Container(
+                    clipBehavior: Clip.antiAlias,
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(5)),
+                    child: Image.asset(
+                      'lib/assets/images/profile.jpeg',
+                      width: 25,
+                      height: 25,
+                    ),
                   ),
                 )
               ],
@@ -129,10 +140,10 @@ class HomePage extends StatelessWidget {
       floatingActionButton: CustomFAB(
         width: 100,
         onPressed: () {
-          // Navigator.of(context).push(MaterialPageRoute(
-          //   builder: (context) => DetailsPage(),
-          //  ));
-          func();
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => DetailsPage(),
+          ));
+          // func();
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
