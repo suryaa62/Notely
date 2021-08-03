@@ -15,6 +15,7 @@ class FAuthenticate {
     db = locator.get<Fstore>();
 
     FirebaseAuth.instance.userChanges().listen((user) async {
+      print("UserChanges");
       if (user == null)
         noUser();
       else {

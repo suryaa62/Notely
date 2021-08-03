@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
                       height: 25,
                     ),
                   ),
-                )
+                ),
               ],
             ),
             Padding(
