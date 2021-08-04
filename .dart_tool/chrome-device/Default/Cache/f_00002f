@@ -1,0 +1,1187 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/provider/src/listenable_provider.dart', 'packages/provider/src/selector.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/material/text_field.dart', 'packages/flutter/src/material/progress_indicator.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/notes_app/themeData/theme_data.dart', 'packages/flutter/src/material/icons.dart', 'packages/flutter/src/painting/image_resolution.dart', 'packages/image_picker/image_picker.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/material/circle_avatar.dart', 'packages/image_picker_platform_interface/src/types/image_source.dart', 'packages/cross_file/src/types/html.dart', 'packages/flutter/src/foundation/change_notifier.dart'], (function load__packages__notes_app__widgets__profilePageWidgets_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__widgets__icon$46dart, packages__provider__src__listenable_provider$46dart, packages__provider__src__selector$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__material__text_field$46dart, packages__flutter__src__material__progress_indicator$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__notes_app__themeData__theme_data$46dart, packages__flutter__src__material__icons$46dart, packages__flutter__src__painting__image_resolution$46dart, packages__image_picker__image_picker$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__material__circle_avatar$46dart, packages__image_picker_platform_interface__src__types__image_source$46dart, packages__cross_file__src__types__html$46dart, packages__flutter__src__foundation__change_notifier$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _js_helper = dart_sdk._js_helper;
+  const _interceptors = dart_sdk._interceptors;
+  const ui = dart_sdk.ui;
+  const async = dart_sdk.async;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const editable_text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__editable_text;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const change_notifier_provider = packages__provider__src__listenable_provider$46dart.src__change_notifier_provider;
+  const consumer = packages__provider__src__selector$46dart.src__consumer;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const theme = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const divider = packages__flutter__src__material__icon_button$46dart.src__material__divider;
+  const floating_action_button = packages__flutter__src__material__icon_button$46dart.src__material__floating_action_button;
+  const text_field = packages__flutter__src__material__text_field$46dart.src__material__text_field;
+  const progress_indicator = packages__flutter__src__material__progress_indicator$46dart.src__material__progress_indicator;
+  const animations = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animations;
+  const theme_data = packages__notes_app__themeData__theme_data$46dart.themeData__theme_data;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const image_resolution = packages__flutter__src__painting__image_resolution$46dart.src__painting__image_resolution;
+  const image_picker = packages__image_picker__image_picker$46dart.image_picker;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const circle_avatar = packages__flutter__src__material__circle_avatar$46dart.src__material__circle_avatar;
+  const image_source = packages__image_picker_platform_interface__src__types__image_source$46dart.src__types__image_source;
+  const html = packages__cross_file__src__types__html$46dart.src__types__html;
+  const change_notifier = packages__flutter__src__foundation__change_notifier$46dart.src__foundation__change_notifier;
+  var profilePageWidgets = Object.create(dart.library);
+  var profilePageWidgetsNotifiers = Object.create(dart.library);
+  var $_get = dartx._get;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    UpdateFieldNotifierL: () => (T.UpdateFieldNotifierL = dart.constFn(dart.legacy(profilePageWidgetsNotifiers.UpdateFieldNotifier)))(),
+    ChangeNotifierProviderOfUpdateFieldNotifierL: () => (T.ChangeNotifierProviderOfUpdateFieldNotifierL = dart.constFn(change_notifier_provider.ChangeNotifierProvider$(T.UpdateFieldNotifierL())))(),
+    ConsumerOfUpdateFieldNotifierL: () => (T.ConsumerOfUpdateFieldNotifierL = dart.constFn(consumer.Consumer$(T.UpdateFieldNotifierL())))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    IdentityMapOfStringL$dynamic: () => (T.IdentityMapOfStringL$dynamic = dart.constFn(_js_helper.IdentityMap$(T.StringL(), dart.dynamic)))(),
+    StringLToNull: () => (T.StringLToNull = dart.constFn(dart.fnType(core.Null, [T.StringL()])))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    JSArrayOfWidgetL: () => (T.JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(T.WidgetL())))(),
+    ColorL: () => (T.ColorL = dart.constFn(dart.legacy(ui.Color)))(),
+    AlwaysStoppedAnimationOfColorL: () => (T.AlwaysStoppedAnimationOfColorL = dart.constFn(animations.AlwaysStoppedAnimation$(T.ColorL())))(),
+    RowL: () => (T.RowL = dart.constFn(dart.legacy(basic.Row)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    BuildContextLAndUpdateFieldNotifierLAndWidgetLToRowL: () => (T.BuildContextLAndUpdateFieldNotifierLAndWidgetLToRowL = dart.constFn(dart.fnType(T.RowL(), [T.BuildContextL(), T.UpdateFieldNotifierL(), T.WidgetL()])))(),
+    ConsumerLOfUpdateFieldNotifierL: () => (T.ConsumerLOfUpdateFieldNotifierL = dart.constFn(dart.legacy(T.ConsumerOfUpdateFieldNotifierL())))(),
+    BuildContextLAndWidgetLToConsumerLOfUpdateFieldNotifierL: () => (T.BuildContextLAndWidgetLToConsumerLOfUpdateFieldNotifierL = dart.constFn(dart.fnType(T.ConsumerLOfUpdateFieldNotifierL(), [T.BuildContextL(), T.WidgetL()])))(),
+    FutureOfNull: () => (T.FutureOfNull = dart.constFn(async.Future$(core.Null)))(),
+    FutureLOfNull: () => (T.FutureLOfNull = dart.constFn(dart.legacy(T.FutureOfNull())))(),
+    VoidToFutureLOfNull: () => (T.VoidToFutureLOfNull = dart.constFn(dart.fnType(T.FutureLOfNull(), [])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 10
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 10,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 10,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 34,
+        [_Location_line]: 62,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 27,
+        [_Location_line]: 63,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[4] || CT.C4, C[5] || CT.C5], T._LocationL());
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[3] || CT.C3,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 61,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 25,
+        [_Location_line]: 60,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 25,
+        [_Location_line]: 61,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8, C[9] || CT.C9], T._LocationL());
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 59,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controller",
+        [_Location_column]: 25,
+        [_Location_line]: 67,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "readOnly",
+        [_Location_column]: 25,
+        [_Location_line]: 68,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onSubmitted",
+        [_Location_column]: 25,
+        [_Location_line]: 69,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 25,
+        [_Location_line]: 75,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.constList([C[12] || CT.C12, C[13] || CT.C13, C[14] || CT.C14, C[15] || CT.C15], T._LocationL());
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 66,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 25,
+        [_Location_line]: 80,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "thickness",
+        [_Location_column]: 25,
+        [_Location_line]: 81,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[18] || CT.C18, C[19] || CT.C19], T._LocationL());
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 79,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 21,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 21,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.constList([C[22] || CT.C22, C[23] || CT.C23], T._LocationL());
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[21] || CT.C21,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 56,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 19,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.constList([C[26] || CT.C26, C[27] || CT.C27], T._LocationL());
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 54,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.constList([C[30] || CT.C30], T._LocationL());
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[29] || CT.C29,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 53,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "valueColor",
+        [_Location_column]: 27,
+        [_Location_line]: 94,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33], T._LocationL());
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 93,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 25,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 25,
+        [_Location_line]: 92,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 25,
+        [_Location_line]: 93,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36, C[37] || CT.C37, C[38] || CT.C38], T._LocationL());
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 90,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 38,
+        [_Location_line]: 99,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.constList([C[41] || CT.C41], T._LocationL());
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[40] || CT.C40,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 99,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 38,
+        [_Location_line]: 100,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C[43] = dart.constList([C[44] || CT.C44], T._LocationL());
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[43] || CT.C43,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 100,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 17,
+        [_Location_line]: 88,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 89,
+        [_Location_file]: null
+      });
+    },
+    get C46() {
+      return C[46] = dart.constList([C[47] || CT.C47, C[48] || CT.C48], T._LocationL());
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[46] || CT.C46,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 87,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 13,
+        [_Location_line]: 50,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 13,
+        [_Location_line]: 51,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.constList([C[51] || CT.C51, C[52] || CT.C52], T._LocationL());
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[50] || CT.C50,
+        [_Location_name]: null,
+        [_Location_column]: 47,
+        [_Location_line]: 49,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 11,
+        [_Location_line]: 49,
+        [_Location_file]: null
+      });
+    },
+    get C54() {
+      return C[54] = dart.constList([C[55] || CT.C55], T._LocationL());
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[54] || CT.C54,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 48,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "value",
+        [_Location_column]: 7,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 7,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.constList([C[58] || CT.C58, C[59] || CT.C59], T._LocationL());
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[57] || CT.C57,
+        [_Location_name]: null,
+        [_Location_column]: 35,
+        [_Location_line]: 43,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "strokeWidth",
+        [_Location_column]: 17,
+        [_Location_line]: 129,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C[61] = dart.constList([C[62] || CT.C62], T._LocationL());
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[61] || CT.C61,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 128,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 128,
+        [_Location_file]: null
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 15,
+        [_Location_line]: 131,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 15,
+        [_Location_line]: 132,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C[64] = dart.constList([C[65] || CT.C65, C[66] || CT.C66, C[67] || CT.C67], T._LocationL());
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[64] || CT.C64,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 127,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 13,
+        [_Location_line]: 126,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 127,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.constList([C[70] || CT.C70, C[71] || CT.C71], T._LocationL());
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[69] || CT.C69,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 125,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C74() {
+      return C[74] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundImage",
+        [_Location_column]: 15,
+        [_Location_line]: 139,
+        [_Location_file]: null
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "radius",
+        [_Location_column]: 15,
+        [_Location_line]: 140,
+        [_Location_file]: null
+      });
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 15,
+        [_Location_line]: 141,
+        [_Location_file]: null
+      });
+    },
+    get C73() {
+      return C[73] = dart.constList([C[74] || CT.C74, C[75] || CT.C75, C[76] || CT.C76], T._LocationL());
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[73] || CT.C73,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 137,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 13,
+        [_Location_line]: 136,
+        [_Location_file]: null
+      });
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 137,
+        [_Location_file]: null
+      });
+    },
+    get C78() {
+      return C[78] = dart.constList([C[79] || CT.C79, C[80] || CT.C80], T._LocationL());
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[78] || CT.C78,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 135,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 33,
+        [_Location_line]: 155,
+        [_Location_file]: null
+      });
+    },
+    get C82() {
+      return C[82] = dart.constList([C[83] || CT.C83], T._LocationL());
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[82] || CT.C82,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 155,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C86() {
+      return C[86] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mini",
+        [_Location_column]: 15,
+        [_Location_line]: 150,
+        [_Location_file]: null
+      });
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 15,
+        [_Location_line]: 151,
+        [_Location_file]: null
+      });
+    },
+    get C88() {
+      return C[88] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "elevation",
+        [_Location_column]: 15,
+        [_Location_line]: 154,
+        [_Location_file]: null
+      });
+    },
+    get C89() {
+      return C[89] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 155,
+        [_Location_file]: null
+      });
+    },
+    get C85() {
+      return C[85] = dart.constList([C[86] || CT.C86, C[87] || CT.C87, C[88] || CT.C88, C[89] || CT.C89], T._LocationL());
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[85] || CT.C85,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 149,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C92() {
+      return C[92] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 13,
+        [_Location_line]: 148,
+        [_Location_file]: null
+      });
+    },
+    get C93() {
+      return C[93] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 149,
+        [_Location_file]: null
+      });
+    },
+    get C91() {
+      return C[91] = dart.constList([C[92] || CT.C92, C[93] || CT.C93], T._LocationL());
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[91] || CT.C91,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 147,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C96() {
+      return C[96] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 124,
+        [_Location_file]: null
+      });
+    },
+    get C95() {
+      return C[95] = dart.constList([C[96] || CT.C96], T._LocationL());
+    },
+    get C94() {
+      return C[94] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[95] || CT.C95,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 123,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    },
+    get C99() {
+      return C[99] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 7,
+        [_Location_line]: 121,
+        [_Location_file]: null
+      });
+    },
+    get C100() {
+      return C[100] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 7,
+        [_Location_line]: 122,
+        [_Location_file]: null
+      });
+    },
+    get C101() {
+      return C[101] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 123,
+        [_Location_file]: null
+      });
+    },
+    get C98() {
+      return C[98] = dart.constList([C[99] || CT.C99, C[100] || CT.C100, C[101] || CT.C101], T._LocationL());
+    },
+    get C97() {
+      return C[97] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[98] || CT.C98,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 120,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/profilePageWidgets.dart"
+      });
+    }
+  }, false);
+  var C = Array(102).fill(void 0);
+  var I = [
+    "package:notes_app/widgets/profilePageWidgets.dart",
+    "package:notes_app/core/Notifiers/widgets/profilePageWidgetsNotifiers.dart"
+  ];
+  var notifier$ = dart.privateName(profilePageWidgets, "UpdateField.notifier");
+  var initialText$ = dart.privateName(profilePageWidgets, "UpdateField.initialText");
+  var field$ = dart.privateName(profilePageWidgets, "UpdateField.field");
+  var label$ = dart.privateName(profilePageWidgets, "UpdateField.label");
+  var readOnly$ = dart.privateName(profilePageWidgets, "UpdateField.readOnly");
+  var prefixIcon$ = dart.privateName(profilePageWidgets, "UpdateField.prefixIcon");
+  profilePageWidgets.UpdateField = class UpdateField extends framework.StatefulWidget {
+    get notifier() {
+      return this[notifier$];
+    }
+    set notifier(value) {
+      this[notifier$] = value;
+    }
+    get initialText() {
+      return this[initialText$];
+    }
+    set initialText(value) {
+      this[initialText$] = value;
+    }
+    get field() {
+      return this[field$];
+    }
+    set field(value) {
+      this[field$] = value;
+    }
+    get label() {
+      return this[label$];
+    }
+    set label(value) {
+      this[label$] = value;
+    }
+    get readOnly() {
+      return this[readOnly$];
+    }
+    set readOnly(value) {
+      this[readOnly$] = value;
+    }
+    get prefixIcon() {
+      return this[prefixIcon$];
+    }
+    set prefixIcon(value) {
+      this[prefixIcon$] = value;
+    }
+    createState() {
+      return new profilePageWidgets._UpdateFieldState.new();
+    }
+  };
+  (profilePageWidgets.UpdateField.new = function(opts) {
+    let notifier = opts && 'notifier' in opts ? opts.notifier : null;
+    let initialText = opts && 'initialText' in opts ? opts.initialText : null;
+    let field = opts && 'field' in opts ? opts.field : null;
+    let label = opts && 'label' in opts ? opts.label : null;
+    let readOnly = opts && 'readOnly' in opts ? opts.readOnly : null;
+    let prefixIcon = opts && 'prefixIcon' in opts ? opts.prefixIcon : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[notifier$] = notifier;
+    this[initialText$] = initialText;
+    this[field$] = field;
+    this[label$] = label;
+    this[readOnly$] = readOnly;
+    this[prefixIcon$] = prefixIcon;
+    profilePageWidgets.UpdateField.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = profilePageWidgets.UpdateField.prototype;
+  dart.addTypeTests(profilePageWidgets.UpdateField);
+  dart.addTypeCaches(profilePageWidgets.UpdateField);
+  dart.setMethodSignature(profilePageWidgets.UpdateField, () => ({
+    __proto__: dart.getMethods(profilePageWidgets.UpdateField.__proto__),
+    createState: dart.fnType(dart.legacy(profilePageWidgets._UpdateFieldState), [])
+  }));
+  dart.setLibraryUri(profilePageWidgets.UpdateField, I[0]);
+  dart.setFieldSignature(profilePageWidgets.UpdateField, () => ({
+    __proto__: dart.getFields(profilePageWidgets.UpdateField.__proto__),
+    notifier: dart.fieldType(dart.legacy(profilePageWidgetsNotifiers.UpdateFieldNotifier)),
+    initialText: dart.fieldType(dart.legacy(core.String)),
+    field: dart.fieldType(dart.legacy(core.String)),
+    label: dart.fieldType(dart.legacy(core.String)),
+    readOnly: dart.fieldType(dart.legacy(core.bool)),
+    prefixIcon: dart.fieldType(dart.legacy(icon.Icon))
+  }));
+  var _controller = dart.privateName(profilePageWidgets, "_controller");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  profilePageWidgets._UpdateFieldState = class _UpdateFieldState extends framework.State$(dart.legacy(profilePageWidgets.UpdateField)) {
+    initState() {
+      super.initState();
+      core.print("yeah------------------------------");
+    }
+    dispose() {
+      this[_controller].dispose();
+      super.dispose();
+    }
+    build(context) {
+      return new (T.ChangeNotifierProviderOfUpdateFieldNotifierL()).value({value: this.widget.notifier, builder: dart.fn((context, value) => {
+          this[_controller].text = this.widget.initialText;
+          return new (T.ConsumerOfUpdateFieldNotifierL()).new({builder: dart.fn((context, value, child) => new basic.Row.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidgetL().of([this.widget.prefixIcon, new basic.Expanded.new({child: new basic.Padding.new({padding: C[0] || CT.C0, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: T.JSArrayOfWidgetL().of([new basic.Padding.new({padding: C[1] || CT.C1, child: new text.Text.new(this.widget.label, {style: theme.Theme.of(context).textTheme.subtitle1, $creationLocationd_0dea112b090073317d4: C[2] || CT.C2}), $creationLocationd_0dea112b090073317d4: C[6] || CT.C6}), new text_field.TextField.new({controller: this[_controller], readOnly: this.widget.readOnly, onSubmitted: dart.fn(s => {
+                            core.print("-----------------onSubmitted-----------");
+                            core.print("8888888888888888-------" + dart.str(this[_controller].text) + "---------888888888888");
+                            value.onChanged(new (T.IdentityMapOfStringL$dynamic()).from([this.widget.field, this[_controller].text]));
+                          }, T.StringLToNull()), onChanged: dart.fn(s => {
+                            value.isChanged = true;
+                          }, T.StringLToNull()), $creationLocationd_0dea112b090073317d4: C[10] || CT.C10}), new divider.Divider.new({height: 20.0, thickness: 2.0, $creationLocationd_0dea112b090073317d4: C[16] || CT.C16})]), $creationLocationd_0dea112b090073317d4: C[20] || CT.C20}), $creationLocationd_0dea112b090073317d4: C[24] || CT.C24}), $creationLocationd_0dea112b090073317d4: C[28] || CT.C28}), new basic.Padding.new({padding: C[0] || CT.C0, child: dart.test(value.busy) ? new container.Container.new({width: 20.0, height: 20.0, child: new progress_indicator.CircularProgressIndicator.new({valueColor: new (T.AlwaysStoppedAnimationOfColorL()).new(theme_data.color_data[$_get]("buttonColor")), $creationLocationd_0dea112b090073317d4: C[31] || CT.C31}), $creationLocationd_0dea112b090073317d4: C[34] || CT.C34}) : dart.test(this.widget.readOnly) ? new icon.Icon.new(icons.Icons.edit_off, {$creationLocationd_0dea112b090073317d4: C[39] || CT.C39}) : new icon.Icon.new(icons.Icons.edit_outlined, {$creationLocationd_0dea112b090073317d4: C[42] || CT.C42}), $creationLocationd_0dea112b090073317d4: C[45] || CT.C45})]), $creationLocationd_0dea112b090073317d4: C[49] || CT.C49}), T.BuildContextLAndUpdateFieldNotifierLAndWidgetLToRowL()), $creationLocationd_0dea112b090073317d4: C[53] || CT.C53});
+        }, T.BuildContextLAndWidgetLToConsumerLOfUpdateFieldNotifierL()), $creationLocationd_0dea112b090073317d4: C[56] || CT.C56});
+    }
+  };
+  (profilePageWidgets._UpdateFieldState.new = function() {
+    this[_controller] = new editable_text.TextEditingController.new();
+    profilePageWidgets._UpdateFieldState.__proto__.new.call(this);
+    ;
+  }).prototype = profilePageWidgets._UpdateFieldState.prototype;
+  dart.addTypeTests(profilePageWidgets._UpdateFieldState);
+  dart.addTypeCaches(profilePageWidgets._UpdateFieldState);
+  dart.setMethodSignature(profilePageWidgets._UpdateFieldState, () => ({
+    __proto__: dart.getMethods(profilePageWidgets._UpdateFieldState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(profilePageWidgets._UpdateFieldState, I[0]);
+  dart.setFieldSignature(profilePageWidgets._UpdateFieldState, () => ({
+    __proto__: dart.getFields(profilePageWidgets._UpdateFieldState.__proto__),
+    [_controller]: dart.fieldType(dart.legacy(editable_text.TextEditingController))
+  }));
+  var radius$ = dart.privateName(profilePageWidgets, "UpdateImage.radius");
+  var url$ = dart.privateName(profilePageWidgets, "UpdateImage.url");
+  var defaultImage = dart.privateName(profilePageWidgets, "UpdateImage.defaultImage");
+  var file = dart.privateName(profilePageWidgets, "UpdateImage.file");
+  var _picker = dart.privateName(profilePageWidgets, "_picker");
+  profilePageWidgets.UpdateImage = class UpdateImage extends framework.StatelessWidget {
+    get radius() {
+      return this[radius$];
+    }
+    set radius(value) {
+      this[radius$] = value;
+    }
+    get url() {
+      return this[url$];
+    }
+    set url(value) {
+      this[url$] = value;
+    }
+    get defaultImage() {
+      return this[defaultImage];
+    }
+    set defaultImage(value) {
+      this[defaultImage] = value;
+    }
+    get file() {
+      return this[file];
+    }
+    set file(value) {
+      this[file] = value;
+    }
+    build(context) {
+      return new basic.SizedBox.new({width: 2 * dart.notNull(this.radius), height: 2 * dart.notNull(this.radius), child: new basic.Stack.new({children: T.JSArrayOfWidgetL().of([new basic.Align.new({alignment: alignment.Alignment.center, child: new container.Container.new({child: new progress_indicator.CircularProgressIndicator.new({strokeWidth: 10.0, $creationLocationd_0dea112b090073317d4: C[60] || CT.C60}), width: 2 * dart.notNull(this.radius), height: 2 * dart.notNull(this.radius), $creationLocationd_0dea112b090073317d4: C[63] || CT.C63}), $creationLocationd_0dea112b090073317d4: C[68] || CT.C68}), new basic.Align.new({alignment: alignment.Alignment.center, child: new circle_avatar.CircleAvatar.new({backgroundImage: this.defaultImage, radius: this.radius, backgroundColor: theme_data.color_data[$_get]("greyColor"), $creationLocationd_0dea112b090073317d4: C[72] || CT.C72}), $creationLocationd_0dea112b090073317d4: C[77] || CT.C77}), new basic.Align.new({alignment: alignment.Alignment.bottomRight, child: new floating_action_button.FloatingActionButton.new({mini: dart.notNull(this.radius) < 100 ? true : false, onPressed: dart.fn(() => async.async(core.Null, (function*() {
+                  this.file = (yield this[_picker].pickImage({source: image_source.ImageSource.gallery}));
+                }).bind(this)), T.VoidToFutureLOfNull()), elevation: 0.0, child: new icon.Icon.new(icons.Icons.camera_alt, {$creationLocationd_0dea112b090073317d4: C[81] || CT.C81}), $creationLocationd_0dea112b090073317d4: C[84] || CT.C84}), $creationLocationd_0dea112b090073317d4: C[90] || CT.C90})]), $creationLocationd_0dea112b090073317d4: C[94] || CT.C94}), $creationLocationd_0dea112b090073317d4: C[97] || CT.C97});
+    }
+  };
+  (profilePageWidgets.UpdateImage.new = function(opts) {
+    let radius = opts && 'radius' in opts ? opts.radius : 50;
+    let url = opts && 'url' in opts ? opts.url : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[defaultImage] = new image_resolution.AssetImage.new("lib/assets/images/profile.jpeg");
+    this[file] = null;
+    this[_picker] = new image_picker.ImagePicker.new();
+    this[radius$] = radius;
+    this[url$] = url;
+    profilePageWidgets.UpdateImage.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = profilePageWidgets.UpdateImage.prototype;
+  dart.addTypeTests(profilePageWidgets.UpdateImage);
+  dart.addTypeCaches(profilePageWidgets.UpdateImage);
+  dart.setMethodSignature(profilePageWidgets.UpdateImage, () => ({
+    __proto__: dart.getMethods(profilePageWidgets.UpdateImage.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(profilePageWidgets.UpdateImage, I[0]);
+  dart.setFieldSignature(profilePageWidgets.UpdateImage, () => ({
+    __proto__: dart.getFields(profilePageWidgets.UpdateImage.__proto__),
+    radius: dart.fieldType(dart.legacy(core.double)),
+    url: dart.fieldType(dart.legacy(core.String)),
+    defaultImage: dart.fieldType(dart.legacy(image_resolution.AssetImage)),
+    file: dart.fieldType(dart.legacy(html.XFile)),
+    [_picker]: dart.finalFieldType(dart.legacy(image_picker.ImagePicker))
+  }));
+  var func$ = dart.privateName(profilePageWidgetsNotifiers, "UpdateFieldNotifier.func");
+  var busy = dart.privateName(profilePageWidgetsNotifiers, "UpdateFieldNotifier.busy");
+  var isChanged = dart.privateName(profilePageWidgetsNotifiers, "UpdateFieldNotifier.isChanged");
+  profilePageWidgetsNotifiers.UpdateFieldNotifier = class UpdateFieldNotifier extends change_notifier.ChangeNotifier {
+    get func() {
+      return this[func$];
+    }
+    set func(value) {
+      this[func$] = value;
+    }
+    get busy() {
+      return this[busy];
+    }
+    set busy(value) {
+      this[busy] = value;
+    }
+    get isChanged() {
+      return this[isChanged];
+    }
+    set isChanged(value) {
+      this[isChanged] = value;
+    }
+    isBusy(b) {
+      this.busy = b;
+      this.notifyListeners();
+    }
+    onChanged(map) {
+      return async.async(dart.void, (function* onChanged() {
+        let t0;
+        if (dart.test(this.isChanged)) {
+          this.isBusy(true);
+          yield (t0 = map, this.func(t0));
+          this.isChanged = false;
+          this.isBusy(false);
+        }
+      }).bind(this));
+    }
+  };
+  (profilePageWidgetsNotifiers.UpdateFieldNotifier.new = function(func) {
+    this[func$] = null;
+    this[busy] = null;
+    this[isChanged] = null;
+    profilePageWidgetsNotifiers.UpdateFieldNotifier.__proto__.new.call(this);
+    this.func = func;
+    this.busy = false;
+    this.isChanged = false;
+  }).prototype = profilePageWidgetsNotifiers.UpdateFieldNotifier.prototype;
+  dart.addTypeTests(profilePageWidgetsNotifiers.UpdateFieldNotifier);
+  dart.addTypeCaches(profilePageWidgetsNotifiers.UpdateFieldNotifier);
+  dart.setMethodSignature(profilePageWidgetsNotifiers.UpdateFieldNotifier, () => ({
+    __proto__: dart.getMethods(profilePageWidgetsNotifiers.UpdateFieldNotifier.__proto__),
+    isBusy: dart.fnType(dart.void, [dart.legacy(core.bool)]),
+    onChanged: dart.fnType(dart.void, [dart.legacy(core.Map$(dart.legacy(core.String), dart.dynamic))])
+  }));
+  dart.setLibraryUri(profilePageWidgetsNotifiers.UpdateFieldNotifier, I[1]);
+  dart.setFieldSignature(profilePageWidgetsNotifiers.UpdateFieldNotifier, () => ({
+    __proto__: dart.getFields(profilePageWidgetsNotifiers.UpdateFieldNotifier.__proto__),
+    func: dart.fieldType(dart.legacy(dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(core.Map$(dart.legacy(core.String), dart.dynamic))]))),
+    busy: dart.fieldType(dart.legacy(core.bool)),
+    isChanged: dart.fieldType(dart.legacy(core.bool))
+  }));
+  dart.trackLibraries("packages/notes_app/widgets/profilePageWidgets.dart", {
+    "package:notes_app/widgets/profilePageWidgets.dart": profilePageWidgets,
+    "package:notes_app/core/Notifiers/widgets/profilePageWidgetsNotifiers.dart": profilePageWidgetsNotifiers
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["profilePageWidgets.dart","../core/Notifiers/widgets/profilePageWidgetsNotifiers.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/notes_app/widgets/profilePageWidgets.dart.lib.js"}');
+  // Exports:
+  return {
+    widgets__profilePageWidgets: profilePageWidgets,
+    core__Notifiers__widgets__profilePageWidgetsNotifiers: profilePageWidgetsNotifiers
+  };
+}));
+
+//# sourceMappingURL=profilePageWidgets.dart.lib.js.map

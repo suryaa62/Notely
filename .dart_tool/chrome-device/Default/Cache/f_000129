@@ -1,0 +1,313 @@
+define(['dart_sdk', 'packages/notes_app/core/services/Fstore.dart', 'packages/get_it/get_it.dart', 'packages/firebase_core/firebase_core.dart', 'packages/firebase_auth/firebase_auth.dart', 'packages/firebase_auth_platform_interface/src/types.dart', 'packages/firebase_auth_platform_interface/src/firebase_auth_exception.dart', 'packages/flutter/src/foundation/change_notifier.dart'], (function load__packages__notes_app__locator_dart(dart_sdk, packages__notes_app__core__services__Fstore$46dart, packages__get_it__get_it$46dart, packages__firebase_core__firebase_core$46dart, packages__firebase_auth__firebase_auth$46dart, packages__firebase_auth_platform_interface__src__types$46dart, packages__firebase_auth_platform_interface__src__firebase_auth_exception$46dart, packages__flutter__src__foundation__change_notifier$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const Fstore = packages__notes_app__core__services__Fstore$46dart.core__services__Fstore;
+  const get_it = packages__get_it__get_it$46dart.get_it;
+  const firebase_core = packages__firebase_core__firebase_core$46dart.firebase_core;
+  const firebase_auth = packages__firebase_auth__firebase_auth$46dart.firebase_auth;
+  const phone_auth = packages__firebase_auth_platform_interface__src__types$46dart.src__providers__phone_auth;
+  const firebase_auth_exception = packages__firebase_auth_platform_interface__src__firebase_auth_exception$46dart.src__firebase_auth_exception;
+  const change_notifier = packages__flutter__src__foundation__change_notifier$46dart.src__foundation__change_notifier;
+  var locator = Object.create(dart.library);
+  var FAuth = Object.create(dart.library);
+  var loginPageNotifier = Object.create(dart.library);
+  var $toString = dartx.toString;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    FAuthenticateL: () => (T.FAuthenticateL = dart.constFn(dart.legacy(FAuth.FAuthenticate)))(),
+    VoidToFAuthenticateL: () => (T.VoidToFAuthenticateL = dart.constFn(dart.fnType(T.FAuthenticateL(), [])))(),
+    FstoreL: () => (T.FstoreL = dart.constFn(dart.legacy(Fstore.Fstore)))(),
+    VoidToFstoreL: () => (T.VoidToFstoreL = dart.constFn(dart.fnType(T.FstoreL(), [])))(),
+    LoginPageNotifierL: () => (T.LoginPageNotifierL = dart.constFn(dart.legacy(loginPageNotifier.LoginPageNotifier)))(),
+    VoidToLoginPageNotifierL: () => (T.VoidToLoginPageNotifierL = dart.constFn(dart.fnType(T.LoginPageNotifierL(), [])))(),
+    FutureOfNull: () => (T.FutureOfNull = dart.constFn(async.Future$(core.Null)))(),
+    FutureLOfNull: () => (T.FutureLOfNull = dart.constFn(dart.legacy(T.FutureOfNull())))(),
+    UserL: () => (T.UserL = dart.constFn(dart.legacy(firebase_auth.User)))(),
+    UserLToFutureLOfNull: () => (T.UserLToFutureLOfNull = dart.constFn(dart.fnType(T.FutureLOfNull(), [T.UserL()])))(),
+    PhoneAuthCredentialL: () => (T.PhoneAuthCredentialL = dart.constFn(dart.legacy(phone_auth.PhoneAuthCredential)))(),
+    PhoneAuthCredentialLToFutureLOfNull: () => (T.PhoneAuthCredentialLToFutureLOfNull = dart.constFn(dart.fnType(T.FutureLOfNull(), [T.PhoneAuthCredentialL()])))(),
+    FirebaseAuthExceptionL: () => (T.FirebaseAuthExceptionL = dart.constFn(dart.legacy(firebase_auth_exception.FirebaseAuthException)))(),
+    FirebaseAuthExceptionLToNull: () => (T.FirebaseAuthExceptionLToNull = dart.constFn(dart.fnType(core.Null, [T.FirebaseAuthExceptionL()])))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    StringLAndintLToFutureLOfNull: () => (T.StringLAndintLToFutureLOfNull = dart.constFn(dart.fnType(T.FutureLOfNull(), [T.StringL(), T.intL()])))(),
+    StringLToFutureLOfNull: () => (T.StringLToFutureLOfNull = dart.constFn(dart.fnType(T.FutureLOfNull(), [T.StringL()])))(),
+    statesLoginL: () => (T.statesLoginL = dart.constFn(dart.legacy(loginPageNotifier.statesLogin)))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: loginPageNotifier.statesLogin.prototype,
+        [_name$]: "statesLogin.loggedIn",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: loginPageNotifier.statesLogin.prototype,
+        [_name$]: "statesLogin.loggedOut",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: loginPageNotifier.statesLogin.prototype,
+        [_name$]: "statesLogin.credential",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: loginPageNotifier.statesLogin.prototype,
+        [_name$]: "statesLogin.registering",
+        index: 3
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: loginPageNotifier.statesLogin.prototype,
+        [_name$]: "statesLogin.code",
+        index: 4
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: loginPageNotifier.statesLogin.prototype,
+        [_name$]: "statesLogin.codeEntered",
+        index: 5
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: loginPageNotifier.statesLogin.prototype,
+        [_name$]: "statesLogin.addData",
+        index: 6
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6], T.statesLoginL());
+    }
+  }, false);
+  var C = Array(8).fill(void 0);
+  var I = [
+    "package:notes_app/core/services/FAuth.dart",
+    "package:notes_app/core/Notifiers/loginPageNotifier.dart"
+  ];
+  locator.setup = function setup() {
+    locator.locator.registerLazySingleton(T.FAuthenticateL(), dart.fn(() => new FAuth.FAuthenticate.new(), T.VoidToFAuthenticateL()));
+    locator.locator.registerLazySingleton(T.FstoreL(), dart.fn(() => new Fstore.Fstore.new(), T.VoidToFstoreL()));
+    locator.locator.registerLazySingleton(T.LoginPageNotifierL(), dart.fn(() => new loginPageNotifier.LoginPageNotifier.new(), T.VoidToLoginPageNotifierL()));
+  };
+  dart.defineLazy(locator, {
+    /*locator.locator*/get locator() {
+      return get_it.GetIt.instance;
+    }
+  }, true);
+  var db = dart.privateName(FAuth, "FAuthenticate.db");
+  var _verificationId = dart.privateName(FAuth, "_verificationId");
+  FAuth.FAuthenticate = class FAuthenticate extends core.Object {
+    get db() {
+      return this[db];
+    }
+    set db(value) {
+      this[db] = value;
+    }
+    init(noUser, hasUser) {
+      return async.async(dart.void, (function* init() {
+        yield firebase_core.Firebase.initializeApp();
+        firebase_auth.FirebaseAuth.instance.userChanges().listen(dart.fn(user => async.async(core.Null, (function*() {
+          if (user == null)
+            noUser();
+          else
+            yield this.db.createUser(user.uid);
+          hasUser();
+        }).bind(this)), T.UserLToFutureLOfNull()));
+      }).bind(this));
+    }
+    phoneAuth(phone_no, verifyCodeCallback) {
+      return async.async(dart.void, (function* phoneAuth() {
+        yield firebase_auth.FirebaseAuth.instance.verifyPhoneNumber({phoneNumber: "+91" + dart.notNull(phone_no), verificationCompleted: dart.fn(credential => async.async(core.Null, function*() {
+            yield firebase_auth.FirebaseAuth.instance.signInWithCredential(credential);
+          }), T.PhoneAuthCredentialLToFutureLOfNull()), verificationFailed: dart.fn(e => {
+            core.print("+1" + dart.notNull(phone_no));
+            core.print("----------------" + dart.notNull(e.code));
+          }, T.FirebaseAuthExceptionLToNull()), codeSent: dart.fn((verificationId, resendToken) => async.async(core.Null, (function*() {
+            core.print("-------------CodeSent--------------");
+            this[_verificationId] = verificationId;
+            verifyCodeCallback();
+          }).bind(this)), T.StringLAndintLToFutureLOfNull()), codeAutoRetrievalTimeout: dart.fn(verificationId => async.async(core.Null, (function*() {
+            core.print("-------------AutoRetrival--------------");
+            this[_verificationId] = verificationId;
+            verifyCodeCallback();
+          }).bind(this)), T.StringLToFutureLOfNull())});
+      }).bind(this));
+    }
+    verifyCode(code) {
+      return async.async(dart.void, (function* verifyCode() {
+        let smsCode = code;
+        let credential = phone_auth.PhoneAuthProvider.credential({verificationId: this[_verificationId], smsCode: smsCode});
+        yield firebase_auth.FirebaseAuth.instance.signInWithCredential(credential);
+      }).bind(this));
+    }
+    logOut() {
+      return async.async(dart.void, function* logOut() {
+        yield firebase_auth.FirebaseAuth.instance.signOut();
+      });
+    }
+  };
+  (FAuth.FAuthenticate.new = function() {
+    this[_verificationId] = null;
+    this[db] = locator.locator.get(T.FstoreL());
+    ;
+  }).prototype = FAuth.FAuthenticate.prototype;
+  dart.addTypeTests(FAuth.FAuthenticate);
+  dart.addTypeCaches(FAuth.FAuthenticate);
+  dart.setMethodSignature(FAuth.FAuthenticate, () => ({
+    __proto__: dart.getMethods(FAuth.FAuthenticate.__proto__),
+    init: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(dart.fnType(dart.void, [])), dart.legacy(dart.fnType(dart.void, []))]),
+    phoneAuth: dart.fnType(dart.void, [dart.legacy(core.String), dart.legacy(dart.fnType(dart.void, []))]),
+    verifyCode: dart.fnType(dart.void, [dart.legacy(core.String)]),
+    logOut: dart.fnType(dart.void, [])
+  }));
+  dart.setLibraryUri(FAuth.FAuthenticate, I[0]);
+  dart.setFieldSignature(FAuth.FAuthenticate, () => ({
+    __proto__: dart.getFields(FAuth.FAuthenticate.__proto__),
+    [_verificationId]: dart.fieldType(dart.legacy(core.String)),
+    db: dart.fieldType(dart.legacy(Fstore.Fstore))
+  }));
+  var _name$ = dart.privateName(loginPageNotifier, "_name");
+  loginPageNotifier.statesLogin = class statesLogin extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (loginPageNotifier.statesLogin.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = loginPageNotifier.statesLogin.prototype;
+  dart.addTypeTests(loginPageNotifier.statesLogin);
+  dart.addTypeCaches(loginPageNotifier.statesLogin);
+  dart.setMethodSignature(loginPageNotifier.statesLogin, () => ({
+    __proto__: dart.getMethods(loginPageNotifier.statesLogin.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(loginPageNotifier.statesLogin, I[1]);
+  dart.setFieldSignature(loginPageNotifier.statesLogin, () => ({
+    __proto__: dart.getFields(loginPageNotifier.statesLogin.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(loginPageNotifier.statesLogin, ['toString']);
+  loginPageNotifier.statesLogin.loggedIn = C[0] || CT.C0;
+  loginPageNotifier.statesLogin.loggedOut = C[1] || CT.C1;
+  loginPageNotifier.statesLogin.credential = C[2] || CT.C2;
+  loginPageNotifier.statesLogin.registering = C[3] || CT.C3;
+  loginPageNotifier.statesLogin.code = C[4] || CT.C4;
+  loginPageNotifier.statesLogin.codeEntered = C[5] || CT.C5;
+  loginPageNotifier.statesLogin.addData = C[6] || CT.C6;
+  loginPageNotifier.statesLogin.values = C[7] || CT.C7;
+  var fAuth = dart.privateName(loginPageNotifier, "LoginPageNotifier.fAuth");
+  var _status = dart.privateName(loginPageNotifier, "_status");
+  loginPageNotifier.LoginPageNotifier = class LoginPageNotifier extends change_notifier.ChangeNotifier {
+    get fAuth() {
+      return this[fAuth];
+    }
+    set fAuth(value) {
+      this[fAuth] = value;
+    }
+    get status() {
+      return this[_status];
+    }
+    letsStart() {
+      this[_status] = loginPageNotifier.statesLogin.credential;
+      this.notifyListeners();
+    }
+    logOutCallback() {
+      this[_status] = loginPageNotifier.statesLogin.loggedOut;
+      this.notifyListeners();
+    }
+    signOut() {
+      this.fAuth.logOut();
+    }
+    loginCallback() {
+      this[_status] = loginPageNotifier.statesLogin.loggedIn;
+      this.notifyListeners();
+    }
+    code() {
+      if (this.status != loginPageNotifier.statesLogin.loggedIn) {
+        this[_status] = loginPageNotifier.statesLogin.code;
+        this.notifyListeners();
+      }
+    }
+    verifyCode(code) {
+      return async.async(dart.void, (function* verifyCode() {
+        this.fAuth.verifyCode(code);
+      }).bind(this));
+    }
+    phoneFieldContinue(phone_no, code) {
+      return async.async(dart.void, (function* phoneFieldContinue() {
+        this.fAuth.phoneAuth(phone_no, code);
+      }).bind(this));
+    }
+  };
+  (loginPageNotifier.LoginPageNotifier.new = function() {
+    this[_status] = loginPageNotifier.statesLogin.loggedOut;
+    this[fAuth] = null;
+    loginPageNotifier.LoginPageNotifier.__proto__.new.call(this);
+    this.fAuth = locator.locator.get(T.FAuthenticateL());
+    this.fAuth.init(dart.bind(this, 'logOutCallback'), dart.bind(this, 'loginCallback'));
+  }).prototype = loginPageNotifier.LoginPageNotifier.prototype;
+  dart.addTypeTests(loginPageNotifier.LoginPageNotifier);
+  dart.addTypeCaches(loginPageNotifier.LoginPageNotifier);
+  dart.setMethodSignature(loginPageNotifier.LoginPageNotifier, () => ({
+    __proto__: dart.getMethods(loginPageNotifier.LoginPageNotifier.__proto__),
+    letsStart: dart.fnType(dart.void, []),
+    logOutCallback: dart.fnType(dart.void, []),
+    signOut: dart.fnType(dart.void, []),
+    loginCallback: dart.fnType(dart.void, []),
+    code: dart.fnType(dart.void, []),
+    verifyCode: dart.fnType(dart.void, [dart.legacy(core.String)]),
+    phoneFieldContinue: dart.fnType(dart.void, [dart.legacy(core.String), dart.legacy(dart.fnType(dart.void, []))])
+  }));
+  dart.setGetterSignature(loginPageNotifier.LoginPageNotifier, () => ({
+    __proto__: dart.getGetters(loginPageNotifier.LoginPageNotifier.__proto__),
+    status: dart.legacy(loginPageNotifier.statesLogin)
+  }));
+  dart.setLibraryUri(loginPageNotifier.LoginPageNotifier, I[1]);
+  dart.setFieldSignature(loginPageNotifier.LoginPageNotifier, () => ({
+    __proto__: dart.getFields(loginPageNotifier.LoginPageNotifier.__proto__),
+    [_status]: dart.fieldType(dart.legacy(loginPageNotifier.statesLogin)),
+    fAuth: dart.fieldType(dart.legacy(FAuth.FAuthenticate))
+  }));
+  dart.trackLibraries("packages/notes_app/locator.dart", {
+    "package:notes_app/locator.dart": locator,
+    "package:notes_app/core/services/FAuth.dart": FAuth,
+    "package:notes_app/core/Notifiers/loginPageNotifier.dart": loginPageNotifier
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["locator.dart","core/services/FAuth.dart","core/Notifiers/loginPageNotifier.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AASqE,IAAnE,AAAQ,0DAAqC,cAAM;AACE,IAArD,AAAQ,mDAA8B,cAAM;AACY,IAAxD,AAAQ,8DAAsB,cAAM;EACtC;;MANM,eAAO;YAAS;;;;;;ICEb;;;;;;SAE2B,QAAwB;AAAzC;AACe,QAA9B,MAAe;AAQb,QANW,AAAS,AAAc,yDAAO,QAAC;AAC1C,cAAI,AAAK,IAAD;AACE,YAAR,AAAM,MAAA;;AAEuB,YAA7B,MAAM,AAAG,mBAAW,AAAK,IAAD;AACjB,UAAT,AAAO,OAAA;QACR;MACH;;cAEsB,UAA0B;AAAlC;AA2BN,QA1BN,MAAmB,AAAS,oEACX,AAAM,qBAAE,QAAQ,0BACN,QAAqB;AACkB,YAA5D,MAAmB,AAAS,yDAAqB,UAAU;UAC5D,kEACmB,QAAuB;AACnB,YAAtB,WAAM,AAAK,oBAAE,QAAQ;AACa,YAAlC,WAAM,AAAmB,kCAAE,AAAE,CAAD;0DAEpB,SAAQ,gBAAoB;AACQ,YAA5C,WAAM;AAC0B,YAAhC,wBAAkB,cAAc;AACZ,YAApB,AAAkB,kBAAA;UAKnB,8EACyB,QAAQ;AACgB,YAAhD,WAAM;AAC0B,YAAhC,wBAAkB,cAAc;AACZ,YAApB,AAAkB,kBAAA;UAKnB;MACP;;eAEuB;AAAR;AACN,sBAAU,IAAI;AACD,yBAA+B,yDAC/B,gCAA0B,OAAO;AACO,QAA5D,MAAmB,AAAS,yDAAqB,UAAU;MAC7D;;;AAEW;AAC4B,QAArC,MAAmB,AAAS;MAC9B;;;;IAtDO;IACA,WAAK,AAAQ;;EAsDtB;;;;;;;;;;;;;;;;;;;;IChDA;;uDARK;;;;EAQL;;;;;;;;;;;;;;;;;;;;;;;;;;IAKgB;;;;;;;AADY;IAAO;;AAQC,MAAhC,gBAAsB;AACL,MAAjB;IACF;;AAGiC,MAA/B,gBAAsB;AACL,MAAjB;IACF;;AAGgB,MAAd,AAAM;IACR;;AAGgC,MAA9B,gBAAsB;AACL,MAAjB;IACF;;AAGE,UAAI,AAAO,eAAe;AACE,QAA1B,gBAAsB;AACL,QAAjB;;IAEJ;eAEuB;AAAR;AACS,QAAtB,AAAM,sBAAW,IAAI;MACvB;;uBAE+B,UAA0B;AAAlC;AACU,QAA/B,AAAM,qBAAU,QAAQ,EAAE,IAAI;MAChC;;;;IAxCY,gBAAsB;IAEpB;AACd;AACsC,IAApC,aAAQ,AAAQ;AACyB,IAAzC,AAAM,0BAAK,mCAAgB;EAC7B","file":"../../../../../../packages/notes_app/locator.dart.lib.js"}');
+  // Exports:
+  return {
+    locator: locator,
+    core__services__FAuth: FAuth,
+    core__Notifiers__loginPageNotifier: loginPageNotifier
+  };
+}));
+
+//# sourceMappingURL=locator.dart.lib.js.map

@@ -1,0 +1,360 @@
+define(['dart_sdk', 'packages/image_picker_platform_interface/src/types/camera_device.dart', 'packages/image_picker_platform_interface/src/types/picked_file/html.dart', 'packages/image_picker_platform_interface/src/types/lost_data_response.dart', 'packages/image_picker_platform_interface/src/types/retrieve_type.dart', 'packages/flutter/src/services/system_channels.dart', 'packages/cross_file/src/types/html.dart', 'packages/plugin_platform_interface/plugin_platform_interface.dart', 'packages/image_picker_platform_interface/src/types/image_source.dart'], (function load__packages__image_picker_platform_interface__src__method_channel__method_channel_image_picker_dart(dart_sdk, packages__image_picker_platform_interface__src__types__camera_device$46dart, packages__image_picker_platform_interface__src__types__picked_file__html$46dart, packages__image_picker_platform_interface__src__types__lost_data_response$46dart, packages__image_picker_platform_interface__src__types__retrieve_type$46dart, packages__flutter__src__services__system_channels$46dart, packages__cross_file__src__types__html$46dart, packages__plugin_platform_interface__plugin_platform_interface$46dart, packages__image_picker_platform_interface__src__types__image_source$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const _js_helper = dart_sdk._js_helper;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const camera_device = packages__image_picker_platform_interface__src__types__camera_device$46dart.src__types__camera_device;
+  const html = packages__image_picker_platform_interface__src__types__picked_file__html$46dart.src__types__picked_file__html;
+  const lost_data = packages__image_picker_platform_interface__src__types__lost_data_response$46dart.src__types__picked_file__lost_data;
+  const lost_data_response = packages__image_picker_platform_interface__src__types__lost_data_response$46dart.src__types__lost_data_response;
+  const retrieve_type = packages__image_picker_platform_interface__src__types__retrieve_type$46dart.src__types__retrieve_type;
+  const message_codec = packages__flutter__src__services__system_channels$46dart.src__services__message_codec;
+  const platform_channel = packages__flutter__src__services__system_channels$46dart.src__services__platform_channel;
+  const html$ = packages__cross_file__src__types__html$46dart.src__types__html;
+  const plugin_platform_interface = packages__plugin_platform_interface__plugin_platform_interface$46dart.plugin_platform_interface;
+  const image_source = packages__image_picker_platform_interface__src__types__image_source$46dart.src__types__image_source;
+  var method_channel_image_picker = Object.create(dart.library);
+  var image_picker_platform = Object.create(dart.library);
+  var image_picker_platform_interface = Object.create(dart.library);
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var $containsKey = dartx.containsKey;
+  var $_get = dartx._get;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    PickedFileN: () => (T.PickedFileN = dart.constFn(dart.nullable(html.PickedFile)))(),
+    dynamicToPickedFile: () => (T.dynamicToPickedFile = dart.constFn(dart.fnType(html.PickedFile, [dart.dynamic])))(),
+    ListOfPickedFile: () => (T.ListOfPickedFile = dart.constFn(core.List$(html.PickedFile)))(),
+    ListNOfPickedFile: () => (T.ListNOfPickedFile = dart.constFn(dart.nullable(T.ListOfPickedFile())))(),
+    ListN: () => (T.ListN = dart.constFn(dart.nullable(core.List)))(),
+    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    XFileN: () => (T.XFileN = dart.constFn(dart.nullable(html$.XFile)))(),
+    dynamicToXFile: () => (T.dynamicToXFile = dart.constFn(dart.fnType(html$.XFile, [dart.dynamic])))(),
+    ListOfXFile: () => (T.ListOfXFile = dart.constFn(core.List$(html$.XFile)))(),
+    ListNOfXFile: () => (T.ListNOfXFile = dart.constFn(dart.nullable(T.ListOfXFile())))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: camera_device.CameraDevice.prototype,
+        [_name]: "CameraDevice.rear",
+        index: 0
+      });
+    }
+  }, false);
+  var C = [void 0];
+  var I = [
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_platform_interface-2.2.0/lib/src/method_channel/method_channel_image_picker.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_platform_interface-2.2.0/lib/src/platform_interface/image_picker_platform.dart",
+    "package:image_picker_platform_interface/src/platform_interface/image_picker_platform.dart",
+    "package:image_picker_platform_interface/src/method_channel/method_channel_image_picker.dart"
+  ];
+  var _name = dart.privateName(camera_device, "_name");
+  var _getImagePath = dart.privateName(method_channel_image_picker, "_getImagePath");
+  var _getMultiImagePath = dart.privateName(method_channel_image_picker, "_getMultiImagePath");
+  var _getVideoPath = dart.privateName(method_channel_image_picker, "_getVideoPath");
+  image_picker_platform.ImagePickerPlatform = class ImagePickerPlatform extends plugin_platform_interface.PlatformInterface {
+    static get instance() {
+      return image_picker_platform.ImagePickerPlatform._instance;
+    }
+    static set instance(instance) {
+      if (instance == null) dart.nullFailed(I[1], 36, 43, "instance");
+      plugin_platform_interface.PlatformInterface.verifyToken(instance, image_picker_platform.ImagePickerPlatform._token);
+      image_picker_platform.ImagePickerPlatform._instance = instance;
+    }
+    pickImage(opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[1], 72, 26, "source");
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[1], 76, 18, "preferredCameraDevice");
+      dart.throw(new core.UnimplementedError.new("pickImage() has not been implemented."));
+    }
+    pickMultiImage(opts) {
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      dart.throw(new core.UnimplementedError.new("pickMultiImage() has not been implemented."));
+    }
+    pickVideo(opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[1], 124, 26, "source");
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[1], 125, 18, "preferredCameraDevice");
+      let maxDuration = opts && 'maxDuration' in opts ? opts.maxDuration : null;
+      dart.throw(new core.UnimplementedError.new("pickVideo() has not been implemented."));
+    }
+    retrieveLostData() {
+      dart.throw(new core.UnimplementedError.new("retrieveLostData() has not been implemented."));
+    }
+    getImage(opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[1], 177, 26, "source");
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[1], 181, 18, "preferredCameraDevice");
+      dart.throw(new core.UnimplementedError.new("getImage() has not been implemented."));
+    }
+    getMultiImage(opts) {
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      dart.throw(new core.UnimplementedError.new("getMultiImage() has not been implemented."));
+    }
+    getVideo(opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[1], 229, 26, "source");
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[1], 230, 18, "preferredCameraDevice");
+      let maxDuration = opts && 'maxDuration' in opts ? opts.maxDuration : null;
+      dart.throw(new core.UnimplementedError.new("getVideo() has not been implemented."));
+    }
+    getLostData() {
+      dart.throw(new core.UnimplementedError.new("getLostData() has not been implemented."));
+    }
+  };
+  (image_picker_platform.ImagePickerPlatform.new = function() {
+    image_picker_platform.ImagePickerPlatform.__proto__.new.call(this, {token: image_picker_platform.ImagePickerPlatform._token});
+    ;
+  }).prototype = image_picker_platform.ImagePickerPlatform.prototype;
+  dart.addTypeTests(image_picker_platform.ImagePickerPlatform);
+  dart.addTypeCaches(image_picker_platform.ImagePickerPlatform);
+  dart.setMethodSignature(image_picker_platform.ImagePickerPlatform, () => ({
+    __proto__: dart.getMethods(image_picker_platform.ImagePickerPlatform.__proto__),
+    pickImage: dart.fnType(async.Future$(dart.nullable(html.PickedFile)), [], {imageQuality: dart.nullable(core.int), maxHeight: dart.nullable(core.double), maxWidth: dart.nullable(core.double), preferredCameraDevice: camera_device.CameraDevice}, {source: image_source.ImageSource}),
+    pickMultiImage: dart.fnType(async.Future$(dart.nullable(core.List$(html.PickedFile))), [], {imageQuality: dart.nullable(core.int), maxHeight: dart.nullable(core.double), maxWidth: dart.nullable(core.double)}, {}),
+    pickVideo: dart.fnType(async.Future$(dart.nullable(html.PickedFile)), [], {maxDuration: dart.nullable(core.Duration), preferredCameraDevice: camera_device.CameraDevice}, {source: image_source.ImageSource}),
+    retrieveLostData: dart.fnType(async.Future$(lost_data.LostData), []),
+    getImage: dart.fnType(async.Future$(dart.nullable(html$.XFile)), [], {imageQuality: dart.nullable(core.int), maxHeight: dart.nullable(core.double), maxWidth: dart.nullable(core.double), preferredCameraDevice: camera_device.CameraDevice}, {source: image_source.ImageSource}),
+    getMultiImage: dart.fnType(async.Future$(dart.nullable(core.List$(html$.XFile))), [], {imageQuality: dart.nullable(core.int), maxHeight: dart.nullable(core.double), maxWidth: dart.nullable(core.double)}, {}),
+    getVideo: dart.fnType(async.Future$(dart.nullable(html$.XFile)), [], {maxDuration: dart.nullable(core.Duration), preferredCameraDevice: camera_device.CameraDevice}, {source: image_source.ImageSource}),
+    getLostData: dart.fnType(async.Future$(lost_data_response.LostDataResponse), [])
+  }));
+  dart.setLibraryUri(image_picker_platform.ImagePickerPlatform, I[2]);
+  dart.defineLazy(image_picker_platform.ImagePickerPlatform, {
+    /*image_picker_platform.ImagePickerPlatform._token*/get _token() {
+      return new core.Object.new();
+    },
+    /*image_picker_platform.ImagePickerPlatform._instance*/get _instance() {
+      return new method_channel_image_picker.MethodChannelImagePicker.new();
+    },
+    set _instance(_) {}
+  }, false);
+  method_channel_image_picker.MethodChannelImagePicker = class MethodChannelImagePicker extends image_picker_platform.ImagePickerPlatform {
+    get channel() {
+      return method_channel_image_picker._channel;
+    }
+    pickImage(opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[0], 23, 26, "source");
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[0], 27, 18, "preferredCameraDevice");
+      return async.async(T.PickedFileN(), (function* pickImage() {
+        let path = (yield this[_getImagePath]({source: source, maxWidth: maxWidth, maxHeight: maxHeight, imageQuality: imageQuality, preferredCameraDevice: preferredCameraDevice}));
+        return path != null ? new html.PickedFile.new(path) : null;
+      }).bind(this));
+    }
+    pickMultiImage(opts) {
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      return async.async(T.ListNOfPickedFile(), (function* pickMultiImage() {
+        let paths = (yield this[_getMultiImagePath]({maxWidth: maxWidth, maxHeight: maxHeight, imageQuality: imageQuality}));
+        if (paths == null) return null;
+        return paths[$map](html.PickedFile, dart.fn(path => new html.PickedFile.new(core.String.as(path)), T.dynamicToPickedFile()))[$toList]();
+      }).bind(this));
+    }
+    [_getMultiImagePath](opts) {
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      if (imageQuality != null && (dart.notNull(imageQuality) < 0 || dart.notNull(imageQuality) > 100)) {
+        dart.throw(new core.ArgumentError.value(imageQuality, "imageQuality", "must be between 0 and 100"));
+      }
+      if (maxWidth != null && dart.notNull(maxWidth) < 0) {
+        dart.throw(new core.ArgumentError.value(maxWidth, "maxWidth", "cannot be negative"));
+      }
+      if (maxHeight != null && dart.notNull(maxHeight) < 0) {
+        dart.throw(new core.ArgumentError.value(maxHeight, "maxHeight", "cannot be negative"));
+      }
+      return method_channel_image_picker._channel.invokeMethod(T.ListN(), "pickMultiImage", new (T.IdentityMapOfString$dynamic()).from(["maxWidth", maxWidth, "maxHeight", maxHeight, "imageQuality", imageQuality]));
+    }
+    [_getImagePath](opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[0], 84, 26, "source");
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[0], 88, 18, "preferredCameraDevice");
+      if (imageQuality != null && (dart.notNull(imageQuality) < 0 || dart.notNull(imageQuality) > 100)) {
+        dart.throw(new core.ArgumentError.value(imageQuality, "imageQuality", "must be between 0 and 100"));
+      }
+      if (maxWidth != null && dart.notNull(maxWidth) < 0) {
+        dart.throw(new core.ArgumentError.value(maxWidth, "maxWidth", "cannot be negative"));
+      }
+      if (maxHeight != null && dart.notNull(maxHeight) < 0) {
+        dart.throw(new core.ArgumentError.value(maxHeight, "maxHeight", "cannot be negative"));
+      }
+      return method_channel_image_picker._channel.invokeMethod(core.String, "pickImage", new (T.IdentityMapOfString$dynamic()).from(["source", source.index, "maxWidth", maxWidth, "maxHeight", maxHeight, "imageQuality", imageQuality, "cameraDevice", preferredCameraDevice.index]));
+    }
+    pickVideo(opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[0], 117, 26, "source");
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[0], 118, 18, "preferredCameraDevice");
+      let maxDuration = opts && 'maxDuration' in opts ? opts.maxDuration : null;
+      return async.async(T.PickedFileN(), (function* pickVideo() {
+        let path = (yield this[_getVideoPath]({source: source, maxDuration: maxDuration, preferredCameraDevice: preferredCameraDevice}));
+        return path != null ? new html.PickedFile.new(path) : null;
+      }).bind(this));
+    }
+    [_getVideoPath](opts) {
+      let t0;
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[0], 130, 26, "source");
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[0], 131, 18, "preferredCameraDevice");
+      let maxDuration = opts && 'maxDuration' in opts ? opts.maxDuration : null;
+      return method_channel_image_picker._channel.invokeMethod(core.String, "pickVideo", new (T.IdentityMapOfString$dynamic()).from(["source", source.index, "maxDuration", (t0 = maxDuration, t0 == null ? null : t0.inSeconds), "cameraDevice", preferredCameraDevice.index]));
+    }
+    retrieveLostData() {
+      return async.async(lost_data.LostData, function* retrieveLostData() {
+        let result = (yield method_channel_image_picker._channel.invokeMapMethod(core.String, dart.dynamic, "retrieve"));
+        if (result == null) {
+          return new lost_data.LostData.empty();
+        }
+        if (!(result[$containsKey]("path") != result[$containsKey]("errorCode"))) dart.assertFailed(null, I[0], 153, 12, "result.containsKey('path') != result.containsKey('errorCode')");
+        let type = T.StringN().as(result[$_get]("type"));
+        if (!(type === "image" || type === "video")) dart.assertFailed(null, I[0], 156, 12, "type == kTypeImage || type == kTypeVideo");
+        let retrieveType = null;
+        if (type === "image") {
+          retrieveType = retrieve_type.RetrieveType.image;
+        } else if (type === "video") {
+          retrieveType = retrieve_type.RetrieveType.video;
+        }
+        let exception = null;
+        if (dart.test(result[$containsKey]("errorCode"))) {
+          exception = new message_codec.PlatformException.new({code: core.String.as(result[$_get]("errorCode")), message: T.StringN().as(result[$_get]("errorMessage"))});
+        }
+        let path = T.StringN().as(result[$_get]("path"));
+        return new lost_data.LostData.new({file: path != null ? new html.PickedFile.new(path) : null, exception: exception, type: retrieveType});
+      });
+    }
+    getImage(opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[0], 182, 26, "source");
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[0], 186, 18, "preferredCameraDevice");
+      return async.async(T.XFileN(), (function* getImage() {
+        let path = (yield this[_getImagePath]({source: source, maxWidth: maxWidth, maxHeight: maxHeight, imageQuality: imageQuality, preferredCameraDevice: preferredCameraDevice}));
+        return path != null ? new html$.XFile.new(path) : null;
+      }).bind(this));
+    }
+    getMultiImage(opts) {
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      return async.async(T.ListNOfXFile(), (function* getMultiImage() {
+        let paths = (yield this[_getMultiImagePath]({maxWidth: maxWidth, maxHeight: maxHeight, imageQuality: imageQuality}));
+        if (paths == null) return null;
+        return paths[$map](html$.XFile, dart.fn(path => new html$.XFile.new(core.String.as(path)), T.dynamicToXFile()))[$toList]();
+      }).bind(this));
+    }
+    getVideo(opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[0], 216, 26, "source");
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[0], 217, 18, "preferredCameraDevice");
+      let maxDuration = opts && 'maxDuration' in opts ? opts.maxDuration : null;
+      return async.async(T.XFileN(), (function* getVideo() {
+        let path = (yield this[_getVideoPath]({source: source, maxDuration: maxDuration, preferredCameraDevice: preferredCameraDevice}));
+        return path != null ? new html$.XFile.new(path) : null;
+      }).bind(this));
+    }
+    getLostData() {
+      return async.async(lost_data_response.LostDataResponse, function* getLostData() {
+        let result = (yield method_channel_image_picker._channel.invokeMapMethod(core.String, dart.dynamic, "retrieve"));
+        if (result == null) {
+          return new lost_data_response.LostDataResponse.empty();
+        }
+        if (!(result[$containsKey]("path") != result[$containsKey]("errorCode"))) dart.assertFailed(null, I[0], 237, 12, "result.containsKey('path') != result.containsKey('errorCode')");
+        let type = T.StringN().as(result[$_get]("type"));
+        if (!(type === "image" || type === "video")) dart.assertFailed(null, I[0], 240, 12, "type == kTypeImage || type == kTypeVideo");
+        let retrieveType = null;
+        if (type === "image") {
+          retrieveType = retrieve_type.RetrieveType.image;
+        } else if (type === "video") {
+          retrieveType = retrieve_type.RetrieveType.video;
+        }
+        let exception = null;
+        if (dart.test(result[$containsKey]("errorCode"))) {
+          exception = new message_codec.PlatformException.new({code: core.String.as(result[$_get]("errorCode")), message: T.StringN().as(result[$_get]("errorMessage"))});
+        }
+        let path = T.StringN().as(result[$_get]("path"));
+        return new lost_data_response.LostDataResponse.new({file: path != null ? new html$.XFile.new(path) : null, exception: exception, type: retrieveType});
+      });
+    }
+  };
+  (method_channel_image_picker.MethodChannelImagePicker.new = function() {
+    method_channel_image_picker.MethodChannelImagePicker.__proto__.new.call(this);
+    ;
+  }).prototype = method_channel_image_picker.MethodChannelImagePicker.prototype;
+  dart.addTypeTests(method_channel_image_picker.MethodChannelImagePicker);
+  dart.addTypeCaches(method_channel_image_picker.MethodChannelImagePicker);
+  dart.setMethodSignature(method_channel_image_picker.MethodChannelImagePicker, () => ({
+    __proto__: dart.getMethods(method_channel_image_picker.MethodChannelImagePicker.__proto__),
+    [_getMultiImagePath]: dart.fnType(async.Future$(dart.nullable(core.List)), [], {imageQuality: dart.nullable(core.int), maxHeight: dart.nullable(core.double), maxWidth: dart.nullable(core.double)}, {}),
+    [_getImagePath]: dart.fnType(async.Future$(dart.nullable(core.String)), [], {imageQuality: dart.nullable(core.int), maxHeight: dart.nullable(core.double), maxWidth: dart.nullable(core.double), preferredCameraDevice: camera_device.CameraDevice}, {source: image_source.ImageSource}),
+    [_getVideoPath]: dart.fnType(async.Future$(dart.nullable(core.String)), [], {maxDuration: dart.nullable(core.Duration), preferredCameraDevice: camera_device.CameraDevice}, {source: image_source.ImageSource})
+  }));
+  dart.setGetterSignature(method_channel_image_picker.MethodChannelImagePicker, () => ({
+    __proto__: dart.getGetters(method_channel_image_picker.MethodChannelImagePicker.__proto__),
+    channel: platform_channel.MethodChannel
+  }));
+  dart.setLibraryUri(method_channel_image_picker.MethodChannelImagePicker, I[3]);
+  dart.defineLazy(method_channel_image_picker, {
+    /*method_channel_image_picker._channel*/get _channel() {
+      return new platform_channel.MethodChannel.new("plugins.flutter.io/image_picker");
+    }
+  }, false);
+  dart.trackLibraries("packages/image_picker_platform_interface/src/method_channel/method_channel_image_picker.dart", {
+    "package:image_picker_platform_interface/src/method_channel/method_channel_image_picker.dart": method_channel_image_picker,
+    "package:image_picker_platform_interface/src/platform_interface/image_picker_platform.dart": image_picker_platform,
+    "package:image_picker_platform_interface/image_picker_platform_interface.dart": image_picker_platform_interface
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["../platform_interface/image_picker_platform.dart","method_channel_image_picker.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../packages/image_picker_platform_interface/src/method_channel/method_channel_image_picker.dart.lib.js"}');
+  // Exports:
+  return {
+    src__method_channel__method_channel_image_picker: method_channel_image_picker,
+    src__platform_interface__image_picker_platform: image_picker_platform,
+    image_picker_platform_interface: image_picker_platform_interface
+  };
+}));
+
+//# sourceMappingURL=method_channel_image_picker.dart.lib.js.map

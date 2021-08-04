@@ -1,0 +1,1286 @@
+define(['dart_sdk', 'packages/collection/src/iterable_extensions.dart', 'packages/async/src/future_group.dart'], (function load__packages__get_it__get_it_dart(dart_sdk, packages__collection__src__iterable_extensions$46dart, packages__async__src__future_group$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const async = dart_sdk.async;
+  const _internal = dart_sdk._internal;
+  const _js_helper = dart_sdk._js_helper;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const iterable_extensions = packages__collection__src__iterable_extensions$46dart.src__iterable_extensions;
+  const future_group = packages__async__src__future_group$46dart.src__future_group;
+  var get_it = Object.create(dart.library);
+  var $entries = dartx.entries;
+  var $toString = dartx.toString;
+  var $runtimeType = dartx.runtimeType;
+  var $clear = dartx.clear;
+  var $values = dartx.values;
+  var $addAll = dartx.addAll;
+  var $fold = dartx.fold;
+  var $last = dartx.last;
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  var $removeRange = dartx.removeRange;
+  var $add = dartx.add;
+  var $removeLast = dartx.removeLast;
+  var $containsKey = dartx.containsKey;
+  var $putIfAbsent = dartx.putIfAbsent;
+  var $_set = dartx._set;
+  var $isEmpty = dartx.isEmpty;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $remove = dartx.remove;
+  var $where = dartx.where;
+  var $first = dartx.first;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var $forEach = dartx.forEach;
+  dart._checkModuleNullSafetyMode(false);
+  var T$ = {
+    _ServiceFactoryTypeL: () => (T$._ServiceFactoryTypeL = dart.constFn(dart.legacy(get_it._ServiceFactoryType)))(),
+    JSArrayOfType: () => (T$.JSArrayOfType = dart.constFn(_interceptors.JSArray$(core.Type)))(),
+    StringN: () => (T$.StringN = dart.constFn(dart.nullable(core.String)))(),
+    _ServiceFactoryOfObject$dynamic$dynamic: () => (T$._ServiceFactoryOfObject$dynamic$dynamic = dart.constFn(get_it._ServiceFactory$(core.Object, dart.dynamic, dart.dynamic)))(),
+    MapOfType$_ServiceFactoryOfObject$dynamic$dynamic: () => (T$.MapOfType$_ServiceFactoryOfObject$dynamic$dynamic = dart.constFn(core.Map$(core.Type, T$._ServiceFactoryOfObject$dynamic$dynamic())))(),
+    IdentityMapOfStringN$MapOfType$_ServiceFactoryOfObject$dynamic$dynamic: () => (T$.IdentityMapOfStringN$MapOfType$_ServiceFactoryOfObject$dynamic$dynamic = dart.constFn(_js_helper.IdentityMap$(T$.StringN(), T$.MapOfType$_ServiceFactoryOfObject$dynamic$dynamic())))(),
+    ListOf_ServiceFactoryOfObject$dynamic$dynamic: () => (T$.ListOf_ServiceFactoryOfObject$dynamic$dynamic = dart.constFn(core.List$(T$._ServiceFactoryOfObject$dynamic$dynamic())))(),
+    JSArrayOf_ServiceFactoryOfObject$dynamic$dynamic: () => (T$.JSArrayOf_ServiceFactoryOfObject$dynamic$dynamic = dart.constFn(_interceptors.JSArray$(T$._ServiceFactoryOfObject$dynamic$dynamic())))(),
+    ListOf_ServiceFactoryOfObject$dynamic$dynamicAndMapOfType$_ServiceFactoryOfObject$dynamic$dynamicToListOf_ServiceFactoryOfObject$dynamic$dynamic: () => (T$.ListOf_ServiceFactoryOfObject$dynamic$dynamicAndMapOfType$_ServiceFactoryOfObject$dynamic$dynamicToListOf_ServiceFactoryOfObject$dynamic$dynamic = dart.constFn(dart.fnType(T$.ListOf_ServiceFactoryOfObject$dynamic$dynamic(), [T$.ListOf_ServiceFactoryOfObject$dynamic$dynamic(), T$.MapOfType$_ServiceFactoryOfObject$dynamic$dynamic()])))(),
+    JSArrayOf_Scope: () => (T$.JSArrayOf_Scope = dart.constFn(_interceptors.JSArray$(get_it._Scope)))(),
+    ListOfWillSignalReady: () => (T$.ListOfWillSignalReady = dart.constFn(core.List$(get_it.WillSignalReady)))(),
+    _ScopeTobool: () => (T$._ScopeTobool = dart.constFn(dart.fnType(core.bool, [get_it._Scope])))(),
+    LinkedMapOfType$_ServiceFactoryOfObject$dynamic$dynamic: () => (T$.LinkedMapOfType$_ServiceFactoryOfObject$dynamic$dynamic = dart.constFn(_js_helper.LinkedMap$(core.Type, T$._ServiceFactoryOfObject$dynamic$dynamic())))(),
+    VoidToMapOfType$_ServiceFactoryOfObject$dynamic$dynamic: () => (T$.VoidToMapOfType$_ServiceFactoryOfObject$dynamic$dynamic = dart.constFn(dart.fnType(T$.MapOfType$_ServiceFactoryOfObject$dynamic$dynamic(), [])))(),
+    _ServiceFactoryNOfObject$dynamic$dynamic: () => (T$._ServiceFactoryNOfObject$dynamic$dynamic = dart.constFn(dart.nullable(T$._ServiceFactoryOfObject$dynamic$dynamic())))(),
+    VoidTo_ServiceFactoryNOfObject$dynamic$dynamic: () => (T$.VoidTo_ServiceFactoryNOfObject$dynamic$dynamic = dart.constFn(dart.fnType(T$._ServiceFactoryNOfObject$dynamic$dynamic(), [])))(),
+    _ServiceFactoryNOfObject$dynamic$dynamicTodynamic: () => (T$._ServiceFactoryNOfObject$dynamic$dynamicTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T$._ServiceFactoryNOfObject$dynamic$dynamic()])))(),
+    VoidToNull: () => (T$.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    dynamicToNull: () => (T$.dynamicToNull = dart.constFn(dart.fnType(core.Null, [dart.dynamic])))(),
+    ListOf_ServiceFactoryOfObject$dynamic$dynamicAnd_ScopeToListOf_ServiceFactoryOfObject$dynamic$dynamic: () => (T$.ListOf_ServiceFactoryOfObject$dynamic$dynamicAnd_ScopeToListOf_ServiceFactoryOfObject$dynamic$dynamic = dart.constFn(dart.fnType(T$.ListOf_ServiceFactoryOfObject$dynamic$dynamic(), [T$.ListOf_ServiceFactoryOfObject$dynamic$dynamic(), get_it._Scope])))(),
+    _ServiceFactoryOfObject$dynamic$dynamicTobool: () => (T$._ServiceFactoryOfObject$dynamic$dynamicTobool = dart.constFn(dart.fnType(core.bool, [T$._ServiceFactoryOfObject$dynamic$dynamic()])))(),
+    _ServiceFactoryOfObject$dynamic$dynamicToString: () => (T$._ServiceFactoryOfObject$dynamic$dynamicToString = dart.constFn(dart.fnType(core.String, [T$._ServiceFactoryOfObject$dynamic$dynamic()])))(),
+    _ServiceFactoryOfObject$dynamic$dynamicTovoid: () => (T$._ServiceFactoryOfObject$dynamic$dynamicTovoid = dart.constFn(dart.fnType(dart.void, [T$._ServiceFactoryOfObject$dynamic$dynamic()])))(),
+    VoidTobool: () => (T$.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
+    ListOfString: () => (T$.ListOfString = dart.constFn(core.List$(core.String)))(),
+    MapOfString$ListOfString: () => (T$.MapOfString$ListOfString = dart.constFn(core.Map$(core.String, T$.ListOfString())))(),
+    MapEntryOfString$ListOfString: () => (T$.MapEntryOfString$ListOfString = dart.constFn(core.MapEntry$(core.String, T$.ListOfString())))(),
+    TypeToString: () => (T$.TypeToString = dart.constFn(dart.fnType(core.String, [core.Type])))(),
+    _ServiceFactoryOfObject$dynamic$dynamicToMapEntryOfString$ListOfString: () => (T$._ServiceFactoryOfObject$dynamic$dynamicToMapEntryOfString$ListOfString = dart.constFn(dart.fnType(T$.MapEntryOfString$ListOfString(), [T$._ServiceFactoryOfObject$dynamic$dynamic()])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T$);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: get_it._ServiceFactoryType.prototype,
+        [_name$]: "_ServiceFactoryType.alwaysNew",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: get_it._ServiceFactoryType.prototype,
+        [_name$]: "_ServiceFactoryType.constant",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: get_it._ServiceFactoryType.prototype,
+        [_name$]: "_ServiceFactoryType.lazy",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2], T$._ServiceFactoryTypeL());
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: core.Object.prototype
+      });
+    }
+  }, false);
+  var C = Array(5).fill(void 0);
+  var I = [
+    "package:get_it/get_it.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/get_it-7.1.3/lib/get_it.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/get_it-7.1.3/lib/get_it_impl.dart"
+  ];
+  get_it.WillSignalReady = class WillSignalReady extends core.Object {};
+  (get_it.WillSignalReady.new = function() {
+    ;
+  }).prototype = get_it.WillSignalReady.prototype;
+  dart.addTypeTests(get_it.WillSignalReady);
+  dart.addTypeCaches(get_it.WillSignalReady);
+  dart.setLibraryUri(get_it.WillSignalReady, I[0]);
+  get_it.ShadowChangeHandlers = class ShadowChangeHandlers extends core.Object {};
+  (get_it.ShadowChangeHandlers.new = function() {
+    ;
+  }).prototype = get_it.ShadowChangeHandlers.prototype;
+  dart.addTypeTests(get_it.ShadowChangeHandlers);
+  dart.addTypeCaches(get_it.ShadowChangeHandlers);
+  dart.setLibraryUri(get_it.ShadowChangeHandlers, I[0]);
+  get_it.Disposable = class Disposable extends core.Object {};
+  (get_it.Disposable.new = function() {
+    ;
+  }).prototype = get_it.Disposable.prototype;
+  dart.addTypeTests(get_it.Disposable);
+  dart.addTypeCaches(get_it.Disposable);
+  dart.setLibraryUri(get_it.Disposable, I[0]);
+  var type$ = dart.privateName(get_it, "InitDependency.type");
+  var instanceName$ = dart.privateName(get_it, "InitDependency.instanceName");
+  get_it.InitDependency = class InitDependency extends core.Type {
+    get type() {
+      return this[type$];
+    }
+    set type(value) {
+      super.type = value;
+    }
+    get instanceName() {
+      return this[instanceName$];
+    }
+    set instanceName(value) {
+      super.instanceName = value;
+    }
+    toString() {
+      return "InitDependency(type:" + dart.str(this.type) + ", instanceName:" + dart.str(this.instanceName) + ")";
+    }
+  };
+  (get_it.InitDependency.new = function(type, opts) {
+    if (type == null) dart.nullFailed(I[1], 66, 23, "type");
+    let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+    this[type$] = type;
+    this[instanceName$] = instanceName;
+    ;
+  }).prototype = get_it.InitDependency.prototype;
+  dart.addTypeTests(get_it.InitDependency);
+  dart.addTypeCaches(get_it.InitDependency);
+  dart.setLibraryUri(get_it.InitDependency, I[0]);
+  dart.setFieldSignature(get_it.InitDependency, () => ({
+    __proto__: dart.getFields(get_it.InitDependency.__proto__),
+    type: dart.finalFieldType(core.Type),
+    instanceName: dart.finalFieldType(dart.nullable(core.String))
+  }));
+  dart.defineExtensionMethods(get_it.InitDependency, ['toString']);
+  var areWaitedBy$ = dart.privateName(get_it, "WaitingTimeOutException.areWaitedBy");
+  var notReadyYet$ = dart.privateName(get_it, "WaitingTimeOutException.notReadyYet");
+  var areReady$ = dart.privateName(get_it, "WaitingTimeOutException.areReady");
+  get_it.WaitingTimeOutException = class WaitingTimeOutException extends core.Object {
+    get areWaitedBy() {
+      return this[areWaitedBy$];
+    }
+    set areWaitedBy(value) {
+      super.areWaitedBy = value;
+    }
+    get notReadyYet() {
+      return this[notReadyYet$];
+    }
+    set notReadyYet(value) {
+      super.notReadyYet = value;
+    }
+    get areReady() {
+      return this[areReady$];
+    }
+    set areReady(value) {
+      super.areReady = value;
+    }
+    toString() {
+      core.print("GetIt: There was a timeout while waiting for an instance to signal ready");
+      core.print("The following instance types where waiting for completion");
+      for (let entry of this.areWaitedBy[$entries]) {
+        core.print(dart.str(entry.value) + " is waiting for " + dart.str(entry.key));
+      }
+      core.print("The following instance types have NOT signalled ready yet");
+      for (let entry of this.notReadyYet) {
+        core.print(entry);
+      }
+      core.print("The following instance types HAVE signalled ready yet");
+      for (let entry of this.areReady) {
+        core.print(entry);
+      }
+      return super[$toString]();
+    }
+  };
+  (get_it.WaitingTimeOutException.new = function(areWaitedBy, notReadyYet, areReady) {
+    if (areWaitedBy == null) dart.nullFailed(I[1], 87, 10, "areWaitedBy");
+    if (notReadyYet == null) dart.nullFailed(I[1], 88, 10, "notReadyYet");
+    if (areReady == null) dart.nullFailed(I[1], 89, 10, "areReady");
+    this[areWaitedBy$] = areWaitedBy;
+    this[notReadyYet$] = notReadyYet;
+    this[areReady$] = areReady;
+    ;
+  }).prototype = get_it.WaitingTimeOutException.prototype;
+  dart.addTypeTests(get_it.WaitingTimeOutException);
+  dart.addTypeCaches(get_it.WaitingTimeOutException);
+  get_it.WaitingTimeOutException[dart.implements] = () => [core.Exception];
+  dart.setLibraryUri(get_it.WaitingTimeOutException, I[0]);
+  dart.setFieldSignature(get_it.WaitingTimeOutException, () => ({
+    __proto__: dart.getFields(get_it.WaitingTimeOutException.__proto__),
+    areWaitedBy: dart.finalFieldType(core.Map$(core.String, core.List$(core.String))),
+    notReadyYet: dart.finalFieldType(core.List$(core.String)),
+    areReady: dart.finalFieldType(core.List$(core.String))
+  }));
+  dart.defineExtensionMethods(get_it.WaitingTimeOutException, ['toString']);
+  var onScopeChanged = dart.privateName(get_it, "GetIt.onScopeChanged");
+  var allowReassignment = dart.privateName(get_it, "GetIt.allowReassignment");
+  get_it.GetIt = class GetIt extends core.Object {
+    get onScopeChanged() {
+      return this[onScopeChanged];
+    }
+    set onScopeChanged(value) {
+      this[onScopeChanged] = value;
+    }
+    get allowReassignment() {
+      return this[allowReassignment];
+    }
+    set allowReassignment(value) {
+      this[allowReassignment] = value;
+    }
+    static get instance() {
+      return get_it.GetIt._instance;
+    }
+    static get I() {
+      return get_it.GetIt._instance;
+    }
+    static asNewInstance() {
+      return new get_it._GetItImplementation.new();
+    }
+  };
+  (get_it.GetIt[dart.mixinNew] = function() {
+    this[onScopeChanged] = null;
+    this[allowReassignment] = false;
+  }).prototype = get_it.GetIt.prototype;
+  dart.addTypeTests(get_it.GetIt);
+  dart.addTypeCaches(get_it.GetIt);
+  dart.setLibraryUri(get_it.GetIt, I[0]);
+  dart.setFieldSignature(get_it.GetIt, () => ({
+    __proto__: dart.getFields(get_it.GetIt.__proto__),
+    onScopeChanged: dart.fieldType(dart.nullable(dart.fnType(dart.void, [core.bool]))),
+    allowReassignment: dart.fieldType(core.bool)
+  }));
+  dart.defineLazy(get_it.GetIt, {
+    /*get_it.GetIt._instance*/get _instance() {
+      return new get_it._GetItImplementation.new();
+    }
+  }, false);
+  var _name$ = dart.privateName(get_it, "_name");
+  get_it._ServiceFactoryType = class _ServiceFactoryType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (get_it._ServiceFactoryType.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[2], 23, 6, "index");
+    if (_name == null) dart.nullFailed(I[2], 23, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = get_it._ServiceFactoryType.prototype;
+  dart.addTypeTests(get_it._ServiceFactoryType);
+  dart.addTypeCaches(get_it._ServiceFactoryType);
+  dart.setLibraryUri(get_it._ServiceFactoryType, I[0]);
+  dart.setFieldSignature(get_it._ServiceFactoryType, () => ({
+    __proto__: dart.getFields(get_it._ServiceFactoryType.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(get_it._ServiceFactoryType, ['toString']);
+  get_it._ServiceFactoryType.alwaysNew = C[0] || CT.C0;
+  get_it._ServiceFactoryType.constant = C[1] || CT.C1;
+  get_it._ServiceFactoryType.lazy = C[2] || CT.C2;
+  get_it._ServiceFactoryType.values = C[3] || CT.C3;
+  var pendingResult = dart.privateName(get_it, "_ServiceFactory.pendingResult");
+  var ___ServiceFactory_param1Type = dart.privateName(get_it, "_#_ServiceFactory#param1Type");
+  var ___ServiceFactory_param1Type_isSet = dart.privateName(get_it, "_#_ServiceFactory#param1Type#isSet");
+  var ___ServiceFactory_param2Type = dart.privateName(get_it, "_#_ServiceFactory#param2Type");
+  var ___ServiceFactory_param2Type_isSet = dart.privateName(get_it, "_#_ServiceFactory#param2Type#isSet");
+  var ___ServiceFactory_registrationType = dart.privateName(get_it, "_#_ServiceFactory#registrationType");
+  var ___ServiceFactory_registrationType_isSet = dart.privateName(get_it, "_#_ServiceFactory#registrationType#isSet");
+  var ___ServiceFactory__readyCompleter = dart.privateName(get_it, "_#_ServiceFactory#_readyCompleter");
+  var ___ServiceFactory__readyCompleter_isSet = dart.privateName(get_it, "_#_ServiceFactory#_readyCompleter#isSet");
+  var _getItInstance$ = dart.privateName(get_it, "_getItInstance");
+  var _readyCompleter = dart.privateName(get_it, "_readyCompleter");
+  var _findFirstFactoryByNameAndTypeOrNull = dart.privateName(get_it, "_findFirstFactoryByNameAndTypeOrNull");
+  const _is__ServiceFactory_default = Symbol('_is__ServiceFactory_default');
+  get_it._ServiceFactory$ = dart.generic((T, P1, P2) => {
+    var FutureOfT = () => (FutureOfT = dart.constFn(async.Future$(T)))();
+    var FutureNOfT = () => (FutureNOfT = dart.constFn(dart.nullable(FutureOfT())))();
+    var TToT = () => (TToT = dart.constFn(dart.fnType(T, [T])))();
+    var P1N = () => (P1N = dart.constFn(dart.nullable(P1)))();
+    var P2N = () => (P2N = dart.constFn(dart.nullable(P2)))();
+    class _ServiceFactory extends core.Object {
+      get pendingResult() {
+        return this[pendingResult];
+      }
+      set pendingResult(value) {
+        this[pendingResult] = FutureNOfT().as(value);
+      }
+      get param1Type() {
+        let t0;
+        return dart.test(this[___ServiceFactory_param1Type_isSet]) ? (t0 = this[___ServiceFactory_param1Type], t0) : dart.throw(new _internal.LateError.fieldNI("param1Type"));
+      }
+      set param1Type(t0) {
+        if (t0 == null) dart.nullFailed(I[2], 38, 19, "null");
+        if (dart.test(this[___ServiceFactory_param1Type_isSet]))
+          dart.throw(new _internal.LateError.fieldAI("param1Type"));
+        else {
+          this[___ServiceFactory_param1Type_isSet] = true;
+          this[___ServiceFactory_param1Type] = t0;
+        }
+      }
+      get param2Type() {
+        let t1;
+        return dart.test(this[___ServiceFactory_param2Type_isSet]) ? (t1 = this[___ServiceFactory_param2Type], t1) : dart.throw(new _internal.LateError.fieldNI("param2Type"));
+      }
+      set param2Type(t1) {
+        if (t1 == null) dart.nullFailed(I[2], 39, 19, "null");
+        if (dart.test(this[___ServiceFactory_param2Type_isSet]))
+          dart.throw(new _internal.LateError.fieldAI("param2Type"));
+        else {
+          this[___ServiceFactory_param2Type_isSet] = true;
+          this[___ServiceFactory_param2Type] = t1;
+        }
+      }
+      get registrationType() {
+        let t2;
+        return dart.test(this[___ServiceFactory_registrationType_isSet]) ? (t2 = this[___ServiceFactory_registrationType], t2) : dart.throw(new _internal.LateError.fieldNI("registrationType"));
+      }
+      set registrationType(t2) {
+        if (t2 == null) dart.nullFailed(I[2], 62, 19, "null");
+        if (dart.test(this[___ServiceFactory_registrationType_isSet]))
+          dart.throw(new _internal.LateError.fieldAI("registrationType"));
+        else {
+          this[___ServiceFactory_registrationType_isSet] = true;
+          this[___ServiceFactory_registrationType] = t2;
+        }
+      }
+      get [_readyCompleter]() {
+        let t3;
+        return dart.test(this[___ServiceFactory__readyCompleter_isSet]) ? (t3 = this[___ServiceFactory__readyCompleter], t3) : dart.throw(new _internal.LateError.fieldNI("_readyCompleter"));
+      }
+      set [_readyCompleter](t3) {
+        if (t3 == null) dart.nullFailed(I[2], 65, 18, "null");
+        this[___ServiceFactory__readyCompleter_isSet] = true;
+        this[___ServiceFactory__readyCompleter] = t3;
+      }
+      get isReady() {
+        return this[_readyCompleter].isCompleted;
+      }
+      get isNamedRegistration() {
+        return this.instanceName != null;
+      }
+      get debugName() {
+        return dart.str(this.instanceName) + " : " + dart.str(this.registrationType);
+      }
+      get canBeWaitedFor() {
+        return dart.test(this.shouldSignalReady) || this.pendingResult != null || dart.test(this.isAsync);
+      }
+      dispose() {
+        let t4, t4$;
+        let factoryThatWouldbeShadowed = this[_getItInstance$][_findFirstFactoryByNameAndTypeOrNull](core.Object, this.instanceName, {type: dart.wrapType(T), lookInScopeBelow: true});
+        let objectThatWouldbeShadowed = (t4 = factoryThatWouldbeShadowed, t4 == null ? null : t4.instance);
+        if (objectThatWouldbeShadowed != null && get_it.ShadowChangeHandlers.is(objectThatWouldbeShadowed)) {
+          objectThatWouldbeShadowed.onLeaveShadow(dart.nullCheck(this.instance));
+        }
+        if (get_it.Disposable.is(this.instance)) {
+          return get_it.Disposable.as(this.instance).onDispose();
+        }
+        if (this.instance != null) {
+          t4$ = this.disposeFunction;
+          return t4$ == null ? null : t4$(T.as(this.instance));
+        }
+      }
+      getObject(param1, param2) {
+        let t4;
+        if (!!(this.factoryType != get_it._ServiceFactoryType.alwaysNew && (param1 != null || param2 != null))) dart.assertFailed("You can only pass parameters to factories!", I[2], 133, 9, "!(factoryType != _ServiceFactoryType.alwaysNew &&\r\n            (param1 != null || param2 != null))");
+        try {
+          switch (this.factoryType) {
+            case C[0] || CT.C0:
+            {
+              if (this.creationFunctionParam != null) {
+                return dart.nullCheck(this.creationFunctionParam)(P1N().as(param1), P2N().as(param2));
+              } else {
+                return dart.nullCheck(this.creationFunction)();
+              }
+            }
+            case C[1] || CT.C1:
+            {
+              return T.as(this.instance);
+            }
+            case C[2] || CT.C2:
+            {
+              if (this.instance == null) {
+                this.instance = dart.nullCheck(this.creationFunction)();
+                this[_readyCompleter].complete();
+                let factoryThatWouldbeShadowed = this[_getItInstance$][_findFirstFactoryByNameAndTypeOrNull](core.Object, this.instanceName, {type: dart.wrapType(T), lookInScopeBelow: true});
+                let objectThatWouldbeShadowed = (t4 = factoryThatWouldbeShadowed, t4 == null ? null : t4.instance);
+                if (objectThatWouldbeShadowed != null && get_it.ShadowChangeHandlers.is(objectThatWouldbeShadowed)) {
+                  objectThatWouldbeShadowed.onGetShadowed(dart.nullCheck(this.instance));
+                }
+              }
+              return T.as(this.instance);
+            }
+            default:
+            {
+              dart.throw(new core.StateError.new("Impossible factoryType"));
+            }
+          }
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          let s = dart.stackTrace(e$);
+          if (core.Object.is(e)) {
+            core.print("Error while creating " + dart.str(dart.wrapType(T).toString()));
+            core.print("Stack trace:\n " + dart.str(s));
+            dart.rethrow(e$);
+          } else
+            throw e$;
+        }
+      }
+      getObjectAsync(R, param1, param2) {
+        return async.async(R, (function* getObjectAsync() {
+          if (!!(this.factoryType != get_it._ServiceFactoryType.alwaysNew && (param1 != null || param2 != null))) dart.assertFailed("You can only pass parameters to factories!", I[2], 192, 9, "!(factoryType != _ServiceFactoryType.alwaysNew &&\r\n            (param1 != null || param2 != null))");
+          get_it.throwIfNot(dart.test(this.isAsync) || this.pendingResult != null, new core.StateError.new("You can only access registered factories/objects " + "this way if they are created asynchronously"));
+          try {
+            switch (this.factoryType) {
+              case C[0] || CT.C0:
+              {
+                if (this.asyncCreationFunctionParam != null) {
+                  return async.Future$(R).as(dart.nullCheck(this.asyncCreationFunctionParam)(P1N().as(param1), P2N().as(param2)));
+                } else {
+                  return async.Future$(R).as(dart.nullCheck(this.asyncCreationFunction)());
+                }
+              }
+              case C[1] || CT.C1:
+              {
+                if (this.instance != null) {
+                  return async.Future$(R).value(R.as(this.instance));
+                } else {
+                  if (!(this.pendingResult != null)) dart.assertFailed(null, I[2], 225, 20, "pendingResult != null");
+                  return async.Future$(R).as(this.pendingResult);
+                }
+              }
+              case C[2] || CT.C2:
+              {
+                if (this.instance != null) {
+                  return async.Future$(R).value(R.as(this.instance));
+                } else {
+                  if (this.pendingResult != null) {
+                    return async.Future$(R).as(this.pendingResult);
+                  }
+                  let asyncResult = dart.nullCheck(this.asyncCreationFunction)();
+                  this.pendingResult = asyncResult.then(T, dart.fn(newInstance => {
+                    let t5;
+                    if (newInstance == null) dart.nullFailed(I[2], 242, 47, "newInstance");
+                    if (!dart.test(this.shouldSignalReady)) {
+                      this[_readyCompleter].complete();
+                    }
+                    this.instance = newInstance;
+                    let factoryThatWouldbeShadowed = this[_getItInstance$][_findFirstFactoryByNameAndTypeOrNull](core.Object, this.instanceName, {type: dart.wrapType(T), lookInScopeBelow: true});
+                    let objectThatWouldbeShadowed = (t5 = factoryThatWouldbeShadowed, t5 == null ? null : t5.instance);
+                    if (objectThatWouldbeShadowed != null && get_it.ShadowChangeHandlers.is(objectThatWouldbeShadowed)) {
+                      objectThatWouldbeShadowed.onGetShadowed(dart.nullCheck(this.instance));
+                    }
+                    return newInstance;
+                  }, TToT()));
+                  return async.Future$(R).as(this.pendingResult);
+                }
+              }
+              default:
+              {
+                dart.throw(new core.StateError.new("Impossible factoryType"));
+              }
+            }
+          } catch (e$) {
+            let e = dart.getThrown(e$);
+            let s = dart.stackTrace(e$);
+            if (core.Object.is(e)) {
+              core.print("Error while creating " + dart.str(dart.wrapType(T).toString()));
+              core.print("Stack trace:\n " + dart.str(s));
+              dart.rethrow(e$);
+            } else
+              throw e$;
+          }
+        }).bind(this));
+      }
+    }
+    (_ServiceFactory.new = function(_getItInstance, factoryType, opts) {
+      if (_getItInstance == null) dart.nullFailed(I[2], 86, 10, "_getItInstance");
+      if (factoryType == null) dart.nullFailed(I[2], 87, 10, "factoryType");
+      let creationFunction = opts && 'creationFunction' in opts ? opts.creationFunction : null;
+      let asyncCreationFunction = opts && 'asyncCreationFunction' in opts ? opts.asyncCreationFunction : null;
+      let creationFunctionParam = opts && 'creationFunctionParam' in opts ? opts.creationFunctionParam : null;
+      let asyncCreationFunctionParam = opts && 'asyncCreationFunctionParam' in opts ? opts.asyncCreationFunctionParam : null;
+      let instance = opts && 'instance' in opts ? opts.instance : null;
+      let isAsync = opts && 'isAsync' in opts ? opts.isAsync : false;
+      if (isAsync == null) dart.nullFailed(I[2], 93, 10, "isAsync");
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      let shouldSignalReady = opts && 'shouldSignalReady' in opts ? opts.shouldSignalReady : null;
+      if (shouldSignalReady == null) dart.nullFailed(I[2], 95, 19, "shouldSignalReady");
+      let disposeFunction = opts && 'disposeFunction' in opts ? opts.disposeFunction : null;
+      this[___ServiceFactory_param1Type] = null;
+      this[___ServiceFactory_param1Type_isSet] = false;
+      this[___ServiceFactory_param2Type] = null;
+      this[___ServiceFactory_param2Type_isSet] = false;
+      this[___ServiceFactory_registrationType] = null;
+      this[___ServiceFactory_registrationType_isSet] = false;
+      this[___ServiceFactory__readyCompleter] = null;
+      this[___ServiceFactory__readyCompleter_isSet] = false;
+      this[pendingResult] = null;
+      this.objectsWaiting = T$.JSArrayOfType().of([]);
+      this[_getItInstance$] = _getItInstance;
+      this.factoryType = factoryType;
+      this.creationFunction = creationFunction;
+      this.asyncCreationFunction = asyncCreationFunction;
+      this.creationFunctionParam = creationFunctionParam;
+      this.asyncCreationFunctionParam = asyncCreationFunctionParam;
+      this.instance = instance;
+      this.isAsync = isAsync;
+      this.instanceName = instanceName;
+      this.shouldSignalReady = shouldSignalReady;
+      this.disposeFunction = disposeFunction;
+      if (!!(disposeFunction != null && instance != null && get_it.Disposable.is(instance))) dart.assertFailed(" You are trying to register type " + dart.str(dart.toString(dart.runtimeType(instance))) + " " + "that implements \"Disposable\" but you also provide a disposing function", I[2], 98, 13, "!(disposeFunction != null &&\r\n                instance != null &&\r\n                instance is Disposable)");
+      this.registrationType = dart.wrapType(T);
+      this.param1Type = dart.wrapType(P1);
+      this.param2Type = dart.wrapType(P2);
+      this[_readyCompleter] = async.Completer.new();
+    }).prototype = _ServiceFactory.prototype;
+    dart.addTypeTests(_ServiceFactory);
+    _ServiceFactory.prototype[_is__ServiceFactory_default] = true;
+    dart.addTypeCaches(_ServiceFactory);
+    dart.setMethodSignature(_ServiceFactory, () => ({
+      __proto__: dart.getMethods(_ServiceFactory.__proto__),
+      dispose: dart.fnType(dart.dynamic, []),
+      getObject: dart.fnType(T, [dart.dynamic, dart.dynamic]),
+      getObjectAsync: dart.gFnType(R => [async.Future$(R), [dart.dynamic, dart.dynamic]], R => [dart.nullable(core.Object)])
+    }));
+    dart.setGetterSignature(_ServiceFactory, () => ({
+      __proto__: dart.getGetters(_ServiceFactory.__proto__),
+      param1Type: core.Type,
+      param2Type: core.Type,
+      registrationType: core.Type,
+      [_readyCompleter]: async.Completer,
+      isReady: core.bool,
+      isNamedRegistration: core.bool,
+      debugName: core.String,
+      canBeWaitedFor: core.bool
+    }));
+    dart.setSetterSignature(_ServiceFactory, () => ({
+      __proto__: dart.getSetters(_ServiceFactory.__proto__),
+      param1Type: core.Type,
+      param2Type: core.Type,
+      registrationType: core.Type,
+      [_readyCompleter]: async.Completer
+    }));
+    dart.setLibraryUri(_ServiceFactory, I[0]);
+    dart.setFieldSignature(_ServiceFactory, () => ({
+      __proto__: dart.getFields(_ServiceFactory.__proto__),
+      factoryType: dart.finalFieldType(get_it._ServiceFactoryType),
+      [_getItInstance$]: dart.finalFieldType(get_it._GetItImplementation),
+      [___ServiceFactory_param1Type]: dart.fieldType(dart.nullable(core.Type)),
+      [___ServiceFactory_param1Type_isSet]: dart.fieldType(core.bool),
+      [___ServiceFactory_param2Type]: dart.fieldType(dart.nullable(core.Type)),
+      [___ServiceFactory_param2Type_isSet]: dart.fieldType(core.bool),
+      creationFunction: dart.finalFieldType(dart.nullable(dart.fnType(T, []))),
+      asyncCreationFunction: dart.finalFieldType(dart.nullable(dart.fnType(async.Future$(T), []))),
+      creationFunctionParam: dart.finalFieldType(dart.nullable(dart.fnType(T, [dart.nullable(P1), dart.nullable(P2)]))),
+      asyncCreationFunctionParam: dart.finalFieldType(dart.nullable(dart.fnType(async.Future$(T), [dart.nullable(P1), dart.nullable(P2)]))),
+      disposeFunction: dart.finalFieldType(dart.nullable(dart.fnType(dart.dynamic, [T]))),
+      instanceName: dart.finalFieldType(dart.nullable(core.String)),
+      isAsync: dart.finalFieldType(core.bool),
+      instance: dart.fieldType(dart.nullable(core.Object)),
+      [___ServiceFactory_registrationType]: dart.fieldType(dart.nullable(core.Type)),
+      [___ServiceFactory_registrationType_isSet]: dart.fieldType(core.bool),
+      [___ServiceFactory__readyCompleter]: dart.fieldType(dart.nullable(async.Completer)),
+      [___ServiceFactory__readyCompleter_isSet]: dart.fieldType(core.bool),
+      pendingResult: dart.fieldType(dart.nullable(async.Future$(T))),
+      objectsWaiting: dart.finalFieldType(core.List$(core.Type)),
+      shouldSignalReady: dart.finalFieldType(core.bool)
+    }));
+    return _ServiceFactory;
+  });
+  get_it._ServiceFactory = get_it._ServiceFactory$();
+  dart.addTypeTests(get_it._ServiceFactory, _is__ServiceFactory_default);
+  get_it._Scope = class _Scope extends core.Object {
+    reset(opts) {
+      let dispose = opts && 'dispose' in opts ? opts.dispose : null;
+      if (dispose == null) dart.nullFailed(I[2], 286, 37, "dispose");
+      return async.async(dart.void, (function* reset() {
+        if (dart.test(dispose)) {
+          for (let _factory of this.allFactories) {
+            yield _factory.dispose();
+          }
+        }
+        this.factoriesByName[$clear]();
+      }).bind(this));
+    }
+    get allFactories() {
+      return this.factoriesByName[$values][$fold](T$.ListOf_ServiceFactoryOfObject$dynamic$dynamic(), T$.JSArrayOf_ServiceFactoryOfObject$dynamic$dynamic().of([]), dart.fn((sum, x) => {
+        let t6;
+        if (sum == null) dart.nullFailed(I[2], 296, 41, "sum");
+        if (x == null) dart.nullFailed(I[2], 296, 46, "x");
+        t6 = sum;
+        return (() => {
+          t6[$addAll](x[$values]);
+          return t6;
+        })();
+      }, T$.ListOf_ServiceFactoryOfObject$dynamic$dynamicAndMapOfType$_ServiceFactoryOfObject$dynamic$dynamicToListOf_ServiceFactoryOfObject$dynamic$dynamic()));
+    }
+    dispose() {
+      return async.async(dart.void, (function* dispose() {
+        let t6;
+        yield (t6 = this.disposeFunc, t6 == null ? null : t6());
+      }).bind(this));
+    }
+  };
+  (get_it._Scope.new = function(opts) {
+    let name = opts && 'name' in opts ? opts.name : null;
+    let disposeFunc = opts && 'disposeFunc' in opts ? opts.disposeFunc : null;
+    this.factoriesByName = new (T$.IdentityMapOfStringN$MapOfType$_ServiceFactoryOfObject$dynamic$dynamic()).new();
+    this.name = name;
+    this.disposeFunc = disposeFunc;
+    ;
+  }).prototype = get_it._Scope.prototype;
+  dart.addTypeTests(get_it._Scope);
+  dart.addTypeCaches(get_it._Scope);
+  dart.setMethodSignature(get_it._Scope, () => ({
+    __proto__: dart.getMethods(get_it._Scope.__proto__),
+    reset: dart.fnType(async.Future$(dart.void), [], {}, {dispose: core.bool}),
+    dispose: dart.fnType(async.Future$(dart.void), [])
+  }));
+  dart.setGetterSignature(get_it._Scope, () => ({
+    __proto__: dart.getGetters(get_it._Scope.__proto__),
+    allFactories: core.List$(get_it._ServiceFactory$(core.Object, dart.dynamic, dart.dynamic))
+  }));
+  dart.setLibraryUri(get_it._Scope, I[0]);
+  dart.setFieldSignature(get_it._Scope, () => ({
+    __proto__: dart.getFields(get_it._Scope.__proto__),
+    name: dart.finalFieldType(dart.nullable(core.String)),
+    disposeFunc: dart.finalFieldType(dart.nullable(dart.fnType(dart.dynamic, []))),
+    factoriesByName: dart.finalFieldType(core.Map$(dart.nullable(core.String), core.Map$(core.Type, get_it._ServiceFactory$(core.Object, dart.dynamic, dart.dynamic))))
+  }));
+  var _scopes = dart.privateName(get_it, "_scopes");
+  var _globalReadyCompleter = dart.privateName(get_it, "_globalReadyCompleter");
+  var _currentScope = dart.privateName(get_it, "_currentScope");
+  var _findFactoryByNameAndType = dart.privateName(get_it, "_findFactoryByNameAndType");
+  var _register = dart.privateName(get_it, "_register");
+  var _findFirstFactoryByInstanceOrNull = dart.privateName(get_it, "_findFirstFactoryByInstanceOrNull");
+  var _findFactoryByInstance = dart.privateName(get_it, "_findFactoryByInstance");
+  var _allFactories = dart.privateName(get_it, "_allFactories");
+  var _throwTimeoutError = dart.privateName(get_it, "_throwTimeoutError");
+  get_it._GetItImplementation = class _GetItImplementation extends core.Object {
+    get [_currentScope]() {
+      return this[_scopes][$last];
+    }
+    [_findFirstFactoryByNameAndTypeOrNull](T, instanceName, opts) {
+      let type = opts && 'type' in opts ? opts.type : null;
+      let lookInScopeBelow = opts && 'lookInScopeBelow' in opts ? opts.lookInScopeBelow : false;
+      if (lookInScopeBelow == null) dart.nullFailed(I[2], 326, 16, "lookInScopeBelow");
+      if (!(type != null || !T.is(C[4] || CT.C4))) dart.assertFailed("GetIt: The compiler could not infer the type. You have to provide a type " + "and optionally a name. Did you accidentally do `var sl=GetIt.instance();` " + "instead of var sl=GetIt.instance;", I[2], 331, 7, "type != null || const Object() is! T");
+      let instanceFactory = null;
+      let scopeLevel = dart.notNull(this[_scopes][$length]) - (dart.test(lookInScopeBelow) ? 2 : 1);
+      while (instanceFactory == null && scopeLevel >= 0) {
+        let factoryByTypes = this[_scopes][$_get](scopeLevel).factoriesByName[$_get](instanceName);
+        if (type == null) {
+          instanceFactory = factoryByTypes != null ? dart.nullable(get_it._ServiceFactory$(T, dart.dynamic, dart.dynamic)).as(factoryByTypes[$_get](dart.wrapType(T))) : null;
+        } else {
+          instanceFactory = factoryByTypes != null ? dart.nullable(get_it._ServiceFactory$(T, dart.dynamic, dart.dynamic)).as(factoryByTypes[$_get](type)) : null;
+        }
+        scopeLevel = scopeLevel - 1;
+      }
+      return instanceFactory;
+    }
+    [_findFactoryByNameAndType](T, instanceName, type = null) {
+      let instanceFactory = this[_findFirstFactoryByNameAndTypeOrNull](T, instanceName, {type: type});
+      if (!(instanceFactory != null)) dart.assertFailed("Object/factory with " + (instanceName != null ? "with name " + dart.str(instanceName) + " and " : " ") + "type " + dart.str(dart.wrapType(T).toString()) + " is not registered inside GetIt. " + "\n(Did you accidentally do GetIt sl=GetIt.instance(); instead of GetIt sl=GetIt.instance;" + "\nDid you forget to register it?)", I[2], 370, 7, "instanceFactory != null");
+      return dart.nullCheck(instanceFactory);
+    }
+    get(T, opts) {
+      let t6, t6$;
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      let param1 = opts && 'param1' in opts ? opts.param1 : null;
+      let param2 = opts && 'param2' in opts ? opts.param2 : null;
+      let instanceFactory = this[_findFactoryByNameAndType](T, instanceName);
+      let instance = dart.wrapType(core.Object);
+      if (dart.test(instanceFactory.isAsync) || instanceFactory.pendingResult != null) {
+        if (!(instanceFactory.factoryType == get_it._ServiceFactoryType.constant || instanceFactory.factoryType == get_it._ServiceFactoryType.lazy)) dart.assertFailed("You can't use get with an async Factory of " + dart.str((t6 = instanceName, t6 == null ? dart.wrapType(T).toString() : t6)) + ".", I[2], 397, 9, "instanceFactory.factoryType == _ServiceFactoryType.constant ||\r\n            instanceFactory.factoryType == _ServiceFactoryType.lazy");
+        if (!dart.test(instanceFactory.isReady)) dart.assertFailed("You tried to access an instance of " + dart.str((t6$ = instanceName, t6$ == null ? dart.wrapType(T).toString() : t6$)) + " that is not ready yet", I[2], 402, 9, "instanceFactory.isReady");
+        instance = dart.nullCheck(instanceFactory.instance);
+      } else {
+        instance = instanceFactory.getObject(param1, param2);
+      }
+      if (!T.is(instance)) dart.assertFailed("Object with name " + dart.str(instanceName) + " has a different type " + "(" + dart.str(dart.toString(instanceFactory.registrationType)) + ") than the one that is inferred " + "(" + dart.str(dart.wrapType(T).toString()) + ") where you call it", I[2], 411, 7, "instance is T");
+      return T.as(instance);
+    }
+    call(T, opts) {
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      let param1 = opts && 'param1' in opts ? opts.param1 : null;
+      let param2 = opts && 'param2' in opts ? opts.param2 : null;
+      return this.get(T, {instanceName: instanceName, param1: param1, param2: param2});
+    }
+    getAsync(T, opts) {
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      let param1 = opts && 'param1' in opts ? opts.param1 : null;
+      let param2 = opts && 'param2' in opts ? opts.param2 : null;
+      let factoryToGet = this[_findFactoryByNameAndType](T, instanceName);
+      return factoryToGet.getObjectAsync(T, param1, param2);
+    }
+    registerFactory(T, factoryFunc, opts) {
+      if (factoryFunc == null) dart.nullFailed(I[2], 453, 20, "factoryFunc");
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      this[_register](T, dart.void, dart.void, {type: get_it._ServiceFactoryType.alwaysNew, instanceName: instanceName, factoryFunc: factoryFunc, isAsync: false, shouldSignalReady: false});
+    }
+    registerFactoryParam(T, P1, P2, factoryFunc, opts) {
+      if (factoryFunc == null) dart.nullFailed(I[2], 486, 35, "factoryFunc");
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      this[_register](T, P1, P2, {type: get_it._ServiceFactoryType.alwaysNew, instanceName: instanceName, factoryFuncParam: factoryFunc, isAsync: false, shouldSignalReady: false});
+    }
+    registerFactoryAsync(T, factoryFunc, opts) {
+      if (factoryFunc == null) dart.nullFailed(I[2], 501, 25, "factoryFunc");
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      this[_register](T, dart.void, dart.void, {type: get_it._ServiceFactoryType.alwaysNew, instanceName: instanceName, factoryFuncAsync: factoryFunc, isAsync: true, shouldSignalReady: false});
+    }
+    registerFactoryParamAsync(T, P1, P2, factoryFunc, opts) {
+      if (factoryFunc == null) dart.nullFailed(I[2], 534, 40, "factoryFunc");
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      this[_register](T, P1, P2, {type: get_it._ServiceFactoryType.alwaysNew, instanceName: instanceName, factoryFuncParamAsync: factoryFunc, isAsync: true, shouldSignalReady: false});
+    }
+    registerLazySingleton(T, factoryFunc, opts) {
+      if (factoryFunc == null) dart.nullFailed(I[2], 556, 20, "factoryFunc");
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      let dispose = opts && 'dispose' in opts ? opts.dispose : null;
+      this[_register](T, dart.void, dart.void, {type: get_it._ServiceFactoryType.lazy, instanceName: instanceName, factoryFunc: factoryFunc, isAsync: false, shouldSignalReady: false, disposeFunc: dispose});
+    }
+    registerSingleton(T, instance, opts) {
+      let t6;
+      if (instance == null) dart.nullFailed(I[2], 580, 7, "instance");
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      let signalsReady = opts && 'signalsReady' in opts ? opts.signalsReady : null;
+      let dispose = opts && 'dispose' in opts ? opts.dispose : null;
+      this[_register](T, dart.void, dart.void, {type: get_it._ServiceFactoryType.constant, instanceName: instanceName, instance: instance, isAsync: false, shouldSignalReady: (t6 = signalsReady, t6 == null ? T$.ListOfWillSignalReady().is(_interceptors.JSArray$(T).of([])) : t6), disposeFunc: dispose});
+    }
+    registerSingletonWithDependencies(T, factoryFunc, opts) {
+      let t6;
+      if (factoryFunc == null) dart.nullFailed(I[2], 609, 20, "factoryFunc");
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      let dependsOn = opts && 'dependsOn' in opts ? opts.dependsOn : null;
+      let signalsReady = opts && 'signalsReady' in opts ? opts.signalsReady : null;
+      let dispose = opts && 'dispose' in opts ? opts.dispose : null;
+      this[_register](T, dart.void, dart.void, {type: get_it._ServiceFactoryType.constant, instanceName: instanceName, isAsync: false, factoryFunc: factoryFunc, dependsOn: dependsOn, shouldSignalReady: (t6 = signalsReady, t6 == null ? T$.ListOfWillSignalReady().is(_interceptors.JSArray$(T).of([])) : t6), disposeFunc: dispose});
+    }
+    registerSingletonAsync(T, factoryFunc, opts) {
+      let t6;
+      if (factoryFunc == null) dart.nullFailed(I[2], 645, 25, "factoryFunc");
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      let dependsOn = opts && 'dependsOn' in opts ? opts.dependsOn : null;
+      let signalsReady = opts && 'signalsReady' in opts ? opts.signalsReady : null;
+      let dispose = opts && 'dispose' in opts ? opts.dispose : null;
+      this[_register](T, dart.void, dart.void, {type: get_it._ServiceFactoryType.constant, instanceName: instanceName, isAsync: true, factoryFuncAsync: factoryFunc, dependsOn: dependsOn, shouldSignalReady: (t6 = signalsReady, t6 == null ? T$.ListOfWillSignalReady().is(_interceptors.JSArray$(T).of([])) : t6), disposeFunc: dispose});
+    }
+    registerLazySingletonAsync(T, factoryFunc, opts) {
+      if (factoryFunc == null) dart.nullFailed(I[2], 679, 25, "factoryFunc");
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      let dispose = opts && 'dispose' in opts ? opts.dispose : null;
+      this[_register](T, dart.void, dart.void, {isAsync: true, type: get_it._ServiceFactoryType.lazy, instanceName: instanceName, factoryFuncAsync: factoryFunc, shouldSignalReady: false, disposeFunc: dispose});
+    }
+    reset(opts) {
+      let dispose = opts && 'dispose' in opts ? opts.dispose : true;
+      if (dispose == null) dart.nullFailed(I[2], 695, 28, "dispose");
+      return async.async(dart.void, (function* reset() {
+        if (dart.test(dispose)) {
+          for (let level = dart.notNull(this[_scopes][$length]) - 1; level >= 0; level = level - 1) {
+            yield this[_scopes][$_get](level).dispose();
+            yield this[_scopes][$_get](level).reset({dispose: dispose});
+          }
+        }
+        this[_scopes][$removeRange](1, this[_scopes][$length]);
+        yield this.resetScope({dispose: dispose});
+      }).bind(this));
+    }
+    resetScope(opts) {
+      let dispose = opts && 'dispose' in opts ? opts.dispose : true;
+      if (dispose == null) dart.nullFailed(I[2], 708, 33, "dispose");
+      return async.async(dart.void, (function* resetScope() {
+        if (dart.test(dispose)) {
+          yield this[_currentScope].dispose();
+        }
+        yield this[_currentScope].reset({dispose: dispose});
+      }).bind(this));
+    }
+    pushNewScope(opts) {
+      let t6, t6$;
+      let init = opts && 'init' in opts ? opts.init : null;
+      let scopeName = opts && 'scopeName' in opts ? opts.scopeName : null;
+      let dispose = opts && 'dispose' in opts ? opts.dispose : null;
+      if (!(scopeName !== "baseScope")) dart.assertFailed("This name is reserved for the real base scope.", I[2], 729, 12, "scopeName != _baseScopeName");
+      if (!(iterable_extensions['IterableExtension|firstWhereOrNull'](get_it._Scope, this[_scopes], dart.fn(x => {
+        if (x == null) dart.nullFailed(I[2], 732, 33, "x");
+        return x.name == scopeName;
+      }, T$._ScopeTobool())) == null)) dart.assertFailed("You already have used the scope name " + dart.str(scopeName), I[2], 732, 7, "_scopes.firstWhereOrNull((x) => x.name == scopeName) == null");
+      this[_scopes][$add](new get_it._Scope.new({name: scopeName, disposeFunc: dispose}));
+      t6 = init;
+      t6 == null ? null : t6(this);
+      t6$ = this.onScopeChanged;
+      t6$ == null ? null : t6$(true);
+    }
+    popScope() {
+      return async.async(dart.void, (function* popScope() {
+        let t6;
+        get_it.throwIfNot(dart.notNull(this[_scopes][$length]) > 1, new core.StateError.new("GetIt: You are already on the base scope. you can't pop this one"));
+        yield this[_currentScope].dispose();
+        yield this[_currentScope].reset({dispose: true});
+        this[_scopes][$removeLast]();
+        t6 = this.onScopeChanged;
+        t6 == null ? null : t6(false);
+      }).bind(this));
+    }
+    popScopesTill(scopeName) {
+      if (scopeName == null) dart.nullFailed(I[2], 763, 37, "scopeName");
+      return async.async(core.bool, (function* popScopesTill() {
+        let t6;
+        if (!(scopeName !== "baseScope")) dart.assertFailed("You can't pop the base scope", I[2], 764, 12, "scopeName != _baseScopeName");
+        if (iterable_extensions['IterableExtension|firstWhereOrNull'](get_it._Scope, this[_scopes], dart.fn(x => {
+          if (x == null) dart.nullFailed(I[2], 765, 35, "x");
+          return x.name == scopeName;
+        }, T$._ScopeTobool())) == null) {
+          return false;
+        }
+        let _scopeName = null;
+        do {
+          _scopeName = this[_currentScope].name;
+          yield this.popScope();
+        } while (_scopeName != scopeName);
+        t6 = this.onScopeChanged;
+        t6 == null ? null : t6(false);
+        return true;
+      }).bind(this));
+    }
+    get currentScopeName() {
+      return this[_currentScope].name;
+    }
+    [_register](T, P1, P2, opts) {
+      let t6, t6$, t6$0, t6$1, t6$2, t6$3, t6$4;
+      let type = opts && 'type' in opts ? opts.type : null;
+      if (type == null) dart.nullFailed(I[2], 781, 34, "type");
+      let factoryFunc = opts && 'factoryFunc' in opts ? opts.factoryFunc : null;
+      let factoryFuncParam = opts && 'factoryFuncParam' in opts ? opts.factoryFuncParam : null;
+      let factoryFuncAsync = opts && 'factoryFuncAsync' in opts ? opts.factoryFuncAsync : null;
+      let factoryFuncParamAsync = opts && 'factoryFuncParamAsync' in opts ? opts.factoryFuncParamAsync : null;
+      let instance = opts && 'instance' in opts ? opts.instance : null;
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      let isAsync = opts && 'isAsync' in opts ? opts.isAsync : null;
+      if (isAsync == null) dart.nullFailed(I[2], 788, 19, "isAsync");
+      let dependsOn = opts && 'dependsOn' in opts ? opts.dependsOn : null;
+      let shouldSignalReady = opts && 'shouldSignalReady' in opts ? opts.shouldSignalReady : null;
+      if (shouldSignalReady == null) dart.nullFailed(I[2], 790, 19, "shouldSignalReady");
+      let disposeFunc = opts && 'disposeFunc' in opts ? opts.disposeFunc : null;
+      get_it.throwIfNot(!T.is(C[4] || CT.C4), "GetIt: You have to provide type. Did you accidentally do `var sl=GetIt.instance();` " + "instead of var sl=GetIt.instance;");
+      let factoriesByName = this[_currentScope].factoriesByName;
+      get_it.throwIf(dart.test(factoriesByName[$containsKey](instanceName)) && dart.test(dart.nullCheck(factoriesByName[$_get](instanceName))[$containsKey](dart.wrapType(T))) && !dart.test(this.allowReassignment), new core.ArgumentError.new("Object/factory with " + (instanceName != null ? "with name " + dart.str(instanceName) + " and " : " ") + "type " + dart.str(dart.wrapType(T).toString()) + " is already registered inside GetIt. "));
+      if (instance != null) {
+        let factoryThatWouldbeShadowed = this[_findFirstFactoryByNameAndTypeOrNull](core.Object, instanceName, {type: dart.wrapType(T)});
+        let objectThatWouldbeShadowed = (t6 = factoryThatWouldbeShadowed, t6 == null ? null : t6.instance);
+        if (objectThatWouldbeShadowed != null && get_it.ShadowChangeHandlers.is(objectThatWouldbeShadowed)) {
+          objectThatWouldbeShadowed.onGetShadowed(instance);
+        }
+      }
+      let serviceFactory = new (get_it._ServiceFactory$(T, P1, P2)).new(this, type, {creationFunction: factoryFunc, creationFunctionParam: factoryFuncParam, asyncCreationFunctionParam: factoryFuncParamAsync, asyncCreationFunction: factoryFuncAsync, instance: instance, isAsync: isAsync, instanceName: instanceName, shouldSignalReady: shouldSignalReady, disposeFunction: disposeFunc});
+      factoriesByName[$putIfAbsent](instanceName, dart.fn(() => new (T$.LinkedMapOfType$_ServiceFactoryOfObject$dynamic$dynamic()).new(), T$.VoidToMapOfType$_ServiceFactoryOfObject$dynamic$dynamic()));
+      dart.nullCheck(factoriesByName[$_get](instanceName))[$_set](dart.wrapType(T), serviceFactory);
+      if (type == get_it._ServiceFactoryType.constant && !dart.test(shouldSignalReady) && !dart.test(isAsync) && dart.test((t6$0 = (t6$ = dependsOn, t6$ == null ? null : t6$[$isEmpty]), t6$0 == null ? true : t6$0))) {
+        return;
+      }
+      if ((dart.test(isAsync) || dart.test((t6$2 = (t6$1 = dependsOn, t6$1 == null ? null : t6$1[$isNotEmpty]), t6$2 == null ? false : t6$2))) && type == get_it._ServiceFactoryType.constant) {
+        let outerFutureGroup = new future_group.FutureGroup.new();
+        let dependentFuture = null;
+        if (dart.test((t6$4 = (t6$3 = dependsOn, t6$3 == null ? null : t6$3[$isNotEmpty]), t6$4 == null ? false : t6$4))) {
+          let dependentFutureGroup = new future_group.FutureGroup.new();
+          for (let dependency of dart.nullCheck(dependsOn)) {
+            let dependentFactory = null;
+            let dependentFactory$35isSet = false;
+            function dependentFactory$35get() {
+              return dependentFactory$35isSet ? dependentFactory : dart.throw(new _internal.LateError.localNI("dependentFactory"));
+            }
+            dart.fn(dependentFactory$35get, T$.VoidTo_ServiceFactoryNOfObject$dynamic$dynamic());
+            function dependentFactory$35set(t9) {
+              if (dependentFactory$35isSet)
+                dart.throw(new _internal.LateError.localAI("dependentFactory"));
+              else {
+                dependentFactory$35isSet = true;
+                return dependentFactory = t9;
+              }
+            }
+            dart.fn(dependentFactory$35set, T$._ServiceFactoryNOfObject$dynamic$dynamicTodynamic());
+            if (get_it.InitDependency.is(dependency)) {
+              dependentFactory$35set(this[_findFirstFactoryByNameAndTypeOrNull](core.Object, dependency.instanceName, {type: dependency.type}));
+            } else {
+              dependentFactory$35set(this[_findFirstFactoryByNameAndTypeOrNull](core.Object, null, {type: dependency}));
+            }
+            get_it.throwIf(dependentFactory$35get() == null, new core.ArgumentError.new("Dependent Type " + dart.str(dependency) + " is not registered in GetIt"));
+            get_it.throwIfNot(dart.nullCheck(dependentFactory$35get()).canBeWaitedFor, new core.ArgumentError.new("Dependent Type " + dart.str(dependency) + " is not an async Singleton"));
+            dependentFactory$35get().objectsWaiting[$add](serviceFactory.registrationType);
+            dependentFutureGroup.add(dependentFactory$35get()[_readyCompleter].future);
+          }
+          dependentFutureGroup.close();
+          dependentFuture = dependentFutureGroup.future;
+        } else {
+          dependentFuture = async.Future.sync(dart.fn(() => {
+          }, T$.VoidToNull()));
+        }
+        outerFutureGroup.add(dependentFuture);
+        dependentFuture.then(core.Null, dart.fn(_ => {
+          let t11;
+          let isReadyFuture = null;
+          if (!dart.test(isAsync)) {
+            serviceFactory.instance = dart.nullCheck(factoryFunc)();
+            let factoryThatWouldbeShadowed = this[_findFirstFactoryByNameAndTypeOrNull](core.Object, instanceName, {type: dart.wrapType(T), lookInScopeBelow: true});
+            let objectThatWouldbeShadowed = (t11 = factoryThatWouldbeShadowed, t11 == null ? null : t11.instance);
+            if (objectThatWouldbeShadowed != null && get_it.ShadowChangeHandlers.is(objectThatWouldbeShadowed)) {
+              objectThatWouldbeShadowed.onGetShadowed(dart.nullCheck(serviceFactory.instance));
+            }
+            isReadyFuture = async.Future$(T).value(T.as(serviceFactory.instance));
+            if (!dart.test(serviceFactory.shouldSignalReady)) {
+              serviceFactory[_readyCompleter].complete();
+            }
+          } else {
+            let asyncResult = dart.nullCheck(factoryFuncAsync)();
+            isReadyFuture = asyncResult.then(T, dart.fn(instance => {
+              let t11;
+              if (instance == null) dart.nullFailed(I[2], 933, 45, "instance");
+              serviceFactory.instance = instance;
+              let factoryThatWouldbeShadowed = this[_findFirstFactoryByNameAndTypeOrNull](core.Object, instanceName, {type: dart.wrapType(T), lookInScopeBelow: true});
+              let objectThatWouldbeShadowed = (t11 = factoryThatWouldbeShadowed, t11 == null ? null : t11.instance);
+              if (objectThatWouldbeShadowed != null && get_it.ShadowChangeHandlers.is(objectThatWouldbeShadowed)) {
+                objectThatWouldbeShadowed.onGetShadowed(instance);
+              }
+              if (!dart.test(serviceFactory.shouldSignalReady) && !dart.test(serviceFactory.isReady)) {
+                serviceFactory[_readyCompleter].complete();
+              }
+              return instance;
+            }, dart.fnType(T, [T])));
+          }
+          outerFutureGroup.add(isReadyFuture);
+          outerFutureGroup.close();
+        }, T$.dynamicToNull()));
+        serviceFactory.pendingResult = outerFutureGroup.future.then(T, dart.fn(completedFutures => {
+          if (completedFutures == null) dart.nullFailed(I[2], 963, 41, "completedFutures");
+          return T.as(completedFutures[$last]);
+        }, dart.fnType(T, [core.List])));
+      }
+    }
+    isRegistered(T, opts) {
+      let instance = opts && 'instance' in opts ? opts.instance : null;
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      if (instance != null) {
+        return this[_findFirstFactoryByInstanceOrNull](instance) != null;
+      } else {
+        return this[_findFirstFactoryByNameAndTypeOrNull](T, instanceName) != null;
+      }
+    }
+    unregister(T, opts) {
+      let instance = opts && 'instance' in opts ? opts.instance : null;
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      let disposingFunction = opts && 'disposingFunction' in opts ? opts.disposingFunction : null;
+      return async.async(dart.dynamic, (function* unregister() {
+        let factoryToRemove = instance != null ? this[_findFactoryByInstance](instance) : this[_findFactoryByNameAndType](T, instanceName);
+        get_it.throwIf(factoryToRemove.objectsWaiting[$isNotEmpty], new core.StateError.new("There are still other objects waiting for this instance so signal ready"));
+        dart.nullCheck(this[_currentScope].factoriesByName[$_get](factoryToRemove.instanceName))[$remove](factoryToRemove.registrationType);
+        if (factoryToRemove.instance != null) {
+          if (disposingFunction != null) {
+            let dispose = disposingFunction(T.as(factoryToRemove.instance));
+            if (async.Future.is(dispose)) {
+              yield dispose;
+            }
+          } else {
+            let dispose = factoryToRemove.dispose();
+            if (async.Future.is(dispose)) {
+              yield dispose;
+            }
+          }
+        }
+      }).bind(this));
+    }
+    resetLazySingleton(T, opts) {
+      let instance = opts && 'instance' in opts ? opts.instance : null;
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      let disposingFunction = opts && 'disposingFunction' in opts ? opts.disposingFunction : null;
+      return async.async(dart.dynamic, (function* resetLazySingleton() {
+        let instanceFactory = null;
+        if (instance != null) {
+          instanceFactory = this[_findFactoryByInstance](instance);
+        } else {
+          instanceFactory = this[_findFactoryByNameAndType](T, instanceName);
+        }
+        get_it.throwIfNot(instanceFactory.factoryType == get_it._ServiceFactoryType.lazy, new core.StateError.new("There is no type " + dart.str(dart.runtimeType(instance)) + " registered as LazySingleton in GetIt"));
+        if (instanceFactory.instance != null) {
+          if (disposingFunction != null) {
+            let dispose = disposingFunction(T.as(instanceFactory.instance));
+            if (async.Future.is(dispose)) {
+              yield dispose;
+            }
+          } else {
+            let dispose = instanceFactory.dispose();
+            if (async.Future.is(dispose)) {
+              yield dispose;
+            }
+          }
+        }
+        instanceFactory.instance = null;
+        instanceFactory.pendingResult = null;
+        instanceFactory[_readyCompleter] = async.Completer.new();
+      }).bind(this));
+    }
+    get [_allFactories]() {
+      return this[_scopes][$fold](T$.ListOf_ServiceFactoryOfObject$dynamic$dynamic(), T$.JSArrayOf_ServiceFactoryOfObject$dynamic$dynamic().of([]), dart.fn((sum, x) => {
+        let t11;
+        if (sum == null) dart.nullFailed(I[2], 1068, 10, "sum");
+        if (x == null) dart.nullFailed(I[2], 1068, 15, "x");
+        t11 = sum;
+        return (() => {
+          t11[$addAll](x.allFactories);
+          return t11;
+        })();
+      }, T$.ListOf_ServiceFactoryOfObject$dynamic$dynamicAnd_ScopeToListOf_ServiceFactoryOfObject$dynamic$dynamic()));
+    }
+    [_findFirstFactoryByInstanceOrNull](instance) {
+      if (instance == null) dart.nullFailed(I[2], 1071, 61, "instance");
+      let registeredFactories = this[_allFactories][$where](dart.fn(x => {
+        if (x == null) dart.nullFailed(I[2], 1073, 30, "x");
+        return core.identical(x.instance, instance);
+      }, T$._ServiceFactoryOfObject$dynamic$dynamicTobool()));
+      return dart.test(registeredFactories[$isEmpty]) ? null : registeredFactories[$first];
+    }
+    [_findFactoryByInstance](instance) {
+      if (instance == null) dart.nullFailed(I[2], 1077, 49, "instance");
+      let registeredFactory = this[_findFirstFactoryByInstanceOrNull](instance);
+      get_it.throwIf(registeredFactory == null, new core.StateError.new("This instance of the type " + dart.str(dart.runtimeType(instance)) + " is not available in GetIt " + "If you have registered it as LazySingleton, are you sure you have used " + "it at least once?"));
+      return dart.nullCheck(registeredFactory);
+    }
+    signalReady(instance) {
+      let registeredInstance = null;
+      if (instance != null) {
+        registeredInstance = this[_findFactoryByInstance](instance);
+        get_it.throwIfNot(registeredInstance.shouldSignalReady, new core.ArgumentError.value(instance, "This instance of type " + dart.str(dart.runtimeType(instance)) + " is not supposed to be " + "signalled.\nDid you forget to set signalsReady==true when registering it?"));
+        get_it.throwIf(registeredInstance.isReady, new core.StateError.new("This instance of type " + dart.str(dart.runtimeType(instance)) + " was already signalled"));
+        registeredInstance[_readyCompleter].complete();
+        registeredInstance.objectsWaiting[$clear]();
+      } else {
+        let notReady = this[_allFactories][$where](dart.fn(x => {
+          if (x == null) dart.nullFailed(I[2], 1139, 19, "x");
+          return dart.test(x.shouldSignalReady) && !dart.test(x.isReady) || x.pendingResult != null && !dart.test(x.isReady);
+        }, T$._ServiceFactoryOfObject$dynamic$dynamicTobool()))[$map](core.String, dart.fn(x => {
+          if (x == null) dart.nullFailed(I[2], 1142, 25, "x");
+          return dart.str(x.registrationType) + "/" + dart.str(x.instanceName);
+        }, T$._ServiceFactoryOfObject$dynamic$dynamicToString()))[$toList]();
+        get_it.throwIf(notReady[$isNotEmpty], new core.StateError.new("You can't signal ready manually if you have registered instances that should " + "signal ready or are async.\n" + "Did you forget to pass an object instance?" + "This registered types/names: " + dart.str(notReady) + " should signal ready but are not ready"));
+        this[_globalReadyCompleter].complete();
+      }
+    }
+    allReady(opts) {
+      let timeout = opts && 'timeout' in opts ? opts.timeout : null;
+      let ignorePendingAsyncCreation = opts && 'ignorePendingAsyncCreation' in opts ? opts.ignorePendingAsyncCreation : false;
+      if (ignorePendingAsyncCreation == null) dart.nullFailed(I[2], 1167, 32, "ignorePendingAsyncCreation");
+      let futures = new future_group.FutureGroup.new();
+      this[_allFactories][$where](dart.fn(x => {
+        if (x == null) dart.nullFailed(I[2], 1170, 17, "x");
+        return (dart.test(x.isAsync) && !dart.test(ignorePendingAsyncCreation) || !dart.test(x.isAsync) && x.pendingResult != null || dart.test(x.shouldSignalReady)) && !dart.test(x.isReady) && x.factoryType == get_it._ServiceFactoryType.constant;
+      }, T$._ServiceFactoryOfObject$dynamic$dynamicTobool()))[$forEach](dart.fn(f => {
+        if (f == null) dart.nullFailed(I[2], 1177, 19, "f");
+        if (f.pendingResult != null) {
+          futures.add(dart.nullCheck(f.pendingResult));
+        } else {
+          futures.add(f[_readyCompleter].future);
+        }
+      }, T$._ServiceFactoryOfObject$dynamic$dynamicTovoid()));
+      futures.close();
+      if (timeout != null) {
+        return futures.future.timeout(timeout, {onTimeout: dart.bind(this, _throwTimeoutError)});
+      } else {
+        return futures.future;
+      }
+    }
+    allReadySync(ignorePendingAsyncCreation = false) {
+      if (ignorePendingAsyncCreation == null) dart.nullFailed(I[2], 1197, 27, "ignorePendingAsyncCreation");
+      let notReadyTypes = this[_allFactories][$where](dart.fn(x => {
+        if (x == null) dart.nullFailed(I[2], 1199, 17, "x");
+        return (dart.test(x.isAsync) && !dart.test(ignorePendingAsyncCreation) || !dart.test(x.isAsync) && x.pendingResult != null || dart.test(x.shouldSignalReady)) && !dart.test(x.isReady) && x.factoryType == get_it._ServiceFactoryType.constant || x.factoryType == get_it._ServiceFactoryType.lazy;
+      }, T$._ServiceFactoryOfObject$dynamic$dynamicTobool()))[$map](core.String, dart.fn(x => {
+        if (x == null) dart.nullFailed(I[2], 1208, 23, "x");
+        if (dart.test(x.isNamedRegistration)) {
+          return "Object " + dart.str(x.instanceName) + " has not completed";
+        } else {
+          return "Registered object of Type " + dart.str(dart.toString(x.registrationType)) + " has not completed";
+        }
+      }, T$._ServiceFactoryOfObject$dynamic$dynamicToString()))[$toList]();
+      if (dart.test(notReadyTypes[$isNotEmpty])) {
+        if (!dart.test(dart.fn(() => {
+          core.print("Not yet ready objects:");
+          core.print(notReadyTypes);
+          return true;
+        }, T$.VoidTobool())())) dart.assertFailed(null, I[2], 1219, 14, "() {\r\n        // ignore: avoid_print\r\n        print('Not yet ready objects:');\r\n        // ignore: avoid_print\r\n        print(notReadyTypes);\r\n        return true;\r\n      }()");
+      }
+      return notReadyTypes[$isEmpty];
+    }
+    [_throwTimeoutError]() {
+      let allFactories = this[_allFactories];
+      let waitedBy = T$.MapOfString$ListOfString().fromEntries(allFactories[$where](dart.fn(x => {
+        if (x == null) dart.nullFailed(I[2], 1237, 19, "x");
+        return (dart.test(x.shouldSignalReady) || x.pendingResult != null) && !dart.test(x.isReady) && dart.test(x.objectsWaiting[$isNotEmpty]);
+      }, T$._ServiceFactoryOfObject$dynamic$dynamicTobool()))[$map](T$.MapEntryOfString$ListOfString(), dart.fn(isWaitedFor => {
+        if (isWaitedFor == null) dart.nullFailed(I[2], 1242, 14, "isWaitedFor");
+        return new (T$.MapEntryOfString$ListOfString()).__(isWaitedFor.debugName, isWaitedFor.objectsWaiting[$map](core.String, dart.fn(waitedByType => {
+          if (waitedByType == null) dart.nullFailed(I[2], 1245, 25, "waitedByType");
+          return dart.toString(waitedByType);
+        }, T$.TypeToString()))[$toList]());
+      }, T$._ServiceFactoryOfObject$dynamic$dynamicToMapEntryOfString$ListOfString())));
+      let notReady = allFactories[$where](dart.fn(x => {
+        if (x == null) dart.nullFailed(I[2], 1251, 17, "x");
+        return (dart.test(x.shouldSignalReady) || x.pendingResult != null) && !dart.test(x.isReady);
+      }, T$._ServiceFactoryOfObject$dynamic$dynamicTobool()))[$map](core.String, dart.fn(f => {
+        if (f == null) dart.nullFailed(I[2], 1253, 15, "f");
+        return f.debugName;
+      }, T$._ServiceFactoryOfObject$dynamic$dynamicToString()))[$toList]();
+      let areReady = allFactories[$where](dart.fn(x => {
+        if (x == null) dart.nullFailed(I[2], 1256, 17, "x");
+        return (dart.test(x.shouldSignalReady) || x.pendingResult != null) && dart.test(x.isReady);
+      }, T$._ServiceFactoryOfObject$dynamic$dynamicTobool()))[$map](core.String, dart.fn(f => {
+        if (f == null) dart.nullFailed(I[2], 1258, 15, "f");
+        return f.debugName;
+      }, T$._ServiceFactoryOfObject$dynamic$dynamicToString()))[$toList]();
+      dart.throw(new get_it.WaitingTimeOutException.new(waitedBy, notReady, areReady));
+    }
+    isReady(T, opts) {
+      let instance = opts && 'instance' in opts ? opts.instance : null;
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      let timeout = opts && 'timeout' in opts ? opts.timeout : null;
+      let callee = opts && 'callee' in opts ? opts.callee : null;
+      let factoryToCheck = null;
+      if (instance != null) {
+        factoryToCheck = this[_findFactoryByInstance](instance);
+      } else {
+        factoryToCheck = this[_findFactoryByNameAndType](T, instanceName);
+      }
+      get_it.throwIfNot(dart.test(factoryToCheck.canBeWaitedFor) && factoryToCheck.factoryType != get_it._ServiceFactoryType.alwaysNew, new core.ArgumentError.new("You only can use this function on Singletons that are async, that are marked as " + "dependent or that are marked with \"signalsReady==true\""));
+      factoryToCheck.objectsWaiting[$add](dart.runtimeType(callee));
+      if (dart.test(factoryToCheck.isAsync) && factoryToCheck.factoryType == get_it._ServiceFactoryType.lazy && factoryToCheck.instance == null) {
+        if (timeout != null) {
+          return factoryToCheck.getObjectAsync(dart.dynamic, null, null).timeout(timeout, {onTimeout: dart.fn(() => {
+              this[_throwTimeoutError]();
+              return null;
+            }, T$.VoidToNull())});
+        } else {
+          return factoryToCheck.getObjectAsync(dart.void, null, null);
+        }
+      }
+      if (timeout != null) {
+        return factoryToCheck[_readyCompleter].future.timeout(timeout, {onTimeout: dart.bind(this, _throwTimeoutError)});
+      } else {
+        return factoryToCheck[_readyCompleter].future;
+      }
+    }
+    isReadySync(T, opts) {
+      let instance = opts && 'instance' in opts ? opts.instance : null;
+      let instanceName = opts && 'instanceName' in opts ? opts.instanceName : null;
+      let factoryToCheck = null;
+      if (instance != null) {
+        factoryToCheck = this[_findFactoryByInstance](instance);
+      } else {
+        factoryToCheck = this[_findFactoryByNameAndType](T, instanceName);
+      }
+      get_it.throwIfNot(dart.test(factoryToCheck.canBeWaitedFor) && factoryToCheck.factoryType != get_it._ServiceFactoryType.alwaysNew, new core.ArgumentError.new("You only can use this function on async Singletons or Singletons " + "that have ben marked with \"signalsReady\" or that they depend on others"));
+      return factoryToCheck.isReady;
+    }
+  };
+  (get_it._GetItImplementation.new = function() {
+    this[_scopes] = T$.JSArrayOf_Scope().of([new get_it._Scope.new({name: "baseScope"})]);
+    this.onScopeChanged = null;
+    this[_globalReadyCompleter] = async.Completer.new();
+    this.allowReassignment = false;
+    ;
+  }).prototype = get_it._GetItImplementation.prototype;
+  dart.addTypeTests(get_it._GetItImplementation);
+  dart.addTypeCaches(get_it._GetItImplementation);
+  get_it._GetItImplementation[dart.implements] = () => [get_it.GetIt];
+  dart.setMethodSignature(get_it._GetItImplementation, () => ({
+    __proto__: dart.getMethods(get_it._GetItImplementation.__proto__),
+    [_findFirstFactoryByNameAndTypeOrNull]: dart.gFnType(T => [dart.nullable(get_it._ServiceFactory$(T, dart.dynamic, dart.dynamic)), [dart.nullable(core.String)], {lookInScopeBelow: core.bool, type: dart.nullable(core.Type)}, {}], T => [core.Object]),
+    [_findFactoryByNameAndType]: dart.gFnType(T => [get_it._ServiceFactory$(core.Object, dart.dynamic, dart.dynamic), [dart.nullable(core.String)], [dart.nullable(core.Type)]], T => [core.Object]),
+    get: dart.gFnType(T => [T, [], {instanceName: dart.nullable(core.String), param1: dart.dynamic, param2: dart.dynamic}, {}], T => [core.Object]),
+    call: dart.gFnType(T => [T, [], {instanceName: dart.nullable(core.String), param1: dart.dynamic, param2: dart.dynamic}, {}], T => [core.Object]),
+    getAsync: dart.gFnType(T => [async.Future$(T), [], {instanceName: dart.nullable(core.String), param1: dart.dynamic, param2: dart.dynamic}, {}], T => [core.Object]),
+    registerFactory: dart.gFnType(T => [dart.void, [dart.fnType(T, [])], {instanceName: dart.nullable(core.String)}, {}], T => [core.Object]),
+    registerFactoryParam: dart.gFnType((T, P1, P2) => [dart.void, [dart.fnType(T, [dart.nullable(P1), dart.nullable(P2)])], {instanceName: dart.nullable(core.String)}, {}], (T, P1, P2) => [core.Object, dart.nullable(core.Object), dart.nullable(core.Object)]),
+    registerFactoryAsync: dart.gFnType(T => [dart.void, [dart.fnType(async.Future$(T), [])], {instanceName: dart.nullable(core.String)}, {}], T => [core.Object]),
+    registerFactoryParamAsync: dart.gFnType((T, P1, P2) => [dart.void, [dart.fnType(async.Future$(T), [dart.nullable(P1), dart.nullable(P2)])], {instanceName: dart.nullable(core.String)}, {}], (T, P1, P2) => [core.Object, dart.nullable(core.Object), dart.nullable(core.Object)]),
+    registerLazySingleton: dart.gFnType(T => [dart.void, [dart.fnType(T, [])], {dispose: dart.nullable(dart.fnType(dart.dynamic, [T])), instanceName: dart.nullable(core.String)}, {}], T => [core.Object]),
+    registerSingleton: dart.gFnType(T => [dart.void, [T], {dispose: dart.nullable(dart.fnType(dart.dynamic, [T])), instanceName: dart.nullable(core.String), signalsReady: dart.nullable(core.bool)}, {}], T => [core.Object]),
+    registerSingletonWithDependencies: dart.gFnType(T => [dart.void, [dart.fnType(T, [])], {dependsOn: dart.nullable(core.Iterable$(core.Type)), dispose: dart.nullable(dart.fnType(dart.dynamic, [T])), instanceName: dart.nullable(core.String), signalsReady: dart.nullable(core.bool)}, {}], T => [core.Object]),
+    registerSingletonAsync: dart.gFnType(T => [dart.void, [dart.fnType(async.Future$(T), [])], {dependsOn: dart.nullable(core.Iterable$(core.Type)), dispose: dart.nullable(dart.fnType(dart.dynamic, [T])), instanceName: dart.nullable(core.String), signalsReady: dart.nullable(core.bool)}, {}], T => [core.Object]),
+    registerLazySingletonAsync: dart.gFnType(T => [dart.void, [dart.fnType(async.Future$(T), [])], {dispose: dart.nullable(dart.fnType(dart.dynamic, [T])), instanceName: dart.nullable(core.String)}, {}], T => [core.Object]),
+    reset: dart.fnType(async.Future$(dart.void), [], {dispose: core.bool}, {}),
+    resetScope: dart.fnType(async.Future$(dart.void), [], {dispose: core.bool}, {}),
+    pushNewScope: dart.fnType(dart.void, [], {dispose: dart.nullable(dart.fnType(dart.dynamic, [])), init: dart.nullable(dart.fnType(dart.void, [get_it.GetIt])), scopeName: dart.nullable(core.String)}, {}),
+    popScope: dart.fnType(async.Future$(dart.void), []),
+    popScopesTill: dart.fnType(async.Future$(core.bool), [core.String]),
+    [_register]: dart.gFnType((T, P1, P2) => [dart.void, [], {dependsOn: dart.nullable(core.Iterable$(core.Type)), disposeFunc: dart.nullable(dart.fnType(dart.dynamic, [T])), factoryFunc: dart.nullable(dart.fnType(T, [])), factoryFuncAsync: dart.nullable(dart.fnType(async.Future$(T), [])), factoryFuncParam: dart.nullable(dart.fnType(T, [dart.nullable(P1), dart.nullable(P2)])), factoryFuncParamAsync: dart.nullable(dart.fnType(async.Future$(T), [dart.nullable(P1), dart.nullable(P2)])), instance: dart.nullable(T)}, {instanceName: dart.nullable(core.String), isAsync: core.bool, shouldSignalReady: core.bool, type: get_it._ServiceFactoryType}], (T, P1, P2) => [core.Object, dart.nullable(core.Object), dart.nullable(core.Object)]),
+    isRegistered: dart.gFnType(T => [core.bool, [], {instance: dart.nullable(core.Object), instanceName: dart.nullable(core.String)}, {}], T => [core.Object]),
+    unregister: dart.gFnType(T => [dart.dynamic, [], {disposingFunction: dart.nullable(dart.fnType(dart.dynamic, [T])), instance: dart.nullable(core.Object), instanceName: dart.nullable(core.String)}, {}], T => [core.Object]),
+    resetLazySingleton: dart.gFnType(T => [dart.dynamic, [], {disposingFunction: dart.nullable(dart.fnType(dart.dynamic, [T])), instance: dart.nullable(core.Object), instanceName: dart.nullable(core.String)}, {}], T => [core.Object]),
+    [_findFirstFactoryByInstanceOrNull]: dart.fnType(dart.nullable(get_it._ServiceFactory$(core.Object, dart.dynamic, dart.dynamic)), [core.Object]),
+    [_findFactoryByInstance]: dart.fnType(get_it._ServiceFactory$(core.Object, dart.dynamic, dart.dynamic), [core.Object]),
+    signalReady: dart.fnType(dart.void, [dart.nullable(core.Object)]),
+    allReady: dart.fnType(async.Future$(dart.void), [], {ignorePendingAsyncCreation: core.bool, timeout: dart.nullable(core.Duration)}, {}),
+    allReadySync: dart.fnType(core.bool, [], [core.bool]),
+    [_throwTimeoutError]: dart.fnType(core.List, []),
+    isReady: dart.gFnType(T => [async.Future$(dart.void), [], {callee: dart.nullable(core.Object), instance: dart.nullable(core.Object), instanceName: dart.nullable(core.String), timeout: dart.nullable(core.Duration)}, {}], T => [core.Object]),
+    isReadySync: dart.gFnType(T => [core.bool, [], {instance: dart.nullable(core.Object), instanceName: dart.nullable(core.String)}, {}], T => [core.Object])
+  }));
+  dart.setGetterSignature(get_it._GetItImplementation, () => ({
+    __proto__: dart.getGetters(get_it._GetItImplementation.__proto__),
+    [_currentScope]: get_it._Scope,
+    currentScopeName: dart.nullable(core.String),
+    [_allFactories]: core.List$(get_it._ServiceFactory$(core.Object, dart.dynamic, dart.dynamic))
+  }));
+  dart.setLibraryUri(get_it._GetItImplementation, I[0]);
+  dart.setFieldSignature(get_it._GetItImplementation, () => ({
+    __proto__: dart.getFields(get_it._GetItImplementation.__proto__),
+    [_scopes]: dart.finalFieldType(core.List$(get_it._Scope)),
+    onScopeChanged: dart.fieldType(dart.nullable(dart.fnType(dart.void, [core.bool]))),
+    [_globalReadyCompleter]: dart.finalFieldType(async.Completer),
+    allowReassignment: dart.fieldType(core.bool)
+  }));
+  dart.defineLazy(get_it._GetItImplementation, {
+    /*get_it._GetItImplementation._baseScopeName*/get _baseScopeName() {
+      return "baseScope";
+    }
+  }, false);
+  get_it.throwIf = function throwIf(condition, error) {
+    if (condition == null) dart.nullFailed(I[2], 6, 19, "condition");
+    if (error == null) dart.nullFailed(I[2], 6, 37, "error");
+    if (dart.test(condition)) dart.throw(error);
+  };
+  get_it.throwIfNot = function throwIfNot(condition, error) {
+    if (condition == null) dart.nullFailed(I[2], 11, 22, "condition");
+    if (error == null) dart.nullFailed(I[2], 11, 40, "error");
+    if (!dart.test(condition)) dart.throw(error);
+  };
+  dart.trackLibraries("packages/get_it/get_it.dart", {
+    "package:get_it/get_it.dart": get_it
+  }, {
+    "package:get_it/get_it.dart": ["get_it_impl.dart"]
+  }, '{"version":3,"sourceRoot":"","sources":["get_it.dart","get_it_impl.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/get_it/get_it.dart.lib.js"}');
+  // Exports:
+  return {
+    get_it: get_it
+  };
+}));
+
+//# sourceMappingURL=get_it.dart.lib.js.map
