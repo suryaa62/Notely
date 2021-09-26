@@ -1,30 +1,60 @@
-define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/rendering/sliver_fill.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter/src/rendering/sliver_padding.dart', 'packages/flutter/src/rendering/sliver.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__widgets__sliver_fill_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__rendering__sliver_fill$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__painting__basic_types$46dart, packages__flutter__src__rendering__sliver_padding$46dart, packages__flutter__src__rendering__sliver$46dart, packages__flutter__src__foundation__debug$46dart) {
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/notes_app/themeData/theme_data.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart', 'packages/flutter/src/painting/box_fit.dart', 'packages/flutter/src/material/text_field.dart', 'packages/date_time_picker/date_time_picker.dart', 'packages/flutter/src/material/elevated_button.dart', 'packages/flutter/src/material/material_state.dart', 'packages/flutter/src/material/card.dart'], (function load__packages__notes_app__widgets__detailPageWidgets_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__icon_button$46dart, packages__notes_app__themeData__theme_data$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart, packages__flutter__src__painting__box_fit$46dart, packages__flutter__src__material__text_field$46dart, packages__date_time_picker__date_time_picker$46dart, packages__flutter__src__material__elevated_button$46dart, packages__flutter__src__material__material_state$46dart, packages__flutter__src__material__card$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _internal = dart_sdk._internal;
   const _interceptors = dart_sdk._interceptors;
+  const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
+  const editable_text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__editable_text;
+  const focus_manager = packages__flutter__src__widgets__widget_span$46dart.src__widgets__focus_manager;
   const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
   const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
-  const sliver = packages__flutter__src__widgets__widget_span$46dart.src__widgets__sliver;
-  const sliver_fill = packages__flutter__src__rendering__sliver_fill$46dart.src__rendering__sliver_fill;
-  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const image = packages__flutter__src__widgets__widget_span$46dart.src__widgets__image;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const gesture_detector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__gesture_detector;
+  const theme = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const icon_button = packages__flutter__src__material__icon_button$46dart.src__material__icon_button;
+  const input_decorator = packages__flutter__src__material__icon_button$46dart.src__material__input_decorator;
+  const divider = packages__flutter__src__material__icon_button$46dart.src__material__divider;
+  const bottom_sheet = packages__flutter__src__material__icon_button$46dart.src__material__bottom_sheet;
+  const button_style = packages__flutter__src__material__icon_button$46dart.src__material__button_style;
+  const theme_data = packages__notes_app__themeData__theme_data$46dart.themeData__theme_data;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
   const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
-  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
-  const sliver_padding = packages__flutter__src__rendering__sliver_padding$46dart.src__rendering__sliver_padding;
-  const sliver$ = packages__flutter__src__rendering__sliver$46dart.src__rendering__sliver;
-  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  var sliver_fill$ = Object.create(dart.library);
-  var $clamp = dartx.clamp;
-  var $add = dartx.add;
-  var $isEmpty = dartx.isEmpty;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const box_fit = packages__flutter__src__painting__box_fit$46dart.src__painting__box_fit;
+  const text_field = packages__flutter__src__material__text_field$46dart.src__material__text_field;
+  const date_time_picker = packages__date_time_picker__date_time_picker$46dart.date_time_picker;
+  const elevated_button = packages__flutter__src__material__elevated_button$46dart.src__material__elevated_button;
+  const material_state = packages__flutter__src__material__material_state$46dart.src__material__material_state;
+  const card = packages__flutter__src__material__card$46dart.src__material__card;
+  var detailPageWidgets = Object.create(dart.library);
+  var $_get = dartx._get;
+  var $plus = dartx['+'];
+  var $length = dartx.length;
   dart._checkModuleNullSafetyMode(false);
   var T = {
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    StringLToNull: () => (T.StringLToNull = dart.constFn(dart.fnType(core.Null, [T.StringL()])))(),
     _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
-    DiagnosticsPropertyOfWidget: () => (T.DiagnosticsPropertyOfWidget = dart.constFn(diagnostics.DiagnosticsProperty$(framework.Widget)))(),
-    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
-    IterablePropertyOfString: () => (T.IterablePropertyOfString = dart.constFn(diagnostics.IterableProperty$(core.String)))()
+    RangeErrorL: () => (T.RangeErrorL = dart.constFn(dart.legacy(core.RangeError)))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    JSArrayOfWidgetL: () => (T.JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(T.WidgetL())))(),
+    ListOfWidgetL: () => (T.ListOfWidgetL = dart.constFn(core.List$(T.WidgetL())))(),
+    RowL: () => (T.RowL = dart.constFn(dart.legacy(basic.Row)))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    intLToRowL: () => (T.intLToRowL = dart.constFn(dart.fnType(T.RowL(), [T.intL()])))(),
+    ObjectL: () => (T.ObjectL = dart.constFn(dart.legacy(core.Object)))(),
+    ColorL: () => (T.ColorL = dart.constFn(dart.legacy(ui.Color)))(),
+    ContainerL: () => (T.ContainerL = dart.constFn(dart.legacy(container.Container)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    BuildContextLToContainerL: () => (T.BuildContextLToContainerL = dart.constFn(dart.fnType(T.ContainerL(), [T.BuildContextL()])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -43,9 +73,9 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
       return C[2] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "viewportFraction",
-        [_Location_column]: 9,
-        [_Location_line]: 66,
+        [_Location_name]: "controller",
+        [_Location_column]: 7,
+        [_Location_line]: 17,
         [_Location_file]: null
       });
     },
@@ -53,32 +83,39 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
       return C[3] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "delegate",
-        [_Location_column]: 9,
-        [_Location_line]: 67,
+        [_Location_name]: "focusNode",
+        [_Location_column]: 7,
+        [_Location_line]: 18,
         [_Location_file]: null
       });
     },
-    get C1() {
-      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3], T._LocationL());
-    },
-    get C0() {
-      return C[0] = dart.const({
+    get C4() {
+      return C[4] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[1] || CT.C1,
-        [_Location_name]: null,
-        [_Location_column]: 15,
-        [_Location_line]: 65,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/sliver_fill.dart"
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 7,
+        [_Location_line]: 19,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "cursorColor",
+        [_Location_column]: 7,
+        [_Location_line]: 20,
+        [_Location_file]: null
       });
     },
     get C6() {
       return C[6] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "viewportFraction",
+        [_Location_name]: "backgroundCursorColor",
         [_Location_column]: 7,
-        [_Location_line]: 64,
+        [_Location_line]: 21,
         [_Location_file]: null
       });
     },
@@ -86,489 +123,2259 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
       return C[7] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "sliver",
+        [_Location_name]: "onChanged",
         [_Location_column]: 7,
-        [_Location_line]: 65,
+        [_Location_line]: 22,
         [_Location_file]: null
-      });
-    },
-    get C5() {
-      return C[5] = dart.constList([C[6] || CT.C6, C[7] || CT.C7], T._LocationL());
-    },
-    get C4() {
-      return C[4] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[5] || CT.C5,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 63,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/sliver_fill.dart"
       });
     },
     get C8() {
       return C[8] = dart.const({
-        __proto__: basic_types.Axis.prototype,
-        [_name]: "Axis.horizontal",
-        index: 0
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "maxLines",
+        [_Location_column]: 7,
+        [_Location_line]: 25,
+        [_Location_file]: null
       });
     },
-    get C9() {
-      return C[9] = dart.const({
-        __proto__: basic_types.Axis.prototype,
-        [_name]: "Axis.vertical",
-        index: 1
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 16,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 7,
+        [_Location_line]: 38,
+        [_Location_file]: null
       });
     },
     get C12() {
       return C[12] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 49,
-        [_Location_line]: 437,
+        [_Location_name]: "style",
+        [_Location_column]: 7,
+        [_Location_line]: 39,
         [_Location_file]: null
       });
     },
-    get C11() {
-      return C[11] = dart.constList([C[12] || CT.C12], T._LocationL());
-    },
     get C10() {
-      return C[10] = dart.const({
+      return C[10] = dart.constList([C[11] || CT.C11, C[12] || CT.C12], T._LocationL());
+    },
+    get C9() {
+      return C[9] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_parameterLocations]: C[10] || CT.C10,
         [_Location_name]: null,
-        [_Location_column]: 14,
-        [_Location_line]: 437,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/sliver_fill.dart"
+        [_Location_column]: 12,
+        [_Location_line]: 37,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
       });
     },
     get C15() {
       return C[15] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 52,
-        [_Location_line]: 439,
+        [_Location_name]: "autofocus",
+        [_Location_column]: 7,
+        [_Location_line]: 62,
         [_Location_file]: null
       });
     },
-    get C14() {
-      return C[14] = dart.constList([C[15] || CT.C15], T._LocationL());
-    },
-    get C13() {
-      return C[13] = dart.const({
+    get C16() {
+      return C[16] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[14] || CT.C14,
-        [_Location_name]: null,
-        [_Location_column]: 14,
-        [_Location_line]: 439,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/sliver_fill.dart"
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controller",
+        [_Location_column]: 7,
+        [_Location_line]: 63,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "focusNode",
+        [_Location_column]: 7,
+        [_Location_line]: 64,
+        [_Location_file]: null
       });
     },
     get C18() {
       return C[18] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 46,
-        [_Location_line]: 440,
+        [_Location_name]: "style",
+        [_Location_column]: 7,
+        [_Location_line]: 65,
         [_Location_file]: null
       });
     },
-    get C17() {
-      return C[17] = dart.constList([C[18] || CT.C18], T._LocationL());
-    },
-    get C16() {
-      return C[16] = dart.const({
+    get C19() {
+      return C[19] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "cursorColor",
+        [_Location_column]: 7,
+        [_Location_line]: 66,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundCursorColor",
+        [_Location_column]: 7,
+        [_Location_line]: 67,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "maxLines",
+        [_Location_column]: 7,
+        [_Location_line]: 68,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 7,
+        [_Location_line]: 69,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17, C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22], T._LocationL());
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
         [_Location_name]: null,
         [_Location_column]: 12,
-        [_Location_line]: 440,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/sliver_fill.dart"
+        [_Location_line]: 61,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 10,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 19,
+        [_Location_line]: 136,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.constList([C[26] || CT.C26], T._LocationL());
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 135,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 17,
+        [_Location_line]: 134,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 135,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.constList([C[29] || CT.C29, C[30] || CT.C30], T._LocationL());
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[28] || CT.C28,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 133,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 34,
+        [_Location_line]: 140,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33], T._LocationL());
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 140,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 17,
+        [_Location_line]: 140,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 17,
+        [_Location_line]: 141,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36, C[37] || CT.C37], T._LocationL());
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 139,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 13,
+        [_Location_line]: 131,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 13,
+        [_Location_line]: 132,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.constList([C[40] || CT.C40, C[41] || CT.C41], T._LocationL());
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[39] || CT.C39,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 130,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 11,
+        [_Location_line]: 129,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 130,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C[43] = dart.constList([C[44] || CT.C44, C[45] || CT.C45], T._LocationL());
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[43] || CT.C43,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 128,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "src",
+        [_Location_column]: 11,
+        [_Location_line]: 149,
+        [_Location_file]: null
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 11,
+        [_Location_line]: 150,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "fit",
+        [_Location_column]: 11,
+        [_Location_line]: 151,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.constList([C[48] || CT.C48, C[49] || CT.C49, C[50] || CT.C50], T._LocationL());
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[47] || CT.C47,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 148,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 7,
+        [_Location_line]: 127,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.constList([C[53] || CT.C53], T._LocationL());
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[52] || CT.C52,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 126,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 25,
+        [_Location_line]: 194,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.constList([C[56] || CT.C56], T._LocationL());
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[55] || CT.C55,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 193,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 23,
+        [_Location_line]: 192,
+        [_Location_file]: null
+      });
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 23,
+        [_Location_line]: 193,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C[58] = dart.constList([C[59] || CT.C59, C[60] || CT.C60], T._LocationL());
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[58] || CT.C58,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 191,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 40,
+        [_Location_line]: 198,
+        [_Location_file]: null
+      });
+    },
+    get C62() {
+      return C[62] = dart.constList([C[63] || CT.C63], T._LocationL());
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[62] || CT.C62,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 198,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 23,
+        [_Location_line]: 198,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 23,
+        [_Location_line]: 199,
+        [_Location_file]: null
+      });
+    },
+    get C65() {
+      return C[65] = dart.constList([C[66] || CT.C66, C[67] || CT.C67], T._LocationL());
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[65] || CT.C65,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 197,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 19,
+        [_Location_line]: 189,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 19,
+        [_Location_line]: 190,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.constList([C[70] || CT.C70, C[71] || CT.C71], T._LocationL());
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[69] || CT.C69,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 188,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C74() {
+      return C[74] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 17,
+        [_Location_line]: 187,
+        [_Location_file]: null
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 188,
+        [_Location_file]: null
+      });
+    },
+    get C73() {
+      return C[73] = dart.constList([C[74] || CT.C74, C[75] || CT.C75], T._LocationL());
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[73] || CT.C73,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 186,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C78() {
+      return C[78] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 36,
+        [_Location_line]: 210,
+        [_Location_file]: null
+      });
+    },
+    get C77() {
+      return C[77] = dart.constList([C[78] || CT.C78], T._LocationL());
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[77] || CT.C77,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 210,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 19,
+        [_Location_line]: 210,
+        [_Location_file]: null
+      });
+    },
+    get C82() {
+      return C[82] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 19,
+        [_Location_line]: 211,
+        [_Location_file]: null
+      });
+    },
+    get C80() {
+      return C[80] = dart.constList([C[81] || CT.C81, C[82] || CT.C82], T._LocationL());
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[80] || CT.C80,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 209,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C85() {
+      return C[85] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controller",
+        [_Location_column]: 17,
+        [_Location_line]: 207,
+        [_Location_file]: null
+      });
+    },
+    get C86() {
+      return C[86] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 17,
+        [_Location_line]: 208,
+        [_Location_file]: null
+      });
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 17,
+        [_Location_line]: 217,
+        [_Location_file]: null
+      });
+    },
+    get C84() {
+      return C[84] = dart.constList([C[85] || CT.C85, C[86] || CT.C86, C[87] || CT.C87], T._LocationL());
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[84] || CT.C84,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 206,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 40,
+        [_Location_line]: 226,
+        [_Location_file]: null
+      });
+    },
+    get C89() {
+      return C[89] = dart.constList([C[90] || CT.C90], T._LocationL());
+    },
+    get C88() {
+      return C[88] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[89] || CT.C89,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 226,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C93() {
+      return C[93] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 23,
+        [_Location_line]: 226,
+        [_Location_file]: null
+      });
+    },
+    get C94() {
+      return C[94] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 23,
+        [_Location_line]: 227,
+        [_Location_file]: null
+      });
+    },
+    get C92() {
+      return C[92] = dart.constList([C[93] || CT.C93, C[94] || CT.C94], T._LocationL());
+    },
+    get C91() {
+      return C[91] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[92] || CT.C92,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 225,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C97() {
+      return C[97] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 44,
+        [_Location_line]: 230,
+        [_Location_file]: null
+      });
+    },
+    get C96() {
+      return C[96] = dart.constList([C[97] || CT.C97], T._LocationL());
+    },
+    get C95() {
+      return C[95] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[96] || CT.C96,
+        [_Location_name]: null,
+        [_Location_column]: 35,
+        [_Location_line]: 230,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C100() {
+      return C[100] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 28,
+        [_Location_line]: 230,
+        [_Location_file]: null
+      });
+    },
+    get C99() {
+      return C[99] = dart.constList([C[100] || CT.C100], T._LocationL());
+    },
+    get C98() {
+      return C[98] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[99] || CT.C99,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 230,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C103() {
+      return C[103] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 31,
+        [_Location_line]: 233,
+        [_Location_file]: null
+      });
+    },
+    get C102() {
+      return C[102] = dart.constList([C[103] || CT.C103], T._LocationL());
+    },
+    get C101() {
+      return C[101] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[102] || CT.C102,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 232,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C106() {
+      return C[106] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 23,
+        [_Location_line]: 232,
+        [_Location_file]: null
+      });
+    },
+    get C107() {
+      return C[107] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 23,
+        [_Location_line]: 235,
+        [_Location_file]: null
+      });
+    },
+    get C105() {
+      return C[105] = dart.constList([C[106] || CT.C106, C[107] || CT.C107], T._LocationL());
+    },
+    get C104() {
+      return C[104] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[105] || CT.C105,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 231,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C110() {
+      return C[110] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 17,
+        [_Location_line]: 224,
+        [_Location_file]: null
+      });
+    },
+    get C109() {
+      return C[109] = dart.constList([C[110] || CT.C110], T._LocationL());
+    },
+    get C108() {
+      return C[108] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[109] || CT.C109,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 223,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C113() {
+      return C[113] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 17,
+        [_Location_line]: 243,
+        [_Location_file]: null
+      });
+    },
+    get C114() {
+      return C[114] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 17,
+        [_Location_line]: 244,
+        [_Location_file]: null
+      });
+    },
+    get C115() {
+      return C[115] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "thickness",
+        [_Location_column]: 17,
+        [_Location_line]: 245,
+        [_Location_file]: null
+      });
+    },
+    get C112() {
+      return C[112] = dart.constList([C[113] || CT.C113, C[114] || CT.C114, C[115] || CT.C115], T._LocationL());
+    },
+    get C111() {
+      return C[111] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[112] || CT.C112,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 242,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C118() {
+      return C[118] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 40,
+        [_Location_line]: 252,
+        [_Location_file]: null
+      });
+    },
+    get C119() {
+      return C[119] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 27,
+        [_Location_line]: 253,
+        [_Location_file]: null
+      });
+    },
+    get C117() {
+      return C[117] = dart.constList([C[118] || CT.C118, C[119] || CT.C119], T._LocationL());
+    },
+    get C116() {
+      return C[116] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[117] || CT.C117,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 252,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C122() {
+      return C[122] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 23,
+        [_Location_line]: 252,
+        [_Location_file]: null
+      });
+    },
+    get C123() {
+      return C[123] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 23,
+        [_Location_line]: 255,
+        [_Location_file]: null
+      });
+    },
+    get C121() {
+      return C[121] = dart.constList([C[122] || CT.C122, C[123] || CT.C123], T._LocationL());
+    },
+    get C120() {
+      return C[120] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[121] || CT.C121,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 251,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C126() {
+      return C[126] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "text",
+        [_Location_column]: 23,
+        [_Location_line]: 260,
+        [_Location_file]: null
+      });
+    },
+    get C125() {
+      return C[125] = dart.constList([C[126] || CT.C126], T._LocationL());
+    },
+    get C124() {
+      return C[124] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[125] || CT.C125,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 259,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C129() {
+      return C[129] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 259,
+        [_Location_file]: null
+      });
+    },
+    get C128() {
+      return C[128] = dart.constList([C[129] || CT.C129], T._LocationL());
+    },
+    get C127() {
+      return C[127] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[128] || CT.C128,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 258,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C132() {
+      return C[132] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 31,
+        [_Location_line]: 265,
+        [_Location_file]: null
+      });
+    },
+    get C133() {
+      return C[133] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 25,
+        [_Location_line]: 266,
+        [_Location_file]: null
+      });
+    },
+    get C131() {
+      return C[131] = dart.constList([C[132] || CT.C132, C[133] || CT.C133], T._LocationL());
+    },
+    get C130() {
+      return C[130] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[131] || CT.C131,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 264,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C136() {
+      return C[136] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 23,
+        [_Location_line]: 264,
+        [_Location_file]: null
+      });
+    },
+    get C137() {
+      return C[137] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 23,
+        [_Location_line]: 268,
+        [_Location_file]: null
+      });
+    },
+    get C135() {
+      return C[135] = dart.constList([C[136] || CT.C136, C[137] || CT.C137], T._LocationL());
+    },
+    get C134() {
+      return C[134] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[135] || CT.C135,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 263,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C140() {
+      return C[140] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 17,
+        [_Location_line]: 250,
+        [_Location_file]: null
+      });
+    },
+    get C139() {
+      return C[139] = dart.constList([C[140] || CT.C140], T._LocationL());
+    },
+    get C138() {
+      return C[138] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[139] || CT.C139,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 249,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C143() {
+      return C[143] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 185,
+        [_Location_file]: null
+      });
+    },
+    get C142() {
+      return C[142] = dart.constList([C[143] || CT.C143], T._LocationL());
+    },
+    get C141() {
+      return C[141] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[142] || CT.C142,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 184,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C146() {
+      return C[146] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 21,
+        [_Location_line]: 300,
+        [_Location_file]: null
+      });
+    },
+    get C147() {
+      return C[147] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textAlign",
+        [_Location_column]: 21,
+        [_Location_line]: 301,
+        [_Location_file]: null
+      });
+    },
+    get C148() {
+      return C[148] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 21,
+        [_Location_line]: 302,
+        [_Location_file]: null
+      });
+    },
+    get C145() {
+      return C[145] = dart.constList([C[146] || CT.C146, C[147] || CT.C147, C[148] || CT.C148], T._LocationL());
+    },
+    get C144() {
+      return C[144] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[145] || CT.C145,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 299,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C149() {
+      return C[149] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 20,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 20,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C152() {
+      return C[152] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controller",
+        [_Location_column]: 23,
+        [_Location_line]: 307,
+        [_Location_file]: null
+      });
+    },
+    get C153() {
+      return C[153] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "type",
+        [_Location_column]: 23,
+        [_Location_line]: 308,
+        [_Location_file]: null
+      });
+    },
+    get C154() {
+      return C[154] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "firstDate",
+        [_Location_column]: 23,
+        [_Location_line]: 309,
+        [_Location_file]: null
+      });
+    },
+    get C155() {
+      return C[155] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "lastDate",
+        [_Location_column]: 23,
+        [_Location_line]: 310,
+        [_Location_file]: null
+      });
+    },
+    get C156() {
+      return C[156] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "dateLabelText",
+        [_Location_column]: 23,
+        [_Location_line]: 311,
+        [_Location_file]: null
+      });
+    },
+    get C157() {
+      return C[157] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "timeLabelText",
+        [_Location_column]: 23,
+        [_Location_line]: 312,
+        [_Location_file]: null
+      });
+    },
+    get C151() {
+      return C[151] = dart.constList([C[152] || CT.C152, C[153] || CT.C153, C[154] || CT.C154, C[155] || CT.C155, C[156] || CT.C156, C[157] || CT.C157], T._LocationL());
+    },
+    get C150() {
+      return C[150] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[151] || CT.C151,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 306,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C160() {
+      return C[160] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 21,
+        [_Location_line]: 305,
+        [_Location_file]: null
+      });
+    },
+    get C161() {
+      return C[161] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 306,
+        [_Location_file]: null
+      });
+    },
+    get C159() {
+      return C[159] = dart.constList([C[160] || CT.C160, C[161] || CT.C161], T._LocationL());
+    },
+    get C158() {
+      return C[158] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[159] || CT.C159,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 304,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C164() {
+      return C[164] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 35,
+        [_Location_line]: 322,
+        [_Location_file]: null
+      });
+    },
+    get C163() {
+      return C[163] = dart.constList([C[164] || CT.C164], T._LocationL());
+    },
+    get C162() {
+      return C[162] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[163] || CT.C163,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 322,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C167() {
+      return C[167] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 23,
+        [_Location_line]: 318,
+        [_Location_file]: null
+      });
+    },
+    get C168() {
+      return C[168] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 23,
+        [_Location_line]: 322,
+        [_Location_file]: null
+      });
+    },
+    get C169() {
+      return C[169] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 23,
+        [_Location_line]: 323,
+        [_Location_file]: null
+      });
+    },
+    get C166() {
+      return C[166] = dart.constList([C[167] || CT.C167, C[168] || CT.C168, C[169] || CT.C169], T._LocationL());
+    },
+    get C165() {
+      return C[165] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[166] || CT.C166,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 317,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C172() {
+      return C[172] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 21,
+        [_Location_line]: 316,
+        [_Location_file]: null
+      });
+    },
+    get C173() {
+      return C[173] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 317,
+        [_Location_file]: null
+      });
+    },
+    get C171() {
+      return C[171] = dart.constList([C[172] || CT.C172, C[173] || CT.C173], T._LocationL());
+    },
+    get C170() {
+      return C[170] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[171] || CT.C171,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 315,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C176() {
+      return C[176] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 17,
+        [_Location_line]: 297,
+        [_Location_file]: null
+      });
+    },
+    get C177() {
+      return C[177] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 17,
+        [_Location_line]: 298,
+        [_Location_file]: null
+      });
+    },
+    get C175() {
+      return C[175] = dart.constList([C[176] || CT.C176, C[177] || CT.C177], T._LocationL());
+    },
+    get C174() {
+      return C[174] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[175] || CT.C175,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 296,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C180() {
+      return C[180] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 15,
+        [_Location_line]: 294,
+        [_Location_file]: null
+      });
+    },
+    get C181() {
+      return C[181] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 15,
+        [_Location_line]: 295,
+        [_Location_file]: null
+      });
+    },
+    get C182() {
+      return C[182] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 296,
+        [_Location_file]: null
+      });
+    },
+    get C179() {
+      return C[179] = dart.constList([C[180] || CT.C180, C[181] || CT.C181, C[182] || CT.C182], T._LocationL());
+    },
+    get C178() {
+      return C[178] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[179] || CT.C179,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 293,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C183() {
+      return C[183] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 10,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 10
+      });
+    },
+    get C186() {
+      return C[186] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 25,
+        [_Location_line]: 346,
+        [_Location_file]: null
+      });
+    },
+    get C187() {
+      return C[187] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 347,
+        [_Location_file]: null
+      });
+    },
+    get C185() {
+      return C[185] = dart.constList([C[186] || CT.C186, C[187] || CT.C187], T._LocationL());
+    },
+    get C184() {
+      return C[184] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[185] || CT.C185,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 345,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C190() {
+      return C[190] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 17,
+        [_Location_line]: 344,
+        [_Location_file]: null
+      });
+    },
+    get C191() {
+      return C[191] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 345,
+        [_Location_file]: null
+      });
+    },
+    get C189() {
+      return C[189] = dart.constList([C[190] || CT.C190, C[191] || CT.C191], T._LocationL());
+    },
+    get C188() {
+      return C[188] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[189] || CT.C189,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 343,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C194() {
+      return C[194] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 19,
+        [_Location_line]: 352,
+        [_Location_file]: null
+      });
+    },
+    get C195() {
+      return C[195] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 19,
+        [_Location_line]: 353,
+        [_Location_file]: null
+      });
+    },
+    get C193() {
+      return C[193] = dart.constList([C[194] || CT.C194, C[195] || CT.C195], T._LocationL());
+    },
+    get C192() {
+      return C[192] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[193] || CT.C193,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 351,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C198() {
+      return C[198] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 351,
+        [_Location_file]: null
+      });
+    },
+    get C197() {
+      return C[197] = dart.constList([C[198] || CT.C198], T._LocationL());
+    },
+    get C196() {
+      return C[196] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[197] || CT.C197,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 350,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C201() {
+      return C[201] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 25,
+        [_Location_line]: 361,
+        [_Location_file]: null
+      });
+    },
+    get C202() {
+      return C[202] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 362,
+        [_Location_file]: null
+      });
+    },
+    get C200() {
+      return C[200] = dart.constList([C[201] || CT.C201, C[202] || CT.C202], T._LocationL());
+    },
+    get C199() {
+      return C[199] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[200] || CT.C200,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 360,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C205() {
+      return C[205] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 17,
+        [_Location_line]: 360,
+        [_Location_file]: null
+      });
+    },
+    get C206() {
+      return C[206] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 17,
+        [_Location_line]: 364,
+        [_Location_file]: null
+      });
+    },
+    get C204() {
+      return C[204] = dart.constList([C[205] || CT.C205, C[206] || CT.C206], T._LocationL());
+    },
+    get C203() {
+      return C[203] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[204] || CT.C204,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 359,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C209() {
+      return C[209] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 13,
+        [_Location_line]: 342,
+        [_Location_file]: null
+      });
+    },
+    get C208() {
+      return C[208] = dart.constList([C[209] || CT.C209], T._LocationL());
+    },
+    get C207() {
+      return C[207] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[208] || CT.C208,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 341,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C212() {
+      return C[212] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 11,
+        [_Location_line]: 340,
+        [_Location_file]: null
+      });
+    },
+    get C213() {
+      return C[213] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 341,
+        [_Location_file]: null
+      });
+    },
+    get C211() {
+      return C[211] = dart.constList([C[212] || CT.C212, C[213] || CT.C213], T._LocationL());
+    },
+    get C210() {
+      return C[210] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[211] || CT.C211,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 339,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
+      });
+    },
+    get C216() {
+      return C[216] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 7,
+        [_Location_line]: 336,
+        [_Location_file]: null
+      });
+    },
+    get C217() {
+      return C[217] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 339,
+        [_Location_file]: null
+      });
+    },
+    get C215() {
+      return C[215] = dart.constList([C[216] || CT.C216, C[217] || CT.C217], T._LocationL());
+    },
+    get C214() {
+      return C[214] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[215] || CT.C215,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 335,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/widgets/detailPageWidgets.dart"
       });
     }
   }, false);
-  var C = Array(19).fill(void 0);
-  var I = [
-    "file:///C:/src/flutter/packages/flutter/lib/src/widgets/sliver_fill.dart",
-    "package:flutter/src/widgets/sliver_fill.dart"
-  ];
-  var viewportFraction$ = dart.privateName(sliver_fill$, "SliverFillViewport.viewportFraction");
-  var padEnds$ = dart.privateName(sliver_fill$, "SliverFillViewport.padEnds");
-  var delegate$ = dart.privateName(sliver_fill$, "SliverFillViewport.delegate");
+  var C = Array(218).fill(void 0);
+  var I = ["package:notes_app/widgets/detailPageWidgets.dart"];
+  var text$ = dart.privateName(detailPageWidgets, "TitleField.text");
+  var updateFunc$ = dart.privateName(detailPageWidgets, "TitleField.updateFunc");
   var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
   var _Location_name = dart.privateName(widget_inspector, "_Location.name");
   var _Location_column = dart.privateName(widget_inspector, "_Location.column");
   var _Location_line = dart.privateName(widget_inspector, "_Location.line");
   var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  sliver_fill$.SliverFillViewport = class SliverFillViewport extends framework.StatelessWidget {
-    get viewportFraction() {
-      return this[viewportFraction$];
+  detailPageWidgets.TitleField = class TitleField extends framework.StatelessWidget {
+    get text() {
+      return this[text$];
     }
-    set viewportFraction(value) {
-      super.viewportFraction = value;
+    set text(value) {
+      this[text$] = value;
     }
-    get padEnds() {
-      return this[padEnds$];
+    get updateFunc() {
+      return this[updateFunc$];
     }
-    set padEnds(value) {
-      super.padEnds = value;
-    }
-    get delegate() {
-      return this[delegate$];
-    }
-    set delegate(value) {
-      super.delegate = value;
+    set updateFunc(value) {
+      this[updateFunc$] = value;
     }
     build(context) {
-      if (context == null) dart.nullFailed(I[0], 62, 29, "context");
-      return new sliver_fill$._SliverFractionalPadding.new({viewportFraction: dart.test(this.padEnds) ? (1 - dart.notNull(this.viewportFraction))[$clamp](0, 1) / 2 : 0.0, sliver: new sliver_fill$._SliverFillViewportRenderObjectWidget.new({viewportFraction: this.viewportFraction, delegate: this.delegate, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[4] || CT.C4});
+      let t0;
+      return new editable_text.EditableText.new({controller: (t0 = new editable_text.TextEditingController.new(), (() => {
+          t0.text = this.text;
+          return t0;
+        })()), focusNode: new focus_manager.FocusNode.new(), style: theme.Theme.of(context).textTheme.subtitle1.copyWith({fontSize: 23.0}), cursorColor: theme_data.color_data[$_get]("buttonColor"), backgroundCursorColor: colors.Colors.amber, onChanged: dart.fn(s => {
+          let t0;
+          t0 = s;
+          this.updateFunc(t0);
+        }, T.StringLToNull()), maxLines: 1, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0});
     }
   };
-  (sliver_fill$.SliverFillViewport.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
-    if (delegate == null) dart.nullFailed(I[0], 30, 19, "delegate");
-    let viewportFraction = opts && 'viewportFraction' in opts ? opts.viewportFraction : 1;
-    if (viewportFraction == null) dart.nullFailed(I[0], 31, 10, "viewportFraction");
-    let padEnds = opts && 'padEnds' in opts ? opts.padEnds : true;
-    if (padEnds == null) dart.nullFailed(I[0], 32, 10, "padEnds");
+  (detailPageWidgets.TitleField.new = function(opts) {
+    let text = opts && 'text' in opts ? opts.text : null;
+    let updateFunc = opts && 'updateFunc' in opts ? opts.updateFunc : null;
     let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[delegate$] = delegate;
-    this[viewportFraction$] = viewportFraction;
-    this[padEnds$] = padEnds;
-    if (!(viewportFraction != null)) dart.assertFailed(null, I[0], 33, 15, "viewportFraction != null");
-    if (!(dart.notNull(viewportFraction) > 0.0)) dart.assertFailed(null, I[0], 34, 15, "viewportFraction > 0.0");
-    if (!(padEnds != null)) dart.assertFailed(null, I[0], 35, 15, "padEnds != null");
-    sliver_fill$.SliverFillViewport.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    this[text$] = text;
+    this[updateFunc$] = updateFunc;
+    detailPageWidgets.TitleField.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = sliver_fill$.SliverFillViewport.prototype;
-  dart.addTypeTests(sliver_fill$.SliverFillViewport);
-  dart.addTypeCaches(sliver_fill$.SliverFillViewport);
-  dart.setMethodSignature(sliver_fill$.SliverFillViewport, () => ({
-    __proto__: dart.getMethods(sliver_fill$.SliverFillViewport.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }).prototype = detailPageWidgets.TitleField.prototype;
+  dart.addTypeTests(detailPageWidgets.TitleField);
+  dart.addTypeCaches(detailPageWidgets.TitleField);
+  dart.setMethodSignature(detailPageWidgets.TitleField, () => ({
+    __proto__: dart.getMethods(detailPageWidgets.TitleField.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
   }));
-  dart.setLibraryUri(sliver_fill$.SliverFillViewport, I[1]);
-  dart.setFieldSignature(sliver_fill$.SliverFillViewport, () => ({
-    __proto__: dart.getFields(sliver_fill$.SliverFillViewport.__proto__),
-    viewportFraction: dart.finalFieldType(core.double),
-    padEnds: dart.finalFieldType(core.bool),
-    delegate: dart.finalFieldType(sliver.SliverChildDelegate)
+  dart.setLibraryUri(detailPageWidgets.TitleField, I[0]);
+  dart.setFieldSignature(detailPageWidgets.TitleField, () => ({
+    __proto__: dart.getFields(detailPageWidgets.TitleField.__proto__),
+    text: dart.fieldType(dart.legacy(core.String)),
+    updateFunc: dart.fieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(core.String)])))
   }));
-  var viewportFraction$0 = dart.privateName(sliver_fill$, "_SliverFillViewportRenderObjectWidget.viewportFraction");
-  sliver_fill$._SliverFillViewportRenderObjectWidget = class _SliverFillViewportRenderObjectWidget extends sliver.SliverMultiBoxAdaptorWidget {
-    get viewportFraction() {
-      return this[viewportFraction$0];
+  var time$ = dart.privateName(detailPageWidgets, "TimeField.time");
+  detailPageWidgets.TimeField = class TimeField extends framework.StatelessWidget {
+    get time() {
+      return this[time$];
     }
-    set viewportFraction(value) {
-      super.viewportFraction = value;
-    }
-    createRenderObject(context) {
-      if (context == null) dart.nullFailed(I[0], 85, 60, "context");
-      let element = sliver.SliverMultiBoxAdaptorElement.as(context);
-      return new sliver_fill.RenderSliverFillViewport.new({childManager: element, viewportFraction: this.viewportFraction});
-    }
-    updateRenderObject(context, renderObject) {
-      if (context == null) dart.nullFailed(I[0], 91, 40, "context");
-      sliver_fill.RenderSliverFillViewport.as(renderObject);
-      if (renderObject == null) dart.nullFailed(I[0], 91, 74, "renderObject");
-      renderObject.viewportFraction = this.viewportFraction;
-    }
-  };
-  (sliver_fill$._SliverFillViewportRenderObjectWidget.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
-    if (delegate == null) dart.nullFailed(I[0], 76, 34, "delegate");
-    let viewportFraction = opts && 'viewportFraction' in opts ? opts.viewportFraction : 1;
-    if (viewportFraction == null) dart.nullFailed(I[0], 77, 10, "viewportFraction");
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[viewportFraction$0] = viewportFraction;
-    if (!(viewportFraction != null)) dart.assertFailed(null, I[0], 78, 15, "viewportFraction != null");
-    if (!(dart.notNull(viewportFraction) > 0.0)) dart.assertFailed(null, I[0], 79, 14, "viewportFraction > 0.0");
-    sliver_fill$._SliverFillViewportRenderObjectWidget.__proto__.new.call(this, {key: key, delegate: delegate, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = sliver_fill$._SliverFillViewportRenderObjectWidget.prototype;
-  dart.addTypeTests(sliver_fill$._SliverFillViewportRenderObjectWidget);
-  dart.addTypeCaches(sliver_fill$._SliverFillViewportRenderObjectWidget);
-  dart.setMethodSignature(sliver_fill$._SliverFillViewportRenderObjectWidget, () => ({
-    __proto__: dart.getMethods(sliver_fill$._SliverFillViewportRenderObjectWidget.__proto__),
-    createRenderObject: dart.fnType(sliver_fill.RenderSliverFillViewport, [framework.BuildContext])
-  }));
-  dart.setLibraryUri(sliver_fill$._SliverFillViewportRenderObjectWidget, I[1]);
-  dart.setFieldSignature(sliver_fill$._SliverFillViewportRenderObjectWidget, () => ({
-    __proto__: dart.getFields(sliver_fill$._SliverFillViewportRenderObjectWidget.__proto__),
-    viewportFraction: dart.finalFieldType(core.double)
-  }));
-  var viewportFraction$1 = dart.privateName(sliver_fill$, "_SliverFractionalPadding.viewportFraction");
-  sliver_fill$._SliverFractionalPadding = class _SliverFractionalPadding extends framework.SingleChildRenderObjectWidget {
-    get viewportFraction() {
-      return this[viewportFraction$1];
-    }
-    set viewportFraction(value) {
-      super.viewportFraction = value;
-    }
-    createRenderObject(context) {
-      if (context == null) dart.nullFailed(I[0], 108, 48, "context");
-      return new sliver_fill$._RenderSliverFractionalPadding.new({viewportFraction: this.viewportFraction});
-    }
-    updateRenderObject(context, renderObject) {
-      if (context == null) dart.nullFailed(I[0], 111, 40, "context");
-      sliver_fill$._RenderSliverFractionalPadding.as(renderObject);
-      if (renderObject == null) dart.nullFailed(I[0], 111, 80, "renderObject");
-      renderObject.viewportFraction = this.viewportFraction;
-    }
-  };
-  (sliver_fill$._SliverFractionalPadding.new = function(opts) {
-    let viewportFraction = opts && 'viewportFraction' in opts ? opts.viewportFraction : 0;
-    if (viewportFraction == null) dart.nullFailed(I[0], 98, 10, "viewportFraction");
-    let sliver = opts && 'sliver' in opts ? opts.sliver : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[viewportFraction$1] = viewportFraction;
-    if (!(viewportFraction != null)) dart.assertFailed(null, I[0], 100, 15, "viewportFraction != null");
-    if (!(dart.notNull(viewportFraction) >= 0)) dart.assertFailed(null, I[0], 101, 14, "viewportFraction >= 0");
-    if (!(dart.notNull(viewportFraction) <= 0.5)) dart.assertFailed(null, I[0], 102, 14, "viewportFraction <= 0.5");
-    sliver_fill$._SliverFractionalPadding.__proto__.new.call(this, {child: sliver, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = sliver_fill$._SliverFractionalPadding.prototype;
-  dart.addTypeTests(sliver_fill$._SliverFractionalPadding);
-  dart.addTypeCaches(sliver_fill$._SliverFractionalPadding);
-  dart.setMethodSignature(sliver_fill$._SliverFractionalPadding, () => ({
-    __proto__: dart.getMethods(sliver_fill$._SliverFractionalPadding.__proto__),
-    createRenderObject: dart.fnType(object.RenderObject, [framework.BuildContext])
-  }));
-  dart.setLibraryUri(sliver_fill$._SliverFractionalPadding, I[1]);
-  dart.setFieldSignature(sliver_fill$._SliverFractionalPadding, () => ({
-    __proto__: dart.getFields(sliver_fill$._SliverFractionalPadding.__proto__),
-    viewportFraction: dart.finalFieldType(core.double)
-  }));
-  var _lastResolvedConstraints = dart.privateName(sliver_fill$, "_lastResolvedConstraints");
-  var _resolvedPadding = dart.privateName(sliver_fill$, "_resolvedPadding");
-  var _viewportFraction = dart.privateName(sliver_fill$, "_viewportFraction");
-  var _markNeedsResolution = dart.privateName(sliver_fill$, "_markNeedsResolution");
-  var _name = dart.privateName(basic_types, "_name");
-  var _resolve = dart.privateName(sliver_fill$, "_resolve");
-  sliver_fill$._RenderSliverFractionalPadding = class _RenderSliverFractionalPadding extends sliver_padding.RenderSliverEdgeInsetsPadding {
-    get viewportFraction() {
-      return this[_viewportFraction];
-    }
-    set viewportFraction(newValue) {
-      if (newValue == null) dart.nullFailed(I[0], 128, 31, "newValue");
-      if (!(newValue != null)) dart.assertFailed(null, I[0], 129, 12, "newValue != null");
-      if (this[_viewportFraction] == newValue) return;
-      this[_viewportFraction] = newValue;
-      this[_markNeedsResolution]();
-    }
-    get resolvedPadding() {
-      return this[_resolvedPadding];
-    }
-    [_markNeedsResolution]() {
-      this[_resolvedPadding] = null;
-      this.markNeedsLayout();
-    }
-    [_resolve]() {
-      if (this[_resolvedPadding] != null && dart.equals(this[_lastResolvedConstraints], this.constraints)) return;
-      if (!(this.constraints.axis != null)) dart.assertFailed(null, I[0], 149, 12, "constraints.axis != null");
-      let paddingValue = dart.notNull(this.constraints.viewportMainAxisExtent) * dart.notNull(this.viewportFraction);
-      this[_lastResolvedConstraints] = this.constraints;
-      switch (this.constraints.axis) {
-        case C[8] || CT.C8:
-        {
-          this[_resolvedPadding] = new edge_insets.EdgeInsets.symmetric({horizontal: paddingValue});
-          break;
-        }
-        case C[9] || CT.C9:
-        {
-          this[_resolvedPadding] = new edge_insets.EdgeInsets.symmetric({vertical: paddingValue});
-          break;
-        }
-        default:
-        {
-          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
-        }
-      }
-      return;
-    }
-    performLayout() {
-      this[_resolve]();
-      super.performLayout();
-    }
-  };
-  (sliver_fill$._RenderSliverFractionalPadding.new = function(opts) {
-    let viewportFraction = opts && 'viewportFraction' in opts ? opts.viewportFraction : 0;
-    if (viewportFraction == null) dart.nullFailed(I[0], 118, 12, "viewportFraction");
-    this[_lastResolvedConstraints] = null;
-    this[_resolvedPadding] = null;
-    if (!(viewportFraction != null)) dart.assertFailed(null, I[0], 119, 15, "viewportFraction != null");
-    if (!(dart.notNull(viewportFraction) <= 0.5)) dart.assertFailed(null, I[0], 120, 14, "viewportFraction <= 0.5");
-    if (!(dart.notNull(viewportFraction) >= 0)) dart.assertFailed(null, I[0], 121, 14, "viewportFraction >= 0");
-    this[_viewportFraction] = viewportFraction;
-    sliver_fill$._RenderSliverFractionalPadding.__proto__.new.call(this);
-    ;
-  }).prototype = sliver_fill$._RenderSliverFractionalPadding.prototype;
-  dart.addTypeTests(sliver_fill$._RenderSliverFractionalPadding);
-  dart.addTypeCaches(sliver_fill$._RenderSliverFractionalPadding);
-  dart.setMethodSignature(sliver_fill$._RenderSliverFractionalPadding, () => ({
-    __proto__: dart.getMethods(sliver_fill$._RenderSliverFractionalPadding.__proto__),
-    [_markNeedsResolution]: dart.fnType(dart.void, []),
-    [_resolve]: dart.fnType(dart.void, [])
-  }));
-  dart.setGetterSignature(sliver_fill$._RenderSliverFractionalPadding, () => ({
-    __proto__: dart.getGetters(sliver_fill$._RenderSliverFractionalPadding.__proto__),
-    viewportFraction: core.double,
-    resolvedPadding: dart.nullable(edge_insets.EdgeInsets)
-  }));
-  dart.setSetterSignature(sliver_fill$._RenderSliverFractionalPadding, () => ({
-    __proto__: dart.getSetters(sliver_fill$._RenderSliverFractionalPadding.__proto__),
-    viewportFraction: core.double
-  }));
-  dart.setLibraryUri(sliver_fill$._RenderSliverFractionalPadding, I[1]);
-  dart.setFieldSignature(sliver_fill$._RenderSliverFractionalPadding, () => ({
-    __proto__: dart.getFields(sliver_fill$._RenderSliverFractionalPadding.__proto__),
-    [_lastResolvedConstraints]: dart.fieldType(dart.nullable(sliver$.SliverConstraints)),
-    [_viewportFraction]: dart.fieldType(core.double),
-    [_resolvedPadding]: dart.fieldType(dart.nullable(edge_insets.EdgeInsets))
-  }));
-  var child$ = dart.privateName(sliver_fill$, "SliverFillRemaining.child");
-  var hasScrollBody$ = dart.privateName(sliver_fill$, "SliverFillRemaining.hasScrollBody");
-  var fillOverscroll$ = dart.privateName(sliver_fill$, "SliverFillRemaining.fillOverscroll");
-  sliver_fill$.SliverFillRemaining = class SliverFillRemaining extends framework.StatelessWidget {
-    get child() {
-      return this[child$];
-    }
-    set child(value) {
-      super.child = value;
-    }
-    get hasScrollBody() {
-      return this[hasScrollBody$];
-    }
-    set hasScrollBody(value) {
-      super.hasScrollBody = value;
-    }
-    get fillOverscroll() {
-      return this[fillOverscroll$];
-    }
-    set fillOverscroll(value) {
-      super.fillOverscroll = value;
+    set time(value) {
+      this[time$] = value;
     }
     build(context) {
-      if (context == null) dart.nullFailed(I[0], 435, 29, "context");
-      if (dart.test(this.hasScrollBody)) return new sliver_fill$._SliverFillRemainingWithScrollable.new({child: this.child, $creationLocationd_0dea112b090073317d4: C[10] || CT.C10});
-      if (!dart.test(this.fillOverscroll)) return new sliver_fill$._SliverFillRemainingWithoutScrollable.new({child: this.child, $creationLocationd_0dea112b090073317d4: C[13] || CT.C13});
-      return new sliver_fill$._SliverFillRemainingAndOverscroll.new({child: this.child, $creationLocationd_0dea112b090073317d4: C[16] || CT.C16});
-    }
-    debugFillProperties(properties) {
-      if (properties == null) dart.nullFailed(I[0], 444, 56, "properties");
-      super.debugFillProperties(properties);
-      properties.add(new (T.DiagnosticsPropertyOfWidget()).new("child", this.child));
-      let flags = (() => {
-        let t0 = T.JSArrayOfString().of([]);
-        if (dart.test(this.hasScrollBody)) t0[$add]("scrollable");
-        if (dart.test(this.fillOverscroll)) t0[$add]("fillOverscroll");
-        return t0;
-      })();
-      if (dart.test(flags[$isEmpty])) flags[$add]("nonscrollable");
-      properties.add(new (T.IterablePropertyOfString()).new("mode", flags));
+      return new text.Text.new(theme_data.formateDate(this.time), {style: theme.Theme.of(context).textTheme.subtitle2.copyWith({fontSize: 13.0}), $creationLocationd_0dea112b090073317d4: C[9] || CT.C9});
     }
   };
-  (sliver_fill$.SliverFillRemaining.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let child = opts && 'child' in opts ? opts.child : null;
-    let hasScrollBody = opts && 'hasScrollBody' in opts ? opts.hasScrollBody : true;
-    if (hasScrollBody == null) dart.nullFailed(I[0], 401, 10, "hasScrollBody");
-    let fillOverscroll = opts && 'fillOverscroll' in opts ? opts.fillOverscroll : false;
-    if (fillOverscroll == null) dart.nullFailed(I[0], 402, 10, "fillOverscroll");
+  (detailPageWidgets.TimeField.new = function(opts) {
+    let time = opts && 'time' in opts ? opts.time : null;
     let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[child$] = child;
-    this[hasScrollBody$] = hasScrollBody;
-    this[fillOverscroll$] = fillOverscroll;
-    if (!(hasScrollBody != null)) dart.assertFailed(null, I[0], 403, 15, "hasScrollBody != null");
-    if (!(fillOverscroll != null)) dart.assertFailed(null, I[0], 404, 15, "fillOverscroll != null");
-    sliver_fill$.SliverFillRemaining.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    this[time$] = time;
+    detailPageWidgets.TimeField.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = sliver_fill$.SliverFillRemaining.prototype;
-  dart.addTypeTests(sliver_fill$.SliverFillRemaining);
-  dart.addTypeCaches(sliver_fill$.SliverFillRemaining);
-  dart.setMethodSignature(sliver_fill$.SliverFillRemaining, () => ({
-    __proto__: dart.getMethods(sliver_fill$.SliverFillRemaining.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }).prototype = detailPageWidgets.TimeField.prototype;
+  dart.addTypeTests(detailPageWidgets.TimeField);
+  dart.addTypeCaches(detailPageWidgets.TimeField);
+  dart.setMethodSignature(detailPageWidgets.TimeField, () => ({
+    __proto__: dart.getMethods(detailPageWidgets.TimeField.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
   }));
-  dart.setLibraryUri(sliver_fill$.SliverFillRemaining, I[1]);
-  dart.setFieldSignature(sliver_fill$.SliverFillRemaining, () => ({
-    __proto__: dart.getFields(sliver_fill$.SliverFillRemaining.__proto__),
-    child: dart.finalFieldType(dart.nullable(framework.Widget)),
-    hasScrollBody: dart.finalFieldType(core.bool),
-    fillOverscroll: dart.finalFieldType(core.bool)
+  dart.setLibraryUri(detailPageWidgets.TimeField, I[0]);
+  dart.setFieldSignature(detailPageWidgets.TimeField, () => ({
+    __proto__: dart.getFields(detailPageWidgets.TimeField.__proto__),
+    time: dart.fieldType(dart.legacy(core.DateTime))
   }));
-  sliver_fill$._SliverFillRemainingWithScrollable = class _SliverFillRemainingWithScrollable extends framework.SingleChildRenderObjectWidget {
-    createRenderObject(context) {
-      if (context == null) dart.nullFailed(I[0], 469, 75, "context");
-      return new sliver_fill.RenderSliverFillRemainingWithScrollable.new();
+  var text$0 = dart.privateName(detailPageWidgets, "NoteText.text");
+  var index$ = dart.privateName(detailPageWidgets, "NoteText.index");
+  var deleteCallback$ = dart.privateName(detailPageWidgets, "NoteText.deleteCallback");
+  var checktextField$ = dart.privateName(detailPageWidgets, "NoteText.checktextField");
+  var addTextfield$ = dart.privateName(detailPageWidgets, "NoteText.addTextfield");
+  var updateFunc$0 = dart.privateName(detailPageWidgets, "NoteText.updateFunc");
+  detailPageWidgets.NoteText = class NoteText extends framework.StatelessWidget {
+    get text() {
+      return this[text$0];
+    }
+    set text(value) {
+      this[text$0] = value;
+    }
+    get index() {
+      return this[index$];
+    }
+    set index(value) {
+      this[index$] = value;
+    }
+    get deleteCallback() {
+      return this[deleteCallback$];
+    }
+    set deleteCallback(value) {
+      this[deleteCallback$] = value;
+    }
+    get checktextField() {
+      return this[checktextField$];
+    }
+    set checktextField(value) {
+      this[checktextField$] = value;
+    }
+    get addTextfield() {
+      return this[addTextfield$];
+    }
+    set addTextfield(value) {
+      this[addTextfield$] = value;
+    }
+    get updateFunc() {
+      return this[updateFunc$0];
+    }
+    set updateFunc(value) {
+      this[updateFunc$0] = value;
+    }
+    build(context) {
+      let t0;
+      return new editable_text.EditableText.new({autofocus: false, controller: (t0 = new editable_text.TextEditingController.new(), (() => {
+          t0.text = this.text;
+          return t0;
+        })()), focusNode: new focus_manager.FocusNode.new(), style: theme.Theme.of(context).textTheme.bodyText1.copyWith({height: 1.5}), cursorColor: theme_data.color_data[$_get]("buttonColor"), backgroundCursorColor: colors.Colors.amber, maxLines: null, onChanged: dart.fn(s => {
+          let t0, t2, t3, t2$;
+          try {
+            let b = (t0 = this.index, this.checktextField(t0));
+            core.print("sssssssssssssssssssssssssssssssss");
+          } catch (e) {
+            let ex = dart.getThrown(e);
+            if (T.RangeErrorL().is(ex)) {
+              this.addTextfield();
+            } else
+              throw e;
+          }
+          if (s === "") {
+            t2 = this.index;
+            this.deleteCallback(t2);
+          } else {
+            t2$ = s;
+            t3 = this.index;
+            this.updateFunc(t2$, t3);
+          }
+        }, T.StringLToNull()), $creationLocationd_0dea112b090073317d4: C[13] || CT.C13});
     }
   };
-  (sliver_fill$._SliverFillRemainingWithScrollable.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let child = opts && 'child' in opts ? opts.child : null;
+  (detailPageWidgets.NoteText.new = function(opts) {
+    let text = opts && 'text' in opts ? opts.text : null;
+    let index = opts && 'index' in opts ? opts.index : null;
+    let deleteCallback = opts && 'deleteCallback' in opts ? opts.deleteCallback : null;
+    let checktextField = opts && 'checktextField' in opts ? opts.checktextField : null;
+    let updateFunc = opts && 'updateFunc' in opts ? opts.updateFunc : null;
+    let addTextfield = opts && 'addTextfield' in opts ? opts.addTextfield : null;
     let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    sliver_fill$._SliverFillRemainingWithScrollable.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    this[text$0] = text;
+    this[index$] = index;
+    this[deleteCallback$] = deleteCallback;
+    this[checktextField$] = checktextField;
+    this[updateFunc$0] = updateFunc;
+    this[addTextfield$] = addTextfield;
+    detailPageWidgets.NoteText.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = sliver_fill$._SliverFillRemainingWithScrollable.prototype;
-  dart.addTypeTests(sliver_fill$._SliverFillRemainingWithScrollable);
-  dart.addTypeCaches(sliver_fill$._SliverFillRemainingWithScrollable);
-  dart.setMethodSignature(sliver_fill$._SliverFillRemainingWithScrollable, () => ({
-    __proto__: dart.getMethods(sliver_fill$._SliverFillRemainingWithScrollable.__proto__),
-    createRenderObject: dart.fnType(sliver_fill.RenderSliverFillRemainingWithScrollable, [framework.BuildContext])
+  }).prototype = detailPageWidgets.NoteText.prototype;
+  dart.addTypeTests(detailPageWidgets.NoteText);
+  dart.addTypeCaches(detailPageWidgets.NoteText);
+  dart.setMethodSignature(detailPageWidgets.NoteText, () => ({
+    __proto__: dart.getMethods(detailPageWidgets.NoteText.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
   }));
-  dart.setLibraryUri(sliver_fill$._SliverFillRemainingWithScrollable, I[1]);
-  sliver_fill$._SliverFillRemainingWithoutScrollable = class _SliverFillRemainingWithoutScrollable extends framework.SingleChildRenderObjectWidget {
-    createRenderObject(context) {
-      if (context == null) dart.nullFailed(I[0], 479, 61, "context");
-      return new sliver_fill.RenderSliverFillRemaining.new();
+  dart.setLibraryUri(detailPageWidgets.NoteText, I[0]);
+  dart.setFieldSignature(detailPageWidgets.NoteText, () => ({
+    __proto__: dart.getFields(detailPageWidgets.NoteText.__proto__),
+    text: dart.fieldType(dart.legacy(core.String)),
+    index: dart.fieldType(dart.legacy(core.int)),
+    deleteCallback: dart.fieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(core.int)]))),
+    checktextField: dart.fieldType(dart.legacy(dart.fnType(dart.legacy(core.bool), [dart.legacy(core.int)]))),
+    addTextfield: dart.fieldType(dart.legacy(dart.fnType(dart.void, []))),
+    updateFunc: dart.fieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(core.String), dart.legacy(core.int)])))
+  }));
+  var path$ = dart.privateName(detailPageWidgets, "NoteImage.path");
+  var title$ = dart.privateName(detailPageWidgets, "NoteImage.title");
+  var index$0 = dart.privateName(detailPageWidgets, "NoteImage.index");
+  var deleteFunc$ = dart.privateName(detailPageWidgets, "NoteImage.deleteFunc");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  detailPageWidgets.NoteImage = class NoteImage extends framework.StatelessWidget {
+    get path() {
+      return this[path$];
+    }
+    set path(value) {
+      this[path$] = value;
+    }
+    get title() {
+      return this[title$];
+    }
+    set title(value) {
+      this[title$] = value;
+    }
+    get index() {
+      return this[index$0];
+    }
+    set index(value) {
+      this[index$0] = value;
+    }
+    get deleteFunc() {
+      return this[deleteFunc$];
+    }
+    set deleteFunc(value) {
+      this[deleteFunc$] = value;
+    }
+    build(context) {
+      return new basic.Column.new({children: T.JSArrayOfWidgetL().of([new basic.Padding.new({padding: C[23] || CT.C23, child: new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceBetween, children: T.JSArrayOfWidgetL().of([new container.Container.new({width: 200.0, child: new detailPageWidgets.TitleField.new({text: this.title, $creationLocationd_0dea112b090073317d4: C[24] || CT.C24}), $creationLocationd_0dea112b090073317d4: C[27] || CT.C27}), new icon_button.IconButton.new({icon: new icon.Icon.new(icons.Icons.cancel, {$creationLocationd_0dea112b090073317d4: C[31] || CT.C31}), onPressed: dart.fn(() => {
+                    let t2;
+                    t2 = this.index;
+                    this.deleteFunc(t2);
+                  }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[34] || CT.C34})]), $creationLocationd_0dea112b090073317d4: C[38] || CT.C38}), $creationLocationd_0dea112b090073317d4: C[42] || CT.C42}), new image.Image.network(this.path, {width: 1 / 0, fit: box_fit.BoxFit.cover, $creationLocationd_0dea112b090073317d4: C[46] || CT.C46})]), $creationLocationd_0dea112b090073317d4: C[51] || CT.C51});
     }
   };
-  (sliver_fill$._SliverFillRemainingWithoutScrollable.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let child = opts && 'child' in opts ? opts.child : null;
+  (detailPageWidgets.NoteImage.new = function(opts) {
+    let path = opts && 'path' in opts ? opts.path : null;
+    let title = opts && 'title' in opts ? opts.title : null;
+    let index = opts && 'index' in opts ? opts.index : null;
+    let deleteFunc = opts && 'deleteFunc' in opts ? opts.deleteFunc : null;
     let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    sliver_fill$._SliverFillRemainingWithoutScrollable.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    this[path$] = path;
+    this[title$] = title;
+    this[index$0] = index;
+    this[deleteFunc$] = deleteFunc;
+    detailPageWidgets.NoteImage.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = sliver_fill$._SliverFillRemainingWithoutScrollable.prototype;
-  dart.addTypeTests(sliver_fill$._SliverFillRemainingWithoutScrollable);
-  dart.addTypeCaches(sliver_fill$._SliverFillRemainingWithoutScrollable);
-  dart.setMethodSignature(sliver_fill$._SliverFillRemainingWithoutScrollable, () => ({
-    __proto__: dart.getMethods(sliver_fill$._SliverFillRemainingWithoutScrollable.__proto__),
-    createRenderObject: dart.fnType(sliver_fill.RenderSliverFillRemaining, [framework.BuildContext])
+  }).prototype = detailPageWidgets.NoteImage.prototype;
+  dart.addTypeTests(detailPageWidgets.NoteImage);
+  dart.addTypeCaches(detailPageWidgets.NoteImage);
+  dart.setMethodSignature(detailPageWidgets.NoteImage, () => ({
+    __proto__: dart.getMethods(detailPageWidgets.NoteImage.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
   }));
-  dart.setLibraryUri(sliver_fill$._SliverFillRemainingWithoutScrollable, I[1]);
-  sliver_fill$._SliverFillRemainingAndOverscroll = class _SliverFillRemainingAndOverscroll extends framework.SingleChildRenderObjectWidget {
-    createRenderObject(context) {
-      if (context == null) dart.nullFailed(I[0], 489, 74, "context");
-      return new sliver_fill.RenderSliverFillRemainingAndOverscroll.new();
+  dart.setLibraryUri(detailPageWidgets.NoteImage, I[0]);
+  dart.setFieldSignature(detailPageWidgets.NoteImage, () => ({
+    __proto__: dart.getFields(detailPageWidgets.NoteImage.__proto__),
+    path: dart.fieldType(dart.legacy(core.String)),
+    title: dart.fieldType(dart.legacy(core.String)),
+    index: dart.fieldType(dart.legacy(core.int)),
+    deleteFunc: dart.fieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(core.int)])))
+  }));
+  var todoList$ = dart.privateName(detailPageWidgets, "NoteTodo.todoList");
+  var todoDone$ = dart.privateName(detailPageWidgets, "NoteTodo.todoDone");
+  var title$0 = dart.privateName(detailPageWidgets, "NoteTodo.title");
+  var index$1 = dart.privateName(detailPageWidgets, "NoteTodo.index");
+  var deleteFunc$0 = dart.privateName(detailPageWidgets, "NoteTodo.deleteFunc");
+  var addTodo$ = dart.privateName(detailPageWidgets, "NoteTodo.addTodo");
+  var checkTodo$ = dart.privateName(detailPageWidgets, "NoteTodo.checkTodo");
+  var uncheckTodo$ = dart.privateName(detailPageWidgets, "NoteTodo.uncheckTodo");
+  var deleteTodo$ = dart.privateName(detailPageWidgets, "NoteTodo.deleteTodo");
+  var value$ = dart.privateName(detailPageWidgets, "NoteTodo.value");
+  var _controller = dart.privateName(detailPageWidgets, "_controller");
+  detailPageWidgets.NoteTodo = class NoteTodo extends framework.StatelessWidget {
+    get todoList() {
+      return this[todoList$];
+    }
+    set todoList(value) {
+      this[todoList$] = value;
+    }
+    get todoDone() {
+      return this[todoDone$];
+    }
+    set todoDone(value) {
+      this[todoDone$] = value;
+    }
+    get title() {
+      return this[title$0];
+    }
+    set title(value) {
+      this[title$0] = value;
+    }
+    get index() {
+      return this[index$1];
+    }
+    set index(value) {
+      this[index$1] = value;
+    }
+    get deleteFunc() {
+      return this[deleteFunc$0];
+    }
+    set deleteFunc(value) {
+      this[deleteFunc$0] = value;
+    }
+    get addTodo() {
+      return this[addTodo$];
+    }
+    set addTodo(value) {
+      this[addTodo$] = value;
+    }
+    get checkTodo() {
+      return this[checkTodo$];
+    }
+    set checkTodo(value) {
+      this[checkTodo$] = value;
+    }
+    get uncheckTodo() {
+      return this[uncheckTodo$];
+    }
+    set uncheckTodo(value) {
+      this[uncheckTodo$] = value;
+    }
+    get deleteTodo() {
+      return this[deleteTodo$];
+    }
+    set deleteTodo(value) {
+      this[deleteTodo$] = value;
+    }
+    get value() {
+      return this[value$];
+    }
+    set value(value) {
+      this[value$] = value;
+    }
+    build(context) {
+      return new basic.Column.new({children: T.JSArrayOfWidgetL().of([new basic.Padding.new({padding: C[23] || CT.C23, child: new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceBetween, children: T.JSArrayOfWidgetL().of([new container.Container.new({width: 200.0, child: new detailPageWidgets.TitleField.new({text: this.title, $creationLocationd_0dea112b090073317d4: C[54] || CT.C54}), $creationLocationd_0dea112b090073317d4: C[57] || CT.C57}), new icon_button.IconButton.new({icon: new icon.Icon.new(icons.Icons.cancel, {$creationLocationd_0dea112b090073317d4: C[61] || CT.C61}), onPressed: dart.fn(() => {
+                    let t2;
+                    t2 = this.index;
+                    this.deleteFunc(t2);
+                  }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[64] || CT.C64})]), $creationLocationd_0dea112b090073317d4: C[68] || CT.C68}), $creationLocationd_0dea112b090073317d4: C[72] || CT.C72}), new text_field.TextField.new({controller: this[_controller], decoration: new input_decorator.InputDecoration.new({suffixIcon: new icon_button.IconButton.new({icon: new icon.Icon.new(icons.Icons.add, {$creationLocationd_0dea112b090073317d4: C[76] || CT.C76}), onPressed: dart.fn(() => {
+                  let t3, t2;
+                  if (this.value !== " ") {
+                    t2 = this.index;
+                    t3 = this.value;
+                    this.addTodo(t2, t3);
+                  }
+                  this.value = "";
+                  this[_controller].text = "";
+                }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[79] || CT.C79})}), onChanged: dart.fn(value => {
+              this.value = value;
+            }, T.StringLToNull()), $creationLocationd_0dea112b090073317d4: C[83] || CT.C83})])[$plus](T.ListOfWidgetL().generate(this.todoList[$length], dart.fn(itemIndex => new basic.Row.new({children: T.JSArrayOfWidgetL().of([new icon_button.IconButton.new({icon: new icon.Icon.new(icons.Icons.radio_button_off, {$creationLocationd_0dea112b090073317d4: C[88] || CT.C88}), onPressed: dart.fn(() => {
+                let t3, t2;
+                t2 = this.index;
+                t3 = itemIndex;
+                this.checkTodo(t2, t3);
+              }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[91] || CT.C91}), new basic.Expanded.new({child: new detailPageWidgets.NoteText.new({text: T.StringL().as(this.todoList[$_get](itemIndex)), $creationLocationd_0dea112b090073317d4: C[95] || CT.C95}), $creationLocationd_0dea112b090073317d4: C[98] || CT.C98}), new icon_button.IconButton.new({icon: new icon.Icon.new(icons.Icons.cancel_outlined, {$creationLocationd_0dea112b090073317d4: C[101] || CT.C101}), onPressed: dart.fn(() => {
+                let t4, t3, t2;
+                t2 = this.index;
+                t3 = itemIndex;
+                t4 = 1;
+                this.deleteTodo(t2, t3, t4);
+              }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[104] || CT.C104})]), $creationLocationd_0dea112b090073317d4: C[108] || CT.C108}), T.intLToRowL())))[$plus](T.JSArrayOfWidgetL().of([new divider.Divider.new({color: theme_data.color_data[$_get]("buttonColor"), height: 3.0, thickness: 1.0, $creationLocationd_0dea112b090073317d4: C[111] || CT.C111})]))[$plus](T.ListOfWidgetL().generate(this.todoDone[$length], dart.fn(itemIndex => new basic.Row.new({children: T.JSArrayOfWidgetL().of([new icon_button.IconButton.new({icon: new icon.Icon.new(icons.Icons.check_circle_outline, {color: colors.Colors.grey, $creationLocationd_0dea112b090073317d4: C[116] || CT.C116}), onPressed: dart.fn(() => {
+                let t3, t2;
+                t2 = this.index;
+                t3 = itemIndex;
+                this.uncheckTodo(t2, t3);
+              }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[120] || CT.C120}), new basic.Expanded.new({child: new detailPageWidgets.NoteText.new({text: T.StringL().as(this.todoDone[$_get](itemIndex)), $creationLocationd_0dea112b090073317d4: C[124] || CT.C124}), $creationLocationd_0dea112b090073317d4: C[127] || CT.C127}), new icon_button.IconButton.new({icon: new icon.Icon.new(icons.Icons.cancel_outlined, {color: colors.Colors.grey, $creationLocationd_0dea112b090073317d4: C[130] || CT.C130}), onPressed: dart.fn(() => {
+                let t4, t3, t2;
+                t2 = this.index;
+                t3 = itemIndex;
+                t4 = 2;
+                this.deleteTodo(t2, t3, t4);
+              }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[134] || CT.C134})]), $creationLocationd_0dea112b090073317d4: C[138] || CT.C138}), T.intLToRowL()))), $creationLocationd_0dea112b090073317d4: C[141] || CT.C141});
     }
   };
-  (sliver_fill$._SliverFillRemainingAndOverscroll.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let child = opts && 'child' in opts ? opts.child : null;
+  (detailPageWidgets.NoteTodo.new = function(opts) {
+    let todoList = opts && 'todoList' in opts ? opts.todoList : null;
+    let todoDone = opts && 'todoDone' in opts ? opts.todoDone : null;
+    let title = opts && 'title' in opts ? opts.title : "#ToDo";
+    let index = opts && 'index' in opts ? opts.index : null;
+    let deleteFunc = opts && 'deleteFunc' in opts ? opts.deleteFunc : null;
+    let addTodo = opts && 'addTodo' in opts ? opts.addTodo : null;
+    let checkTodo = opts && 'checkTodo' in opts ? opts.checkTodo : null;
+    let deleteTodo = opts && 'deleteTodo' in opts ? opts.deleteTodo : null;
+    let uncheckTodo = opts && 'uncheckTodo' in opts ? opts.uncheckTodo : null;
     let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    sliver_fill$._SliverFillRemainingAndOverscroll.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    this[value$] = " ";
+    this[_controller] = new editable_text.TextEditingController.new();
+    this[todoList$] = todoList;
+    this[todoDone$] = todoDone;
+    this[title$0] = title;
+    this[index$1] = index;
+    this[deleteFunc$0] = deleteFunc;
+    this[addTodo$] = addTodo;
+    this[checkTodo$] = checkTodo;
+    this[deleteTodo$] = deleteTodo;
+    this[uncheckTodo$] = uncheckTodo;
+    detailPageWidgets.NoteTodo.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = sliver_fill$._SliverFillRemainingAndOverscroll.prototype;
-  dart.addTypeTests(sliver_fill$._SliverFillRemainingAndOverscroll);
-  dart.addTypeCaches(sliver_fill$._SliverFillRemainingAndOverscroll);
-  dart.setMethodSignature(sliver_fill$._SliverFillRemainingAndOverscroll, () => ({
-    __proto__: dart.getMethods(sliver_fill$._SliverFillRemainingAndOverscroll.__proto__),
-    createRenderObject: dart.fnType(sliver_fill.RenderSliverFillRemainingAndOverscroll, [framework.BuildContext])
+  }).prototype = detailPageWidgets.NoteTodo.prototype;
+  dart.addTypeTests(detailPageWidgets.NoteTodo);
+  dart.addTypeCaches(detailPageWidgets.NoteTodo);
+  dart.setMethodSignature(detailPageWidgets.NoteTodo, () => ({
+    __proto__: dart.getMethods(detailPageWidgets.NoteTodo.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
   }));
-  dart.setLibraryUri(sliver_fill$._SliverFillRemainingAndOverscroll, I[1]);
-  dart.trackLibraries("packages/flutter/src/widgets/sliver_fill.dart", {
-    "package:flutter/src/widgets/sliver_fill.dart": sliver_fill$
+  dart.setLibraryUri(detailPageWidgets.NoteTodo, I[0]);
+  dart.setFieldSignature(detailPageWidgets.NoteTodo, () => ({
+    __proto__: dart.getFields(detailPageWidgets.NoteTodo.__proto__),
+    todoList: dart.fieldType(dart.legacy(core.List)),
+    todoDone: dart.fieldType(dart.legacy(core.List)),
+    title: dart.fieldType(dart.legacy(core.String)),
+    index: dart.fieldType(dart.legacy(core.int)),
+    deleteFunc: dart.fieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(core.int)]))),
+    addTodo: dart.fieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(core.int), dart.legacy(core.String)]))),
+    checkTodo: dart.fieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(core.int), dart.legacy(core.int)]))),
+    uncheckTodo: dart.fieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(core.int), dart.legacy(core.int)]))),
+    deleteTodo: dart.fieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(core.int), dart.legacy(core.int), dart.legacy(core.int)]))),
+    value: dart.fieldType(dart.legacy(core.String)),
+    [_controller]: dart.fieldType(dart.legacy(editable_text.TextEditingController))
+  }));
+  var index$2 = dart.privateName(detailPageWidgets, "NoteReminder.index");
+  var time$0 = dart.privateName(detailPageWidgets, "NoteReminder.time");
+  var updateFunc$1 = dart.privateName(detailPageWidgets, "NoteReminder.updateFunc");
+  var deleteFunc$1 = dart.privateName(detailPageWidgets, "NoteReminder.deleteFunc");
+  detailPageWidgets.NoteReminder = class NoteReminder extends framework.StatelessWidget {
+    get index() {
+      return this[index$2];
+    }
+    set index(value) {
+      this[index$2] = value;
+    }
+    get time() {
+      return this[time$0];
+    }
+    set time(value) {
+      this[time$0] = value;
+    }
+    get updateFunc() {
+      return this[updateFunc$1];
+    }
+    set updateFunc(value) {
+      this[updateFunc$1] = value;
+    }
+    get deleteFunc() {
+      return this[deleteFunc$1];
+    }
+    set deleteFunc(value) {
+      this[deleteFunc$1] = value;
+    }
+    BottomeSheet(context) {
+      let dateTime = new editable_text.TextEditingController.new();
+      bottom_sheet.showModalBottomSheet(dart.dynamic, {context: context, builder: dart.fn(context => new container.Container.new({margin: new edge_insets.EdgeInsets.all(20.0), height: 170.0, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: T.JSArrayOfWidgetL().of([new text.Text.new("Enter Date and Time", {textAlign: ui.TextAlign.start, style: theme.Theme.of(context).textTheme.headline2, $creationLocationd_0dea112b090073317d4: C[144] || CT.C144}), new basic.Padding.new({padding: C[149] || CT.C149, child: new date_time_picker.DateTimePicker.new({controller: dateTime, type: date_time_picker.DateTimePickerType.dateTimeSeparate, firstDate: new core.DateTime.now(), lastDate: new core.DateTime.new(2030), dateLabelText: "Date", timeLabelText: "Time", $creationLocationd_0dea112b090073317d4: C[150] || CT.C150}), $creationLocationd_0dea112b090073317d4: C[158] || CT.C158}), new basic.SizedBox.new({width: 1 / 0, child: new elevated_button.ElevatedButton.new({onPressed: dart.fn(() => {
+                    let t2;
+                    t2 = core.DateTime.parse(dateTime.text);
+                    this.updateFunc(t2);
+                    navigator.Navigator.pop(T.ObjectL(), context);
+                  }, T.VoidToNull()), child: new text.Text.new("SAVE", {$creationLocationd_0dea112b090073317d4: C[162] || CT.C162}), style: new button_style.ButtonStyle.new({backgroundColor: material_state.MaterialStateProperty.all(T.ColorL(), theme_data.color_data[$_get]("buttonColor"))}), $creationLocationd_0dea112b090073317d4: C[165] || CT.C165}), $creationLocationd_0dea112b090073317d4: C[170] || CT.C170})]), $creationLocationd_0dea112b090073317d4: C[174] || CT.C174}), $creationLocationd_0dea112b090073317d4: C[178] || CT.C178}), T.BuildContextLToContainerL())});
+    }
+    build(context) {
+      return new gesture_detector.GestureDetector.new({onTap: dart.fn(() => {
+          this.BottomeSheet(context);
+        }, T.VoidToNull()), child: new card.Card.new({color: theme_data.color_data[$_get]("reminderColor"), child: new basic.Row.new({children: T.JSArrayOfWidgetL().of([new basic.Padding.new({padding: C[183] || CT.C183, child: new icon.Icon.new(icons.Icons.notifications_outlined, {color: colors.Colors.white, $creationLocationd_0dea112b090073317d4: C[184] || CT.C184}), $creationLocationd_0dea112b090073317d4: C[188] || CT.C188}), new basic.Expanded.new({child: new text.Text.new(this.time, {style: theme.Theme.of(context).textTheme.subtitle2.copyWith({fontSize: 16.0, color: colors.Colors.white}), $creationLocationd_0dea112b090073317d4: C[192] || CT.C192}), $creationLocationd_0dea112b090073317d4: C[196] || CT.C196}), new icon_button.IconButton.new({icon: new icon.Icon.new(icons.Icons.cancel, {color: colors.Colors.white, $creationLocationd_0dea112b090073317d4: C[199] || CT.C199}), onPressed: dart.fn(() => {
+                  let t2;
+                  t2 = this.index;
+                  this.deleteFunc(t2);
+                }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[203] || CT.C203})]), $creationLocationd_0dea112b090073317d4: C[207] || CT.C207}), $creationLocationd_0dea112b090073317d4: C[210] || CT.C210}), $creationLocationd_0dea112b090073317d4: C[214] || CT.C214});
+    }
+  };
+  (detailPageWidgets.NoteReminder.new = function(opts) {
+    let time = opts && 'time' in opts ? opts.time : null;
+    let updateFunc = opts && 'updateFunc' in opts ? opts.updateFunc : null;
+    let deleteFunc = opts && 'deleteFunc' in opts ? opts.deleteFunc : null;
+    let index = opts && 'index' in opts ? opts.index : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[time$0] = time;
+    this[updateFunc$1] = updateFunc;
+    this[deleteFunc$1] = deleteFunc;
+    this[index$2] = index;
+    detailPageWidgets.NoteReminder.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = detailPageWidgets.NoteReminder.prototype;
+  dart.addTypeTests(detailPageWidgets.NoteReminder);
+  dart.addTypeCaches(detailPageWidgets.NoteReminder);
+  dart.setMethodSignature(detailPageWidgets.NoteReminder, () => ({
+    __proto__: dart.getMethods(detailPageWidgets.NoteReminder.__proto__),
+    BottomeSheet: dart.fnType(dart.void, [dart.legacy(framework.BuildContext)]),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(detailPageWidgets.NoteReminder, I[0]);
+  dart.setFieldSignature(detailPageWidgets.NoteReminder, () => ({
+    __proto__: dart.getFields(detailPageWidgets.NoteReminder.__proto__),
+    index: dart.fieldType(dart.legacy(core.int)),
+    time: dart.fieldType(dart.legacy(core.String)),
+    updateFunc: dart.fieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(core.DateTime)]))),
+    deleteFunc: dart.fieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(core.int)])))
+  }));
+  dart.trackLibraries("packages/notes_app/widgets/detailPageWidgets.dart", {
+    "package:notes_app/widgets/detailPageWidgets.dart": detailPageWidgets
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["sliver_fill.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/widgets/sliver_fill.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["detailPageWidgets.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAUS;;;;;;IACe;;;;;;UAGI;;AACxB,YAAO,sGACO;AAAyB,oBAAO;;0BACjC,0CACE,AAAY,AAAU,AAAU,eAA7B,OAAO,0CAAyC,qBACnD,AAAU,6BAAC,uCACM,gCACnB,QAAC;;AACG,eAAF,CAAC;UAAZ,AAAU;yCAEF;IAEd;;;QAlB2B;QAAqB;;IAArB;IAAqB;AAAhD;;EAA4D;;;;;;;;;;;;;;;IAwBnD;;;;;;UAGiB;AACxB,YAAO,mBACL,uBAAY,oBACC,AAAY,AAAU,AAAU,eAA7B,OAAO,0CAAyC;IAEpE;;;QAV0B;;;AAA1B;;EAAgC;;;;;;;;;;;;;;;;;;;IAsBzB;;;;;;IACH;;;;;;IACe;;;;;;IACA;;;;;;IACH;;;;;;IACW;;;;;;UAED;;AACxB,YAAO,gDACM,wEACC;AAAyB,oBAAO;;0BACjC,0CACE,AAAY,AAAU,AAAU,eAA7B,OAAO,wCAAuC,oBACjD,AAAU,6BAAC,uCACM,+BACpB,iBACC,QAAC;;AACV;AACO,0BAAmB,YAAf,AAAc;AACmB,YAA1C,WAAM;;;AACN;AACc,cAAd,AAAY;;;;AAEd,cAAI,AAAE,CAAD,KAAI,IACc;iBAAN;YAAf,AAAc;;AAEM,kBAAT,CAAC;iBAAE;YAAd,AAAU;;;IAIlB;;;QArCoB;QACX;QACA;QACA;QACA;QACA;;IALW;IACX;IACA;IACA;IACA;IACA;AANT;;EAMuB;;;;;;;;;;;;;;;;;;;;;;;;;;IAuChB;;;;;;IACA;;;;;;IACH;;;;;;IACe;;;;;;UAGO;AA8BxB,YAAO,iCACK,yBACR,wDAES,sCACgC,+CAC3B,yBACR,oCACS,cACA,4CACC,kIAGV,sCACQ,kBAAW,2FACN;;AACQ,yBAAN;oBAAX,AAAU;yNAMd,wBACJ,+BAEY;IAIpB;;;QAnEoB;QAAqB;QAAY;QAAY;;IAA7C;IAAqB;IAAY;IAAY;AADjE;;EAC6E;;;;;;;;;;;;;;;;;;;;;;;;;;;IAkF/D;;;;;;IACA;;;;;;IACP;;;;;;IACH;;;;;;IACe;;;;;;IACQ;;;;;;IACH;;;;;;IACA;;;;;;IACK;;;;;;IACtB;;;;;;UAImB;AACxB,YAAO,iCACe,AAoCZ,AAmBC,AAOD,yBA7DA,wDAES,sCACgC,+CAC3B,yBACR,oCACS,cACA,4CACC,kIAGV,sCACQ,kBAAW,2FACN;;AACQ,yBAAN;oBAAX,AAAU;yNAMpB,0CACc,+BACA,qDACI,sCACR,kBAAW,wFACN;;AACT,sBAAI,AAAM,eAAG,KAA0B;yBAAb;yBAAO;oBAAf,AAAO;;AACV,kBAAV,aAAQ;AACQ,kBAArB,AAAY,yBAAO;4GAGZ,QAAC;AACQ,cAAb,aAAQ,KAAK;sGAInB,2BAAS,AAAS,wBAAQ,QAAC,aACvB,6BACK,yBACR,sCACU,kBAAW,qGACN;;AACkB,qBAAjB;qBAAO,SAAS;gBAA1B,AAAS;6FAEf,+BAAgB,yDAAe,AAAQ,qBAAC,SAAS,0HACjD,sCACU,kBACE,sGAEG;;AACsB,qBAApB;qBAAO,SAAS;qBAAE;gBAA7B,AAAU;uLAKtB,yBACE,gCACS,AAAU,6BAAC,wBACV,gBACG,2EAGV,2BAAS,AAAS,wBAAQ,QAAC,aACvB,6BACK,yBACR,sCACU,kBAAW,0CACC,4FAEP;;AACoB,qBAAjB;qBAAO,SAAS;gBAA5B,AAAW;+FAEjB,+BACS,yDACC,AAAQ,qBAAC,SAAS,8HAG5B,sCACU,kBACE,qCACQ,4FAEL;;AACsB,qBAApB;qBAAO,SAAS;qBAAE;gBAA7B,AAAU;;IAKhC;;;QAlHoB;QACD;QACV;QACA;QACA;QACA;QACA;QACA;QACA;;IAWF,eAAQ;IACO,oBAAc;IApBhB;IACD;IACV;IACA;IACA;IACA;IACA;IACA;IACA;AATT;;EASsB;;;;;;;;;;;;;;;;;;;;;;;;;;;IAoHlB;;;;;;IACG;;;;;;IACiB;;;;;;IACL;;;;;;iBAEY;AACP,qBAAW;AAwCvB,MAvCV,0DACa,OAAO,WACP,QAAC,WAAY,qCACG,+BAAI,eACf,cACD,0CACkC,yCAC7B,yBACR,kBACE,mCACqB,2BACR,AAAY,AAAU,eAAnB,OAAO,oFAEzB,0DAES,qDACO,QAAQ,QACK,iEACL,mCACV,sBAAS,sBACJ,uBACA,kIAGnB,6CAES,mDACM;;AACgC,yBAArB,oBAAM,AAAS,QAAD;oBAAlC,AAAU;AACY,oBAAZ,qCAAI,OAAO;6CAEhB,kBAAK,6EACL,mDACoC,qDACnC,AAAU,6BAAC;IAMvC;UAG0B;AACxB,YAAO,kDACE;AACgB,UAArB,kBAAa,OAAO;mCAEf,0BACI,AAAU,6BAAC,yBACX,6BACK,yBACR,0DAES,kBACC,4CACQ,+IAGlB,+BACS,kBACL,mBACa,AACR,AACA,AACA,eAHW,OAAO,0CAGC,aAAkB,iJAG9C,sCACQ,kBACE,4BACQ,6FAEL;;AACQ,uBAAN;kBAAX,AAAU;;IAM1B;;;QA5FoB;QACD;QACV;QACA;;IAHW;IACD;IACV;IACA;AAJT;;EAIgB","file":"../../../../../../../packages/notes_app/widgets/detailPageWidgets.dart.lib.js"}');
   // Exports:
   return {
-    src__widgets__sliver_fill: sliver_fill$
+    widgets__detailPageWidgets: detailPageWidgets
   };
 }));
 
-//# sourceMappingURL=sliver_fill.dart.lib.js.map
+//# sourceMappingURL=detailPageWidgets.dart.lib.js.map

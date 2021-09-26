@@ -17,9 +17,11 @@ void main() {
       ChangeNotifierProvider<LoginPageNotifier>(
           create: (context) => locator.get<LoginPageNotifier>()),
       ChangeNotifierProvider<ProfilePageNotifier>(
-          create: (context) => locator.get<ProfilePageNotifier>()),
+          create: (context) => ProfilePageNotifier()),
       ChangeNotifierProvider<DetailsPageNotifier>(
           create: (context) => locator.get<DetailsPageNotifier>()),
+      ChangeNotifierProvider<ThemeNotifier>(
+          create: (context) => locator.get<ThemeNotifier>())
     ],
     child: MyApp(),
   ));
@@ -33,18 +35,21 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: myTheme(),
-      home: Consumer<LoginPageNotifier>(builder: (context, value, child) {
-        if (value.status == statesLogin.loggedIn)
-          return ChangeNotifierProvider(
-              create: (context) => locator.get<ProfilePageNotifier>(),
-              builder: (context, child) => HomePage(value.signOut));
-        return LoginPage(
-          state: value,
-        );
-      }),
-    );
+    return Consumer<ThemeNotifier>(
+        builder: (context, theme, child) => MaterialApp(
+              title: 'Flutter Demo',
+              theme: theme.currentTheme,
+              home:
+                  Consumer<LoginPageNotifier>(builder: (context, value, child) {
+                if (value.status == statesLogin.loggedIn)
+                  return ChangeNotifierProvider(
+                      create: (context) => locator.get<ProfilePageNotifier>(),
+                      builder: (context, child) =>
+                          AdaptiveHomePage(func: value.signOut));
+                return LoginPage(
+                  state: value,
+                );
+              }),
+            ));
   }
 }

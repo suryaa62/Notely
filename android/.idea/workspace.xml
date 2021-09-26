@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d196f02d-b8e9-42fe-aff3-62eff7a42645" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../lib/core/Notifiers/loginPageNotifier.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/Notifiers/loginPageNotifier.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/core/services/FAuth.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/services/FAuth.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.dart_tool/flutter_build/3d0ea908c3c22ce11b8654eb83673d1b/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/../.dart_tool/flutter_build/3d0ea908c3c22ce11b8654eb83673d1b/.filecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.dart_tool/flutter_build/3d0ea908c3c22ce11b8654eb83673d1b/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/../.dart_tool/flutter_build/3d0ea908c3c22ce11b8654eb83673d1b/app.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/../.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/core/Notifiers/detailsPageNotifier.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/Notifiers/detailsPageNotifier.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/core/models/notesModel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/models/notesModel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/pages/detailsPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/pages/detailsPage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/widgets/detailPageWidgets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/widgets/detailPageWidgets.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,10 +176,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="100" y="100" width="768" height="624" key="AVDManager" timestamp="1627829757630">
+    <state x="86" y="124" width="768" height="624" key="AVDManager" timestamp="1628357838656">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="100" y="100" width="768" height="624" key="AVDManager/0.0.1536.824@0.0.1536.824" timestamp="1627829757630" />
+    <state x="86" y="124" width="768" height="624" key="AVDManager/0.0.1536.824@0.0.1536.824" timestamp="1628357838656" />
     <state width="1491" height="164" key="GridCell.Tab.0.bottom" timestamp="1627755845392">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

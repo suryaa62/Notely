@@ -1,40 +1,38 @@
-define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/flutter/src/painting/border_radius.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/rendering/proxy_box.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/widgets/icon_theme.dart', 'packages/flutter/src/widgets/icon_theme_data.dart', 'packages/flutter/src/gestures/tap.dart'], (function load__packages__flutter__src__cupertino__button_dart(dart_sdk, packages__flutter__src__cupertino__text_theme$46dart, packages__flutter__src__painting__border_radius$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__animation__curves$46dart, packages__flutter__src__rendering__proxy_box$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__widgets__icon_theme$46dart, packages__flutter__src__widgets__icon_theme_data$46dart, packages__flutter__src__gestures__tap$46dart) {
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/widgets/safe_area.dart', 'packages/notes_app/widgets/progressIndicator.dart', 'packages/notes_app/widgets/profilePageWidgets.dart', 'packages/notes_app/widgets/customFAB.dart'], (function load__packages__notes_app__pages__profilePage_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__widgets__safe_area$46dart, packages__notes_app__widgets__progressIndicator$46dart, packages__notes_app__widgets__profilePageWidgets$46dart, packages__notes_app__widgets__customFAB$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const ui = dart_sdk.ui;
-  const _internal = dart_sdk._internal;
+  const _interceptors = dart_sdk._interceptors;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const colors = packages__flutter__src__cupertino__text_theme$46dart.src__cupertino__colors;
-  const theme = packages__flutter__src__cupertino__text_theme$46dart.src__cupertino__theme;
-  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
-  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
-  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
-  const gesture_detector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__gesture_detector;
   const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
-  const transitions = packages__flutter__src__widgets__widget_span$46dart.src__widgets__transitions;
+  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
   const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
   const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
-  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
-  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const icon_button = packages__flutter__src__material__icon_button$46dart.src__material__icon_button;
+  const theme = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
   const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
-  const tween = packages__flutter__src__animation__listener_helpers$46dart.src__animation__tween;
-  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
-  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
-  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
-  const proxy_box = packages__flutter__src__rendering__proxy_box$46dart.src__rendering__proxy_box;
-  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
-  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
-  const icon_theme = packages__flutter__src__widgets__icon_theme$46dart.src__widgets__icon_theme;
-  const icon_theme_data = packages__flutter__src__widgets__icon_theme_data$46dart.src__widgets__icon_theme_data;
-  const tap = packages__flutter__src__gestures__tap$46dart.src__gestures__tap;
-  var button = Object.create(dart.library);
+  const safe_area = packages__flutter__src__widgets__safe_area$46dart.src__widgets__safe_area;
+  const progressIndicator = packages__notes_app__widgets__progressIndicator$46dart.widgets__progressIndicator;
+  const profilePageWidgets = packages__notes_app__widgets__profilePageWidgets$46dart.widgets__profilePageWidgets;
+  const profilePageNotifier = packages__notes_app__widgets__profilePageWidgets$46dart.core__Notifiers__profilePageNotifier;
+  const customFAB = packages__notes_app__widgets__customFAB$46dart.widgets__customFAB;
+  var profilePage = Object.create(dart.library);
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    TweenOfdouble: () => (T.TweenOfdouble = dart.constFn(tween.Tween$(core.double)))(),
-    voidToNull: () => (T.voidToNull = dart.constFn(dart.fnType(core.Null, [dart.void])))(),
-    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))()
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    ObjectL: () => (T.ObjectL = dart.constFn(dart.legacy(core.Object)))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    JSArrayOfWidgetL: () => (T.JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(T.WidgetL())))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -49,116 +47,122 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
-    get C1() {
-      return C[1] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 1115059840
-      });
-    },
     get C2() {
       return C[2] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 678720640
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 25,
+        [_Location_line]: 20,
+        [_Location_file]: null
       });
     },
     get C3() {
       return C[3] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 762738304
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 21,
+        [_Location_file]: null
       });
     },
     get C4() {
       return C[4] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 343176320
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 19,
+        [_Location_line]: 22,
+        [_Location_file]: null
       });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4], T._LocationL());
     },
     get C0() {
       return C[0] = dart.const({
-        __proto__: colors.CupertinoDynamicColor.prototype,
-        [Color_value]: 0,
-        [CupertinoDynamicColor_darkHighContrastElevatedColor]: C[1] || CT.C1,
-        [CupertinoDynamicColor_highContrastElevatedColor]: C[2] || CT.C2,
-        [CupertinoDynamicColor_darkElevatedColor]: C[3] || CT.C3,
-        [CupertinoDynamicColor_elevatedColor]: C[4] || CT.C4,
-        [CupertinoDynamicColor_darkHighContrastColor]: C[1] || CT.C1,
-        [CupertinoDynamicColor_highContrastColor]: C[2] || CT.C2,
-        [CupertinoDynamicColor_darkColor]: C[3] || CT.C3,
-        [CupertinoDynamicColor_color]: C[4] || CT.C4,
-        [CupertinoDynamicColor__debugResolveContext]: null,
-        [CupertinoDynamicColor__debugLabel]: "quaternarySystemFill",
-        [CupertinoDynamicColor__effectiveColor]: C[4] || CT.C4
-      });
-    },
-    get C6() {
-      return C[6] = dart.const({
-        __proto__: ui.Radius.prototype,
-        [Radius_y]: 8,
-        [Radius_x]: 8
-      });
-    },
-    get C5() {
-      return C[5] = dart.const({
-        __proto__: border_radius.BorderRadius.prototype,
-        [BorderRadius_bottomRight]: C[6] || CT.C6,
-        [BorderRadius_bottomLeft]: C[6] || CT.C6,
-        [BorderRadius_topRight]: C[6] || CT.C6,
-        [BorderRadius_topLeft]: C[6] || CT.C6
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 19,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
       });
     },
     get C7() {
       return C[7] = dart.const({
-        __proto__: alignment.Alignment.prototype,
-        [Alignment_y]: 0,
-        [Alignment_x]: 0
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 17,
+        [_Location_line]: 18,
+        [_Location_file]: null
       });
     },
     get C8() {
       return C[8] = dart.const({
-        __proto__: core.Duration.prototype,
-        [Duration__duration]: 200000
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 17,
+        [_Location_line]: 19,
+        [_Location_file]: null
       });
     },
     get C9() {
       return C[9] = dart.const({
-        __proto__: box.BoxConstraints.prototype,
-        [BoxConstraints_maxHeight]: 1 / 0,
-        [BoxConstraints_minHeight]: 0,
-        [BoxConstraints_maxWidth]: 1 / 0,
-        [BoxConstraints_minWidth]: 0
-      });
-    },
-    get C12() {
-      return C[12] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "data",
-        [_Location_column]: 23,
-        [_Location_line]: 276,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 17,
+        [_Location_line]: 24,
         [_Location_file]: null
       });
     },
-    get C13() {
-      return C[13] = dart.const({
+    get C6() {
+      return C[6] = dart.constList([C[7] || CT.C7, C[8] || CT.C8, C[9] || CT.C9], T._LocationL());
+    },
+    get C5() {
+      return C[5] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 23,
-        [_Location_line]: 277,
-        [_Location_file]: null
+        [_Location_parameterLocations]: C[6] || CT.C6,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 17,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
       });
     },
     get C11() {
-      return C[11] = dart.constList([C[12] || CT.C12, C[13] || CT.C13], T._LocationL());
+      return C[11] = dart.constList([], T._LocationL());
     },
     get C10() {
       return C[10] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C[11] || CT.C11,
         [_Location_name]: null,
-        [_Location_column]: 28,
-        [_Location_line]: 275,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/cupertino/button.dart"
+        [_Location_column]: 15,
+        [_Location_line]: 27,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 10,
+        [EdgeInsets_left]: 25
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 15,
+        [_Location_line]: 32,
+        [_Location_file]: null
       });
     },
     get C16() {
@@ -166,62 +170,55 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "style",
-        [_Location_column]: 21,
-        [_Location_line]: 274,
+        [_Location_column]: 15,
+        [_Location_line]: 33,
         [_Location_file]: null
       });
-    },
-    get C17() {
-      return C[17] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 21,
-        [_Location_line]: 275,
-        [_Location_file]: null
-      });
-    },
-    get C15() {
-      return C[15] = dart.constList([C[16] || CT.C16, C[17] || CT.C17], T._LocationL());
     },
     get C14() {
-      return C[14] = dart.const({
+      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16], T._LocationL());
+    },
+    get C13() {
+      return C[13] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[15] || CT.C15,
+        [_Location_parameterLocations]: C[14] || CT.C14,
         [_Location_name]: null,
-        [_Location_column]: 26,
-        [_Location_line]: 273,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/cupertino/button.dart"
+        [_Location_column]: 20,
+        [_Location_line]: 31,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 13,
+        [_Location_line]: 30,
+        [_Location_file]: null
       });
     },
     get C20() {
       return C[20] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "alignment",
-        [_Location_column]: 19,
-        [_Location_line]: 270,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 31,
         [_Location_file]: null
       });
     },
-    get C21() {
-      return C[21] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "widthFactor",
-        [_Location_column]: 19,
-        [_Location_line]: 271,
-        [_Location_file]: null
-      });
+    get C18() {
+      return C[18] = dart.constList([C[19] || CT.C19, C[20] || CT.C20], T._LocationL());
     },
-    get C22() {
-      return C[22] = dart.const({
+    get C17() {
+      return C[17] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "heightFactor",
-        [_Location_column]: 19,
-        [_Location_line]: 272,
-        [_Location_file]: null
+        [_Location_parameterLocations]: C[18] || CT.C18,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 29,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
       });
     },
     get C23() {
@@ -229,31 +226,31 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "child",
-        [_Location_column]: 19,
-        [_Location_line]: 273,
+        [_Location_column]: 11,
+        [_Location_line]: 29,
         [_Location_file]: null
       });
     },
-    get C19() {
-      return C[19] = dart.constList([C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22, C[23] || CT.C23], T._LocationL());
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23], T._LocationL());
     },
-    get C18() {
-      return C[18] = dart.const({
+    get C21() {
+      return C[21] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_parameterLocations]: C[22] || CT.C22,
         [_Location_name]: null,
-        [_Location_column]: 24,
-        [_Location_line]: 269,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/cupertino/button.dart"
+        [_Location_column]: 9,
+        [_Location_line]: 28,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
       });
     },
     get C26() {
       return C[26] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "padding",
-        [_Location_column]: 17,
-        [_Location_line]: 266,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 7,
+        [_Location_line]: 14,
         [_Location_file]: null
       });
     },
@@ -261,9 +258,9 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
       return C[27] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 17,
-        [_Location_line]: 269,
+        [_Location_name]: "children",
+        [_Location_column]: 7,
+        [_Location_line]: 15,
         [_Location_file]: null
       });
     },
@@ -275,117 +272,123 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C[25] || CT.C25,
         [_Location_name]: null,
-        [_Location_column]: 22,
-        [_Location_line]: 265,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/cupertino/button.dart"
+        [_Location_column]: 12,
+        [_Location_line]: 13,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
       });
     },
-    get C30() {
-      return C[30] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "decoration",
-        [_Location_column]: 15,
-        [_Location_line]: 259,
-        [_Location_file]: null
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 20,
+        [EdgeInsets_top]: 10,
+        [EdgeInsets_left]: 20
       });
     },
     get C31() {
       return C[31] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 15,
-        [_Location_line]: 265,
+        [_Location_name]: "radius",
+        [_Location_column]: 19,
+        [_Location_line]: 53,
         [_Location_file]: null
       });
-    },
-    get C29() {
-      return C[29] = dart.constList([C[30] || CT.C30, C[31] || CT.C31], T._LocationL());
-    },
-    get C28() {
-      return C[28] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[29] || CT.C29,
-        [_Location_name]: null,
-        [_Location_column]: 20,
-        [_Location_line]: 258,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/cupertino/button.dart"
-      });
-    },
-    get C34() {
-      return C[34] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "opacity",
-        [_Location_column]: 13,
-        [_Location_line]: 257,
-        [_Location_file]: null
-      });
-    },
-    get C35() {
-      return C[35] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 13,
-        [_Location_line]: 258,
-        [_Location_file]: null
-      });
-    },
-    get C33() {
-      return C[33] = dart.constList([C[34] || CT.C34, C[35] || CT.C35], T._LocationL());
     },
     get C32() {
       return C[32] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[33] || CT.C33,
-        [_Location_name]: null,
-        [_Location_column]: 18,
-        [_Location_line]: 256,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/cupertino/button.dart"
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "url",
+        [_Location_column]: 19,
+        [_Location_line]: 54,
+        [_Location_file]: null
       });
     },
-    get C38() {
-      return C[38] = dart.const({
+    get C33() {
+      return C[33] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "constraints",
-        [_Location_column]: 11,
-        [_Location_line]: 250,
+        [_Location_name]: "notifier",
+        [_Location_column]: 19,
+        [_Location_line]: 55,
         [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.constList([C[31] || CT.C31, C[32] || CT.C32, C[33] || CT.C33], T._LocationL());
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[30] || CT.C30,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 52,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 42,
+        [_Location_line]: 62,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36], T._LocationL());
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 62,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
       });
     },
     get C39() {
       return C[39] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 11,
-        [_Location_line]: 256,
+        [_Location_name]: "label",
+        [_Location_column]: 19,
+        [_Location_line]: 58,
         [_Location_file]: null
       });
     },
-    get C37() {
-      return C[37] = dart.constList([C[38] || CT.C38, C[39] || CT.C39], T._LocationL());
-    },
-    get C36() {
-      return C[36] = dart.const({
+    get C40() {
+      return C[40] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[37] || CT.C37,
-        [_Location_name]: null,
-        [_Location_column]: 16,
-        [_Location_line]: 249,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/cupertino/button.dart"
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "field",
+        [_Location_column]: 19,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "notifier",
+        [_Location_column]: 19,
+        [_Location_line]: 60,
+        [_Location_file]: null
       });
     },
     get C42() {
       return C[42] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "button",
-        [_Location_column]: 9,
-        [_Location_line]: 248,
+        [_Location_name]: "initialText",
+        [_Location_column]: 19,
+        [_Location_line]: 61,
         [_Location_file]: null
       });
     },
@@ -393,72 +396,65 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
       return C[43] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 9,
-        [_Location_line]: 249,
+        [_Location_name]: "prefixIcon",
+        [_Location_column]: 19,
+        [_Location_line]: 62,
         [_Location_file]: null
       });
     },
-    get C41() {
-      return C[41] = dart.constList([C[42] || CT.C42, C[43] || CT.C43], T._LocationL());
-    },
-    get C40() {
-      return C[40] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[41] || CT.C41,
-        [_Location_name]: null,
-        [_Location_column]: 14,
-        [_Location_line]: 247,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/cupertino/button.dart"
-      });
-    },
-    get C46() {
-      return C[46] = dart.const({
+    get C44() {
+      return C[44] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "behavior",
-        [_Location_column]: 7,
-        [_Location_line]: 242,
+        [_Location_name]: "readOnly",
+        [_Location_column]: 19,
+        [_Location_line]: 63,
         [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.constList([C[39] || CT.C39, C[40] || CT.C40, C[41] || CT.C41, C[42] || CT.C42, C[43] || CT.C43, C[44] || CT.C44], T._LocationL());
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[38] || CT.C38,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 57,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
       });
     },
     get C47() {
       return C[47] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "onTapDown",
-        [_Location_column]: 7,
-        [_Location_line]: 243,
+        [_Location_name]: "icon",
+        [_Location_column]: 42,
+        [_Location_line]: 70,
         [_Location_file]: null
       });
     },
-    get C48() {
-      return C[48] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "onTapUp",
-        [_Location_column]: 7,
-        [_Location_line]: 244,
-        [_Location_file]: null
-      });
+    get C46() {
+      return C[46] = dart.constList([C[47] || CT.C47], T._LocationL());
     },
-    get C49() {
-      return C[49] = dart.const({
+    get C45() {
+      return C[45] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "onTapCancel",
-        [_Location_column]: 7,
-        [_Location_line]: 245,
-        [_Location_file]: null
+        [_Location_parameterLocations]: C[46] || CT.C46,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 70,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
       });
     },
     get C50() {
       return C[50] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "onTap",
-        [_Location_column]: 7,
-        [_Location_line]: 246,
+        [_Location_name]: "label",
+        [_Location_column]: 19,
+        [_Location_line]: 66,
         [_Location_file]: null
       });
     },
@@ -466,427 +462,487 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
       return C[51] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 7,
-        [_Location_line]: 247,
+        [_Location_name]: "field",
+        [_Location_column]: 19,
+        [_Location_line]: 67,
         [_Location_file]: null
-      });
-    },
-    get C45() {
-      return C[45] = dart.constList([C[46] || CT.C46, C[47] || CT.C47, C[48] || CT.C48, C[49] || CT.C49, C[50] || CT.C50, C[51] || CT.C51], T._LocationL());
-    },
-    get C44() {
-      return C[44] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[45] || CT.C45,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 241,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/cupertino/button.dart"
       });
     },
     get C52() {
       return C[52] = dart.const({
-        __proto__: core.Duration.prototype,
-        [Duration__duration]: 10000
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "notifier",
+        [_Location_column]: 19,
+        [_Location_line]: 68,
+        [_Location_file]: null
       });
     },
     get C53() {
       return C[53] = dart.const({
-        __proto__: core.Duration.prototype,
-        [Duration__duration]: 100000
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "initialText",
+        [_Location_column]: 19,
+        [_Location_line]: 69,
+        [_Location_file]: null
       });
     },
     get C54() {
       return C[54] = dart.const({
-        __proto__: edge_insets.EdgeInsets.prototype,
-        [EdgeInsets_bottom]: 16,
-        [EdgeInsets_right]: 16,
-        [EdgeInsets_top]: 16,
-        [EdgeInsets_left]: 16
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "prefixIcon",
+        [_Location_column]: 19,
+        [_Location_line]: 70,
+        [_Location_file]: null
       });
     },
     get C55() {
       return C[55] = dart.const({
-        __proto__: edge_insets.EdgeInsets.prototype,
-        [EdgeInsets_bottom]: 14,
-        [EdgeInsets_right]: 64,
-        [EdgeInsets_top]: 14,
-        [EdgeInsets_left]: 64
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "readOnly",
+        [_Location_column]: 19,
+        [_Location_line]: 71,
+        [_Location_file]: null
+      });
+    },
+    get C49() {
+      return C[49] = dart.constList([C[50] || CT.C50, C[51] || CT.C51, C[52] || CT.C52, C[53] || CT.C53, C[54] || CT.C54, C[55] || CT.C55], T._LocationL());
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[49] || CT.C49,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 65,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 42,
+        [_Location_line]: 78,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.constList([C[58] || CT.C58], T._LocationL());
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[57] || CT.C57,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 78,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
+      });
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "label",
+        [_Location_column]: 19,
+        [_Location_line]: 74,
+        [_Location_file]: null
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "field",
+        [_Location_column]: 19,
+        [_Location_line]: 75,
+        [_Location_file]: null
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "notifier",
+        [_Location_column]: 19,
+        [_Location_line]: 76,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "initialText",
+        [_Location_column]: 19,
+        [_Location_line]: 77,
+        [_Location_file]: null
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "prefixIcon",
+        [_Location_column]: 19,
+        [_Location_line]: 78,
+        [_Location_file]: null
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "readOnly",
+        [_Location_column]: 19,
+        [_Location_line]: 79,
+        [_Location_file]: null
+      });
+    },
+    get C60() {
+      return C[60] = dart.constList([C[61] || CT.C61, C[62] || CT.C62, C[63] || CT.C63, C[64] || CT.C64, C[65] || CT.C65, C[66] || CT.C66], T._LocationL());
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[60] || CT.C60,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 73,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 81,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 15,
+        [_Location_line]: 50,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.constList([C[70] || CT.C70], T._LocationL());
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[69] || CT.C69,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 49,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
+      });
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 13,
+        [_Location_line]: 48,
+        [_Location_file]: null
+      });
+    },
+    get C74() {
+      return C[74] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 49,
+        [_Location_file]: null
+      });
+    },
+    get C72() {
+      return C[72] = dart.constList([C[73] || CT.C73, C[74] || CT.C74], T._LocationL());
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[72] || CT.C72,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 47,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
+      });
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "busy",
+        [_Location_column]: 11,
+        [_Location_line]: 46,
+        [_Location_file]: null
+      });
+    },
+    get C78() {
+      return C[78] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C76() {
+      return C[76] = dart.constList([C[77] || CT.C77, C[78] || CT.C78], T._LocationL());
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[76] || CT.C76,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 45,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
+      });
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C80() {
+      return C[80] = dart.constList([C[81] || CT.C81], T._LocationL());
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[80] || CT.C80,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 44,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
+      });
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 26,
+        [_Location_line]: 96,
+        [_Location_file]: null
+      });
+    },
+    get C83() {
+      return C[83] = dart.constList([C[84] || CT.C84], T._LocationL());
+    },
+    get C82() {
+      return C[82] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[83] || CT.C83,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 96,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
+      });
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 20,
+        [_Location_line]: 97,
+        [_Location_file]: null
+      });
+    },
+    get C86() {
+      return C[86] = dart.constList([C[87] || CT.C87], T._LocationL());
+    },
+    get C85() {
+      return C[85] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[86] || CT.C86,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 97,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
+      });
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 13,
+        [_Location_line]: 94,
+        [_Location_file]: null
+      });
+    },
+    get C91() {
+      return C[91] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 13,
+        [_Location_line]: 95,
+        [_Location_file]: null
+      });
+    },
+    get C89() {
+      return C[89] = dart.constList([C[90] || CT.C90, C[91] || CT.C91], T._LocationL());
+    },
+    get C88() {
+      return C[88] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[89] || CT.C89,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 93,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
+      });
+    },
+    get C94() {
+      return C[94] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 11,
+        [_Location_line]: 88,
+        [_Location_file]: null
+      });
+    },
+    get C95() {
+      return C[95] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 93,
+        [_Location_file]: null
+      });
+    },
+    get C93() {
+      return C[93] = dart.constList([C[94] || CT.C94, C[95] || CT.C95], T._LocationL());
+    },
+    get C92() {
+      return C[92] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[93] || CT.C93,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 87,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
+      });
+    },
+    get C98() {
+      return C[98] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C99() {
+      return C[99] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "floatingActionButton",
+        [_Location_column]: 7,
+        [_Location_line]: 87,
+        [_Location_file]: null
+      });
+    },
+    get C97() {
+      return C[97] = dart.constList([C[98] || CT.C98, C[99] || CT.C99], T._LocationL());
+    },
+    get C96() {
+      return C[96] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[97] || CT.C97,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 43,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/pages/profilePage.dart"
       });
     }
   }, false);
-  var C = Array(56).fill(void 0);
-  var I = [
-    "file:///C:/src/flutter/packages/flutter/lib/src/cupertino/button.dart",
-    "package:flutter/src/cupertino/button.dart"
-  ];
-  var child$ = dart.privateName(button, "CupertinoButton.child");
-  var padding$ = dart.privateName(button, "CupertinoButton.padding");
-  var color$ = dart.privateName(button, "CupertinoButton.color");
-  var disabledColor$ = dart.privateName(button, "CupertinoButton.disabledColor");
-  var onPressed$ = dart.privateName(button, "CupertinoButton.onPressed");
-  var minSize$ = dart.privateName(button, "CupertinoButton.minSize");
-  var pressedOpacity$ = dart.privateName(button, "CupertinoButton.pressedOpacity");
-  var borderRadius$ = dart.privateName(button, "CupertinoButton.borderRadius");
-  var alignment$ = dart.privateName(button, "CupertinoButton.alignment");
-  var _filled = dart.privateName(button, "CupertinoButton._filled");
-  var Color_value = dart.privateName(ui, "Color.value");
-  var CupertinoDynamicColor_darkHighContrastElevatedColor = dart.privateName(colors, "CupertinoDynamicColor.darkHighContrastElevatedColor");
-  var CupertinoDynamicColor_highContrastElevatedColor = dart.privateName(colors, "CupertinoDynamicColor.highContrastElevatedColor");
-  var CupertinoDynamicColor_darkElevatedColor = dart.privateName(colors, "CupertinoDynamicColor.darkElevatedColor");
-  var CupertinoDynamicColor_elevatedColor = dart.privateName(colors, "CupertinoDynamicColor.elevatedColor");
-  var CupertinoDynamicColor_darkHighContrastColor = dart.privateName(colors, "CupertinoDynamicColor.darkHighContrastColor");
-  var CupertinoDynamicColor_highContrastColor = dart.privateName(colors, "CupertinoDynamicColor.highContrastColor");
-  var CupertinoDynamicColor_darkColor = dart.privateName(colors, "CupertinoDynamicColor.darkColor");
-  var CupertinoDynamicColor_color = dart.privateName(colors, "CupertinoDynamicColor.color");
-  var CupertinoDynamicColor__debugResolveContext = dart.privateName(colors, "CupertinoDynamicColor._debugResolveContext");
-  var CupertinoDynamicColor__debugLabel = dart.privateName(colors, "CupertinoDynamicColor._debugLabel");
-  var CupertinoDynamicColor__effectiveColor = dart.privateName(colors, "CupertinoDynamicColor._effectiveColor");
-  var Radius_y = dart.privateName(ui, "Radius.y");
-  var Radius_x = dart.privateName(ui, "Radius.x");
-  var BorderRadius_bottomRight = dart.privateName(border_radius, "BorderRadius.bottomRight");
-  var BorderRadius_bottomLeft = dart.privateName(border_radius, "BorderRadius.bottomLeft");
-  var BorderRadius_topRight = dart.privateName(border_radius, "BorderRadius.topRight");
-  var BorderRadius_topLeft = dart.privateName(border_radius, "BorderRadius.topLeft");
-  var Alignment_y = dart.privateName(alignment, "Alignment.y");
-  var Alignment_x = dart.privateName(alignment, "Alignment.x");
-  var _filled$ = dart.privateName(button, "_filled");
-  button.CupertinoButton = class CupertinoButton extends framework.StatefulWidget {
-    get child() {
-      return this[child$];
-    }
-    set child(value) {
-      super.child = value;
-    }
-    get padding() {
-      return this[padding$];
-    }
-    set padding(value) {
-      super.padding = value;
-    }
-    get color() {
-      return this[color$];
-    }
-    set color(value) {
-      super.color = value;
-    }
-    get disabledColor() {
-      return this[disabledColor$];
-    }
-    set disabledColor(value) {
-      super.disabledColor = value;
-    }
-    get onPressed() {
-      return this[onPressed$];
-    }
-    set onPressed(value) {
-      super.onPressed = value;
-    }
-    get minSize() {
-      return this[minSize$];
-    }
-    set minSize(value) {
-      super.minSize = value;
-    }
-    get pressedOpacity() {
-      return this[pressedOpacity$];
-    }
-    set pressedOpacity(value) {
-      super.pressedOpacity = value;
-    }
-    get borderRadius() {
-      return this[borderRadius$];
-    }
-    set borderRadius(value) {
-      super.borderRadius = value;
-    }
-    get alignment() {
-      return this[alignment$];
-    }
-    set alignment(value) {
-      super.alignment = value;
-    }
-    get [_filled$]() {
-      return this[_filled];
-    }
-    set [_filled$](value) {
-      super[_filled$] = value;
-    }
-    get enabled() {
-      return this.onPressed != null;
-    }
-    createState() {
-      return new button._CupertinoButtonState.new();
-    }
-    debugFillProperties(properties) {
-      if (properties == null) dart.nullFailed(I[0], 143, 56, "properties");
-      super.debugFillProperties(properties);
-      properties.add(new diagnostics.FlagProperty.new("enabled", {value: this.enabled, ifFalse: "disabled"}));
-    }
-  };
-  (button.CupertinoButton.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let child = opts && 'child' in opts ? opts.child : null;
-    if (child == null) dart.nullFailed(I[0], 36, 19, "child");
-    let padding = opts && 'padding' in opts ? opts.padding : null;
-    let color = opts && 'color' in opts ? opts.color : null;
-    let disabledColor = opts && 'disabledColor' in opts ? opts.disabledColor : C[0] || CT.C0;
-    if (disabledColor == null) dart.nullFailed(I[0], 39, 10, "disabledColor");
-    let minSize = opts && 'minSize' in opts ? opts.minSize : 44;
-    let pressedOpacity = opts && 'pressedOpacity' in opts ? opts.pressedOpacity : 0.4;
-    let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : C[5] || CT.C5;
-    let alignment = opts && 'alignment' in opts ? opts.alignment : C[7] || CT.C7;
-    if (alignment == null) dart.nullFailed(I[0], 43, 10, "alignment");
-    let onPressed = opts && 'onPressed' in opts ? opts.onPressed : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[child$] = child;
-    this[padding$] = padding;
-    this[color$] = color;
-    this[disabledColor$] = disabledColor;
-    this[minSize$] = minSize;
-    this[pressedOpacity$] = pressedOpacity;
-    this[borderRadius$] = borderRadius;
-    this[alignment$] = alignment;
-    this[onPressed$] = onPressed;
-    if (!(pressedOpacity == null || dart.notNull(pressedOpacity) >= 0.0 && dart.notNull(pressedOpacity) <= 1.0)) dart.assertFailed(null, I[0], 45, 15, "pressedOpacity == null || (pressedOpacity >= 0.0 && pressedOpacity <= 1.0)");
-    if (!(disabledColor != null)) dart.assertFailed(null, I[0], 46, 15, "disabledColor != null");
-    if (!(alignment != null)) dart.assertFailed(null, I[0], 47, 15, "alignment != null");
-    this[_filled] = false;
-    button.CupertinoButton.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = button.CupertinoButton.prototype;
-  (button.CupertinoButton.filled = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let child = opts && 'child' in opts ? opts.child : null;
-    if (child == null) dart.nullFailed(I[0], 59, 19, "child");
-    let padding = opts && 'padding' in opts ? opts.padding : null;
-    let disabledColor = opts && 'disabledColor' in opts ? opts.disabledColor : C[0] || CT.C0;
-    if (disabledColor == null) dart.nullFailed(I[0], 61, 10, "disabledColor");
-    let minSize = opts && 'minSize' in opts ? opts.minSize : 44;
-    let pressedOpacity = opts && 'pressedOpacity' in opts ? opts.pressedOpacity : 0.4;
-    let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : C[5] || CT.C5;
-    let alignment = opts && 'alignment' in opts ? opts.alignment : C[7] || CT.C7;
-    if (alignment == null) dart.nullFailed(I[0], 65, 10, "alignment");
-    let onPressed = opts && 'onPressed' in opts ? opts.onPressed : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[child$] = child;
-    this[padding$] = padding;
-    this[disabledColor$] = disabledColor;
-    this[minSize$] = minSize;
-    this[pressedOpacity$] = pressedOpacity;
-    this[borderRadius$] = borderRadius;
-    this[alignment$] = alignment;
-    this[onPressed$] = onPressed;
-    if (!(pressedOpacity == null || dart.notNull(pressedOpacity) >= 0.0 && dart.notNull(pressedOpacity) <= 1.0)) dart.assertFailed(null, I[0], 67, 15, "pressedOpacity == null || (pressedOpacity >= 0.0 && pressedOpacity <= 1.0)");
-    if (!(disabledColor != null)) dart.assertFailed(null, I[0], 68, 15, "disabledColor != null");
-    if (!(alignment != null)) dart.assertFailed(null, I[0], 69, 15, "alignment != null");
-    this[color$] = null;
-    this[_filled] = true;
-    button.CupertinoButton.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = button.CupertinoButton.prototype;
-  dart.addTypeTests(button.CupertinoButton);
-  dart.addTypeCaches(button.CupertinoButton);
-  dart.setMethodSignature(button.CupertinoButton, () => ({
-    __proto__: dart.getMethods(button.CupertinoButton.__proto__),
-    createState: dart.fnType(button._CupertinoButtonState, [])
-  }));
-  dart.setGetterSignature(button.CupertinoButton, () => ({
-    __proto__: dart.getGetters(button.CupertinoButton.__proto__),
-    enabled: core.bool
-  }));
-  dart.setLibraryUri(button.CupertinoButton, I[1]);
-  dart.setFieldSignature(button.CupertinoButton, () => ({
-    __proto__: dart.getFields(button.CupertinoButton.__proto__),
-    child: dart.finalFieldType(framework.Widget),
-    padding: dart.finalFieldType(dart.nullable(edge_insets.EdgeInsetsGeometry)),
-    color: dart.finalFieldType(dart.nullable(ui.Color)),
-    disabledColor: dart.finalFieldType(ui.Color),
-    onPressed: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, []))),
-    minSize: dart.finalFieldType(dart.nullable(core.double)),
-    pressedOpacity: dart.finalFieldType(dart.nullable(core.double)),
-    borderRadius: dart.finalFieldType(dart.nullable(border_radius.BorderRadius)),
-    alignment: dart.finalFieldType(alignment.AlignmentGeometry),
-    [_filled$]: dart.finalFieldType(core.bool)
-  }));
-  var _opacityTween = dart.privateName(button, "_opacityTween");
-  var ___CupertinoButtonState__animationController = dart.privateName(button, "_#_CupertinoButtonState#_animationController");
-  var ___CupertinoButtonState__animationController_isSet = dart.privateName(button, "_#_CupertinoButtonState#_animationController#isSet");
-  var ___CupertinoButtonState__opacityAnimation = dart.privateName(button, "_#_CupertinoButtonState#_opacityAnimation");
-  var ___CupertinoButtonState__opacityAnimation_isSet = dart.privateName(button, "_#_CupertinoButtonState#_opacityAnimation#isSet");
-  var _buttonHeldDown = dart.privateName(button, "_buttonHeldDown");
-  var _animationController = dart.privateName(button, "_animationController");
-  var _opacityAnimation = dart.privateName(button, "_opacityAnimation");
-  var Duration__duration = dart.privateName(core, "Duration._duration");
-  var _setTween = dart.privateName(button, "_setTween");
-  var _animate = dart.privateName(button, "_animate");
-  var _handleTapDown = dart.privateName(button, "_handleTapDown");
-  var _handleTapUp = dart.privateName(button, "_handleTapUp");
-  var _handleTapCancel = dart.privateName(button, "_handleTapCancel");
-  var BoxConstraints_maxHeight = dart.privateName(box, "BoxConstraints.maxHeight");
-  var BoxConstraints_minHeight = dart.privateName(box, "BoxConstraints.minHeight");
-  var BoxConstraints_maxWidth = dart.privateName(box, "BoxConstraints.maxWidth");
-  var BoxConstraints_minWidth = dart.privateName(box, "BoxConstraints.minWidth");
+  var C = Array(100).fill(void 0);
+  var I = ["package:notes_app/pages/profilePage.dart"];
+  var state$ = dart.privateName(profilePage, "ProfilePage.state");
   var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
   var _Location_name = dart.privateName(widget_inspector, "_Location.name");
   var _Location_column = dart.privateName(widget_inspector, "_Location.column");
   var _Location_line = dart.privateName(widget_inspector, "_Location.line");
   var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  const State_SingleTickerProviderStateMixin$36 = class State_SingleTickerProviderStateMixin extends framework.State$(button.CupertinoButton) {};
-  (State_SingleTickerProviderStateMixin$36.new = function() {
-    ticker_provider.SingleTickerProviderStateMixin$(button.CupertinoButton)[dart.mixinNew].call(this);
-    State_SingleTickerProviderStateMixin$36.__proto__.new.call(this);
-  }).prototype = State_SingleTickerProviderStateMixin$36.prototype;
-  dart.applyMixin(State_SingleTickerProviderStateMixin$36, ticker_provider.SingleTickerProviderStateMixin$(button.CupertinoButton));
-  button._CupertinoButtonState = class _CupertinoButtonState extends State_SingleTickerProviderStateMixin$36 {
-    get [_animationController]() {
-      let t0;
-      return dart.test(this[___CupertinoButtonState__animationController_isSet]) ? (t0 = this[___CupertinoButtonState__animationController], t0) : dart.throw(new _internal.LateError.fieldNI("_animationController"));
-    }
-    set [_animationController](t0) {
-      if (t0 == null) dart.nullFailed(I[0], 155, 28, "null");
-      this[___CupertinoButtonState__animationController_isSet] = true;
-      this[___CupertinoButtonState__animationController] = t0;
-    }
-    get [_opacityAnimation]() {
-      let t1;
-      return dart.test(this[___CupertinoButtonState__opacityAnimation_isSet]) ? (t1 = this[___CupertinoButtonState__opacityAnimation], t1) : dart.throw(new _internal.LateError.fieldNI("_opacityAnimation"));
-    }
-    set [_opacityAnimation](t1) {
-      if (t1 == null) dart.nullFailed(I[0], 156, 26, "null");
-      this[___CupertinoButtonState__opacityAnimation_isSet] = true;
-      this[___CupertinoButtonState__opacityAnimation] = t1;
-    }
-    initState() {
-      super.initState();
-      this[_animationController] = new animation_controller.AnimationController.new({duration: C[8] || CT.C8, value: 0.0, vsync: this});
-      this[_opacityAnimation] = this[_animationController].drive(core.double, new tween.CurveTween.new({curve: curves.Curves.decelerate})).drive(core.double, this[_opacityTween]);
-      this[_setTween]();
-    }
-    didUpdateWidget(old) {
-      button.CupertinoButton.as(old);
-      if (old == null) dart.nullFailed(I[0], 173, 40, "old");
-      super.didUpdateWidget(old);
-      this[_setTween]();
-    }
-    [_setTween]() {
-      let t2;
-      this[_opacityTween].end = (t2 = this.widget.pressedOpacity, t2 == null ? 1.0 : t2);
-    }
-    dispose() {
-      this[_animationController].dispose();
-      super.dispose();
-    }
-    [_handleTapDown](event) {
-      if (event == null) dart.nullFailed(I[0], 190, 38, "event");
-      if (!dart.test(this[_buttonHeldDown])) {
-        this[_buttonHeldDown] = true;
-        this[_animate]();
-      }
-    }
-    [_handleTapUp](event) {
-      if (event == null) dart.nullFailed(I[0], 197, 34, "event");
-      if (dart.test(this[_buttonHeldDown])) {
-        this[_buttonHeldDown] = false;
-        this[_animate]();
-      }
-    }
-    [_handleTapCancel]() {
-      if (dart.test(this[_buttonHeldDown])) {
-        this[_buttonHeldDown] = false;
-        this[_animate]();
-      }
-    }
-    [_animate]() {
-      if (dart.test(this[_animationController].isAnimating)) return;
-      let wasHeldDown = this[_buttonHeldDown];
-      let ticker = dart.test(this[_buttonHeldDown]) ? this[_animationController].animateTo(1.0, {duration: button._CupertinoButtonState.kFadeOutDuration}) : this[_animationController].animateTo(0.0, {duration: button._CupertinoButtonState.kFadeInDuration});
-      ticker.then(dart.void, dart.fn(value => {
-        if (dart.test(this.mounted) && wasHeldDown != this[_buttonHeldDown]) this[_animate]();
-      }, T.voidToNull()));
-    }
-    build(context) {
-      let t2;
-      if (context == null) dart.nullFailed(I[0], 225, 29, "context");
-      let enabled = this.widget.enabled;
-      let themeData = theme.CupertinoTheme.of(context);
-      let primaryColor = themeData.primaryColor;
-      let backgroundColor = this.widget.color == null ? dart.test(this.widget[_filled$]) ? primaryColor : null : colors.CupertinoDynamicColor.maybeResolve(this.widget.color, context);
-      let foregroundColor = backgroundColor != null ? themeData.primaryContrastingColor : dart.test(enabled) ? primaryColor : colors.CupertinoDynamicColor.resolve(colors.CupertinoColors.placeholderText, context);
-      let textStyle = themeData.textTheme.textStyle.copyWith({color: foregroundColor});
-      return new gesture_detector.GestureDetector.new({behavior: proxy_box.HitTestBehavior.opaque, onTapDown: dart.test(enabled) ? dart.bind(this, _handleTapDown) : null, onTapUp: dart.test(enabled) ? dart.bind(this, _handleTapUp) : null, onTapCancel: dart.test(enabled) ? dart.bind(this, _handleTapCancel) : null, onTap: this.widget.onPressed, child: new basic.Semantics.new({button: true, child: new basic.ConstrainedBox.new({constraints: this.widget.minSize == null ? C[9] || CT.C9 : new box.BoxConstraints.new({minWidth: dart.nullCheck(this.widget.minSize), minHeight: dart.nullCheck(this.widget.minSize)}), child: new transitions.FadeTransition.new({opacity: this[_opacityAnimation], child: new container.DecoratedBox.new({decoration: new box_decoration.BoxDecoration.new({borderRadius: this.widget.borderRadius, color: backgroundColor != null && !dart.test(enabled) ? colors.CupertinoDynamicColor.resolve(this.widget.disabledColor, context) : backgroundColor}), child: new basic.Padding.new({padding: (t2 = this.widget.padding, t2 == null ? backgroundColor != null ? button._kBackgroundButtonPadding : button._kButtonPadding : t2), child: new basic.Align.new({alignment: this.widget.alignment, widthFactor: 1.0, heightFactor: 1.0, child: new text.DefaultTextStyle.new({style: textStyle, child: new icon_theme.IconTheme.new({data: new icon_theme_data.IconThemeData.new({color: foregroundColor}), child: this.widget.child, $creationLocationd_0dea112b090073317d4: C[10] || CT.C10}), $creationLocationd_0dea112b090073317d4: C[14] || CT.C14}), $creationLocationd_0dea112b090073317d4: C[18] || CT.C18}), $creationLocationd_0dea112b090073317d4: C[24] || CT.C24}), $creationLocationd_0dea112b090073317d4: C[28] || CT.C28}), $creationLocationd_0dea112b090073317d4: C[32] || CT.C32}), $creationLocationd_0dea112b090073317d4: C[36] || CT.C36}), $creationLocationd_0dea112b090073317d4: C[40] || CT.C40}), $creationLocationd_0dea112b090073317d4: C[44] || CT.C44});
-    }
-  };
-  (button._CupertinoButtonState.new = function() {
-    this[_opacityTween] = new (T.TweenOfdouble()).new({begin: 1.0});
-    this[___CupertinoButtonState__animationController] = null;
-    this[___CupertinoButtonState__animationController_isSet] = false;
-    this[___CupertinoButtonState__opacityAnimation] = null;
-    this[___CupertinoButtonState__opacityAnimation_isSet] = false;
-    this[_buttonHeldDown] = false;
-    button._CupertinoButtonState.__proto__.new.call(this);
-    ;
-  }).prototype = button._CupertinoButtonState.prototype;
-  dart.addTypeTests(button._CupertinoButtonState);
-  dart.addTypeCaches(button._CupertinoButtonState);
-  dart.setMethodSignature(button._CupertinoButtonState, () => ({
-    __proto__: dart.getMethods(button._CupertinoButtonState.__proto__),
-    [_setTween]: dart.fnType(dart.void, []),
-    [_handleTapDown]: dart.fnType(dart.void, [tap.TapDownDetails]),
-    [_handleTapUp]: dart.fnType(dart.void, [tap.TapUpDetails]),
-    [_handleTapCancel]: dart.fnType(dart.void, []),
-    [_animate]: dart.fnType(dart.void, []),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
-  }));
-  dart.setGetterSignature(button._CupertinoButtonState, () => ({
-    __proto__: dart.getGetters(button._CupertinoButtonState.__proto__),
-    [_animationController]: animation_controller.AnimationController,
-    [_opacityAnimation]: animation.Animation$(core.double)
-  }));
-  dart.setSetterSignature(button._CupertinoButtonState, () => ({
-    __proto__: dart.getSetters(button._CupertinoButtonState.__proto__),
-    [_animationController]: animation_controller.AnimationController,
-    [_opacityAnimation]: animation.Animation$(core.double)
-  }));
-  dart.setLibraryUri(button._CupertinoButtonState, I[1]);
-  dart.setFieldSignature(button._CupertinoButtonState, () => ({
-    __proto__: dart.getFields(button._CupertinoButtonState.__proto__),
-    [_opacityTween]: dart.finalFieldType(tween.Tween$(core.double)),
-    [___CupertinoButtonState__animationController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
-    [___CupertinoButtonState__animationController_isSet]: dart.fieldType(core.bool),
-    [___CupertinoButtonState__opacityAnimation]: dart.fieldType(dart.nullable(animation.Animation$(core.double))),
-    [___CupertinoButtonState__opacityAnimation_isSet]: dart.fieldType(core.bool),
-    [_buttonHeldDown]: dart.fieldType(core.bool)
-  }));
-  dart.defineLazy(button._CupertinoButtonState, {
-    /*button._CupertinoButtonState.kFadeOutDuration*/get kFadeOutDuration() {
-      return C[52] || CT.C52;
-    },
-    /*button._CupertinoButtonState.kFadeInDuration*/get kFadeInDuration() {
-      return C[53] || CT.C53;
-    }
-  }, false);
   var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
   var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
   var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
   var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
-  dart.defineLazy(button, {
-    /*button._kButtonPadding*/get _kButtonPadding() {
-      return C[54] || CT.C54;
-    },
-    /*button._kBackgroundButtonPadding*/get _kBackgroundButtonPadding() {
-      return C[55] || CT.C55;
+  var _appbar = dart.privateName(profilePage, "_appbar");
+  profilePage.ProfilePage = class ProfilePage extends framework.StatelessWidget {
+    get state() {
+      return this[state$];
     }
-  }, false);
-  dart.trackLibraries("packages/flutter/src/cupertino/button.dart", {
-    "package:flutter/src/cupertino/button.dart": button
+    set state(value) {
+      this[state$] = value;
+    }
+    [_appbar](context) {
+      return new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceBetween, children: T.JSArrayOfWidgetL().of([dart.notNull(media_query.MediaQuery.of(context).size.width) < 600 ? new icon_button.IconButton.new({alignment: alignment.Alignment.centerRight, icon: new icon.Icon.new(icons.Icons.arrow_back, {color: colors.Colors.black, size: 40.0, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), onPressed: dart.fn(() => {
+              navigator.Navigator.of(context).pop(T.ObjectL());
+            }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[5] || CT.C5}) : new container.Container.new({$creationLocationd_0dea112b090073317d4: C[10] || CT.C10}), new basic.Expanded.new({child: new basic.Padding.new({padding: C[12] || CT.C12, child: new text.Text.new("Profile", {style: theme.Theme.of(context).textTheme.headline2, $creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), $creationLocationd_0dea112b090073317d4: C[17] || CT.C17}), $creationLocationd_0dea112b090073317d4: C[21] || CT.C21})]), $creationLocationd_0dea112b090073317d4: C[24] || CT.C24});
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({body: new safe_area.SafeArea.new({child: new progressIndicator.Progress.new({busy: this.state.busy, child: new basic.Padding.new({padding: C[28] || CT.C28, child: new basic.Column.new({children: T.JSArrayOfWidgetL().of([this[_appbar](context), new profilePageWidgets.UpdateImage.new({radius: 75.0, url: this.state.user.imageURL, notifier: this.state.imageNotifier, $creationLocationd_0dea112b090073317d4: C[29] || CT.C29}), new profilePageWidgets.UpdateField.new({label: "Name", field: "name", notifier: this.state.nameFieldNotifier, initialText: this.state.user.name, prefixIcon: new icon.Icon.new(icons.Icons.person, {$creationLocationd_0dea112b090073317d4: C[34] || CT.C34}), readOnly: false, $creationLocationd_0dea112b090073317d4: C[37] || CT.C37}), new profilePageWidgets.UpdateField.new({label: "Email", field: "email", notifier: this.state.emailFieldNotifier, initialText: this.state.user.email, prefixIcon: new icon.Icon.new(icons.Icons.email, {$creationLocationd_0dea112b090073317d4: C[45] || CT.C45}), readOnly: false, $creationLocationd_0dea112b090073317d4: C[48] || CT.C48}), new profilePageWidgets.UpdateField.new({label: "Phone", field: "phoneNo", notifier: this.state.phoneFieldNotifier, initialText: this.state.user.phoneNo, prefixIcon: new icon.Icon.new(icons.Icons.phone_android, {$creationLocationd_0dea112b090073317d4: C[56] || CT.C56}), readOnly: true, $creationLocationd_0dea112b090073317d4: C[59] || CT.C59}), new profilePageWidgets.switchTheme.new({$creationLocationd_0dea112b090073317d4: C[67] || CT.C67})]), $creationLocationd_0dea112b090073317d4: C[68] || CT.C68}), $creationLocationd_0dea112b090073317d4: C[71] || CT.C71}), $creationLocationd_0dea112b090073317d4: C[75] || CT.C75}), $creationLocationd_0dea112b090073317d4: C[79] || CT.C79}), floatingActionButton: new customFAB.CustomFAB.new({onPressed: dart.fn(() => {
+            this.state.logout();
+            if (dart.notNull(media_query.MediaQuery.of(context).size.width) < 600) navigator.Navigator.of(context).pop(T.ObjectL());
+          }, T.VoidToNull()), child: new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceEvenly, children: T.JSArrayOfWidgetL().of([new icon.Icon.new(icons.Icons.logout, {$creationLocationd_0dea112b090073317d4: C[82] || CT.C82}), new text.Text.new("LogOut", {$creationLocationd_0dea112b090073317d4: C[85] || CT.C85})]), $creationLocationd_0dea112b090073317d4: C[88] || CT.C88}), $creationLocationd_0dea112b090073317d4: C[92] || CT.C92}), $creationLocationd_0dea112b090073317d4: C[96] || CT.C96});
+    }
+  };
+  (profilePage.ProfilePage.new = function(state, opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[state$] = state;
+    profilePage.ProfilePage.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = profilePage.ProfilePage.prototype;
+  dart.addTypeTests(profilePage.ProfilePage);
+  dart.addTypeCaches(profilePage.ProfilePage);
+  dart.setMethodSignature(profilePage.ProfilePage, () => ({
+    __proto__: dart.getMethods(profilePage.ProfilePage.__proto__),
+    [_appbar]: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(profilePage.ProfilePage, I[0]);
+  dart.setFieldSignature(profilePage.ProfilePage, () => ({
+    __proto__: dart.getFields(profilePage.ProfilePage.__proto__),
+    state: dart.fieldType(dart.legacy(profilePageNotifier.ProfilePageNotifier))
+  }));
+  dart.trackLibraries("packages/notes_app/pages/profilePage.dart", {
+    "package:notes_app/pages/profilePage.dart": profilePage
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["button.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA4Ee;;;;;;IAKa;;;;;;IAQb;;;;;;IAQD;;;;;;IAKQ;;;;;;IAMN;;;;;;IAOA;;;;;;IAKM;;;;;;IAUI;;;;;;IAEb;;;;;;;AAIS,YAAA,AAAU;IAAO;;AAGE;IAAuB;;UAGT;AACd,MAA/B,0BAAoB,UAAU;AACwC,MAA5E,AAAW,UAAD,KAAK,iCAAa,mBAAkB,uBAAkB;IAClE;;;QA/GO;QACS;;QACT;QACA;QACA;;QACA;QACA;QACA;QACA;;QACS;;IARA;IACT;IACA;IACA;IACA;IACA;IACA;IACA;IACS;UACJ,AAAe,AAAQ,cAAT,YAA4B,aAAf,cAAc,KAAI,OAAsB,aAAf,cAAc,KAAI;UACtE,AAAc,aAAD;UACb,AAAU,SAAD;IACR,gBAAE;AACV,0DAAW,GAAG;;EAAC;;QASb;QACS;;QACT;QACA;;QACA;QACA;QACA;QACA;;QACS;;IAPA;IACT;IACA;IACA;IACA;IACA;IACA;IACS;UACJ,AAAe,AAAQ,cAAT,YAA4B,aAAf,cAAc,KAAI,OAAsB,aAAf,cAAc,KAAI;UACtE,AAAc,aAAD;UACb,AAAU,SAAD;IACV,eAAE;IACA,gBAAE;AACV,0DAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAmFK;IAAoB;;;AAApB;;IAAoB;;;AACtB;IAAiB;;;AAAjB;;IAAiB;;AAIrB,MAAX;AAKL,MAJD,6BAAuB,kFAEd,YACA;AAIc,MAFvB,0BAAoB,AACjB,AACA,8CADM,iCAAyB,+CACzB;AACE,MAAX;IACF;;gCAGqC;;AACT,MAApB,sBAAgB,GAAG;AACd,MAAX;IACF;;;AAGkD,MAAhD,AAAc,2BAA4B,KAAtB,AAAO,4BAAA,aAAkB;IAC/C;;AAIgC,MAA9B,AAAqB;AACN,MAAT;IACR;;UAImC;AACjC,qBAAK;AACmB,QAAtB,wBAAkB;AACR,QAAV;;IAEJ;;UAE+B;AAC7B,oBAAI;AACqB,QAAvB,wBAAkB;AACR,QAAV;;IAEJ;;AAGE,oBAAI;AACqB,QAAvB,wBAAkB;AACR,QAAV;;IAEJ;;AAGE,oBAAI,AAAqB,yCACvB;AACS,wBAAc;AACN,6BAAS,yBACtB,AAAqB,qCAAU,gBAAe,kDAC9C,AAAqB,qCAAU,gBAAe;AAIlD,MAHF,AAAO,MAAD,iBAAY,QAAM;AACtB,sBAAI,iBAAW,AAAY,WAAD,IAAI,uBAC5B,AAAU;;IAEhB;UAG0B;;;AACb,oBAAU,AAAO;AACH,sBAA2B,wBAAG,OAAO;AAClD,yBAAe,AAAU,SAAD;AACvB,4BAAkB,AAAO,AAAM,sCACvC,AAAO,yBAAU,YAAY,GAAG,OACX,0CAAa,AAAO,mBAAO,OAAO;AAEhD,4BAAkB,AAAgB,eAAD,WACzC,AAAU,SAAD,qCACT,OAAO,IACL,YAAY,GACU,qCAAwB,wCAAiB,OAAO;AAE5D,sBAAY,AAAU,AAAU,AAAU,SAArB,sCAAqC,eAAe;AAEzF,YAAO,qDACqB,uDACf,OAAO,cAAG,wBAAiB,yBAC7B,OAAO,cAAG,sBAAe,6BACrB,OAAO,cAAG,0BAAmB,aACnC,AAAO,8BACP,iCACG,aACD,2CACQ,AAAO,AAAQ,8CAExB,sCAC0B,eAAd,AAAO,iCACQ,eAAd,AAAO,+BAEjB,6CACI,gCACF,4CACO,oDACI,AAAO,iCACd,AAAgB,AAAQ,eAAT,uBAAa,OAAO,IAChB,qCAAQ,AAAO,2BAAe,OAAO,IAC3D,eAAe,WAEd,iCACmB,KAAf,AAAO,qBAAA,aAAY,AAAgB,eAAD,WACvC,mCACA,qCACG,gCACM,AAAO,oCACL,mBACC,YACP,sCACE,SAAS,SACT,oCACC,8CAAqB,eAAe,WACnC,AAAO;IAUlC;;;IAtIoB,sBAAgB,oCAAqB;yDAEhC;;sDACF;;IAgClB,wBAAkB;;;EAoGzB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAzIwB,6CAAgB;;;MAChB,4CAAe;;;;;;;;;MA3ItB,sBAAe;;;MACf,gCAAyB","file":"../../../../../../../packages/flutter/src/cupertino/button.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["profilePage.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IASsB;;;;;;cAEQ;AAC1B,YAAO,uCACgC,+CAC3B,yBAC2B,aAAvB,AAAY,AAAK,0BAAd,OAAO,gBAAe,MAC/B,2CACuB,uCACf,kBACE,gCACQ,2BACR,0EAEG;AACkB,cAAjB,AAAY,uBAAT,OAAO;0FAExB,wFACN,+BACS,wDAEE,kBACL,mBACa,AAAY,AAAU,eAAnB,OAAO;IAMnC;UAG0B;AACxB,YAAO,kCACC,mCACG,0CACC,AAAM,wBACL,wDAEE,gCACK,yBACR,cAAQ,OAAO,GACf,gDACU,WACH,AAAM,AAAK,oCACN,AAAM,qFAElB,+CACS,eACA,kBACG,AAAM,2CACH,AAAM,AAAK,kCACZ,kBAAW,0FACb,kEAEZ,+CACS,gBACA,mBACG,AAAM,4CACH,AAAM,AAAK,mCACZ,kBAAW,yFACb,kEAEZ,+CACS,gBACA,qBACG,AAAM,4CACH,AAAM,AAAK,qCACZ,kBAAW,iGACb,iEAEZ,uWAMY,wCACP;AACK,YAAd,AAAM;AACN,gBAAsC,aAAvB,AAAY,AAAK,0BAAd,OAAO,gBAAe,KAC5B,AAAY,AAAK,uBAAd,OAAO;qCAEjB,sCACgC,8CAC3B,yBACR,kBAAW,gFACX,kBAAK;IAIjB;;0CA5FiB;;;AAAjB;;EAAuB","file":"../../../../../../../packages/notes_app/pages/profilePage.dart.lib.js"}');
   // Exports:
   return {
-    src__cupertino__button: button
+    pages__profilePage: profilePage
   };
 }));
 
-//# sourceMappingURL=button.dart.lib.js.map
+//# sourceMappingURL=profilePage.dart.lib.js.map

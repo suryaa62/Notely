@@ -13,16 +13,18 @@ class ProfilePage extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        IconButton(
-            alignment: Alignment.centerRight,
-            icon: Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-              size: 40,
-            ),
-            onPressed: () {
-              Navigator.of(context).pop();
-            }),
+        (MediaQuery.of(context).size.width < 600)
+            ? IconButton(
+                alignment: Alignment.centerRight,
+                icon: Icon(
+                  Icons.arrow_back,
+                  color: Colors.black,
+                  size: 40,
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                })
+            : Container(),
         Expanded(
           child: Padding(
             padding: const EdgeInsets.only(left: 25, top: 10),
@@ -49,7 +51,8 @@ class ProfilePage extends StatelessWidget {
                 _appbar(context),
                 UpdateImage(
                   radius: 75,
-                  url: " ",
+                  url: state.user.imageURL,
+                  notifier: state.imageNotifier,
                 ),
                 UpdateField(
                   label: "Name",
@@ -74,14 +77,19 @@ class ProfilePage extends StatelessWidget {
                   initialText: state.user.phoneNo,
                   prefixIcon: Icon(Icons.phone_android),
                   readOnly: true,
-                )
+                ),
+                switchTheme()
               ],
             ),
           ),
         ),
       ),
       floatingActionButton: CustomFAB(
-          onPressed: () {},
+          onPressed: () {
+            state.logout();
+            if (MediaQuery.of(context).size.width < 600)
+              Navigator.of(context).pop();
+          },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

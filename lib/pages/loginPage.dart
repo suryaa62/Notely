@@ -49,6 +49,15 @@ class _LoginPageState extends State<LoginPage> {
       child: TextField(
           controller: _fieldController,
           maxLength: 10,
+          onEditingComplete: () async {
+            if (widget.state.status == statesLogin.credential) {
+              widget.state
+                  .phoneFieldContinue(_fieldController.text, widget.state.code);
+              _fieldController.text = "";
+            } else if (widget.state.status == statesLogin.code) {
+              widget.state.verifyCode(_fieldController.text);
+            }
+          },
           style:
               Theme.of(context).textTheme.bodyText1.copyWith(letterSpacing: 3),
           decoration: InputDecoration(
@@ -69,6 +78,15 @@ class _LoginPageState extends State<LoginPage> {
             busy: widget.state.busy,
             child: Stack(
               children: [
+                Positioned(
+                    bottom: 0,
+                    left: -50,
+                    child: Image.asset(
+                      'lib/assets/images/landing.png',
+                      width: 736,
+                      height: 473,
+                      fit: BoxFit.cover,
+                    )),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -92,15 +110,6 @@ class _LoginPageState extends State<LoginPage> {
                     _phoneField(context),
                   ],
                 ),
-                Positioned(
-                    bottom: 0,
-                    left: -50,
-                    child: Image.asset(
-                      'lib/assets/images/landing.png',
-                      width: 736,
-                      height: 473,
-                      fit: BoxFit.cover,
-                    )),
               ],
             ),
           ),

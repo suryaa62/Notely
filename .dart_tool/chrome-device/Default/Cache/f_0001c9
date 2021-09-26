@@ -1,0 +1,359 @@
+define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/notes_app/themeData/theme_data.dart', 'packages/provider/src/selector.dart', 'packages/notes_app/core/Notifiers/profilePageNotifier.dart', 'packages/provider/src/listenable_provider.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/notes_app/pages/homePage.dart', 'packages/notes_app/pages/loginPage.dart', 'packages/provider/src/provider.dart', 'packages/nested/nested.dart'], (function load__packages__notes_app__main_dart(dart_sdk, packages__flutter__src__material__app$46dart, packages__notes_app__themeData__theme_data$46dart, packages__provider__src__selector$46dart, packages__notes_app__core__Notifiers__profilePageNotifier$46dart, packages__provider__src__listenable_provider$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__notes_app__pages__homePage$46dart, packages__notes_app__pages__loginPage$46dart, packages__provider__src__provider$46dart, packages__nested__nested$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const app = packages__flutter__src__material__app$46dart.src__material__app;
+  const theme_data = packages__notes_app__themeData__theme_data$46dart.themeData__theme_data;
+  const consumer = packages__provider__src__selector$46dart.src__consumer;
+  const loginPageNotifier = packages__notes_app__core__Notifiers__profilePageNotifier$46dart.core__Notifiers__loginPageNotifier;
+  const profilePageNotifier = packages__notes_app__core__Notifiers__profilePageNotifier$46dart.core__Notifiers__profilePageNotifier;
+  const locator = packages__notes_app__core__Notifiers__profilePageNotifier$46dart.locator;
+  const detailsPageNotifier = packages__notes_app__core__Notifiers__profilePageNotifier$46dart.core__Notifiers__detailsPageNotifier;
+  const change_notifier_provider = packages__provider__src__listenable_provider$46dart.src__change_notifier_provider;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const binding = packages__flutter__src__widgets__widget_span$46dart.src__widgets__binding;
+  const homePage = packages__notes_app__pages__homePage$46dart.pages__homePage;
+  const loginPage = packages__notes_app__pages__loginPage$46dart.pages__loginPage;
+  const provider = packages__provider__src__provider$46dart.src__provider;
+  const nested = packages__nested__nested$46dart.nested;
+  var main = Object.create(dart.library);
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    LoginPageNotifierL: () => (T.LoginPageNotifierL = dart.constFn(dart.legacy(loginPageNotifier.LoginPageNotifier)))(),
+    ConsumerOfLoginPageNotifierL: () => (T.ConsumerOfLoginPageNotifierL = dart.constFn(consumer.Consumer$(T.LoginPageNotifierL())))(),
+    ProfilePageNotifierL: () => (T.ProfilePageNotifierL = dart.constFn(dart.legacy(profilePageNotifier.ProfilePageNotifier)))(),
+    ChangeNotifierProviderOfProfilePageNotifierL: () => (T.ChangeNotifierProviderOfProfilePageNotifierL = dart.constFn(change_notifier_provider.ChangeNotifierProvider$(T.ProfilePageNotifierL())))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    BuildContextLToProfilePageNotifierL: () => (T.BuildContextLToProfilePageNotifierL = dart.constFn(dart.fnType(T.ProfilePageNotifierL(), [T.BuildContextL()])))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    HomePageL: () => (T.HomePageL = dart.constFn(dart.legacy(homePage.HomePage)))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    BuildContextLAndWidgetLToHomePageL: () => (T.BuildContextLAndWidgetLToHomePageL = dart.constFn(dart.fnType(T.HomePageL(), [T.BuildContextL(), T.WidgetL()])))(),
+    BuildContextLAndLoginPageNotifierLAndWidgetLToWidgetL: () => (T.BuildContextLAndLoginPageNotifierLAndWidgetLToWidgetL = dart.constFn(dart.fnType(T.WidgetL(), [T.BuildContextL(), T.LoginPageNotifierL(), T.WidgetL()])))(),
+    ChangeNotifierProviderOfLoginPageNotifierL: () => (T.ChangeNotifierProviderOfLoginPageNotifierL = dart.constFn(change_notifier_provider.ChangeNotifierProvider$(T.LoginPageNotifierL())))(),
+    BuildContextLToLoginPageNotifierL: () => (T.BuildContextLToLoginPageNotifierL = dart.constFn(dart.fnType(T.LoginPageNotifierL(), [T.BuildContextL()])))(),
+    DetailsPageNotifierL: () => (T.DetailsPageNotifierL = dart.constFn(dart.legacy(detailsPageNotifier.DetailsPageNotifier)))(),
+    ChangeNotifierProviderOfDetailsPageNotifierL: () => (T.ChangeNotifierProviderOfDetailsPageNotifierL = dart.constFn(change_notifier_provider.ChangeNotifierProvider$(T.DetailsPageNotifierL())))(),
+    BuildContextLToDetailsPageNotifierL: () => (T.BuildContextLToDetailsPageNotifierL = dart.constFn(dart.fnType(T.DetailsPageNotifierL(), [T.BuildContextL()])))(),
+    SingleChildWidgetL: () => (T.SingleChildWidgetL = dart.constFn(dart.legacy(nested.SingleChildWidget)))(),
+    JSArrayOfSingleChildWidgetL: () => (T.JSArrayOfSingleChildWidgetL = dart.constFn(_interceptors.JSArray$(T.SingleChildWidgetL())))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "func",
+        [_Location_column]: 59,
+        [_Location_line]: 43,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 44,
+        [_Location_line]: 43,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/main.dart"
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "create",
+        [_Location_column]: 15,
+        [_Location_line]: 42,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 15,
+        [_Location_line]: 43,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5, C[6] || CT.C6], T._LocationL());
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 41,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/main.dart"
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "state",
+        [_Location_column]: 11,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.constList([C[9] || CT.C9], T._LocationL());
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[8] || CT.C8,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 44,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/main.dart"
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 41,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.constList([C[12] || CT.C12], T._LocationL());
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/main.dart"
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 7,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "theme",
+        [_Location_column]: 7,
+        [_Location_line]: 38,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "home",
+        [_Location_column]: 7,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17], T._LocationL());
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 36,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/main.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "create",
+        [_Location_column]: 11,
+        [_Location_line]: 18,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20], T._LocationL());
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 7,
+        [_Location_line]: 17,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/main.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "create",
+        [_Location_column]: 11,
+        [_Location_line]: 20,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23], T._LocationL());
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[22] || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 7,
+        [_Location_line]: 19,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/main.dart"
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "create",
+        [_Location_column]: 11,
+        [_Location_line]: 22,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.constList([C[26] || CT.C26], T._LocationL());
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 7,
+        [_Location_line]: 21,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/main.dart"
+      });
+    },
+    get C28() {
+      return C[28] = dart.constList([], T._LocationL());
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[28] || CT.C28,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 24,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/main.dart"
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "providers",
+        [_Location_column]: 5,
+        [_Location_line]: 16,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 5,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.constList([C[31] || CT.C31, C[32] || CT.C32], T._LocationL());
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[30] || CT.C30,
+        [_Location_name]: null,
+        [_Location_column]: 10,
+        [_Location_line]: 15,
+        [_Location_file]: "file:///C:/Users/surya/practice%20projects/flutter/notes_app/lib/main.dart"
+      });
+    }
+  }, false);
+  var C = Array(33).fill(void 0);
+  var I = ["package:notes_app/main.dart"];
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  main.MyApp = class MyApp extends framework.StatelessWidget {
+    build(context) {
+      return new app.MaterialApp.new({title: "Flutter Demo", theme: theme_data.myTheme(), home: new (T.ConsumerOfLoginPageNotifierL()).new({builder: dart.fn((context, value, child) => {
+            if (value.status == loginPageNotifier.statesLogin.loggedIn) return new (T.ChangeNotifierProviderOfProfilePageNotifierL()).new({create: dart.fn(context => locator.locator.get(T.ProfilePageNotifierL()), T.BuildContextLToProfilePageNotifierL()), builder: dart.fn((context, child) => new homePage.HomePage.new(dart.bind(value, 'signOut'), {$creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), T.BuildContextLAndWidgetLToHomePageL()), $creationLocationd_0dea112b090073317d4: C[3] || CT.C3});
+            return new loginPage.LoginPage.new({state: value, $creationLocationd_0dea112b090073317d4: C[7] || CT.C7});
+          }, T.BuildContextLAndLoginPageNotifierLAndWidgetLToWidgetL()), $creationLocationd_0dea112b090073317d4: C[10] || CT.C10}), $creationLocationd_0dea112b090073317d4: C[13] || CT.C13});
+    }
+  };
+  (main.MyApp.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    main.MyApp.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = main.MyApp.prototype;
+  dart.addTypeTests(main.MyApp);
+  dart.addTypeCaches(main.MyApp);
+  dart.setMethodSignature(main.MyApp, () => ({
+    __proto__: dart.getMethods(main.MyApp.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(main.MyApp, I[0]);
+  main.main = function main$() {
+    locator.setup();
+    binding.runApp(new provider.MultiProvider.new({providers: T.JSArrayOfSingleChildWidgetL().of([new (T.ChangeNotifierProviderOfLoginPageNotifierL()).new({create: dart.fn(context => locator.locator.get(T.LoginPageNotifierL()), T.BuildContextLToLoginPageNotifierL()), $creationLocationd_0dea112b090073317d4: C[18] || CT.C18}), new (T.ChangeNotifierProviderOfProfilePageNotifierL()).new({create: dart.fn(context => new profilePageNotifier.ProfilePageNotifier.new(), T.BuildContextLToProfilePageNotifierL()), $creationLocationd_0dea112b090073317d4: C[21] || CT.C21}), new (T.ChangeNotifierProviderOfDetailsPageNotifierL()).new({create: dart.fn(context => locator.locator.get(T.DetailsPageNotifierL()), T.BuildContextLToDetailsPageNotifierL()), $creationLocationd_0dea112b090073317d4: C[24] || CT.C24})]), child: new main.MyApp.new({$creationLocationd_0dea112b090073317d4: C[27] || CT.C27}), $creationLocationd_0dea112b090073317d4: C[29] || CT.C29}));
+  };
+  dart.trackLibraries("packages/notes_app/main.dart", {
+    "package:notes_app/main.dart": main
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["main.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAkC4B;AACxB,YAAO,iCACE,uBACA,4BACD,qDAAqC,SAAC,SAAS,OAAO;AAC1D,gBAAI,AAAM,AAAO,KAAR,WAAuB,wCAC9B,MAAO,qEACK,QAAC,WAAY,AAAQ,kGACpB,SAAC,SAAS,UAAU,0BAAe,UAAN,KAAK;AACjD,kBAAO,qCACE,KAAK;;IAIpB;;;;;;EACF;;;;;;;;;AApCS,IAAP;AAWE,IAVF,eAAO,2CACM,oCACT,kEACY,QAAC,WAAY,AAAQ,gJACjC,oEACY,QAAC,WAAY,wJACzB,oEACY,QAAC,WAAY,AAAQ,6JAE5B;EAMX","file":"../../../../../../packages/notes_app/main.dart.lib.js"}');
+  // Exports:
+  return {
+    main: main
+  };
+}));
+
+//# sourceMappingURL=main.dart.lib.js.map
