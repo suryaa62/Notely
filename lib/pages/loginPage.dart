@@ -15,6 +15,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   TextEditingController _fieldController = TextEditingController();
+  bool _validated = true;
+  final _validationString = RegExp(r"^[6-9]\d{9}$");
 
   @override
   void dispose() {
@@ -51,9 +53,19 @@ class _LoginPageState extends State<LoginPage> {
           maxLength: 10,
           onEditingComplete: () async {
             if (widget.state.status == statesLogin.credential) {
-              widget.state
-                  .phoneFieldContinue(_fieldController.text, widget.state.code);
-              _fieldController.text = "";
+              if (_validationString.hasMatch(_fieldController.text)) {
+                widget.state.phoneFieldContinue(
+                    _fieldController.text, widget.state.code);
+                _fieldController.text = "";
+                setState(() {
+                  _validated = true;
+                });
+              } else {
+                _fieldController.text = "";
+                setState(() {
+                  _validated = false;
+                });
+              }
             } else if (widget.state.status == statesLogin.code) {
               widget.state.verifyCode(_fieldController.text);
             }
@@ -61,11 +73,12 @@ class _LoginPageState extends State<LoginPage> {
           style:
               Theme.of(context).textTheme.bodyText1.copyWith(letterSpacing: 3),
           decoration: InputDecoration(
-            fillColor: color_data['greyColor'],
-            filled: true,
-            icon: Icon(Icons.phone_android),
-            border: InputBorder.none,
-          )),
+              fillColor: color_data['greyColor'],
+              filled: true,
+              icon: Icon(Icons.phone_android),
+              border: InputBorder.none,
+              errorText:
+                  (_validated) ? null : "Please Enter A Valid Phone No!")),
     );
   }
 
@@ -119,9 +132,19 @@ class _LoginPageState extends State<LoginPage> {
             if (widget.state.status == statesLogin.loggedOut)
               widget.state.letsStart();
             else if (widget.state.status == statesLogin.credential) {
-              widget.state
-                  .phoneFieldContinue(_fieldController.text, widget.state.code);
-              _fieldController.text = "";
+              if (_validationString.hasMatch(_fieldController.text)) {
+                widget.state.phoneFieldContinue(
+                    _fieldController.text, widget.state.code);
+                _fieldController.text = "";
+                setState(() {
+                  _validated = true;
+                });
+              } else {
+                _fieldController.text = "";
+                setState(() {
+                  _validated = false;
+                });
+              }
             } else if (widget.state.status == statesLogin.code) {
               widget.state.verifyCode(_fieldController.text);
             }
