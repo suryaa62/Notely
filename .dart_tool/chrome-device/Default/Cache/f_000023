@@ -1,17 +1,23 @@
-define(['dart_sdk', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/painting/colors.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__material__floating_action_button_theme_dart(dart_sdk, packages__flutter__src__painting__borders$46dart, packages__flutter__src__painting__colors$46dart, packages__flutter__src__foundation__debug$46dart) {
+define(['dart_sdk', 'packages/collection/src/comparators.dart'], (function load__packages__collection__src__equality_dart(dart_sdk, packages__collection__src__comparators$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const ui = dart_sdk.ui;
+  const collection = dart_sdk.collection;
+  const _js_helper = dart_sdk._js_helper;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
-  const colors = packages__flutter__src__painting__colors$46dart.src__painting__colors;
-  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  var floating_action_button_theme = Object.create(dart.library);
-  var $runtimeType = dartx.runtimeType;
+  const comparators = packages__collection__src__comparators$46dart.src__comparators;
+  var equality = Object.create(dart.library);
+  var $hashCode = dartx.hashCode;
+  var $iterator = dartx.iterator;
+  var $rightShift = dartx['>>'];
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  var $_set = dartx._set;
+  var $keys = dartx.keys;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    DiagnosticsPropertyOfShapeBorder: () => (T.DiagnosticsPropertyOfShapeBorder = dart.constFn(diagnostics.DiagnosticsProperty$(borders.ShapeBorder)))()
+    DefaultEqualityOfNeverL: () => (T.DefaultEqualityOfNeverL = dart.constFn(equality.DefaultEquality$(dart.legacy(dart.Never))))(),
+    LinkedMapOf_MapEntry$int: () => (T.LinkedMapOf_MapEntry$int = dart.constFn(_js_helper.LinkedMap$(equality._MapEntry, core.int)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -28,212 +34,697 @@ define(['dart_sdk', 'packages/flutter/src/painting/borders.dart', 'packages/flut
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: floating_action_button_theme.FloatingActionButtonThemeData.prototype,
-        [shape$]: null,
-        [highlightElevation$]: null,
-        [disabledElevation$]: null,
-        [hoverElevation$]: null,
-        [focusElevation$]: null,
-        [elevation$]: null,
-        [splashColor$]: null,
-        [hoverColor$]: null,
-        [focusColor$]: null,
-        [backgroundColor$]: null,
-        [foregroundColor$]: null
+        __proto__: T.DefaultEqualityOfNeverL().prototype
       });
     }
   }, false);
   var C = [void 0];
   var I = [
-    "file:///C:/src/flutter/packages/flutter/lib/src/material/floating_action_button_theme.dart",
-    "package:flutter/src/material/floating_action_button_theme.dart"
+    "package:collection/src/equality.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.15.0/lib/src/equality.dart"
   ];
-  var foregroundColor$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.foregroundColor");
-  var backgroundColor$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.backgroundColor");
-  var focusColor$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.focusColor");
-  var hoverColor$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.hoverColor");
-  var splashColor$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.splashColor");
-  var elevation$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.elevation");
-  var focusElevation$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.focusElevation");
-  var hoverElevation$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.hoverElevation");
-  var disabledElevation$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.disabledElevation");
-  var highlightElevation$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.highlightElevation");
-  var shape$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.shape");
-  const Object_Diagnosticable$36 = class Object_Diagnosticable extends core.Object {};
-  (Object_Diagnosticable$36.new = function() {
-  }).prototype = Object_Diagnosticable$36.prototype;
-  dart.applyMixin(Object_Diagnosticable$36, diagnostics.Diagnosticable);
-  floating_action_button_theme.FloatingActionButtonThemeData = class FloatingActionButtonThemeData extends Object_Diagnosticable$36 {
-    get foregroundColor() {
-      return this[foregroundColor$];
+  const _is_Equality_default = Symbol('_is_Equality_default');
+  equality.Equality$ = dart.generic(E => {
+    class Equality extends core.Object {}
+    (Equality[dart.mixinNew] = function() {
+    }).prototype = Equality.prototype;
+    dart.addTypeTests(Equality);
+    Equality.prototype[_is_Equality_default] = true;
+    dart.addTypeCaches(Equality);
+    dart.setLibraryUri(Equality, I[0]);
+    return Equality;
+  });
+  equality.Equality = equality.Equality$();
+  dart.addTypeTests(equality.Equality, _is_Equality_default);
+  var _comparisonKey = dart.privateName(equality, "_comparisonKey");
+  var _inner = dart.privateName(equality, "_inner");
+  const _is_EqualityBy_default = Symbol('_is_EqualityBy_default');
+  equality.EqualityBy$ = dart.generic((E, F) => {
+    class EqualityBy extends core.Object {
+      equals(e1, e2) {
+        let t0, t0$;
+        E.as(e1);
+        E.as(e2);
+        return this[_inner].equals((t0 = e1, this[_comparisonKey](t0)), (t0$ = e2, this[_comparisonKey](t0$)));
+      }
+      hash(e) {
+        let t0;
+        E.as(e);
+        return this[_inner].hash((t0 = e, this[_comparisonKey](t0)));
+      }
+      isValidKey(o) {
+        let t0;
+        if (E.is(o)) {
+          let value = (t0 = o, this[_comparisonKey](t0));
+          return F.is(value) && dart.test(this[_inner].isValidKey(value));
+        }
+        return false;
+      }
     }
-    set foregroundColor(value) {
-      super.foregroundColor = value;
+    (EqualityBy.new = function(comparisonKey, inner = C[0] || CT.C0) {
+      if (comparisonKey == null) dart.nullFailed(I[1], 54, 28, "comparisonKey");
+      if (inner == null) dart.nullFailed(I[1], 55, 20, "inner");
+      this[_comparisonKey] = comparisonKey;
+      this[_inner] = inner;
+      ;
+    }).prototype = EqualityBy.prototype;
+    dart.addTypeTests(EqualityBy);
+    EqualityBy.prototype[_is_EqualityBy_default] = true;
+    dart.addTypeCaches(EqualityBy);
+    EqualityBy[dart.implements] = () => [equality.Equality$(E)];
+    dart.setMethodSignature(EqualityBy, () => ({
+      __proto__: dart.getMethods(EqualityBy.__proto__),
+      equals: dart.fnType(core.bool, [dart.nullable(core.Object), dart.nullable(core.Object)]),
+      hash: dart.fnType(core.int, [dart.nullable(core.Object)]),
+      isValidKey: dart.fnType(core.bool, [dart.nullable(core.Object)])
+    }));
+    dart.setLibraryUri(EqualityBy, I[0]);
+    dart.setFieldSignature(EqualityBy, () => ({
+      __proto__: dart.getFields(EqualityBy.__proto__),
+      [_comparisonKey]: dart.finalFieldType(dart.fnType(F, [E])),
+      [_inner]: dart.finalFieldType(equality.Equality$(F))
+    }));
+    return EqualityBy;
+  });
+  equality.EqualityBy = equality.EqualityBy$();
+  dart.addTypeTests(equality.EqualityBy, _is_EqualityBy_default);
+  const _is_DefaultEquality_default = Symbol('_is_DefaultEquality_default');
+  equality.DefaultEquality$ = dart.generic(E => {
+    class DefaultEquality extends core.Object {
+      equals(e1, e2) {
+        return dart.equals(e1, e2);
+      }
+      hash(e) {
+        return dart.hashCode(e);
+      }
+      isValidKey(o) {
+        return true;
+      }
     }
-    get backgroundColor() {
-      return this[backgroundColor$];
+    (DefaultEquality.new = function() {
+      ;
+    }).prototype = DefaultEquality.prototype;
+    dart.addTypeTests(DefaultEquality);
+    DefaultEquality.prototype[_is_DefaultEquality_default] = true;
+    dart.addTypeCaches(DefaultEquality);
+    DefaultEquality[dart.implements] = () => [equality.Equality$(E)];
+    dart.setMethodSignature(DefaultEquality, () => ({
+      __proto__: dart.getMethods(DefaultEquality.__proto__),
+      equals: dart.fnType(core.bool, [dart.nullable(core.Object), dart.nullable(core.Object)]),
+      hash: dart.fnType(core.int, [dart.nullable(core.Object)]),
+      isValidKey: dart.fnType(core.bool, [dart.nullable(core.Object)])
+    }));
+    dart.setLibraryUri(DefaultEquality, I[0]);
+    return DefaultEquality;
+  });
+  equality.DefaultEquality = equality.DefaultEquality$();
+  dart.addTypeTests(equality.DefaultEquality, _is_DefaultEquality_default);
+  const _is_IdentityEquality_default = Symbol('_is_IdentityEquality_default');
+  equality.IdentityEquality$ = dart.generic(E => {
+    class IdentityEquality extends core.Object {
+      equals(e1, e2) {
+        E.as(e1);
+        E.as(e2);
+        return core.identical(e1, e2);
+      }
+      hash(e) {
+        E.as(e);
+        return core.identityHashCode(e);
+      }
+      isValidKey(o) {
+        return true;
+      }
     }
-    set backgroundColor(value) {
-      super.backgroundColor = value;
+    (IdentityEquality.new = function() {
+      ;
+    }).prototype = IdentityEquality.prototype;
+    dart.addTypeTests(IdentityEquality);
+    IdentityEquality.prototype[_is_IdentityEquality_default] = true;
+    dart.addTypeCaches(IdentityEquality);
+    IdentityEquality[dart.implements] = () => [equality.Equality$(E)];
+    dart.setMethodSignature(IdentityEquality, () => ({
+      __proto__: dart.getMethods(IdentityEquality.__proto__),
+      equals: dart.fnType(core.bool, [dart.nullable(core.Object), dart.nullable(core.Object)]),
+      hash: dart.fnType(core.int, [dart.nullable(core.Object)]),
+      isValidKey: dart.fnType(core.bool, [dart.nullable(core.Object)])
+    }));
+    dart.setLibraryUri(IdentityEquality, I[0]);
+    return IdentityEquality;
+  });
+  equality.IdentityEquality = equality.IdentityEquality$();
+  dart.addTypeTests(equality.IdentityEquality, _is_IdentityEquality_default);
+  var _elementEquality = dart.privateName(equality, "IterableEquality._elementEquality");
+  var _elementEquality$ = dart.privateName(equality, "_elementEquality");
+  const _is_IterableEquality_default = Symbol('_is_IterableEquality_default');
+  equality.IterableEquality$ = dart.generic(E => {
+    var IterableOfE = () => (IterableOfE = dart.constFn(core.Iterable$(E)))();
+    var IterableNOfE = () => (IterableNOfE = dart.constFn(dart.nullable(IterableOfE())))();
+    class IterableEquality extends core.Object {
+      get [_elementEquality$]() {
+        return this[_elementEquality];
+      }
+      set [_elementEquality$](value) {
+        super[_elementEquality$] = value;
+      }
+      equals(elements1, elements2) {
+        IterableNOfE().as(elements1);
+        IterableNOfE().as(elements2);
+        if (elements1 == elements2) return true;
+        if (elements1 == null || elements2 == null) return false;
+        let it1 = elements1[$iterator];
+        let it2 = elements2[$iterator];
+        while (true) {
+          let hasNext = it1.moveNext();
+          if (hasNext != it2.moveNext()) return false;
+          if (!dart.test(hasNext)) return true;
+          if (!dart.test(this[_elementEquality$].equals(it1.current, it2.current))) return false;
+        }
+      }
+      hash(elements) {
+        IterableNOfE().as(elements);
+        if (elements == null) return dart.hashCode(null);
+        let hash = 0;
+        for (let element of elements) {
+          let c = this[_elementEquality$].hash(element);
+          hash = (hash + dart.notNull(c) & 2147483647) >>> 0;
+          hash = (hash + (hash << 10 >>> 0) & 2147483647) >>> 0;
+          hash = (hash ^ hash[$rightShift](6)) >>> 0;
+        }
+        hash = (hash + (hash << 3 >>> 0) & 2147483647) >>> 0;
+        hash = (hash ^ hash[$rightShift](11)) >>> 0;
+        hash = (hash + (hash << 15 >>> 0) & 2147483647) >>> 0;
+        return hash;
+      }
+      isValidKey(o) {
+        return IterableOfE().is(o);
+      }
     }
-    get focusColor() {
-      return this[focusColor$];
+    (IterableEquality.new = function(elementEquality = C[0] || CT.C0) {
+      if (elementEquality == null) dart.nullFailed(I[1], 115, 20, "elementEquality");
+      this[_elementEquality] = elementEquality;
+      ;
+    }).prototype = IterableEquality.prototype;
+    dart.addTypeTests(IterableEquality);
+    IterableEquality.prototype[_is_IterableEquality_default] = true;
+    dart.addTypeCaches(IterableEquality);
+    IterableEquality[dart.implements] = () => [equality.Equality$(core.Iterable$(E))];
+    dart.setMethodSignature(IterableEquality, () => ({
+      __proto__: dart.getMethods(IterableEquality.__proto__),
+      equals: dart.fnType(core.bool, [dart.nullable(core.Object), dart.nullable(core.Object)]),
+      hash: dart.fnType(core.int, [dart.nullable(core.Object)]),
+      isValidKey: dart.fnType(core.bool, [dart.nullable(core.Object)])
+    }));
+    dart.setLibraryUri(IterableEquality, I[0]);
+    dart.setFieldSignature(IterableEquality, () => ({
+      __proto__: dart.getFields(IterableEquality.__proto__),
+      [_elementEquality$]: dart.finalFieldType(equality.Equality$(dart.nullable(E)))
+    }));
+    return IterableEquality;
+  });
+  equality.IterableEquality = equality.IterableEquality$();
+  dart.addTypeTests(equality.IterableEquality, _is_IterableEquality_default);
+  var _elementEquality$0 = dart.privateName(equality, "ListEquality._elementEquality");
+  const _is_ListEquality_default = Symbol('_is_ListEquality_default');
+  equality.ListEquality$ = dart.generic(E => {
+    var ListOfE = () => (ListOfE = dart.constFn(core.List$(E)))();
+    var ListNOfE = () => (ListNOfE = dart.constFn(dart.nullable(ListOfE())))();
+    class ListEquality extends core.Object {
+      get [_elementEquality$]() {
+        return this[_elementEquality$0];
+      }
+      set [_elementEquality$](value) {
+        super[_elementEquality$] = value;
+      }
+      equals(list1, list2) {
+        ListNOfE().as(list1);
+        ListNOfE().as(list2);
+        if (list1 == list2) return true;
+        if (list1 == null || list2 == null) return false;
+        let length = list1[$length];
+        if (length != list2[$length]) return false;
+        for (let i = 0; i < dart.notNull(length); i = i + 1) {
+          if (!dart.test(this[_elementEquality$].equals(list1[$_get](i), list2[$_get](i)))) return false;
+        }
+        return true;
+      }
+      hash(list) {
+        ListNOfE().as(list);
+        if (list == null) return dart.hashCode(null);
+        let hash = 0;
+        for (let i = 0; i < dart.notNull(list[$length]); i = i + 1) {
+          let c = this[_elementEquality$].hash(list[$_get](i));
+          hash = (hash + dart.notNull(c) & 2147483647) >>> 0;
+          hash = (hash + (hash << 10 >>> 0) & 2147483647) >>> 0;
+          hash = (hash ^ hash[$rightShift](6)) >>> 0;
+        }
+        hash = (hash + (hash << 3 >>> 0) & 2147483647) >>> 0;
+        hash = (hash ^ hash[$rightShift](11)) >>> 0;
+        hash = (hash + (hash << 15 >>> 0) & 2147483647) >>> 0;
+        return hash;
+      }
+      isValidKey(o) {
+        return ListOfE().is(o);
+      }
     }
-    set focusColor(value) {
-      super.focusColor = value;
+    (ListEquality.new = function(elementEquality = C[0] || CT.C0) {
+      if (elementEquality == null) dart.nullFailed(I[1], 167, 20, "elementEquality");
+      this[_elementEquality$0] = elementEquality;
+      ;
+    }).prototype = ListEquality.prototype;
+    dart.addTypeTests(ListEquality);
+    ListEquality.prototype[_is_ListEquality_default] = true;
+    dart.addTypeCaches(ListEquality);
+    ListEquality[dart.implements] = () => [equality.Equality$(core.List$(E))];
+    dart.setMethodSignature(ListEquality, () => ({
+      __proto__: dart.getMethods(ListEquality.__proto__),
+      equals: dart.fnType(core.bool, [dart.nullable(core.Object), dart.nullable(core.Object)]),
+      hash: dart.fnType(core.int, [dart.nullable(core.Object)]),
+      isValidKey: dart.fnType(core.bool, [dart.nullable(core.Object)])
+    }));
+    dart.setLibraryUri(ListEquality, I[0]);
+    dart.setFieldSignature(ListEquality, () => ({
+      __proto__: dart.getFields(ListEquality.__proto__),
+      [_elementEquality$]: dart.finalFieldType(equality.Equality$(E))
+    }));
+    return ListEquality;
+  });
+  equality.ListEquality = equality.ListEquality$();
+  dart.addTypeTests(equality.ListEquality, _is_ListEquality_default);
+  var _elementEquality$1 = dart.privateName(equality, "_UnorderedEquality._elementEquality");
+  const _is__UnorderedEquality_default = Symbol('_is__UnorderedEquality_default');
+  equality._UnorderedEquality$ = dart.generic((E, T) => {
+    var HashMapOfE$dynamic = () => (HashMapOfE$dynamic = dart.constFn(collection.HashMap$(E, dart.dynamic)))();
+    class _UnorderedEquality extends core.Object {
+      get [_elementEquality$]() {
+        return this[_elementEquality$1];
+      }
+      set [_elementEquality$](value) {
+        super[_elementEquality$] = value;
+      }
+      equals(elements1, elements2) {
+        let t0;
+        T.as(elements1);
+        T.as(elements2);
+        if (elements1 == elements2) return true;
+        if (elements1 == null || elements2 == null) return false;
+        let counts = HashMapOfE$dynamic().new({equals: dart.bind(this[_elementEquality$], 'equals'), hashCode: dart.bind(this[_elementEquality$], 'hash'), isValidKey: dart.bind(this[_elementEquality$], 'isValidKey')});
+        let length = 0;
+        for (let e of elements1) {
+          let count = (t0 = counts[$_get](e), t0 == null ? 0 : t0);
+          counts[$_set](e, dart.dsend(count, '+', [1]));
+          length = length + 1;
+        }
+        for (let e of elements2) {
+          let count = counts[$_get](e);
+          if (count == null || dart.equals(count, 0)) return false;
+          counts[$_set](e, dart.dsend(count, '-', [1]));
+          length = length - 1;
+        }
+        return length === 0;
+      }
+      hash(elements) {
+        T.as(elements);
+        if (elements == null) return dart.hashCode(null);
+        let hash = 0;
+        for (let element of elements) {
+          let c = this[_elementEquality$].hash(element);
+          hash = (hash + dart.notNull(c) & 2147483647) >>> 0;
+        }
+        hash = (hash + (hash << 3 >>> 0) & 2147483647) >>> 0;
+        hash = (hash ^ hash[$rightShift](11)) >>> 0;
+        hash = (hash + (hash << 15 >>> 0) & 2147483647) >>> 0;
+        return hash;
+      }
     }
-    get hoverColor() {
-      return this[hoverColor$];
+    (_UnorderedEquality.new = function(_elementEquality) {
+      if (_elementEquality == null) dart.nullFailed(I[1], 209, 33, "_elementEquality");
+      this[_elementEquality$1] = _elementEquality;
+      ;
+    }).prototype = _UnorderedEquality.prototype;
+    dart.addTypeTests(_UnorderedEquality);
+    _UnorderedEquality.prototype[_is__UnorderedEquality_default] = true;
+    dart.addTypeCaches(_UnorderedEquality);
+    _UnorderedEquality[dart.implements] = () => [equality.Equality$(T)];
+    dart.setMethodSignature(_UnorderedEquality, () => ({
+      __proto__: dart.getMethods(_UnorderedEquality.__proto__),
+      equals: dart.fnType(core.bool, [dart.nullable(core.Object), dart.nullable(core.Object)]),
+      hash: dart.fnType(core.int, [dart.nullable(core.Object)])
+    }));
+    dart.setLibraryUri(_UnorderedEquality, I[0]);
+    dart.setFieldSignature(_UnorderedEquality, () => ({
+      __proto__: dart.getFields(_UnorderedEquality.__proto__),
+      [_elementEquality$]: dart.finalFieldType(equality.Equality$(E))
+    }));
+    return _UnorderedEquality;
+  });
+  equality._UnorderedEquality = equality._UnorderedEquality$();
+  dart.addTypeTests(equality._UnorderedEquality, _is__UnorderedEquality_default);
+  const _is_UnorderedIterableEquality_default = Symbol('_is_UnorderedIterableEquality_default');
+  equality.UnorderedIterableEquality$ = dart.generic(E => {
+    var IterableOfE = () => (IterableOfE = dart.constFn(core.Iterable$(E)))();
+    class UnorderedIterableEquality extends equality._UnorderedEquality$(E, dart.nullable(core.Iterable$(E))) {
+      isValidKey(o) {
+        return IterableOfE().is(o);
+      }
     }
-    set hoverColor(value) {
-      super.hoverColor = value;
+    (UnorderedIterableEquality.new = function(elementEquality = C[0] || CT.C0) {
+      if (elementEquality == null) dart.nullFailed(I[1], 256, 20, "elementEquality");
+      UnorderedIterableEquality.__proto__.new.call(this, elementEquality);
+      ;
+    }).prototype = UnorderedIterableEquality.prototype;
+    dart.addTypeTests(UnorderedIterableEquality);
+    UnorderedIterableEquality.prototype[_is_UnorderedIterableEquality_default] = true;
+    dart.addTypeCaches(UnorderedIterableEquality);
+    dart.setMethodSignature(UnorderedIterableEquality, () => ({
+      __proto__: dart.getMethods(UnorderedIterableEquality.__proto__),
+      isValidKey: dart.fnType(core.bool, [dart.nullable(core.Object)])
+    }));
+    dart.setLibraryUri(UnorderedIterableEquality, I[0]);
+    return UnorderedIterableEquality;
+  });
+  equality.UnorderedIterableEquality = equality.UnorderedIterableEquality$();
+  dart.addTypeTests(equality.UnorderedIterableEquality, _is_UnorderedIterableEquality_default);
+  const _is_SetEquality_default = Symbol('_is_SetEquality_default');
+  equality.SetEquality$ = dart.generic(E => {
+    var SetOfE = () => (SetOfE = dart.constFn(core.Set$(E)))();
+    class SetEquality extends equality._UnorderedEquality$(E, dart.nullable(core.Set$(E))) {
+      isValidKey(o) {
+        return SetOfE().is(o);
+      }
     }
-    get splashColor() {
-      return this[splashColor$];
-    }
-    set splashColor(value) {
-      super.splashColor = value;
-    }
-    get elevation() {
-      return this[elevation$];
-    }
-    set elevation(value) {
-      super.elevation = value;
-    }
-    get focusElevation() {
-      return this[focusElevation$];
-    }
-    set focusElevation(value) {
-      super.focusElevation = value;
-    }
-    get hoverElevation() {
-      return this[hoverElevation$];
-    }
-    set hoverElevation(value) {
-      super.hoverElevation = value;
-    }
-    get disabledElevation() {
-      return this[disabledElevation$];
-    }
-    set disabledElevation(value) {
-      super.disabledElevation = value;
-    }
-    get highlightElevation() {
-      return this[highlightElevation$];
-    }
-    set highlightElevation(value) {
-      super.highlightElevation = value;
-    }
-    get shape() {
-      return this[shape$];
-    }
-    set shape(value) {
-      super.shape = value;
-    }
-    copyWith(opts) {
-      let t0, t0$, t0$0, t0$1, t0$2, t0$3, t0$4, t0$5, t0$6, t0$7, t0$8;
-      let foregroundColor = opts && 'foregroundColor' in opts ? opts.foregroundColor : null;
-      let backgroundColor = opts && 'backgroundColor' in opts ? opts.backgroundColor : null;
-      let focusColor = opts && 'focusColor' in opts ? opts.focusColor : null;
-      let hoverColor = opts && 'hoverColor' in opts ? opts.hoverColor : null;
-      let splashColor = opts && 'splashColor' in opts ? opts.splashColor : null;
-      let elevation = opts && 'elevation' in opts ? opts.elevation : null;
-      let focusElevation = opts && 'focusElevation' in opts ? opts.focusElevation : null;
-      let hoverElevation = opts && 'hoverElevation' in opts ? opts.hoverElevation : null;
-      let disabledElevation = opts && 'disabledElevation' in opts ? opts.disabledElevation : null;
-      let highlightElevation = opts && 'highlightElevation' in opts ? opts.highlightElevation : null;
-      let shape = opts && 'shape' in opts ? opts.shape : null;
-      return new floating_action_button_theme.FloatingActionButtonThemeData.new({foregroundColor: (t0 = foregroundColor, t0 == null ? this.foregroundColor : t0), backgroundColor: (t0$ = backgroundColor, t0$ == null ? this.backgroundColor : t0$), focusColor: (t0$0 = focusColor, t0$0 == null ? this.focusColor : t0$0), hoverColor: (t0$1 = hoverColor, t0$1 == null ? this.hoverColor : t0$1), splashColor: (t0$2 = splashColor, t0$2 == null ? this.splashColor : t0$2), elevation: (t0$3 = elevation, t0$3 == null ? this.elevation : t0$3), focusElevation: (t0$4 = focusElevation, t0$4 == null ? this.focusElevation : t0$4), hoverElevation: (t0$5 = hoverElevation, t0$5 == null ? this.hoverElevation : t0$5), disabledElevation: (t0$6 = disabledElevation, t0$6 == null ? this.disabledElevation : t0$6), highlightElevation: (t0$7 = highlightElevation, t0$7 == null ? this.highlightElevation : t0$7), shape: (t0$8 = shape, t0$8 == null ? this.shape : t0$8)});
-    }
-    static lerp(a, b, t) {
-      let t0, t0$, t0$0, t0$1, t0$2, t0$3, t0$4, t0$5, t0$6, t0$7, t0$8, t0$9, t0$10, t0$11, t0$12, t0$13, t0$14, t0$15, t0$16, t0$17, t0$18, t0$19;
-      if (t == null) dart.nullFailed(I[0], 127, 121, "t");
-      if (!(t != null)) dart.assertFailed(null, I[0], 128, 12, "t != null");
-      if (a == null && b == null) return null;
-      return new floating_action_button_theme.FloatingActionButtonThemeData.new({foregroundColor: ui.Color.lerp((t0 = a, t0 == null ? null : t0.foregroundColor), (t0$ = b, t0$ == null ? null : t0$.foregroundColor), t), backgroundColor: ui.Color.lerp((t0$0 = a, t0$0 == null ? null : t0$0.backgroundColor), (t0$1 = b, t0$1 == null ? null : t0$1.backgroundColor), t), focusColor: ui.Color.lerp((t0$2 = a, t0$2 == null ? null : t0$2.focusColor), (t0$3 = b, t0$3 == null ? null : t0$3.focusColor), t), hoverColor: ui.Color.lerp((t0$4 = a, t0$4 == null ? null : t0$4.hoverColor), (t0$5 = b, t0$5 == null ? null : t0$5.hoverColor), t), splashColor: ui.Color.lerp((t0$6 = a, t0$6 == null ? null : t0$6.splashColor), (t0$7 = b, t0$7 == null ? null : t0$7.splashColor), t), elevation: ui.lerpDouble((t0$8 = a, t0$8 == null ? null : t0$8.elevation), (t0$9 = b, t0$9 == null ? null : t0$9.elevation), t), focusElevation: ui.lerpDouble((t0$10 = a, t0$10 == null ? null : t0$10.focusElevation), (t0$11 = b, t0$11 == null ? null : t0$11.focusElevation), t), hoverElevation: ui.lerpDouble((t0$12 = a, t0$12 == null ? null : t0$12.hoverElevation), (t0$13 = b, t0$13 == null ? null : t0$13.hoverElevation), t), disabledElevation: ui.lerpDouble((t0$14 = a, t0$14 == null ? null : t0$14.disabledElevation), (t0$15 = b, t0$15 == null ? null : t0$15.disabledElevation), t), highlightElevation: ui.lerpDouble((t0$16 = a, t0$16 == null ? null : t0$16.highlightElevation), (t0$17 = b, t0$17 == null ? null : t0$17.highlightElevation), t), shape: borders.ShapeBorder.lerp((t0$18 = a, t0$18 == null ? null : t0$18.shape), (t0$19 = b, t0$19 == null ? null : t0$19.shape), t)});
-    }
+    (SetEquality.new = function(elementEquality = C[0] || CT.C0) {
+      if (elementEquality == null) dart.nullFailed(I[1], 277, 20, "elementEquality");
+      SetEquality.__proto__.new.call(this, elementEquality);
+      ;
+    }).prototype = SetEquality.prototype;
+    dart.addTypeTests(SetEquality);
+    SetEquality.prototype[_is_SetEquality_default] = true;
+    dart.addTypeCaches(SetEquality);
+    dart.setMethodSignature(SetEquality, () => ({
+      __proto__: dart.getMethods(SetEquality.__proto__),
+      isValidKey: dart.fnType(core.bool, [dart.nullable(core.Object)])
+    }));
+    dart.setLibraryUri(SetEquality, I[0]);
+    return SetEquality;
+  });
+  equality.SetEquality = equality.SetEquality$();
+  dart.addTypeTests(equality.SetEquality, _is_SetEquality_default);
+  var _keyEquality = dart.privateName(equality, "_keyEquality");
+  var _valueEquality = dart.privateName(equality, "_valueEquality");
+  equality._MapEntry = class _MapEntry extends core.Object {
     get hashCode() {
-      return ui.hashValues(this.foregroundColor, this.backgroundColor, this.focusColor, this.hoverColor, this.splashColor, this.elevation, this.focusElevation, this.hoverElevation, this.disabledElevation, this.highlightElevation, this.shape);
+      return (3 * dart.notNull(this.equality[_keyEquality].hash(this.key)) + 7 * dart.notNull(this.equality[_valueEquality].hash(this.value)) & 2147483647) >>> 0;
     }
     _equals(other) {
       if (other == null) return false;
-      if (this === other) return true;
-      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
-      return floating_action_button_theme.FloatingActionButtonThemeData.is(other) && dart.equals(other.foregroundColor, this.foregroundColor) && dart.equals(other.backgroundColor, this.backgroundColor) && dart.equals(other.focusColor, this.focusColor) && dart.equals(other.hoverColor, this.hoverColor) && dart.equals(other.splashColor, this.splashColor) && other.elevation == this.elevation && other.focusElevation == this.focusElevation && other.hoverElevation == this.hoverElevation && other.disabledElevation == this.disabledElevation && other.highlightElevation == this.highlightElevation && dart.equals(other.shape, this.shape);
-    }
-    debugFillProperties(properties) {
-      if (properties == null) dart.nullFailed(I[0], 184, 56, "properties");
-      super.debugFillProperties(properties);
-      let defaultData = C[0] || CT.C0;
-      properties.add(new colors.ColorProperty.new("foregroundColor", this.foregroundColor, {defaultValue: defaultData.foregroundColor}));
-      properties.add(new colors.ColorProperty.new("backgroundColor", this.backgroundColor, {defaultValue: defaultData.backgroundColor}));
-      properties.add(new colors.ColorProperty.new("focusColor", this.focusColor, {defaultValue: defaultData.focusColor}));
-      properties.add(new colors.ColorProperty.new("hoverColor", this.hoverColor, {defaultValue: defaultData.hoverColor}));
-      properties.add(new colors.ColorProperty.new("splashColor", this.splashColor, {defaultValue: defaultData.splashColor}));
-      properties.add(new diagnostics.DoubleProperty.new("elevation", this.elevation, {defaultValue: defaultData.elevation}));
-      properties.add(new diagnostics.DoubleProperty.new("focusElevation", this.focusElevation, {defaultValue: defaultData.focusElevation}));
-      properties.add(new diagnostics.DoubleProperty.new("hoverElevation", this.hoverElevation, {defaultValue: defaultData.hoverElevation}));
-      properties.add(new diagnostics.DoubleProperty.new("disabledElevation", this.disabledElevation, {defaultValue: defaultData.disabledElevation}));
-      properties.add(new diagnostics.DoubleProperty.new("highlightElevation", this.highlightElevation, {defaultValue: defaultData.highlightElevation}));
-      properties.add(new (T.DiagnosticsPropertyOfShapeBorder()).new("shape", this.shape, {defaultValue: defaultData.shape}));
+      return equality._MapEntry.is(other) && dart.test(this.equality[_keyEquality].equals(this.key, other.key)) && dart.test(this.equality[_valueEquality].equals(this.value, other.value));
     }
   };
-  (floating_action_button_theme.FloatingActionButtonThemeData.new = function(opts) {
-    let foregroundColor = opts && 'foregroundColor' in opts ? opts.foregroundColor : null;
-    let backgroundColor = opts && 'backgroundColor' in opts ? opts.backgroundColor : null;
-    let focusColor = opts && 'focusColor' in opts ? opts.focusColor : null;
-    let hoverColor = opts && 'hoverColor' in opts ? opts.hoverColor : null;
-    let splashColor = opts && 'splashColor' in opts ? opts.splashColor : null;
-    let elevation = opts && 'elevation' in opts ? opts.elevation : null;
-    let focusElevation = opts && 'focusElevation' in opts ? opts.focusElevation : null;
-    let hoverElevation = opts && 'hoverElevation' in opts ? opts.hoverElevation : null;
-    let disabledElevation = opts && 'disabledElevation' in opts ? opts.disabledElevation : null;
-    let highlightElevation = opts && 'highlightElevation' in opts ? opts.highlightElevation : null;
-    let shape = opts && 'shape' in opts ? opts.shape : null;
-    this[foregroundColor$] = foregroundColor;
-    this[backgroundColor$] = backgroundColor;
-    this[focusColor$] = focusColor;
-    this[hoverColor$] = hoverColor;
-    this[splashColor$] = splashColor;
-    this[elevation$] = elevation;
-    this[focusElevation$] = focusElevation;
-    this[hoverElevation$] = hoverElevation;
-    this[disabledElevation$] = disabledElevation;
-    this[highlightElevation$] = highlightElevation;
-    this[shape$] = shape;
+  (equality._MapEntry.new = function(equality, key, value) {
+    if (equality == null) dart.nullFailed(I[1], 292, 18, "equality");
+    this.equality = equality;
+    this.key = key;
+    this.value = value;
     ;
-  }).prototype = floating_action_button_theme.FloatingActionButtonThemeData.prototype;
-  dart.addTypeTests(floating_action_button_theme.FloatingActionButtonThemeData);
-  dart.addTypeCaches(floating_action_button_theme.FloatingActionButtonThemeData);
-  dart.setMethodSignature(floating_action_button_theme.FloatingActionButtonThemeData, () => ({
-    __proto__: dart.getMethods(floating_action_button_theme.FloatingActionButtonThemeData.__proto__),
-    copyWith: dart.fnType(floating_action_button_theme.FloatingActionButtonThemeData, [], {backgroundColor: dart.nullable(ui.Color), disabledElevation: dart.nullable(core.double), elevation: dart.nullable(core.double), focusColor: dart.nullable(ui.Color), focusElevation: dart.nullable(core.double), foregroundColor: dart.nullable(ui.Color), highlightElevation: dart.nullable(core.double), hoverColor: dart.nullable(ui.Color), hoverElevation: dart.nullable(core.double), shape: dart.nullable(borders.ShapeBorder), splashColor: dart.nullable(ui.Color)}, {})
+  }).prototype = equality._MapEntry.prototype;
+  dart.addTypeTests(equality._MapEntry);
+  dart.addTypeCaches(equality._MapEntry);
+  dart.setLibraryUri(equality._MapEntry, I[0]);
+  dart.setFieldSignature(equality._MapEntry, () => ({
+    __proto__: dart.getFields(equality._MapEntry.__proto__),
+    equality: dart.finalFieldType(equality.MapEquality),
+    key: dart.finalFieldType(dart.dynamic),
+    value: dart.finalFieldType(dart.dynamic)
   }));
-  dart.setLibraryUri(floating_action_button_theme.FloatingActionButtonThemeData, I[1]);
-  dart.setFieldSignature(floating_action_button_theme.FloatingActionButtonThemeData, () => ({
-    __proto__: dart.getFields(floating_action_button_theme.FloatingActionButtonThemeData.__proto__),
-    foregroundColor: dart.finalFieldType(dart.nullable(ui.Color)),
-    backgroundColor: dart.finalFieldType(dart.nullable(ui.Color)),
-    focusColor: dart.finalFieldType(dart.nullable(ui.Color)),
-    hoverColor: dart.finalFieldType(dart.nullable(ui.Color)),
-    splashColor: dart.finalFieldType(dart.nullable(ui.Color)),
-    elevation: dart.finalFieldType(dart.nullable(core.double)),
-    focusElevation: dart.finalFieldType(dart.nullable(core.double)),
-    hoverElevation: dart.finalFieldType(dart.nullable(core.double)),
-    disabledElevation: dart.finalFieldType(dart.nullable(core.double)),
-    highlightElevation: dart.finalFieldType(dart.nullable(core.double)),
-    shape: dart.finalFieldType(dart.nullable(borders.ShapeBorder))
+  dart.defineExtensionMethods(equality._MapEntry, ['_equals']);
+  dart.defineExtensionAccessors(equality._MapEntry, ['hashCode']);
+  var _keyEquality$ = dart.privateName(equality, "MapEquality._keyEquality");
+  var _valueEquality$ = dart.privateName(equality, "MapEquality._valueEquality");
+  const _is_MapEquality_default = Symbol('_is_MapEquality_default');
+  equality.MapEquality$ = dart.generic((K, V) => {
+    var MapOfK$V = () => (MapOfK$V = dart.constFn(core.Map$(K, V)))();
+    var MapNOfK$V = () => (MapNOfK$V = dart.constFn(dart.nullable(MapOfK$V())))();
+    class MapEquality extends core.Object {
+      get [_keyEquality]() {
+        return this[_keyEquality$];
+      }
+      set [_keyEquality](value) {
+        super[_keyEquality] = value;
+      }
+      get [_valueEquality]() {
+        return this[_valueEquality$];
+      }
+      set [_valueEquality](value) {
+        super[_valueEquality] = value;
+      }
+      equals(map1, map2) {
+        let t0;
+        MapNOfK$V().as(map1);
+        MapNOfK$V().as(map2);
+        if (map1 == map2) return true;
+        if (map1 == null || map2 == null) return false;
+        let length = map1[$length];
+        if (length != map2[$length]) return false;
+        let equalElementCounts = new (T.LinkedMapOf_MapEntry$int()).new();
+        for (let key of map1[$keys]) {
+          let entry = new equality._MapEntry.new(this, key, map1[$_get](key));
+          let count = (t0 = equalElementCounts[$_get](entry), t0 == null ? 0 : t0);
+          equalElementCounts[$_set](entry, dart.notNull(count) + 1);
+        }
+        for (let key of map2[$keys]) {
+          let entry = new equality._MapEntry.new(this, key, map2[$_get](key));
+          let count = equalElementCounts[$_get](entry);
+          if (count == null || count === 0) return false;
+          equalElementCounts[$_set](entry, dart.notNull(count) - 1);
+        }
+        return true;
+      }
+      hash(map) {
+        MapNOfK$V().as(map);
+        if (map == null) return dart.hashCode(null);
+        let hash = 0;
+        for (let key of map[$keys]) {
+          let keyHash = this[_keyEquality].hash(key);
+          let valueHash = this[_valueEquality].hash(V.as(map[$_get](key)));
+          hash = (hash + 3 * dart.notNull(keyHash) + 7 * dart.notNull(valueHash) & 2147483647) >>> 0;
+        }
+        hash = (hash + (hash << 3 >>> 0) & 2147483647) >>> 0;
+        hash = (hash ^ hash[$rightShift](11)) >>> 0;
+        hash = (hash + (hash << 15 >>> 0) & 2147483647) >>> 0;
+        return hash;
+      }
+      isValidKey(o) {
+        return MapOfK$V().is(o);
+      }
+    }
+    (MapEquality.new = function(opts) {
+      let keys = opts && 'keys' in opts ? opts.keys : C[0] || CT.C0;
+      if (keys == null) dart.nullFailed(I[1], 319, 20, "keys");
+      let values = opts && 'values' in opts ? opts.values : C[0] || CT.C0;
+      if (values == null) dart.nullFailed(I[1], 320, 19, "values");
+      this[_keyEquality$] = keys;
+      this[_valueEquality$] = values;
+      ;
+    }).prototype = MapEquality.prototype;
+    dart.addTypeTests(MapEquality);
+    MapEquality.prototype[_is_MapEquality_default] = true;
+    dart.addTypeCaches(MapEquality);
+    MapEquality[dart.implements] = () => [equality.Equality$(core.Map$(K, V))];
+    dart.setMethodSignature(MapEquality, () => ({
+      __proto__: dart.getMethods(MapEquality.__proto__),
+      equals: dart.fnType(core.bool, [dart.nullable(core.Object), dart.nullable(core.Object)]),
+      hash: dart.fnType(core.int, [dart.nullable(core.Object)]),
+      isValidKey: dart.fnType(core.bool, [dart.nullable(core.Object)])
+    }));
+    dart.setLibraryUri(MapEquality, I[0]);
+    dart.setFieldSignature(MapEquality, () => ({
+      __proto__: dart.getFields(MapEquality.__proto__),
+      [_keyEquality]: dart.finalFieldType(equality.Equality$(K)),
+      [_valueEquality]: dart.finalFieldType(equality.Equality$(V))
+    }));
+    return MapEquality;
+  });
+  equality.MapEquality = equality.MapEquality$();
+  dart.addTypeTests(equality.MapEquality, _is_MapEquality_default);
+  var _equalities = dart.privateName(equality, "MultiEquality._equalities");
+  var _equalities$ = dart.privateName(equality, "_equalities");
+  const _is_MultiEquality_default = Symbol('_is_MultiEquality_default');
+  equality.MultiEquality$ = dart.generic(E => {
+    class MultiEquality extends core.Object {
+      get [_equalities$]() {
+        return this[_equalities];
+      }
+      set [_equalities$](value) {
+        super[_equalities$] = value;
+      }
+      equals(e1, e2) {
+        E.as(e1);
+        E.as(e2);
+        for (let eq of this[_equalities$]) {
+          if (dart.test(eq.isValidKey(e1))) return dart.test(eq.isValidKey(e2)) && dart.test(eq.equals(e1, e2));
+        }
+        return false;
+      }
+      hash(e) {
+        E.as(e);
+        for (let eq of this[_equalities$]) {
+          if (dart.test(eq.isValidKey(e))) return eq.hash(e);
+        }
+        return 0;
+      }
+      isValidKey(o) {
+        for (let eq of this[_equalities$]) {
+          if (dart.test(eq.isValidKey(o))) return true;
+        }
+        return false;
+      }
+    }
+    (MultiEquality.new = function(equalities) {
+      if (equalities == null) dart.nullFailed(I[1], 381, 45, "equalities");
+      this[_equalities] = equalities;
+      ;
+    }).prototype = MultiEquality.prototype;
+    dart.addTypeTests(MultiEquality);
+    MultiEquality.prototype[_is_MultiEquality_default] = true;
+    dart.addTypeCaches(MultiEquality);
+    MultiEquality[dart.implements] = () => [equality.Equality$(E)];
+    dart.setMethodSignature(MultiEquality, () => ({
+      __proto__: dart.getMethods(MultiEquality.__proto__),
+      equals: dart.fnType(core.bool, [dart.nullable(core.Object), dart.nullable(core.Object)]),
+      hash: dart.fnType(core.int, [dart.nullable(core.Object)]),
+      isValidKey: dart.fnType(core.bool, [dart.nullable(core.Object)])
+    }));
+    dart.setLibraryUri(MultiEquality, I[0]);
+    dart.setFieldSignature(MultiEquality, () => ({
+      __proto__: dart.getFields(MultiEquality.__proto__),
+      [_equalities$]: dart.finalFieldType(core.Iterable$(equality.Equality$(E)))
+    }));
+    return MultiEquality;
+  });
+  equality.MultiEquality = equality.MultiEquality$();
+  dart.addTypeTests(equality.MultiEquality, _is_MultiEquality_default);
+  var _base = dart.privateName(equality, "DeepCollectionEquality._base");
+  var _unordered = dart.privateName(equality, "DeepCollectionEquality._unordered");
+  var _base$ = dart.privateName(equality, "_base");
+  var _unordered$ = dart.privateName(equality, "_unordered");
+  equality.DeepCollectionEquality = class DeepCollectionEquality extends core.Object {
+    get [_base$]() {
+      return this[_base];
+    }
+    set [_base$](value) {
+      super[_base$] = value;
+    }
+    get [_unordered$]() {
+      return this[_unordered];
+    }
+    set [_unordered$](value) {
+      super[_unordered$] = value;
+    }
+    equals(e1, e2) {
+      if (core.Set.is(e1)) {
+        return core.Set.is(e2) && dart.test(new equality.SetEquality.new(this).equals(e1, e2));
+      }
+      if (core.Map.is(e1)) {
+        return core.Map.is(e2) && dart.test(new equality.MapEquality.new({keys: this, values: this}).equals(e1, e2));
+      }
+      if (!dart.test(this[_unordered$])) {
+        if (core.List.is(e1)) {
+          return core.List.is(e2) && dart.test(new equality.ListEquality.new(this).equals(e1, e2));
+        }
+        if (core.Iterable.is(e1)) {
+          return core.Iterable.is(e2) && dart.test(new equality.IterableEquality.new(this).equals(e1, e2));
+        }
+      } else if (core.Iterable.is(e1)) {
+        if (core.List.is(e1) !== core.List.is(e2)) return false;
+        return core.Iterable.is(e2) && dart.test(new equality.UnorderedIterableEquality.new(this).equals(e1, e2));
+      }
+      return this[_base$].equals(e1, e2);
+    }
+    hash(o) {
+      if (core.Set.is(o)) return new equality.SetEquality.new(this).hash(o);
+      if (core.Map.is(o)) return new equality.MapEquality.new({keys: this, values: this}).hash(o);
+      if (!dart.test(this[_unordered$])) {
+        if (core.List.is(o)) return new equality.ListEquality.new(this).hash(o);
+        if (core.Iterable.is(o)) return new equality.IterableEquality.new(this).hash(o);
+      } else if (core.Iterable.is(o)) {
+        return new equality.UnorderedIterableEquality.new(this).hash(o);
+      }
+      return this[_base$].hash(o);
+    }
+    isValidKey(o) {
+      return core.Iterable.is(o) || core.Map.is(o) || dart.test(this[_base$].isValidKey(o));
+    }
+  };
+  (equality.DeepCollectionEquality.new = function(base = C[0] || CT.C0) {
+    if (base == null) dart.nullFailed(I[1], 427, 42, "base");
+    this[_base] = base;
+    this[_unordered] = false;
+    ;
+  }).prototype = equality.DeepCollectionEquality.prototype;
+  (equality.DeepCollectionEquality.unordered = function(base = C[0] || CT.C0) {
+    if (base == null) dart.nullFailed(I[1], 435, 17, "base");
+    this[_base] = base;
+    this[_unordered] = true;
+    ;
+  }).prototype = equality.DeepCollectionEquality.prototype;
+  dart.addTypeTests(equality.DeepCollectionEquality);
+  dart.addTypeCaches(equality.DeepCollectionEquality);
+  equality.DeepCollectionEquality[dart.implements] = () => [equality.Equality];
+  dart.setMethodSignature(equality.DeepCollectionEquality, () => ({
+    __proto__: dart.getMethods(equality.DeepCollectionEquality.__proto__),
+    equals: dart.fnType(core.bool, [dart.nullable(core.Object), dart.nullable(core.Object)]),
+    hash: dart.fnType(core.int, [dart.nullable(core.Object)]),
+    isValidKey: dart.fnType(core.bool, [dart.nullable(core.Object)])
   }));
-  dart.defineExtensionMethods(floating_action_button_theme.FloatingActionButtonThemeData, ['_equals']);
-  dart.defineExtensionAccessors(floating_action_button_theme.FloatingActionButtonThemeData, ['hashCode']);
-  dart.trackLibraries("packages/flutter/src/material/floating_action_button_theme.dart", {
-    "package:flutter/src/material/floating_action_button_theme.dart": floating_action_button_theme
+  dart.setLibraryUri(equality.DeepCollectionEquality, I[0]);
+  dart.setFieldSignature(equality.DeepCollectionEquality, () => ({
+    __proto__: dart.getFields(equality.DeepCollectionEquality.__proto__),
+    [_base$]: dart.finalFieldType(equality.Equality),
+    [_unordered$]: dart.finalFieldType(core.bool)
+  }));
+  equality.CaseInsensitiveEquality = class CaseInsensitiveEquality extends core.Object {
+    equals(string1, string2) {
+      core.String.as(string1);
+      if (string1 == null) dart.nullFailed(I[1], 486, 22, "string1");
+      core.String.as(string2);
+      if (string2 == null) dart.nullFailed(I[1], 486, 38, "string2");
+      return comparators.equalsIgnoreAsciiCase(string1, string2);
+    }
+    hash(string) {
+      core.String.as(string);
+      if (string == null) dart.nullFailed(I[1], 490, 19, "string");
+      return comparators.hashIgnoreAsciiCase(string);
+    }
+    isValidKey(object) {
+      return typeof object == 'string';
+    }
+  };
+  (equality.CaseInsensitiveEquality.new = function() {
+    ;
+  }).prototype = equality.CaseInsensitiveEquality.prototype;
+  dart.addTypeTests(equality.CaseInsensitiveEquality);
+  dart.addTypeCaches(equality.CaseInsensitiveEquality);
+  equality.CaseInsensitiveEquality[dart.implements] = () => [equality.Equality$(core.String)];
+  dart.setMethodSignature(equality.CaseInsensitiveEquality, () => ({
+    __proto__: dart.getMethods(equality.CaseInsensitiveEquality.__proto__),
+    equals: dart.fnType(core.bool, [dart.nullable(core.Object), dart.nullable(core.Object)]),
+    hash: dart.fnType(core.int, [dart.nullable(core.Object)]),
+    isValidKey: dart.fnType(core.bool, [dart.nullable(core.Object)])
+  }));
+  dart.setLibraryUri(equality.CaseInsensitiveEquality, I[0]);
+  dart.defineLazy(equality, {
+    /*equality._HASH_MASK*/get _HASH_MASK() {
+      return 2147483647;
+    }
+  }, false);
+  dart.trackLibraries("packages/collection/src/equality.dart", {
+    "package:collection/src/equality.dart": equality
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["floating_action_button_theme.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/material/floating_action_button_theme.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["equality.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/collection/src/equality.dart.lib.js"}');
   // Exports:
   return {
-    src__material__floating_action_button_theme: floating_action_button_theme
+    src__equality: equality
   };
 }));
 
-//# sourceMappingURL=floating_action_button_theme.dart.lib.js.map
+//# sourceMappingURL=equality.dart.lib.js.map

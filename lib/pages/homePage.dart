@@ -200,9 +200,11 @@ class _HomePageState extends State<HomePage> {
                                                                         value,
                                                                         widget.webFunc))),
                                                   ));
-                                                else
+                                                else {
+                                                  homePageValue.reload();
                                                   widget.webFunc(homePageValue
                                                       .notes[index]);
+                                                }
                                               },
                                               child: NoteCard(
                                                 note:
@@ -291,8 +293,15 @@ class _AdaptiveHomePageState extends State<AdaptiveHomePage> {
                         child: Text("No Note Selcted!"),
                       ),
                     )
-                  : DetailsPage(DetailsPageNotifier.showNote(currentNote),
-                      ChangeCurrentNote)),
+                  : ChangeNotifierProvider(
+                      key: UniqueKey(),
+                      create: (context) =>
+                          DetailsPageNotifier.showNote(currentNote),
+                      builder: (context, child) =>
+                          Consumer<DetailsPageNotifier>(
+                              builder: (context, value, child) {
+                            return DetailsPage(value, ChangeCurrentNote);
+                          }))),
           Expanded(
             flex: 30,
             child: ChangeNotifierProvider<ProfilePageNotifier>(

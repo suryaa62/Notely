@@ -1,86 +1,36 @@
-define(['dart_sdk', 'packages/firebase_core_web/src/interop/utils/utils.dart', 'packages/firebase_core_web/src/interop/app.dart', 'packages/firebase_core_platform_interface/firebase_core_platform_interface.dart', 'packages/firebase_core_web/src/interop/utils/js.dart', 'packages/cloud_firestore_platform_interface/src/load_bundle_task_state.dart', 'packages/cloud_firestore_platform_interface/src/platform_interface/utils/load_bundle_task_state.dart'], (function load__packages__cloud_firestore_web__src__interop__utils__utils_dart(dart_sdk, packages__firebase_core_web__src__interop__utils__utils$46dart, packages__firebase_core_web__src__interop__app$46dart, packages__firebase_core_platform_interface__firebase_core_platform_interface$46dart, packages__firebase_core_web__src__interop__utils__js$46dart, packages__cloud_firestore_platform_interface__src__load_bundle_task_state$46dart, packages__cloud_firestore_platform_interface__src__platform_interface__utils__load_bundle_task_state$46dart) {
+define(['dart_sdk', 'packages/collection/src/equality.dart', 'packages/plugin_platform_interface/plugin_platform_interface.dart', 'packages/flutter/src/services/system_channels.dart', 'packages/flutter/src/foundation/_platform_web.dart'], (function load__packages__firebase_core_platform_interface__firebase_core_platform_interface_dart(dart_sdk, packages__collection__src__equality$46dart, packages__plugin_platform_interface__plugin_platform_interface$46dart, packages__flutter__src__services__system_channels$46dart, packages__flutter__src__foundation___platform_web$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const js_util = dart_sdk.js_util;
-  const js = dart_sdk.js;
-  const _internal = dart_sdk._internal;
+  const ui = dart_sdk.ui;
+  const _js_helper = dart_sdk._js_helper;
   const async = dart_sdk.async;
-  const typed_data = dart_sdk.typed_data;
-  const _interceptors = dart_sdk._interceptors;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const utils = packages__firebase_core_web__src__interop__utils__utils$46dart.src__interop__utils__utils;
-  const app = packages__firebase_core_web__src__interop__app$46dart.src__interop__app;
-  const firebase_core_platform_interface = packages__firebase_core_platform_interface__firebase_core_platform_interface$46dart.firebase_core_platform_interface;
-  const js$ = packages__firebase_core_web__src__interop__utils__js$46dart.src__interop__utils__js;
-  const load_bundle_task_state = packages__cloud_firestore_platform_interface__src__load_bundle_task_state$46dart.src__load_bundle_task_state;
-  const load_bundle_task_state$ = packages__cloud_firestore_platform_interface__src__platform_interface__utils__load_bundle_task_state$46dart.src__platform_interface__utils__load_bundle_task_state;
-  var utils$ = Object.create(dart.library);
-  var firestore_interop = Object.create(dart.library);
-  var firebase_interop = Object.create(dart.library);
-  var firestore = Object.create(dart.library);
-  var $toLowerCase = dartx.toLowerCase;
-  var $insert = dartx.insert;
-  var $map = dartx.map;
+  const equality = packages__collection__src__equality$46dart.src__equality;
+  const plugin_platform_interface = packages__plugin_platform_interface__plugin_platform_interface$46dart.plugin_platform_interface;
+  const platform_channel = packages__flutter__src__services__system_channels$46dart.src__services__platform_channel;
+  const message_codecs = packages__flutter__src__services__system_channels$46dart.src__services__message_codecs;
+  const platform = packages__flutter__src__foundation___platform_web$46dart.src__foundation__platform;
+  var firebase_core_platform_interface = Object.create(dart.library);
+  var $toString = dartx.toString;
+  var $_get = dartx._get;
+  var $remove = dartx.remove;
+  var $forEach = dartx.forEach;
+  var $_set = dartx._set;
+  var $values = dartx.values;
   var $toList = dartx.toList;
+  var $containsKey = dartx.containsKey;
   dart._checkModuleNullSafetyMode(false);
-  var T$ = {
-    ObjectN: () => (T$.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
-    ObjectNToObjectN: () => (T$.ObjectNToObjectN = dart.constFn(dart.fnType(T$.ObjectN(), [T$.ObjectN()])))(),
-    ObjectNTodynamic: () => (T$.ObjectNTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T$.ObjectN()])))(),
-    QueryOfQueryJsImpl: () => (T$.QueryOfQueryJsImpl = dart.constFn(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query"))))(),
-    StreamControllerOfvoid: () => (T$.StreamControllerOfvoid = dart.constFn(async.StreamController$(dart.void)))(),
-    VoidToStreamControllerOfvoid: () => (T$.VoidToStreamControllerOfvoid = dart.constFn(dart.fnType(T$.StreamControllerOfvoid(), [])))(),
-    StreamControllerOfvoidTodynamic: () => (T$.StreamControllerOfvoidTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T$.StreamControllerOfvoid()])))(),
-    VoidTodynamic: () => (T$.VoidTodynamic = dart.constFn(dart.fnType(dart.dynamic, [])))(),
-    VoidToFn: () => (T$.VoidToFn = dart.constFn(dart.fnType(T$.VoidTodynamic(), [])))(),
-    FnTodynamic: () => (T$.FnTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T$.VoidTodynamic()])))(),
-    ObjectNToNull: () => (T$.ObjectNToNull = dart.constFn(dart.fnType(core.Null, [T$.ObjectN()])))(),
-    VoidTovoid: () => (T$.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    dynamicToPromiseJsImpl: () => (T$.dynamicToPromiseJsImpl = dart.constFn(dart.fnType(dart.lazyJSType(() => dart.global.Promise, "Promise"), [dart.dynamic])))(),
-    FutureOfObjectN: () => (T$.FutureOfObjectN = dart.constFn(async.Future$(T$.ObjectN())))(),
-    voidTodynamic: () => (T$.voidTodynamic = dart.constFn(dart.fnType(dart.dynamic, [dart.void])))(),
-    ExpandoOfFirestore: () => (T$.ExpandoOfFirestore = dart.constFn(core.Expando$(firestore.Firestore)))(),
-    StreamControllerOfLoadBundleTaskProgress: () => (T$.StreamControllerOfLoadBundleTaskProgress = dart.constFn(async.StreamController$(firestore.LoadBundleTaskProgress)))(),
-    VoidToStreamControllerOfLoadBundleTaskProgress: () => (T$.VoidToStreamControllerOfLoadBundleTaskProgress = dart.constFn(dart.fnType(T$.StreamControllerOfLoadBundleTaskProgress(), [])))(),
-    StreamControllerOfLoadBundleTaskProgressTodynamic: () => (T$.StreamControllerOfLoadBundleTaskProgressTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T$.StreamControllerOfLoadBundleTaskProgress()])))(),
-    LoadBundleTaskProgressJsImplTovoid: () => (T$.LoadBundleTaskProgressJsImplTovoid = dart.constFn(dart.fnType(dart.void, [dart.anonymousJSType("LoadBundleTaskProgressJsImpl")])))(),
-    dynamicTodynamic: () => (T$.dynamicTodynamic = dart.constFn(dart.fnType(dart.dynamic, [dart.dynamic])))(),
-    dynamicToNull: () => (T$.dynamicToNull = dart.constFn(dart.fnType(core.Null, [dart.dynamic])))(),
-    FirestoreErrorTodynamic: () => (T$.FirestoreErrorTodynamic = dart.constFn(dart.fnType(dart.dynamic, [dart.anonymousJSType("FirestoreError")])))(),
-    FirestoreErrorToNull: () => (T$.FirestoreErrorToNull = dart.constFn(dart.fnType(core.Null, [dart.anonymousJSType("FirestoreError")])))(),
-    VoidToNull: () => (T$.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
-    ExpandoOfLoadBundleTask: () => (T$.ExpandoOfLoadBundleTask = dart.constFn(core.Expando$(firestore.LoadBundleTask)))(),
-    ExpandoOfLoadBundleTaskProgress: () => (T$.ExpandoOfLoadBundleTaskProgress = dart.constFn(core.Expando$(firestore.LoadBundleTaskProgress)))(),
-    ExpandoOfWriteBatch: () => (T$.ExpandoOfWriteBatch = dart.constFn(core.Expando$(firestore.WriteBatch)))(),
-    DocumentSnapshotJsImplToDocumentSnapshot: () => (T$.DocumentSnapshotJsImplToDocumentSnapshot = dart.constFn(dart.fnType(firestore.DocumentSnapshot, [dart.lazyJSType(() => dart.global.firebase.firestore.DocumentSnapshot, "firebase.firestore.DocumentSnapshot")])))(),
-    StreamControllerOfDocumentSnapshot: () => (T$.StreamControllerOfDocumentSnapshot = dart.constFn(async.StreamController$(firestore.DocumentSnapshot)))(),
-    VoidToStreamControllerOfDocumentSnapshot: () => (T$.VoidToStreamControllerOfDocumentSnapshot = dart.constFn(dart.fnType(T$.StreamControllerOfDocumentSnapshot(), [])))(),
-    StreamControllerOfDocumentSnapshotTodynamic: () => (T$.StreamControllerOfDocumentSnapshotTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T$.StreamControllerOfDocumentSnapshot()])))(),
-    DocumentSnapshotJsImplToNull: () => (T$.DocumentSnapshotJsImplToNull = dart.constFn(dart.fnType(core.Null, [dart.lazyJSType(() => dart.global.firebase.firestore.DocumentSnapshot, "firebase.firestore.DocumentSnapshot")])))(),
-    dynamicTovoid: () => (T$.dynamicTovoid = dart.constFn(dart.fnType(dart.void, [dart.dynamic])))(),
-    ExpandoOfDocumentReference: () => (T$.ExpandoOfDocumentReference = dart.constFn(core.Expando$(firestore.DocumentReference)))(),
-    QuerySnapshotJsImplToQuerySnapshot: () => (T$.QuerySnapshotJsImplToQuerySnapshot = dart.constFn(dart.fnType(firestore.QuerySnapshot, [dart.lazyJSType(() => dart.global.firebase.firestore.QuerySnapshot, "firebase.firestore.QuerySnapshot")])))(),
-    StreamControllerOfQuerySnapshot: () => (T$.StreamControllerOfQuerySnapshot = dart.constFn(async.StreamController$(firestore.QuerySnapshot)))(),
-    VoidToStreamControllerOfQuerySnapshot: () => (T$.VoidToStreamControllerOfQuerySnapshot = dart.constFn(dart.fnType(T$.StreamControllerOfQuerySnapshot(), [])))(),
-    StreamControllerOfQuerySnapshotTodynamic: () => (T$.StreamControllerOfQuerySnapshotTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T$.StreamControllerOfQuerySnapshot()])))(),
-    QuerySnapshotJsImplToNull: () => (T$.QuerySnapshotJsImplToNull = dart.constFn(dart.fnType(core.Null, [dart.lazyJSType(() => dart.global.firebase.firestore.QuerySnapshot, "firebase.firestore.QuerySnapshot")])))(),
-    JSArrayOfDocumentSnapshotJsImpl: () => (T$.JSArrayOfDocumentSnapshotJsImpl = dart.constFn(_interceptors.JSArray$(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentSnapshot, "firebase.firestore.DocumentSnapshot"))))(),
-    CollectionReferenceOfCollectionReferenceJsImpl: () => (T$.CollectionReferenceOfCollectionReferenceJsImpl = dart.constFn(firestore.CollectionReference$(dart.lazyJSType(() => dart.global.firebase.firestore.CollectionReference, "firebase.firestore.CollectionReference"))))(),
-    DocumentReferenceJsImplToDocumentReference: () => (T$.DocumentReferenceJsImplToDocumentReference = dart.constFn(dart.fnType(firestore.DocumentReference, [dart.lazyJSType(() => dart.global.firebase.firestore.DocumentReference, "firebase.firestore.DocumentReference")])))(),
-    ExpandoOfCollectionReferenceOfCollectionReferenceJsImpl: () => (T$.ExpandoOfCollectionReferenceOfCollectionReferenceJsImpl = dart.constFn(core.Expando$(T$.CollectionReferenceOfCollectionReferenceJsImpl())))(),
-    ExpandoOfDocumentChange: () => (T$.ExpandoOfDocumentChange = dart.constFn(core.Expando$(firestore.DocumentChange)))(),
-    MapOfString$dynamic: () => (T$.MapOfString$dynamic = dart.constFn(core.Map$(core.String, dart.dynamic)))(),
-    MapNOfString$dynamic: () => (T$.MapNOfString$dynamic = dart.constFn(dart.nullable(T$.MapOfString$dynamic())))(),
-    ExpandoOfDocumentSnapshot: () => (T$.ExpandoOfDocumentSnapshot = dart.constFn(core.Expando$(firestore.DocumentSnapshot)))(),
-    dynamicToDocumentChange: () => (T$.dynamicToDocumentChange = dart.constFn(dart.fnType(firestore.DocumentChange, [dart.dynamic])))(),
-    dynamicToDocumentSnapshot: () => (T$.dynamicToDocumentSnapshot = dart.constFn(dart.fnType(firestore.DocumentSnapshot, [dart.dynamic])))(),
-    ExpandoOfQuerySnapshot: () => (T$.ExpandoOfQuerySnapshot = dart.constFn(core.Expando$(firestore.QuerySnapshot)))(),
-    ExpandoOfTransaction: () => (T$.ExpandoOfTransaction = dart.constFn(core.Expando$(firestore.Transaction)))()
+  var T = {
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    IdentityMapOfString$StringN: () => (T.IdentityMapOfString$StringN = dart.constFn(_js_helper.IdentityMap$(core.String, T.StringN())))(),
+    DefaultEqualityOfNeverL: () => (T.DefaultEqualityOfNeverL = dart.constFn(equality.DefaultEquality$(dart.legacy(dart.Never))))(),
+    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
+    IdentityMapOfString$MethodChannelFirebaseApp: () => (T.IdentityMapOfString$MethodChannelFirebaseApp = dart.constFn(_js_helper.IdentityMap$(core.String, firebase_core_platform_interface.MethodChannelFirebaseApp)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
-  }, T$);
+  }, T);
   var S = {
     _: () => S
   };
@@ -91,1180 +41,676 @@ define(['dart_sdk', 'packages/firebase_core_web/src/interop/utils/utils.dart', '
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
-    get C0() {
-      return C[0] = dart.fn(utils$.jsify, T$.ObjectNTodynamic());
-    },
     get C1() {
-      return C[1] = dart.fn(firestore.DocumentSnapshot.getInstance, T$.DocumentSnapshotJsImplToDocumentSnapshot());
+      return C[1] = dart.const({
+        __proto__: T.DefaultEqualityOfNeverL().prototype
+      });
     },
-    get C2() {
-      return C[2] = dart.fn(firestore.QuerySnapshot.getInstance, T$.QuerySnapshotJsImplToQuerySnapshot());
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: equality.MapEquality.prototype,
+        [MapEquality__valueEquality]: C[1] || CT.C1,
+        [MapEquality__keyEquality]: C[1] || CT.C1
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: message_codecs.StandardMessageCodec.prototype
+      });
     },
     get C3() {
-      return C[3] = dart.fn(firestore.DocumentReference.getInstance, T$.DocumentReferenceJsImplToDocumentReference());
+      return C[3] = dart.const({
+        __proto__: message_codecs.StandardMethodCodec.prototype,
+        [StandardMethodCodec_messageCodec]: C[4] || CT.C4
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: platform_channel.MethodChannel.prototype,
+        [MethodChannel__binaryMessenger]: null,
+        [MethodChannel_codec]: C[3] || CT.C3,
+        [MethodChannel_name]: "plugins.flutter.io/firebase_core"
+      });
     }
   }, false);
-  var C = Array(4).fill(void 0);
+  var C = Array(5).fill(void 0);
   var I = [
-    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_web-2.3.0/lib/src/interop/firestore.dart",
-    "package:cloud_firestore_web/src/interop/firestore.dart"
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-4.0.1/lib/src/firebase_exception.dart",
+    "package:firebase_core_platform_interface/firebase_core_platform_interface.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-4.0.1/lib/src/firebase_options.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-4.0.1/lib/src/method_channel/method_channel_firebase_app.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-4.0.1/lib/src/platform_interface/platform_interface_firebase_app.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-4.0.1/lib/src/method_channel/method_channel_firebase.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-4.0.1/lib/src/platform_interface/platform_interface_firebase.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-4.0.1/lib/src/platform_interface/platform_interface_firebase_plugin.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-4.0.1/lib/src/firebase_core_exceptions.dart"
   ];
-  utils$.dartify = function dartify(jsObject) {
-    return utils.dartify(jsObject, dart.fn(object => {
-      if (dart.test(js_util.instanceof(object, dart.global.firebase.firestore.DocumentReference))) {
-        return firestore.DocumentReference.getInstance(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentReference, "firebase.firestore.DocumentReference").as(dart.nullCheck(object)));
+  var plugin$ = dart.privateName(firebase_core_platform_interface, "FirebaseException.plugin");
+  var message$ = dart.privateName(firebase_core_platform_interface, "FirebaseException.message");
+  var code$ = dart.privateName(firebase_core_platform_interface, "FirebaseException.code");
+  var stackTrace$ = dart.privateName(firebase_core_platform_interface, "FirebaseException.stackTrace");
+  firebase_core_platform_interface.FirebaseException = class FirebaseException extends core.Object {
+    get plugin() {
+      return this[plugin$];
+    }
+    set plugin(value) {
+      super.plugin = value;
+    }
+    get message() {
+      return this[message$];
+    }
+    set message(value) {
+      super.message = value;
+    }
+    get code() {
+      return this[code$];
+    }
+    set code(value) {
+      super.code = value;
+    }
+    get stackTrace() {
+      return this[stackTrace$];
+    }
+    set stackTrace(value) {
+      super.stackTrace = value;
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (this === other) return true;
+      if (!firebase_core_platform_interface.FirebaseException.is(other)) return false;
+      return dart.hashCode(other) == this.hashCode;
+    }
+    get hashCode() {
+      return ui.hashValues(this.plugin, this.code, this.message);
+    }
+    toString() {
+      let output = "[" + dart.str(this.plugin) + "/" + dart.str(this.code) + "] " + dart.str(this.message);
+      if (this.stackTrace != null) {
+        output = output + ("\n\n" + dart.str(dart.toString(this.stackTrace)));
       }
-      if (dart.test(js_util.instanceof(object, dart.global.firebase.firestore.GeoPoint))) {
-        return object;
-      }
-      if (dart.test(js_util.instanceof(object, dart.global.firebase.firestore.Timestamp))) {
-        return new core.DateTime.fromMillisecondsSinceEpoch(dart.lazyJSType(() => dart.global.firebase.firestore.Timestamp, "firebase.firestore.Timestamp").as(dart.nullCheck(object)).toMillis());
-      }
-      if (dart.test(js_util.instanceof(object, dart.global.firebase.firestore.Blob))) {
-        return dart.anonymousJSType("Blob").as(dart.nullCheck(object));
-      }
-      return null;
-    }, T$.ObjectNToObjectN()));
+      return output;
+    }
   };
-  utils$.jsify = function jsify(dartObject) {
-    if (dartObject == null) {
-      return null;
+  (firebase_core_platform_interface.FirebaseException.new = function(opts) {
+    let plugin = opts && 'plugin' in opts ? opts.plugin : null;
+    if (plugin == null) dart.nullFailed(I[0], 30, 19, "plugin");
+    let message = opts && 'message' in opts ? opts.message : null;
+    let code = opts && 'code' in opts ? opts.code : "unknown";
+    if (code == null) dart.nullFailed(I[0], 32, 10, "code");
+    let stackTrace = opts && 'stackTrace' in opts ? opts.stackTrace : null;
+    this[plugin$] = plugin;
+    this[message$] = message;
+    this[code$] = code;
+    this[stackTrace$] = stackTrace;
+    ;
+  }).prototype = firebase_core_platform_interface.FirebaseException.prototype;
+  dart.addTypeTests(firebase_core_platform_interface.FirebaseException);
+  dart.addTypeCaches(firebase_core_platform_interface.FirebaseException);
+  firebase_core_platform_interface.FirebaseException[dart.implements] = () => [core.Exception];
+  dart.setLibraryUri(firebase_core_platform_interface.FirebaseException, I[1]);
+  dart.setFieldSignature(firebase_core_platform_interface.FirebaseException, () => ({
+    __proto__: dart.getFields(firebase_core_platform_interface.FirebaseException.__proto__),
+    plugin: dart.finalFieldType(core.String),
+    message: dart.finalFieldType(dart.nullable(core.String)),
+    code: dart.finalFieldType(core.String),
+    stackTrace: dart.finalFieldType(dart.nullable(core.StackTrace))
+  }));
+  dart.defineExtensionMethods(firebase_core_platform_interface.FirebaseException, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(firebase_core_platform_interface.FirebaseException, ['hashCode']);
+  var apiKey$ = dart.privateName(firebase_core_platform_interface, "FirebaseOptions.apiKey");
+  var appId$ = dart.privateName(firebase_core_platform_interface, "FirebaseOptions.appId");
+  var messagingSenderId$ = dart.privateName(firebase_core_platform_interface, "FirebaseOptions.messagingSenderId");
+  var projectId$ = dart.privateName(firebase_core_platform_interface, "FirebaseOptions.projectId");
+  var authDomain$ = dart.privateName(firebase_core_platform_interface, "FirebaseOptions.authDomain");
+  var databaseURL$ = dart.privateName(firebase_core_platform_interface, "FirebaseOptions.databaseURL");
+  var storageBucket$ = dart.privateName(firebase_core_platform_interface, "FirebaseOptions.storageBucket");
+  var measurementId$ = dart.privateName(firebase_core_platform_interface, "FirebaseOptions.measurementId");
+  var trackingId$ = dart.privateName(firebase_core_platform_interface, "FirebaseOptions.trackingId");
+  var deepLinkURLScheme$ = dart.privateName(firebase_core_platform_interface, "FirebaseOptions.deepLinkURLScheme");
+  var androidClientId$ = dart.privateName(firebase_core_platform_interface, "FirebaseOptions.androidClientId");
+  var iosClientId$ = dart.privateName(firebase_core_platform_interface, "FirebaseOptions.iosClientId");
+  var iosBundleId$ = dart.privateName(firebase_core_platform_interface, "FirebaseOptions.iosBundleId");
+  var appGroupId$ = dart.privateName(firebase_core_platform_interface, "FirebaseOptions.appGroupId");
+  var MapEquality__valueEquality = dart.privateName(equality, "MapEquality._valueEquality");
+  var MapEquality__keyEquality = dart.privateName(equality, "MapEquality._keyEquality");
+  firebase_core_platform_interface.FirebaseOptions = class FirebaseOptions extends core.Object {
+    get apiKey() {
+      return this[apiKey$];
     }
-    return utils.jsify(dartObject, dart.fn(object => {
-      if (core.DateTime.is(object)) {
-        return dart.global.firebase.firestore.Timestamp.fromMillis(object.millisecondsSinceEpoch);
-      }
-      if (firestore.DocumentReference.is(object)) {
-        return object.jsObject;
-      }
-      if (firestore.FieldValue.is(object)) {
-        return firestore.jsifyFieldValue(object);
-      }
-      if (dart.anonymousJSType("Blob").is(object)) {
-        return object;
-      }
-      if (dart.lazyJSType(() => dart.global.firebase.firestore.GeoPoint, "firebase.firestore.GeoPoint").is(object)) {
-        return dartObject;
-      }
-      if (core.Function.is(object)) {
-        return js.allowInterop(core.Function, object);
-      }
-      return null;
-    }, T$.ObjectNTodynamic()));
+    set apiKey(value) {
+      super.apiKey = value;
+    }
+    get appId() {
+      return this[appId$];
+    }
+    set appId(value) {
+      super.appId = value;
+    }
+    get messagingSenderId() {
+      return this[messagingSenderId$];
+    }
+    set messagingSenderId(value) {
+      super.messagingSenderId = value;
+    }
+    get projectId() {
+      return this[projectId$];
+    }
+    set projectId(value) {
+      super.projectId = value;
+    }
+    get authDomain() {
+      return this[authDomain$];
+    }
+    set authDomain(value) {
+      super.authDomain = value;
+    }
+    get databaseURL() {
+      return this[databaseURL$];
+    }
+    set databaseURL(value) {
+      super.databaseURL = value;
+    }
+    get storageBucket() {
+      return this[storageBucket$];
+    }
+    set storageBucket(value) {
+      super.storageBucket = value;
+    }
+    get measurementId() {
+      return this[measurementId$];
+    }
+    set measurementId(value) {
+      super.measurementId = value;
+    }
+    get trackingId() {
+      return this[trackingId$];
+    }
+    set trackingId(value) {
+      super.trackingId = value;
+    }
+    get deepLinkURLScheme() {
+      return this[deepLinkURLScheme$];
+    }
+    set deepLinkURLScheme(value) {
+      super.deepLinkURLScheme = value;
+    }
+    get androidClientId() {
+      return this[androidClientId$];
+    }
+    set androidClientId(value) {
+      super.androidClientId = value;
+    }
+    get iosClientId() {
+      return this[iosClientId$];
+    }
+    set iosClientId(value) {
+      super.iosClientId = value;
+    }
+    get iosBundleId() {
+      return this[iosBundleId$];
+    }
+    set iosBundleId(value) {
+      super.iosBundleId = value;
+    }
+    get appGroupId() {
+      return this[appGroupId$];
+    }
+    set appGroupId(value) {
+      super.appGroupId = value;
+    }
+    get asMap() {
+      return new (T.IdentityMapOfString$StringN()).from(["apiKey", this.apiKey, "appId", this.appId, "messagingSenderId", this.messagingSenderId, "projectId", this.projectId, "authDomain", this.authDomain, "databaseURL", this.databaseURL, "storageBucket", this.storageBucket, "measurementId", this.measurementId, "trackingId", this.trackingId, "deepLinkURLScheme", this.deepLinkURLScheme, "androidClientId", this.androidClientId, "iosClientId", this.iosClientId, "iosBundleId", this.iosBundleId, "appGroupId", this.appGroupId]);
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (this === other) return true;
+      if (!firebase_core_platform_interface.FirebaseOptions.is(other)) return false;
+      return (C[0] || CT.C0).equals(this.asMap, other.asMap);
+    }
+    get hashCode() {
+      return (C[0] || CT.C0).hash(this.asMap);
+    }
+    toString() {
+      return dart.toString(this.asMap);
+    }
   };
-  firestore.Firestore = class Firestore extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.firestore.Firestore, "firebase.firestore.Firestore")) {
-    get app() {
-      return app.App.getInstance(this.jsObject.app);
+  (firebase_core_platform_interface.FirebaseOptions.new = function(opts) {
+    let apiKey = opts && 'apiKey' in opts ? opts.apiKey : null;
+    if (apiKey == null) dart.nullFailed(I[2], 37, 19, "apiKey");
+    let appId = opts && 'appId' in opts ? opts.appId : null;
+    if (appId == null) dart.nullFailed(I[2], 38, 19, "appId");
+    let messagingSenderId = opts && 'messagingSenderId' in opts ? opts.messagingSenderId : null;
+    if (messagingSenderId == null) dart.nullFailed(I[2], 39, 19, "messagingSenderId");
+    let projectId = opts && 'projectId' in opts ? opts.projectId : null;
+    if (projectId == null) dart.nullFailed(I[2], 40, 19, "projectId");
+    let authDomain = opts && 'authDomain' in opts ? opts.authDomain : null;
+    let databaseURL = opts && 'databaseURL' in opts ? opts.databaseURL : null;
+    let storageBucket = opts && 'storageBucket' in opts ? opts.storageBucket : null;
+    let measurementId = opts && 'measurementId' in opts ? opts.measurementId : null;
+    let trackingId = opts && 'trackingId' in opts ? opts.trackingId : null;
+    let deepLinkURLScheme = opts && 'deepLinkURLScheme' in opts ? opts.deepLinkURLScheme : null;
+    let androidClientId = opts && 'androidClientId' in opts ? opts.androidClientId : null;
+    let iosClientId = opts && 'iosClientId' in opts ? opts.iosClientId : null;
+    let iosBundleId = opts && 'iosBundleId' in opts ? opts.iosBundleId : null;
+    let appGroupId = opts && 'appGroupId' in opts ? opts.appGroupId : null;
+    this[apiKey$] = apiKey;
+    this[appId$] = appId;
+    this[messagingSenderId$] = messagingSenderId;
+    this[projectId$] = projectId;
+    this[authDomain$] = authDomain;
+    this[databaseURL$] = databaseURL;
+    this[storageBucket$] = storageBucket;
+    this[measurementId$] = measurementId;
+    this[trackingId$] = trackingId;
+    this[deepLinkURLScheme$] = deepLinkURLScheme;
+    this[androidClientId$] = androidClientId;
+    this[iosClientId$] = iosClientId;
+    this[iosBundleId$] = iosBundleId;
+    this[appGroupId$] = appGroupId;
+    ;
+  }).prototype = firebase_core_platform_interface.FirebaseOptions.prototype;
+  (firebase_core_platform_interface.FirebaseOptions.fromMap = function(map) {
+    if (map == null) dart.nullFailed(I[2], 59, 49, "map");
+    if (!(map[$_get]("apiKey") != null)) dart.assertFailed("'apiKey' cannot be null.", I[2], 60, 16, "map['apiKey'] != null");
+    if (!(map[$_get]("appId") != null)) dart.assertFailed("'appId' cannot be null.", I[2], 61, 16, "map['appId'] != null");
+    if (!(map[$_get]("messagingSenderId") != null)) dart.assertFailed("'messagingSenderId' cannot be null.", I[2], 62, 16, "map['messagingSenderId'] != null");
+    if (!(map[$_get]("projectId") != null)) dart.assertFailed("'projectId' cannot be null.", I[2], 64, 16, "map['projectId'] != null");
+    this[apiKey$] = core.String.as(map[$_get]("apiKey"));
+    this[appId$] = core.String.as(map[$_get]("appId"));
+    this[messagingSenderId$] = core.String.as(map[$_get]("messagingSenderId"));
+    this[projectId$] = core.String.as(map[$_get]("projectId"));
+    this[authDomain$] = T.StringN().as(map[$_get]("authDomain"));
+    this[databaseURL$] = T.StringN().as(map[$_get]("databaseURL"));
+    this[storageBucket$] = T.StringN().as(map[$_get]("storageBucket"));
+    this[measurementId$] = T.StringN().as(map[$_get]("measurementId"));
+    this[trackingId$] = T.StringN().as(map[$_get]("trackingId"));
+    this[deepLinkURLScheme$] = T.StringN().as(map[$_get]("deepLinkURLScheme"));
+    this[androidClientId$] = T.StringN().as(map[$_get]("androidClientId"));
+    this[iosClientId$] = T.StringN().as(map[$_get]("iosClientId"));
+    this[iosBundleId$] = T.StringN().as(map[$_get]("iosBundleId"));
+    this[appGroupId$] = T.StringN().as(map[$_get]("appGroupId"));
+    ;
+  }).prototype = firebase_core_platform_interface.FirebaseOptions.prototype;
+  dart.addTypeTests(firebase_core_platform_interface.FirebaseOptions);
+  dart.addTypeCaches(firebase_core_platform_interface.FirebaseOptions);
+  dart.setGetterSignature(firebase_core_platform_interface.FirebaseOptions, () => ({
+    __proto__: dart.getGetters(firebase_core_platform_interface.FirebaseOptions.__proto__),
+    asMap: core.Map$(core.String, dart.nullable(core.String))
+  }));
+  dart.setLibraryUri(firebase_core_platform_interface.FirebaseOptions, I[1]);
+  dart.setFieldSignature(firebase_core_platform_interface.FirebaseOptions, () => ({
+    __proto__: dart.getFields(firebase_core_platform_interface.FirebaseOptions.__proto__),
+    apiKey: dart.finalFieldType(core.String),
+    appId: dart.finalFieldType(core.String),
+    messagingSenderId: dart.finalFieldType(core.String),
+    projectId: dart.finalFieldType(core.String),
+    authDomain: dart.finalFieldType(dart.nullable(core.String)),
+    databaseURL: dart.finalFieldType(dart.nullable(core.String)),
+    storageBucket: dart.finalFieldType(dart.nullable(core.String)),
+    measurementId: dart.finalFieldType(dart.nullable(core.String)),
+    trackingId: dart.finalFieldType(dart.nullable(core.String)),
+    deepLinkURLScheme: dart.finalFieldType(dart.nullable(core.String)),
+    androidClientId: dart.finalFieldType(dart.nullable(core.String)),
+    iosClientId: dart.finalFieldType(dart.nullable(core.String)),
+    iosBundleId: dart.finalFieldType(dart.nullable(core.String)),
+    appGroupId: dart.finalFieldType(dart.nullable(core.String))
+  }));
+  dart.defineExtensionMethods(firebase_core_platform_interface.FirebaseOptions, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(firebase_core_platform_interface.FirebaseOptions, ['hashCode']);
+  var _isDeleted = dart.privateName(firebase_core_platform_interface, "_isDeleted");
+  var _isAutomaticDataCollectionEnabled = dart.privateName(firebase_core_platform_interface, "_isAutomaticDataCollectionEnabled");
+  var _isDefault = dart.privateName(firebase_core_platform_interface, "_isDefault");
+  var name$ = dart.privateName(firebase_core_platform_interface, "FirebaseAppPlatform.name");
+  var options$ = dart.privateName(firebase_core_platform_interface, "FirebaseAppPlatform.options");
+  firebase_core_platform_interface.FirebaseAppPlatform = class FirebaseAppPlatform extends plugin_platform_interface.PlatformInterface {
+    get name() {
+      return this[name$];
     }
-    static getInstance(jsObject) {
-      let t3, t2, t1, t0;
-      if (jsObject == null) dart.nullFailed(I[0], 40, 66, "jsObject");
-      t0 = firestore.Firestore._expando;
-      t1 = jsObject;
-      t2 = t0._get(t1);
-      return t2 == null ? (t3 = new firestore.Firestore._fromJsObject(jsObject), t0._set(t1, t3), t3) : t2;
+    set name(value) {
+      super.name = value;
     }
-    batch() {
-      return firestore.WriteBatch.getInstance(this.jsObject.batch());
+    get options() {
+      return this[options$];
     }
-    collection(collectionPath) {
-      if (collectionPath == null) dart.nullFailed(I[0], 49, 41, "collectionPath");
-      return firestore.CollectionReference.getInstance(this.jsObject.collection(collectionPath));
+    set options(value) {
+      super.options = value;
     }
-    collectionGroup(collectionId) {
-      if (collectionId == null) dart.nullFailed(I[0], 52, 32, "collectionId");
-      return new (T$.QueryOfQueryJsImpl()).fromJsObject(this.jsObject.collectionGroup(collectionId));
+    static verifyExtends(instance) {
+      if (instance == null) dart.nullFailed(I[4], 17, 49, "instance");
+      plugin_platform_interface.PlatformInterface.verifyToken(instance, firebase_core_platform_interface.FirebaseAppPlatform._token);
     }
-    doc(documentPath) {
-      if (documentPath == null) dart.nullFailed(I[0], 55, 32, "documentPath");
-      return firestore.DocumentReference.getInstance(this.jsObject.doc(documentPath));
+    get [_isDefault]() {
+      return this.name === "[DEFAULT]";
     }
-    enablePersistence(settings = null) {
-      return utils.handleThenable(core.Null, this.jsObject.enablePersistence(settings));
+    get isAutomaticDataCollectionEnabled() {
+      dart.throw(new core.UnimplementedError.new("isAutomaticDataCollectionEnabled has not been implemented."));
     }
-    snapshotsInSync() {
-      let controller = null;
-      let controller$35isSet = false;
-      function controller$35get() {
-        return controller$35isSet ? controller : dart.throw(new _internal.LateError.localNI("controller"));
-      }
-      dart.fn(controller$35get, T$.VoidToStreamControllerOfvoid());
-      function controller$35set(t3) {
-        if (t3 == null) dart.nullFailed(I[0], 63, 33, "null");
-        controller$35isSet = true;
-        return controller = t3;
-      }
-      dart.fn(controller$35set, T$.StreamControllerOfvoidTodynamic());
-      let onSnapshotsInSyncUnsubscribe = null;
-      let onSnapshotsInSyncUnsubscribe$35isSet = false;
-      function onSnapshotsInSyncUnsubscribe$35get() {
-        return onSnapshotsInSyncUnsubscribe$35isSet ? onSnapshotsInSyncUnsubscribe : dart.throw(new _internal.LateError.localNI("onSnapshotsInSyncUnsubscribe"));
-      }
-      dart.fn(onSnapshotsInSyncUnsubscribe$35get, T$.VoidToFn());
-      function onSnapshotsInSyncUnsubscribe$35set(t8) {
-        if (t8 == null) dart.nullFailed(I[0], 64, 23, "null");
-        onSnapshotsInSyncUnsubscribe$35isSet = true;
-        return onSnapshotsInSyncUnsubscribe = t8;
-      }
-      dart.fn(onSnapshotsInSyncUnsubscribe$35set, T$.FnTodynamic());
-      let nextWrapper = js.allowInterop(T$.ObjectNToNull(), dart.fn(noValue => {
-        controller$35get().add(null);
-      }, T$.ObjectNToNull()));
-      const startListen = () => {
-        onSnapshotsInSyncUnsubscribe$35set(this.jsObject.onSnapshotsInSync(dart.assertInterop(nextWrapper)));
-      };
-      dart.fn(startListen, T$.VoidTovoid());
-      function stopListen() {
-        onSnapshotsInSyncUnsubscribe$35get()();
-        controller$35get().close();
-      }
-      dart.fn(stopListen, T$.VoidTovoid());
-      controller$35set(T$.StreamControllerOfvoid().broadcast({onListen: startListen, onCancel: stopListen}));
-      return controller$35get().stream;
+    delete() {
+      return async.async(dart.void, function* $delete() {
+        dart.throw(new core.UnimplementedError.new("delete() has not been implemented."));
+      });
     }
-    clearPersistence() {
-      return utils.handleThenable(core.Null, this.jsObject.clearPersistence());
+    setAutomaticDataCollectionEnabled(enabled) {
+      if (enabled == null) dart.nullFailed(I[4], 48, 55, "enabled");
+      return async.async(dart.void, function* setAutomaticDataCollectionEnabled() {
+        dart.throw(new core.UnimplementedError.new("setAutomaticDataCollectionEnabled() has not been implemented."));
+      });
     }
-    runTransaction(updateFunction) {
-      if (updateFunction == null) dart.nullFailed(I[0], 89, 48, "updateFunction");
-      let updateFunctionWrap = js.allowInterop(T$.dynamicToPromiseJsImpl(), dart.fn(transaction => utils.handleFutureWithMapper(T$.ObjectN(), dart.dynamic, T$.FutureOfObjectN().as(updateFunction(firestore.Transaction.getInstance(dart.lazyJSType(() => dart.global.firebase.firestore.Transaction, "firebase.firestore.Transaction").as(transaction)))), C[0] || CT.C0), T$.dynamicToPromiseJsImpl()));
-      return utils.handleThenable(dart.void, this.jsObject.runTransaction(dart.assertInterop(updateFunctionWrap))).then(dart.dynamic, dart.fn(value => utils$.dartify(null), T$.voidTodynamic()));
+    setAutomaticResourceManagementEnabled(enabled) {
+      if (enabled == null) dart.nullFailed(I[4], 55, 59, "enabled");
+      return async.async(dart.void, function* setAutomaticResourceManagementEnabled() {
+        dart.throw(new core.UnimplementedError.new("setAutomaticResourceManagementEnabled() has not been implemented."));
+      });
     }
-    settings(settings) {
-      if (settings == null) dart.nullFailed(I[0], 98, 44, "settings");
-      return this.jsObject.settings(settings);
+    _equals(other) {
+      if (other == null) return false;
+      if (this === other) return true;
+      if (!firebase_core_platform_interface.FirebaseAppPlatform.is(other)) return false;
+      return other.name == this.name && dart.equals(other.options, this.options);
     }
-    useEmulator(host, port) {
-      if (host == null) dart.nullFailed(I[0], 101, 27, "host");
-      if (port == null) dart.nullFailed(I[0], 101, 37, "port");
-      return this.jsObject.useEmulator(host, port);
+    get hashCode() {
+      return ui.hashValues(this.name, this.options);
     }
-    enableNetwork() {
-      return utils.handleThenable(dart.dynamic, this.jsObject.enableNetwork());
+    toString() {
+      return dart.str(dart.wrapType(firebase_core_platform_interface.FirebaseAppPlatform)) + "(" + dart.str(this.name) + ")";
     }
-    disableNetwork() {
-      return utils.handleThenable(dart.dynamic, this.jsObject.disableNetwork());
+  };
+  (firebase_core_platform_interface.FirebaseAppPlatform.new = function(name, options) {
+    if (name == null) dart.nullFailed(I[4], 12, 28, "name");
+    if (options == null) dart.nullFailed(I[4], 12, 39, "options");
+    this[name$] = name;
+    this[options$] = options;
+    firebase_core_platform_interface.FirebaseAppPlatform.__proto__.new.call(this, {token: firebase_core_platform_interface.FirebaseAppPlatform._token});
+    ;
+  }).prototype = firebase_core_platform_interface.FirebaseAppPlatform.prototype;
+  dart.addTypeTests(firebase_core_platform_interface.FirebaseAppPlatform);
+  dart.addTypeCaches(firebase_core_platform_interface.FirebaseAppPlatform);
+  dart.setMethodSignature(firebase_core_platform_interface.FirebaseAppPlatform, () => ({
+    __proto__: dart.getMethods(firebase_core_platform_interface.FirebaseAppPlatform.__proto__),
+    delete: dart.fnType(async.Future$(dart.void), []),
+    setAutomaticDataCollectionEnabled: dart.fnType(async.Future$(dart.void), [core.bool]),
+    setAutomaticResourceManagementEnabled: dart.fnType(async.Future$(dart.void), [core.bool])
+  }));
+  dart.setGetterSignature(firebase_core_platform_interface.FirebaseAppPlatform, () => ({
+    __proto__: dart.getGetters(firebase_core_platform_interface.FirebaseAppPlatform.__proto__),
+    [_isDefault]: core.bool,
+    isAutomaticDataCollectionEnabled: core.bool
+  }));
+  dart.setLibraryUri(firebase_core_platform_interface.FirebaseAppPlatform, I[1]);
+  dart.setFieldSignature(firebase_core_platform_interface.FirebaseAppPlatform, () => ({
+    __proto__: dart.getFields(firebase_core_platform_interface.FirebaseAppPlatform.__proto__),
+    name: dart.finalFieldType(core.String),
+    options: dart.finalFieldType(firebase_core_platform_interface.FirebaseOptions)
+  }));
+  dart.defineExtensionMethods(firebase_core_platform_interface.FirebaseAppPlatform, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(firebase_core_platform_interface.FirebaseAppPlatform, ['hashCode']);
+  dart.defineLazy(firebase_core_platform_interface.FirebaseAppPlatform, {
+    /*firebase_core_platform_interface.FirebaseAppPlatform._token*/get _token() {
+      return new core.Object.new();
     }
-    terminate() {
-      return utils.handleThenable(core.Null, this.jsObject.terminate());
+  }, false);
+  firebase_core_platform_interface.MethodChannelFirebaseApp = class MethodChannelFirebaseApp extends firebase_core_platform_interface.FirebaseAppPlatform {
+    get isAutomaticDataCollectionEnabled() {
+      return this[_isAutomaticDataCollectionEnabled];
     }
-    waitForPendingWrites() {
-      return utils.handleThenable(core.Null, this.jsObject.waitForPendingWrites());
-    }
-    loadBundle(bundle) {
-      if (bundle == null) dart.nullFailed(I[0], 112, 39, "bundle");
-      return firestore.LoadBundleTask.getInstance(this.jsObject.loadBundle(bundle));
-    }
-    namedQuery(name) {
-      if (name == null) dart.nullFailed(I[0], 116, 35, "name");
-      return async.async(T$.QueryOfQueryJsImpl(), (function* namedQuery() {
-        let query = (yield utils.handleThenable(dart.nullable(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), this.jsObject.namedQuery(name)));
-        if (query == null) {
-          dart.throw(new firebase_core_platform_interface.FirebaseException.new({plugin: "cloud_firestore", message: "Named query has not been found. Please check it has been loaded properly via loadBundle().", code: "non-existent-named-query"}));
+    delete() {
+      return async.async(dart.void, (function* $delete() {
+        if (dart.test(this[_isDefault])) {
+          dart.throw(firebase_core_platform_interface.noDefaultAppDelete());
         }
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(query);
+        if (dart.test(this[_isDeleted])) {
+          return;
+        }
+        yield firebase_core_platform_interface.MethodChannelFirebase.channel.invokeMethod(dart.void, "FirebaseApp#delete", new (T.IdentityMapOfString$dynamic()).from(["appName", this.name, "options", this.options.asMap]));
+        firebase_core_platform_interface.MethodChannelFirebase.appInstances[$remove](this.name);
+        firebase_core_platform_interface.FirebasePluginPlatform._constantsForPluginApps[$remove](this.name);
+        this[_isDeleted] = true;
+      }).bind(this));
+    }
+    setAutomaticDataCollectionEnabled(enabled) {
+      if (enabled == null) dart.nullFailed(I[3], 61, 55, "enabled");
+      return async.async(dart.void, (function* setAutomaticDataCollectionEnabled() {
+        yield firebase_core_platform_interface.MethodChannelFirebase.channel.invokeMethod(dart.void, "FirebaseApp#setAutomaticDataCollectionEnabled", new (T.IdentityMapOfString$dynamic()).from(["appName", this.name, "enabled", enabled]));
+        this[_isAutomaticDataCollectionEnabled] = enabled;
+      }).bind(this));
+    }
+    setAutomaticResourceManagementEnabled(enabled) {
+      if (enabled == null) dart.nullFailed(I[3], 72, 59, "enabled");
+      return async.async(dart.void, (function* setAutomaticResourceManagementEnabled() {
+        yield firebase_core_platform_interface.MethodChannelFirebase.channel.invokeMethod(dart.void, "FirebaseApp#setAutomaticResourceManagementEnabled", new (T.IdentityMapOfString$dynamic()).from(["appName", this.name, "enabled", enabled]));
       }).bind(this));
     }
   };
-  (firestore.Firestore._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 44, 61, "jsObject");
-    firestore.Firestore.__proto__.fromJsObject.call(this, jsObject);
+  (firebase_core_platform_interface.MethodChannelFirebaseApp.new = function(name, options, opts) {
+    let t0;
+    if (name == null) dart.nullFailed(I[3], 18, 12, "name");
+    if (options == null) dart.nullFailed(I[3], 19, 21, "options");
+    let isAutomaticDataCollectionEnabled = opts && 'isAutomaticDataCollectionEnabled' in opts ? opts.isAutomaticDataCollectionEnabled : null;
+    this[_isDeleted] = false;
+    this[_isAutomaticDataCollectionEnabled] = core.bool.as((t0 = isAutomaticDataCollectionEnabled, t0 == null ? false : t0));
+    firebase_core_platform_interface.MethodChannelFirebaseApp.__proto__.new.call(this, name, options);
     ;
-  }).prototype = firestore.Firestore.prototype;
-  dart.addTypeTests(firestore.Firestore);
-  dart.addTypeCaches(firestore.Firestore);
-  dart.setMethodSignature(firestore.Firestore, () => ({
-    __proto__: dart.getMethods(firestore.Firestore.__proto__),
-    batch: dart.fnType(dart.nullable(firestore.WriteBatch), []),
-    collection: dart.fnType(firestore.CollectionReference$(dart.lazyJSType(() => dart.global.firebase.firestore.CollectionReference, "firebase.firestore.CollectionReference")), [core.String]),
-    collectionGroup: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [core.String]),
-    doc: dart.fnType(firestore.DocumentReference, [core.String]),
-    enablePersistence: dart.fnType(async.Future$(core.Null), [], [dart.nullable(dart.anonymousJSType("PersistenceSettings"))]),
-    snapshotsInSync: dart.fnType(async.Stream$(dart.void), []),
-    clearPersistence: dart.fnType(async.Future$(core.Null), []),
-    runTransaction: dart.fnType(async.Future, [dart.fnType(dart.dynamic, [dart.nullable(firestore.Transaction)])]),
-    settings: dart.fnType(dart.void, [dart.anonymousJSType("Settings")]),
-    useEmulator: dart.fnType(dart.void, [core.String, core.int]),
-    enableNetwork: dart.fnType(async.Future, []),
-    disableNetwork: dart.fnType(async.Future, []),
-    terminate: dart.fnType(async.Future$(core.Null), []),
-    waitForPendingWrites: dart.fnType(async.Future$(core.Null), []),
-    loadBundle: dart.fnType(firestore.LoadBundleTask, [typed_data.Uint8List]),
-    namedQuery: dart.fnType(async.Future$(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query"))), [core.String])
+  }).prototype = firebase_core_platform_interface.MethodChannelFirebaseApp.prototype;
+  dart.addTypeTests(firebase_core_platform_interface.MethodChannelFirebaseApp);
+  dart.addTypeCaches(firebase_core_platform_interface.MethodChannelFirebaseApp);
+  dart.setLibraryUri(firebase_core_platform_interface.MethodChannelFirebaseApp, I[1]);
+  dart.setFieldSignature(firebase_core_platform_interface.MethodChannelFirebaseApp, () => ({
+    __proto__: dart.getFields(firebase_core_platform_interface.MethodChannelFirebaseApp.__proto__),
+    [_isDeleted]: dart.fieldType(core.bool),
+    [_isAutomaticDataCollectionEnabled]: dart.fieldType(core.bool)
   }));
-  dart.setGetterSignature(firestore.Firestore, () => ({
-    __proto__: dart.getGetters(firestore.Firestore.__proto__),
-    app: app.App
-  }));
-  dart.setLibraryUri(firestore.Firestore, I[1]);
-  dart.defineLazy(firestore.Firestore, {
-    /*firestore.Firestore._expando*/get _expando() {
-      return new (T$.ExpandoOfFirestore()).new();
+  var _initializeFirebaseAppFromMap = dart.privateName(firebase_core_platform_interface, "_initializeFirebaseAppFromMap");
+  var _initializeCore = dart.privateName(firebase_core_platform_interface, "_initializeCore");
+  firebase_core_platform_interface.FirebasePlatform = class FirebasePlatform extends plugin_platform_interface.PlatformInterface {
+    static get instance() {
+      return firebase_core_platform_interface.FirebasePlatform._instance;
     }
-  }, false);
-  firestore.LoadBundleTask = class LoadBundleTask extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.firestore.LoadBundleTask, "firebase.firestore.LoadBundleTask")) {
-    static getInstance(jsObject) {
-      let t13, t12, t11, t10;
-      if (jsObject == null) dart.nullFailed(I[0], 142, 44, "jsObject");
-      t10 = firestore.LoadBundleTask._expando;
-      t11 = jsObject;
-      t12 = t10._get(t11);
-      return t12 == null ? (t13 = new firestore.LoadBundleTask._fromJsObject(jsObject), t10._set(t11, t13), t13) : t12;
+    static set instance(instance) {
+      if (instance == null) dart.nullFailed(I[6], 31, 40, "instance");
+      plugin_platform_interface.PlatformInterface.verifyToken(instance, firebase_core_platform_interface.FirebasePlatform._token);
+      firebase_core_platform_interface.FirebasePlatform._instance = instance;
     }
-    get stream() {
-      let controller = null;
-      let controller$35isSet = false;
-      function controller$35get() {
-        return controller$35isSet ? controller : dart.throw(new _internal.LateError.localNI("controller"));
-      }
-      dart.fn(controller$35get, T$.VoidToStreamControllerOfLoadBundleTaskProgress());
-      function controller$35set(t13) {
-        if (t13 == null) dart.nullFailed(I[0], 149, 51, "null");
-        controller$35isSet = true;
-        return controller = t13;
-      }
-      dart.fn(controller$35set, T$.StreamControllerOfLoadBundleTaskProgressTodynamic());
-      controller$35set(T$.StreamControllerOfLoadBundleTaskProgress().new({onListen: dart.fn(() => {
-          this.jsObject.onProgress(js.allowInterop(T$.LoadBundleTaskProgressJsImplTovoid(), dart.fn(data => {
-            if (data == null) dart.nullFailed(I[0], 153, 72, "data");
-            let taskProgress = new firestore.LoadBundleTaskProgress._fromJsObject(data);
-            if (load_bundle_task_state.LoadBundleTaskState.error != taskProgress.taskState) {
-              controller$35get().add(taskProgress);
-            }
-          }, T$.LoadBundleTaskProgressJsImplTovoid())));
-          this.jsObject.then(js.allowInterop(T$.dynamicTodynamic(), dart.fn(value => {
-            controller$35get().close();
-          }, T$.dynamicToNull())), js.allowInterop(T$.FirestoreErrorTodynamic(), dart.fn(error => {
-            if (error == null) dart.nullFailed(I[0], 165, 25, "error");
-            controller$35get().addError(new firebase_core_platform_interface.FirebaseException.new({plugin: "cloud_firestore", message: error.message, code: "load-bundle-error", stackTrace: new core._StringStackTrace.new(error.stack)}));
-            controller$35get().close();
-          }, T$.FirestoreErrorToNull())));
-        }, T$.VoidTovoid()), onCancel: dart.fn(() => {
-          controller$35get().close();
-        }, T$.VoidToNull())}));
-      return controller$35get().stream;
+    get apps() {
+      dart.throw(new core.UnimplementedError.new("apps has not been implemented."));
+    }
+    initializeApp(opts) {
+      let name = opts && 'name' in opts ? opts.name : null;
+      let options = opts && 'options' in opts ? opts.options : null;
+      dart.throw(new core.UnimplementedError.new("initializeApp() has not been implemented."));
+    }
+    app(name = "[DEFAULT]") {
+      if (name == null) dart.nullFailed(I[6], 52, 35, "name");
+      dart.throw(new core.UnimplementedError.new("app() has not been implemented."));
     }
   };
-  (firestore.LoadBundleTask._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 135, 71, "jsObject");
-    firestore.LoadBundleTask.__proto__.fromJsObject.call(this, jsObject);
+  (firebase_core_platform_interface.FirebasePlatform.new = function() {
+    firebase_core_platform_interface.FirebasePlatform.__proto__.new.call(this, {token: firebase_core_platform_interface.FirebasePlatform._token});
     ;
-  }).prototype = firestore.LoadBundleTask.prototype;
-  dart.addTypeTests(firestore.LoadBundleTask);
-  dart.addTypeCaches(firestore.LoadBundleTask);
-  dart.setGetterSignature(firestore.LoadBundleTask, () => ({
-    __proto__: dart.getGetters(firestore.LoadBundleTask.__proto__),
-    stream: async.Stream$(firestore.LoadBundleTaskProgress)
+  }).prototype = firebase_core_platform_interface.FirebasePlatform.prototype;
+  dart.addTypeTests(firebase_core_platform_interface.FirebasePlatform);
+  dart.addTypeCaches(firebase_core_platform_interface.FirebasePlatform);
+  dart.setMethodSignature(firebase_core_platform_interface.FirebasePlatform, () => ({
+    __proto__: dart.getMethods(firebase_core_platform_interface.FirebasePlatform.__proto__),
+    initializeApp: dart.fnType(async.Future$(firebase_core_platform_interface.FirebaseAppPlatform), [], {name: dart.nullable(core.String), options: dart.nullable(firebase_core_platform_interface.FirebaseOptions)}, {}),
+    app: dart.fnType(firebase_core_platform_interface.FirebaseAppPlatform, [], [core.String])
   }));
-  dart.setLibraryUri(firestore.LoadBundleTask, I[1]);
-  dart.defineLazy(firestore.LoadBundleTask, {
-    /*firestore.LoadBundleTask._expando*/get _expando() {
-      return new (T$.ExpandoOfLoadBundleTask()).new();
-    }
-  }, false);
-  var taskState = dart.privateName(firestore, "LoadBundleTaskProgress.taskState");
-  var bytesLoaded = dart.privateName(firestore, "LoadBundleTaskProgress.bytesLoaded");
-  var documentsLoaded = dart.privateName(firestore, "LoadBundleTaskProgress.documentsLoaded");
-  var totalBytes = dart.privateName(firestore, "LoadBundleTaskProgress.totalBytes");
-  var totalDocuments = dart.privateName(firestore, "LoadBundleTaskProgress.totalDocuments");
-  firestore.LoadBundleTaskProgress = class LoadBundleTaskProgress extends js$.JsObjectWrapper$(dart.anonymousJSType("LoadBundleTaskProgressJsImpl")) {
-    get taskState() {
-      return this[taskState];
-    }
-    set taskState(value) {
-      super.taskState = value;
-    }
-    get bytesLoaded() {
-      return this[bytesLoaded];
-    }
-    set bytesLoaded(value) {
-      super.bytesLoaded = value;
-    }
-    get documentsLoaded() {
-      return this[documentsLoaded];
-    }
-    set documentsLoaded(value) {
-      super.documentsLoaded = value;
-    }
-    get totalBytes() {
-      return this[totalBytes];
-    }
-    set totalBytes(value) {
-      super.totalBytes = value;
-    }
-    get totalDocuments() {
-      return this[totalDocuments];
-    }
-    set totalDocuments(value) {
-      super.totalDocuments = value;
-    }
-    static getInstance(jsObject) {
-      let t18, t17, t16, t15;
-      if (jsObject == null) dart.nullFailed(I[0], 199, 52, "jsObject");
-      t15 = firestore.LoadBundleTaskProgress._expando;
-      t16 = jsObject;
-      t17 = t15._get(t16);
-      return t17 == null ? (t18 = new firestore.LoadBundleTaskProgress._fromJsObject(jsObject), t15._set(t16, t18), t18) : t17;
-    }
-  };
-  (firestore.LoadBundleTaskProgress._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 187, 52, "jsObject");
-    this[taskState] = load_bundle_task_state$.convertToTaskState(jsObject.taskState[$toLowerCase]());
-    this[bytesLoaded] = core.int.parse(jsObject.bytesLoaded);
-    this[documentsLoaded] = jsObject.documentsLoaded;
-    this[totalBytes] = core.int.parse(jsObject.totalBytes);
-    this[totalDocuments] = jsObject.totalDocuments;
-    firestore.LoadBundleTaskProgress.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = firestore.LoadBundleTaskProgress.prototype;
-  dart.addTypeTests(firestore.LoadBundleTaskProgress);
-  dart.addTypeCaches(firestore.LoadBundleTaskProgress);
-  dart.setLibraryUri(firestore.LoadBundleTaskProgress, I[1]);
-  dart.setFieldSignature(firestore.LoadBundleTaskProgress, () => ({
-    __proto__: dart.getFields(firestore.LoadBundleTaskProgress.__proto__),
-    taskState: dart.finalFieldType(load_bundle_task_state.LoadBundleTaskState),
-    bytesLoaded: dart.finalFieldType(core.int),
-    documentsLoaded: dart.finalFieldType(core.int),
-    totalBytes: dart.finalFieldType(core.int),
-    totalDocuments: dart.finalFieldType(core.int)
+  dart.setGetterSignature(firebase_core_platform_interface.FirebasePlatform, () => ({
+    __proto__: dart.getGetters(firebase_core_platform_interface.FirebasePlatform.__proto__),
+    apps: core.List$(firebase_core_platform_interface.FirebaseAppPlatform)
   }));
-  dart.defineLazy(firestore.LoadBundleTaskProgress, {
-    /*firestore.LoadBundleTaskProgress._expando*/get _expando() {
-      return new (T$.ExpandoOfLoadBundleTaskProgress()).new();
-    }
-  }, false);
-  var _wrapUpdateFunctionCall = dart.privateName(firestore, "_wrapUpdateFunctionCall");
-  firestore._Updatable = class _Updatable extends core.Object {
-    [_wrapUpdateFunctionCall](T, jsObject, data, documentRef = null) {
-      if (data == null) dart.nullFailed(I[0], 614, 64, "data");
-      let args = [utils$.jsify(data)];
-      if (documentRef != null) {
-        args[$insert](0, documentRef.jsObject);
-      }
-      return dart.nullable(T).as(utils.callMethod(core.Object.as(jsObject), "update", args));
-    }
-  };
-  (firestore._Updatable.new = function() {
-    ;
-  }).prototype = firestore._Updatable.prototype;
-  dart.addTypeTests(firestore._Updatable);
-  dart.addTypeCaches(firestore._Updatable);
-  dart.setMethodSignature(firestore._Updatable, () => ({
-    __proto__: dart.getMethods(firestore._Updatable.__proto__),
-    [_wrapUpdateFunctionCall]: dart.gFnType(T => [dart.nullable(T), [dart.dynamic, core.Map$(core.String, dart.dynamic)], [dart.nullable(firestore.DocumentReference)]], T => [dart.nullable(core.Object)])
-  }));
-  dart.setLibraryUri(firestore._Updatable, I[1]);
-  const JsObjectWrapper__Updatable$36 = class JsObjectWrapper__Updatable extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.firestore.WriteBatch, "firebase.firestore.WriteBatch")) {};
-  (JsObjectWrapper__Updatable$36.fromJsObject = function(jsObject) {
-    JsObjectWrapper__Updatable$36.__proto__.fromJsObject.call(this, jsObject);
-  }).prototype = JsObjectWrapper__Updatable$36.prototype;
-  dart.applyMixin(JsObjectWrapper__Updatable$36, firestore._Updatable);
-  firestore.WriteBatch = class WriteBatch extends JsObjectWrapper__Updatable$36 {
-    static getInstance(jsObject) {
-      let t18, t17, t16, t15;
-      if (jsObject == null) dart.nullFailed(I[0], 217, 68, "jsObject");
-      t15 = firestore.WriteBatch._expando;
-      t16 = jsObject;
-      t17 = t15._get(t16);
-      return t17 == null ? (t18 = new firestore.WriteBatch._fromJsObject(jsObject), t15._set(t16, t18), t18) : t17;
-    }
-    commit() {
-      return utils.handleThenable(core.Null, this.jsObject.commit());
-    }
-    delete(documentRef) {
-      if (documentRef == null) dart.nullFailed(I[0], 226, 39, "documentRef");
-      return firestore.WriteBatch.getInstance(this.jsObject.delete(documentRef.jsObject));
-    }
-    set(documentRef, data, options = null) {
-      if (documentRef == null) dart.nullFailed(I[0], 229, 36, "documentRef");
-      if (data == null) dart.nullFailed(I[0], 229, 70, "data");
-      let jsObjectSet = options != null ? this.jsObject.set(documentRef.jsObject, utils$.jsify(data), options) : this.jsObject.set(documentRef.jsObject, utils$.jsify(data));
-      return firestore.WriteBatch.getInstance(jsObjectSet);
-    }
-    update(documentRef, data) {
-      if (documentRef == null) dart.nullFailed(I[0], 237, 39, "documentRef");
-      if (data == null) dart.nullFailed(I[0], 237, 73, "data");
-      return firestore.WriteBatch.getInstance(dart.lazyJSType(() => dart.global.firebase.firestore.WriteBatch, "firebase.firestore.WriteBatch").as(this[_wrapUpdateFunctionCall](dart.dynamic, this.jsObject, data, documentRef)));
-    }
-  };
-  (firestore.WriteBatch._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 221, 63, "jsObject");
-    firestore.WriteBatch.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = firestore.WriteBatch.prototype;
-  dart.addTypeTests(firestore.WriteBatch);
-  dart.addTypeCaches(firestore.WriteBatch);
-  dart.setMethodSignature(firestore.WriteBatch, () => ({
-    __proto__: dart.getMethods(firestore.WriteBatch.__proto__),
-    commit: dart.fnType(async.Future$(core.Null), []),
-    delete: dart.fnType(firestore.WriteBatch, [firestore.DocumentReference]),
-    set: dart.fnType(firestore.WriteBatch, [firestore.DocumentReference, core.Map$(core.String, dart.dynamic)], [dart.nullable(dart.anonymousJSType("SetOptions"))]),
-    update: dart.fnType(firestore.WriteBatch, [firestore.DocumentReference, core.Map$(core.String, dart.dynamic)])
-  }));
-  dart.setLibraryUri(firestore.WriteBatch, I[1]);
-  dart.defineLazy(firestore.WriteBatch, {
-    /*firestore.WriteBatch._expando*/get _expando() {
-      return new (T$.ExpandoOfWriteBatch()).new();
-    }
-  }, false);
-  var _createSnapshotStream = dart.privateName(firestore, "_createSnapshotStream");
-  const JsObjectWrapper__Updatable$36$ = class JsObjectWrapper__Updatable extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentReference, "firebase.firestore.DocumentReference")) {};
-  (JsObjectWrapper__Updatable$36$.fromJsObject = function(jsObject) {
-    JsObjectWrapper__Updatable$36$.__proto__.fromJsObject.call(this, jsObject);
-  }).prototype = JsObjectWrapper__Updatable$36$.prototype;
-  dart.applyMixin(JsObjectWrapper__Updatable$36$, firestore._Updatable);
-  firestore.DocumentReference = class DocumentReference extends JsObjectWrapper__Updatable$36$ {
-    get firestore() {
-      return firestore.Firestore.getInstance(this.jsObject.firestore);
-    }
-    get id() {
-      return this.jsObject.id;
-    }
-    get parent() {
-      return firestore.CollectionReference.getInstance(this.jsObject.parent);
-    }
-    get path() {
-      return this.jsObject.path;
-    }
-    static getInstance(jsObject) {
-      let t18, t17, t16, t15;
-      if (jsObject == null) dart.nullFailed(I[0], 260, 49, "jsObject");
-      t15 = firestore.DocumentReference._expando;
-      t16 = jsObject;
-      t17 = t15._get(t16);
-      return t17 == null ? (t18 = new firestore.DocumentReference._fromJsObject(jsObject), t15._set(t16, t18), t18) : t17;
-    }
-    collection(collectionPath) {
-      if (collectionPath == null) dart.nullFailed(I[0], 268, 42, "collectionPath");
-      return firestore.CollectionReference.getInstance(this.jsObject.collection(collectionPath));
-    }
-    delete() {
-      return utils.handleThenable(core.Null, this.jsObject.delete());
-    }
-    get(options = null) {
-      let jsObjectGet = options != null ? this.jsObject.get(options) : this.jsObject.get();
-      return utils.handleThenable(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentSnapshot, "firebase.firestore.DocumentSnapshot"), jsObjectGet).then(firestore.DocumentSnapshot, C[1] || CT.C1);
-    }
-    get onSnapshot() {
-      return this[_createSnapshotStream]().stream;
-    }
-    get onMetadataChangesSnapshot() {
-      return this[_createSnapshotStream]({includeMetadataChanges: true}).stream;
-    }
-    [_createSnapshotStream](options = null) {
-      let onSnapshotUnsubscribe = null;
-      let onSnapshotUnsubscribe$35isSet = false;
-      function onSnapshotUnsubscribe$35get() {
-        return onSnapshotUnsubscribe$35isSet ? onSnapshotUnsubscribe : dart.throw(new _internal.LateError.localNI("onSnapshotUnsubscribe"));
-      }
-      dart.fn(onSnapshotUnsubscribe$35get, T$.VoidToFn());
-      function onSnapshotUnsubscribe$35set(t18) {
-        if (t18 == null) dart.nullFailed(I[0], 291, 23, "null");
-        onSnapshotUnsubscribe$35isSet = true;
-        return onSnapshotUnsubscribe = t18;
-      }
-      dart.fn(onSnapshotUnsubscribe$35set, T$.FnTodynamic());
-      let controller = null;
-      let controller$35isSet = false;
-      function controller$35get() {
-        return controller$35isSet ? controller : dart.throw(new _internal.LateError.localNI("controller"));
-      }
-      dart.fn(controller$35get, T$.VoidToStreamControllerOfDocumentSnapshot());
-      function controller$35set(t23) {
-        if (t23 == null) dart.nullFailed(I[0], 293, 45, "null");
-        controller$35isSet = true;
-        return controller = t23;
-      }
-      dart.fn(controller$35set, T$.StreamControllerOfDocumentSnapshotTodynamic());
-      let nextWrapper = js.allowInterop(T$.DocumentSnapshotJsImplToNull(), dart.fn(snapshot => {
-        if (snapshot == null) dart.nullFailed(I[0], 296, 64, "snapshot");
-        controller$35get().add(firestore.DocumentSnapshot.getInstance(snapshot));
-      }, T$.DocumentSnapshotJsImplToNull()));
-      let errorWrapper = js.allowInterop(T$.dynamicTovoid(), dart.fn(e => controller$35get().addError(core.Object.as(e)), T$.dynamicTovoid()));
-      const startListen = () => {
-        onSnapshotUnsubscribe$35set(options != null ? this.jsObject.onSnapshot(options, dart.assertInterop(nextWrapper), dart.assertInterop(errorWrapper)) : this.jsObject.onSnapshot(dart.assertInterop(nextWrapper), dart.assertInterop(errorWrapper)));
-      };
-      dart.fn(startListen, T$.VoidTovoid());
-      function stopListen() {
-        onSnapshotUnsubscribe$35get()();
-      }
-      dart.fn(stopListen, T$.VoidTovoid());
-      return controller$35set(T$.StreamControllerOfDocumentSnapshot().broadcast({onListen: startListen, onCancel: stopListen, sync: true}));
-    }
-    set(data, options = null) {
-      if (data == null) dart.nullFailed(I[0], 319, 41, "data");
-      let jsObjectSet = options != null ? this.jsObject.set(utils$.jsify(data), options) : this.jsObject.set(utils$.jsify(data));
-      return utils.handleThenable(core.Null, jsObjectSet);
-    }
-    update(data) {
-      if (data == null) dart.nullFailed(I[0], 327, 44, "data");
-      return utils.handleThenable(core.Null, dart.lazyJSType(() => dart.global.Promise, "Promise").as(this[_wrapUpdateFunctionCall](dart.dynamic, this.jsObject, data)));
-    }
-  };
-  (firestore.DocumentReference._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 265, 49, "jsObject");
-    firestore.DocumentReference.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = firestore.DocumentReference.prototype;
-  dart.addTypeTests(firestore.DocumentReference);
-  dart.addTypeCaches(firestore.DocumentReference);
-  dart.setMethodSignature(firestore.DocumentReference, () => ({
-    __proto__: dart.getMethods(firestore.DocumentReference.__proto__),
-    collection: dart.fnType(dart.nullable(firestore.CollectionReference$(dart.lazyJSType(() => dart.global.firebase.firestore.CollectionReference, "firebase.firestore.CollectionReference"))), [core.String]),
-    delete: dart.fnType(async.Future$(core.Null), []),
-    get: dart.fnType(async.Future$(firestore.DocumentSnapshot), [], [dart.nullable(dart.anonymousJSType("GetOptions"))]),
-    [_createSnapshotStream]: dart.fnType(async.StreamController$(firestore.DocumentSnapshot), [], [dart.nullable(dart.anonymousJSType("DocumentListenOptions"))]),
-    set: dart.fnType(async.Future$(core.Null), [core.Map$(core.String, dart.dynamic)], [dart.nullable(dart.anonymousJSType("SetOptions"))]),
-    update: dart.fnType(async.Future$(core.Null), [core.Map$(core.String, dart.dynamic)])
-  }));
-  dart.setGetterSignature(firestore.DocumentReference, () => ({
-    __proto__: dart.getGetters(firestore.DocumentReference.__proto__),
-    firestore: firestore.Firestore,
-    id: core.String,
-    parent: dart.nullable(firestore.CollectionReference$(dart.lazyJSType(() => dart.global.firebase.firestore.CollectionReference, "firebase.firestore.CollectionReference"))),
-    path: core.String,
-    onSnapshot: async.Stream$(firestore.DocumentSnapshot),
-    onMetadataChangesSnapshot: async.Stream$(firestore.DocumentSnapshot)
-  }));
-  dart.setLibraryUri(firestore.DocumentReference, I[1]);
-  dart.defineLazy(firestore.DocumentReference, {
-    /*firestore.DocumentReference._expando*/get _expando() {
-      return new (T$.ExpandoOfDocumentReference()).new();
-    }
-  }, false);
-  var __Query_onSnapshot = dart.privateName(firestore, "_#Query#onSnapshot");
-  var __Query_onSnapshot_isSet = dart.privateName(firestore, "_#Query#onSnapshot#isSet");
-  var __Query_onSnapshotMetadata = dart.privateName(firestore, "_#Query#onSnapshotMetadata");
-  var __Query_onSnapshotMetadata_isSet = dart.privateName(firestore, "_#Query#onSnapshotMetadata#isSet");
-  var _wrapPaginatingFunctionCall = dart.privateName(firestore, "_wrapPaginatingFunctionCall");
-  const _is_Query_default = Symbol('_is_Query_default');
-  firestore.Query$ = dart.generic(T => {
-    class Query extends js$.JsObjectWrapper$(T) {
-      get firestore() {
-        return firestore.Firestore.getInstance(this.jsObject.firestore);
-      }
-      endAt(opts) {
-        let snapshot = opts && 'snapshot' in opts ? opts.snapshot : null;
-        let fieldValues = opts && 'fieldValues' in opts ? opts.fieldValues : null;
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query").as(this[_wrapPaginatingFunctionCall](dart.dynamic, "endAt", snapshot, fieldValues)));
-      }
-      endBefore(opts) {
-        let snapshot = opts && 'snapshot' in opts ? opts.snapshot : null;
-        let fieldValues = opts && 'fieldValues' in opts ? opts.fieldValues : null;
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query").as(this[_wrapPaginatingFunctionCall](dart.dynamic, "endBefore", snapshot, fieldValues)));
-      }
-      get(options = null) {
-        let jsObjectGet = options != null ? this.jsObject.get(options) : this.jsObject.get();
-        return utils.handleThenable(dart.lazyJSType(() => dart.global.firebase.firestore.QuerySnapshot, "firebase.firestore.QuerySnapshot"), jsObjectGet).then(firestore.QuerySnapshot, C[2] || CT.C2);
-      }
-      limit(limit) {
-        if (limit == null) dart.nullFailed(I[0], 353, 19, "limit");
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(this.jsObject.limit(limit));
-      }
-      limitToLast(limit) {
-        if (limit == null) dart.nullFailed(I[0], 355, 25, "limit");
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(this.jsObject.limitToLast(limit));
-      }
-      get onSnapshot() {
-        let t26;
-        if (!dart.test(this[__Query_onSnapshot_isSet])) {
-          let t25 = this[_createSnapshotStream](false).stream;
-          if (dart.test(this[__Query_onSnapshot_isSet])) dart.throw(new _internal.LateError.fieldADI("onSnapshot"));
-          this[__Query_onSnapshot] = t25;
-          this[__Query_onSnapshot_isSet] = true;
-        }
-        t26 = this[__Query_onSnapshot];
-        return t26;
-      }
-      get onSnapshotMetadata() {
-        let t27;
-        if (!dart.test(this[__Query_onSnapshotMetadata_isSet])) {
-          let t26 = this[_createSnapshotStream](true).stream;
-          if (dart.test(this[__Query_onSnapshotMetadata_isSet])) dart.throw(new _internal.LateError.fieldADI("onSnapshotMetadata"));
-          this[__Query_onSnapshotMetadata] = t26;
-          this[__Query_onSnapshotMetadata_isSet] = true;
-        }
-        t27 = this[__Query_onSnapshotMetadata];
-        return t27;
-      }
-      [_createSnapshotStream](includeMetadataChanges) {
-        if (includeMetadataChanges == null) dart.nullFailed(I[0], 365, 10, "includeMetadataChanges");
-        let onSnapshotUnsubscribe = null;
-        let onSnapshotUnsubscribe$35isSet = false;
-        function onSnapshotUnsubscribe$35get() {
-          return onSnapshotUnsubscribe$35isSet ? onSnapshotUnsubscribe : dart.throw(new _internal.LateError.localNI("onSnapshotUnsubscribe"));
-        }
-        dart.fn(onSnapshotUnsubscribe$35get, T$.VoidToFn());
-        function onSnapshotUnsubscribe$35set(t30) {
-          if (t30 == null) dart.nullFailed(I[0], 367, 23, "null");
-          onSnapshotUnsubscribe$35isSet = true;
-          return onSnapshotUnsubscribe = t30;
-        }
-        dart.fn(onSnapshotUnsubscribe$35set, T$.FnTodynamic());
-        let controller = null;
-        let controller$35isSet = false;
-        function controller$35get() {
-          return controller$35isSet ? controller : dart.throw(new _internal.LateError.localNI("controller"));
-        }
-        dart.fn(controller$35get, T$.VoidToStreamControllerOfQuerySnapshot());
-        function controller$35set(t35) {
-          if (t35 == null) dart.nullFailed(I[0], 369, 42, "null");
-          controller$35isSet = true;
-          return controller = t35;
-        }
-        dart.fn(controller$35set, T$.StreamControllerOfQuerySnapshotTodynamic());
-        let nextWrapper = js.allowInterop(T$.QuerySnapshotJsImplToNull(), dart.fn(snapshot => {
-          if (snapshot == null) dart.nullFailed(I[0], 372, 61, "snapshot");
-          controller$35get().add(new firestore.QuerySnapshot._fromJsObject(snapshot));
-        }, T$.QuerySnapshotJsImplToNull()));
-        let errorWrapper = js.allowInterop(T$.dynamicTovoid(), dart.fn(e => controller$35get().addError(core.Object.as(e)), T$.dynamicTovoid()));
-        let options = {includeMetadataChanges: includeMetadataChanges};
-        const startListen = () => {
-          onSnapshotUnsubscribe$35set(this.jsObject.onSnapshot(options, dart.assertInterop(nextWrapper), dart.assertInterop(errorWrapper)));
-        };
-        dart.fn(startListen, T$.VoidTovoid());
-        function stopListen() {
-          onSnapshotUnsubscribe$35get()();
-        }
-        dart.fn(stopListen, T$.VoidTovoid());
-        return controller$35set(T$.StreamControllerOfQuerySnapshot().broadcast({onListen: startListen, onCancel: stopListen, sync: true}));
-      }
-      orderBy(fieldPath, directionStr = null) {
-        let jsObjectOrderBy = directionStr != null ? this.jsObject.orderBy(fieldPath, directionStr) : this.jsObject.orderBy(fieldPath);
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(jsObjectOrderBy);
-      }
-      startAfter(opts) {
-        let snapshot = opts && 'snapshot' in opts ? opts.snapshot : null;
-        let fieldValues = opts && 'fieldValues' in opts ? opts.fieldValues : null;
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query").as(this[_wrapPaginatingFunctionCall](dart.dynamic, "startAfter", snapshot, fieldValues)));
-      }
-      startAt(opts) {
-        let snapshot = opts && 'snapshot' in opts ? opts.snapshot : null;
-        let fieldValues = opts && 'fieldValues' in opts ? opts.fieldValues : null;
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query").as(this[_wrapPaginatingFunctionCall](dart.dynamic, "startAt", snapshot, fieldValues)));
-      }
-      where(fieldPath, opStr, value) {
-        if (opStr == null) dart.nullFailed(I[0], 412, 45, "opStr");
-        return new (T$.QueryOfQueryJsImpl()).fromJsObject(this.jsObject.where(fieldPath, opStr, utils$.jsify(value)));
-      }
-      [_wrapPaginatingFunctionCall](S, method, snapshot, fieldValues) {
-        if (method == null) dart.nullFailed(I[0], 420, 14, "method");
-        if (snapshot == null && fieldValues == null) {
-          dart.throw(new core.ArgumentError.new("Please provide either snapshot or fieldValues parameter."));
-        }
-        let args = snapshot != null ? T$.JSArrayOfDocumentSnapshotJsImpl().of([snapshot.jsObject]) : dart.nullCheck(fieldValues)[$map](dart.dynamic, C[0] || CT.C0)[$toList]();
-        return dart.nullable(S).as(utils.callMethod(this.jsObject, method, args));
-      }
-    }
-    (Query.fromJsObject = function(jsObject) {
-      if (jsObject == null) dart.nullFailed(I[0], 336, 24, "jsObject");
-      this[__Query_onSnapshot] = null;
-      this[__Query_onSnapshot_isSet] = false;
-      this[__Query_onSnapshotMetadata] = null;
-      this[__Query_onSnapshotMetadata_isSet] = false;
-      Query.__proto__.fromJsObject.call(this, jsObject);
-      ;
-    }).prototype = Query.prototype;
-    dart.addTypeTests(Query);
-    Query.prototype[_is_Query_default] = true;
-    dart.addTypeCaches(Query);
-    dart.setMethodSignature(Query, () => ({
-      __proto__: dart.getMethods(Query.__proto__),
-      endAt: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [], {fieldValues: dart.nullable(core.List), snapshot: dart.nullable(firestore.DocumentSnapshot)}, {}),
-      endBefore: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [], {fieldValues: dart.nullable(core.List), snapshot: dart.nullable(firestore.DocumentSnapshot)}, {}),
-      get: dart.fnType(async.Future$(firestore.QuerySnapshot), [], [dart.nullable(dart.anonymousJSType("GetOptions"))]),
-      limit: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [core.num]),
-      limitToLast: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [core.num]),
-      [_createSnapshotStream]: dart.fnType(async.StreamController$(firestore.QuerySnapshot), [core.bool]),
-      orderBy: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [dart.dynamic], [dart.nullable(core.String)]),
-      startAfter: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [], {fieldValues: dart.nullable(core.List), snapshot: dart.nullable(firestore.DocumentSnapshot)}, {}),
-      startAt: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [], {fieldValues: dart.nullable(core.List), snapshot: dart.nullable(firestore.DocumentSnapshot)}, {}),
-      where: dart.fnType(firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")), [dart.dynamic, core.String, dart.dynamic]),
-      [_wrapPaginatingFunctionCall]: dart.gFnType(S => [dart.nullable(S), [core.String, dart.nullable(firestore.DocumentSnapshot), dart.nullable(core.List)]], S => [dart.nullable(core.Object)])
-    }));
-    dart.setGetterSignature(Query, () => ({
-      __proto__: dart.getGetters(Query.__proto__),
-      firestore: firestore.Firestore,
-      onSnapshot: async.Stream$(firestore.QuerySnapshot),
-      onSnapshotMetadata: async.Stream$(firestore.QuerySnapshot)
-    }));
-    dart.setLibraryUri(Query, I[1]);
-    dart.setFieldSignature(Query, () => ({
-      __proto__: dart.getFields(Query.__proto__),
-      [__Query_onSnapshot]: dart.fieldType(dart.nullable(async.Stream$(firestore.QuerySnapshot))),
-      [__Query_onSnapshot_isSet]: dart.fieldType(core.bool),
-      [__Query_onSnapshotMetadata]: dart.fieldType(dart.nullable(async.Stream$(firestore.QuerySnapshot))),
-      [__Query_onSnapshotMetadata_isSet]: dart.fieldType(core.bool)
-    }));
-    return Query;
-  });
-  firestore.Query = firestore.Query$();
-  dart.addTypeTests(firestore.Query, _is_Query_default);
-  const _is_CollectionReference_default = Symbol('_is_CollectionReference_default');
-  firestore.CollectionReference$ = dart.generic(T => {
-    class CollectionReference extends firestore.Query$(T) {
-      get id() {
-        return this.jsObject.id;
-      }
-      get parent() {
-        return firestore.DocumentReference.getInstance(this.jsObject.parent);
-      }
-      get path() {
-        return this.jsObject.path;
-      }
-      static getInstance(jsObject) {
-        let t40, t39, t38, t37;
-        if (jsObject == null) dart.nullFailed(I[0], 446, 51, "jsObject");
-        t37 = firestore.CollectionReference._expando;
-        t38 = jsObject;
-        t39 = t37._get(t38);
-        return t39 == null ? (t40 = new (T$.CollectionReferenceOfCollectionReferenceJsImpl())._fromJsObject(jsObject), t37._set(t38, t40), t40) : t39;
-      }
-      static new() {
-        return new (firestore.CollectionReference$(T))._fromJsObject(new dart.global.firebase.firestore.CollectionReference());
-      }
-      add(data) {
-        if (data == null) dart.nullFailed(I[0], 457, 54, "data");
-        return utils.handleThenable(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentReference, "firebase.firestore.DocumentReference"), this.jsObject.add(utils$.jsify(data))).then(firestore.DocumentReference, C[3] || CT.C3);
-      }
-      doc(documentPath = null) {
-        let jsObjectDoc = documentPath != null ? this.jsObject.doc(documentPath) : this.jsObject.doc();
-        return firestore.DocumentReference.getInstance(jsObjectDoc);
-      }
-      isEqual(other) {
-        if (other == null) dart.nullFailed(I[0], 468, 36, "other");
-        return this.jsObject.isEqual(other.jsObject);
-      }
-    }
-    (CollectionReference._fromJsObject = function(jsObject) {
-      if (jsObject == null) dart.nullFailed(I[0], 454, 51, "jsObject");
-      CollectionReference.__proto__.fromJsObject.call(this, T.as(jsObject));
-      ;
-    }).prototype = CollectionReference.prototype;
-    dart.addTypeTests(CollectionReference);
-    CollectionReference.prototype[_is_CollectionReference_default] = true;
-    dart.addTypeCaches(CollectionReference);
-    dart.setMethodSignature(CollectionReference, () => ({
-      __proto__: dart.getMethods(CollectionReference.__proto__),
-      add: dart.fnType(async.Future$(firestore.DocumentReference), [core.Map$(core.String, dart.dynamic)]),
-      doc: dart.fnType(firestore.DocumentReference, [], [dart.nullable(core.String)]),
-      isEqual: dart.fnType(core.bool, [firestore.CollectionReference$(dart.lazyJSType(() => dart.global.firebase.firestore.CollectionReference, "firebase.firestore.CollectionReference"))])
-    }));
-    dart.setGetterSignature(CollectionReference, () => ({
-      __proto__: dart.getGetters(CollectionReference.__proto__),
-      id: core.String,
-      parent: dart.nullable(firestore.DocumentReference),
-      path: core.String
-    }));
-    dart.setLibraryUri(CollectionReference, I[1]);
-    return CollectionReference;
-  });
-  firestore.CollectionReference = firestore.CollectionReference$();
-  dart.defineLazy(firestore.CollectionReference, {
-    /*firestore.CollectionReference._expando*/get _expando() {
-      return new (T$.ExpandoOfCollectionReferenceOfCollectionReferenceJsImpl()).new();
-    }
-  }, false);
-  dart.addTypeTests(firestore.CollectionReference, _is_CollectionReference_default);
-  firestore.DocumentChange = class DocumentChange extends js$.JsObjectWrapper$(dart.anonymousJSType("DocumentChangeJsImpl")) {
-    get type() {
-      return this.jsObject.type;
-    }
-    get doc() {
-      return firestore.DocumentSnapshot.getInstance(this.jsObject.doc);
-    }
-    get oldIndex() {
-      return this.jsObject.oldIndex;
-    }
-    get newIndex() {
-      return this.jsObject.newIndex;
-    }
-    static getInstance(jsObject) {
-      let t40, t39, t38, t37;
-      if (jsObject == null) dart.nullFailed(I[0], 485, 46, "jsObject");
-      t37 = firestore.DocumentChange._expando;
-      t38 = jsObject;
-      t39 = t37._get(t38);
-      return t39 == null ? (t40 = new firestore.DocumentChange._fromJsObject(jsObject), t37._set(t38, t40), t40) : t39;
-    }
-  };
-  (firestore.DocumentChange._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 489, 71, "jsObject");
-    firestore.DocumentChange.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = firestore.DocumentChange.prototype;
-  dart.addTypeTests(firestore.DocumentChange);
-  dart.addTypeCaches(firestore.DocumentChange);
-  dart.setGetterSignature(firestore.DocumentChange, () => ({
-    __proto__: dart.getGetters(firestore.DocumentChange.__proto__),
-    type: core.String,
-    doc: dart.nullable(firestore.DocumentSnapshot),
-    oldIndex: core.num,
-    newIndex: core.num
-  }));
-  dart.setLibraryUri(firestore.DocumentChange, I[1]);
-  dart.defineLazy(firestore.DocumentChange, {
-    /*firestore.DocumentChange._expando*/get _expando() {
-      return new (T$.ExpandoOfDocumentChange()).new();
-    }
-  }, false);
-  firestore.DocumentSnapshot = class DocumentSnapshot extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentSnapshot, "firebase.firestore.DocumentSnapshot")) {
-    get exists() {
-      return this.jsObject.exists;
-    }
-    get id() {
-      return this.jsObject.id;
-    }
-    get metadata() {
-      return this.jsObject.metadata;
-    }
-    get ref() {
-      return firestore.DocumentReference.getInstance(this.jsObject.ref);
-    }
-    static getInstance(jsObject) {
-      let t40, t39, t38, t37;
-      if (jsObject == null) dart.nullFailed(I[0], 507, 48, "jsObject");
-      t37 = firestore.DocumentSnapshot._expando;
-      t38 = jsObject;
-      t39 = t37._get(t38);
-      return t39 == null ? (t40 = new firestore.DocumentSnapshot._fromJsObject(jsObject), t37._set(t38, t40), t40) : t39;
-    }
-    data() {
-      return T$.MapNOfString$dynamic().as(utils$.dartify(this.jsObject.data()));
-    }
-    get(fieldPath) {
-      return utils$.dartify(this.jsObject.get(fieldPath));
-    }
-    isEqual(other) {
-      if (other == null) dart.nullFailed(I[0], 520, 33, "other");
-      return this.jsObject.isEqual(other.jsObject);
-    }
-  };
-  (firestore.DocumentSnapshot._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 512, 48, "jsObject");
-    firestore.DocumentSnapshot.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = firestore.DocumentSnapshot.prototype;
-  dart.addTypeTests(firestore.DocumentSnapshot);
-  dart.addTypeCaches(firestore.DocumentSnapshot);
-  dart.setMethodSignature(firestore.DocumentSnapshot, () => ({
-    __proto__: dart.getMethods(firestore.DocumentSnapshot.__proto__),
-    data: dart.fnType(dart.nullable(core.Map$(core.String, dart.dynamic)), []),
-    get: dart.fnType(dart.dynamic, [dart.dynamic]),
-    isEqual: dart.fnType(core.bool, [firestore.DocumentSnapshot])
-  }));
-  dart.setGetterSignature(firestore.DocumentSnapshot, () => ({
-    __proto__: dart.getGetters(firestore.DocumentSnapshot.__proto__),
-    exists: core.bool,
-    id: core.String,
-    metadata: dart.lazyJSType(() => dart.global.firebase.firestore.SnapshotMetadata, "firebase.firestore.SnapshotMetadata"),
-    ref: dart.nullable(firestore.DocumentReference)
-  }));
-  dart.setLibraryUri(firestore.DocumentSnapshot, I[1]);
-  dart.defineLazy(firestore.DocumentSnapshot, {
-    /*firestore.DocumentSnapshot._expando*/get _expando() {
-      return new (T$.ExpandoOfDocumentSnapshot()).new();
-    }
-  }, false);
-  firestore.QuerySnapshot = class QuerySnapshot extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.firestore.QuerySnapshot, "firebase.firestore.QuerySnapshot")) {
-    docChanges(options = null) {
-      let changes = options != null ? this.jsObject.docChanges(dart.nullable(dart.anonymousJSType("SnapshotListenOptions")).as(utils$.jsify(options))) : this.jsObject.docChanges();
-      return changes[$map](firestore.DocumentChange, dart.fn(e => firestore.DocumentChange.getInstance(dart.anonymousJSType("DocumentChangeJsImpl").as(e)), T$.dynamicToDocumentChange()))[$toList]();
-    }
-    get docs() {
-      return this.jsObject.docs[$map](firestore.DocumentSnapshot, dart.fn(e => firestore.DocumentSnapshot.getInstance(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentSnapshot, "firebase.firestore.DocumentSnapshot").as(e)), T$.dynamicToDocumentSnapshot()))[$toList]();
-    }
-    get empty() {
-      return this.jsObject.empty;
-    }
-    get metadata() {
-      return this.jsObject.metadata;
-    }
-    get query() {
-      return new (T$.QueryOfQueryJsImpl()).fromJsObject(this.jsObject.query);
-    }
-    get size() {
-      return this.jsObject.size;
-    }
-    static getInstance(jsObject) {
-      let t40, t39, t38, t37;
-      if (jsObject == null) dart.nullFailed(I[0], 558, 45, "jsObject");
-      t37 = firestore.QuerySnapshot._expando;
-      t38 = jsObject;
-      t39 = t37._get(t38);
-      return t39 == null ? (t40 = new firestore.QuerySnapshot._fromJsObject(jsObject), t37._set(t38, t40), t40) : t39;
-    }
-    forEach(callback) {
-      if (callback == null) dart.nullFailed(I[0], 565, 44, "callback");
-      let callbackWrap = js.allowInterop(T$.dynamicTodynamic(), dart.fn(s => callback(firestore.DocumentSnapshot.getInstance(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentSnapshot, "firebase.firestore.DocumentSnapshot").as(s))), T$.dynamicTodynamic()));
-      return this.jsObject.forEach(dart.assertInterop(callbackWrap));
-    }
-    isEqual(other) {
-      if (other == null) dart.nullFailed(I[0], 571, 30, "other");
-      return this.jsObject.isEqual(other.jsObject);
-    }
-  };
-  (firestore.QuerySnapshot._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 562, 69, "jsObject");
-    firestore.QuerySnapshot.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = firestore.QuerySnapshot.prototype;
-  dart.addTypeTests(firestore.QuerySnapshot);
-  dart.addTypeCaches(firestore.QuerySnapshot);
-  dart.setMethodSignature(firestore.QuerySnapshot, () => ({
-    __proto__: dart.getMethods(firestore.QuerySnapshot.__proto__),
-    docChanges: dart.fnType(core.List$(firestore.DocumentChange), [], [dart.nullable(dart.anonymousJSType("SnapshotListenOptions"))]),
-    forEach: dart.fnType(dart.void, [dart.fnType(dart.dynamic, [dart.nullable(firestore.DocumentSnapshot)])]),
-    isEqual: dart.fnType(core.bool, [firestore.QuerySnapshot])
-  }));
-  dart.setGetterSignature(firestore.QuerySnapshot, () => ({
-    __proto__: dart.getGetters(firestore.QuerySnapshot.__proto__),
-    docs: core.List$(dart.nullable(firestore.DocumentSnapshot)),
-    empty: core.bool,
-    metadata: dart.lazyJSType(() => dart.global.firebase.firestore.SnapshotMetadata, "firebase.firestore.SnapshotMetadata"),
-    query: firestore.Query$(dart.lazyJSType(() => dart.global.firebase.firestore.Query, "firebase.firestore.Query")),
-    size: core.num
-  }));
-  dart.setLibraryUri(firestore.QuerySnapshot, I[1]);
-  dart.defineLazy(firestore.QuerySnapshot, {
-    /*firestore.QuerySnapshot._expando*/get _expando() {
-      return new (T$.ExpandoOfQuerySnapshot()).new();
-    }
-  }, false);
-  const JsObjectWrapper__Updatable$36$0 = class JsObjectWrapper__Updatable extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.firestore.Transaction, "firebase.firestore.Transaction")) {};
-  (JsObjectWrapper__Updatable$36$0.fromJsObject = function(jsObject) {
-    JsObjectWrapper__Updatable$36$0.__proto__.fromJsObject.call(this, jsObject);
-  }).prototype = JsObjectWrapper__Updatable$36$0.prototype;
-  dart.applyMixin(JsObjectWrapper__Updatable$36$0, firestore._Updatable);
-  firestore.Transaction = class Transaction extends JsObjectWrapper__Updatable$36$0 {
-    static getInstance(jsObject) {
-      let t40, t39, t38, t37;
-      if (jsObject == null) dart.nullFailed(I[0], 579, 70, "jsObject");
-      t37 = firestore.Transaction._expando;
-      t38 = jsObject;
-      t39 = t37._get(t38);
-      return t39 == null ? (t40 = new firestore.Transaction._fromJsObject(jsObject), t37._set(t38, t40), t40) : t39;
-    }
-    delete(documentRef) {
-      if (documentRef == null) dart.nullFailed(I[0], 586, 40, "documentRef");
-      return firestore.Transaction.getInstance(this.jsObject.delete(documentRef.jsObject));
-    }
-    get(documentRef) {
-      if (documentRef == null) dart.nullFailed(I[0], 589, 50, "documentRef");
-      return utils.handleThenable(dart.lazyJSType(() => dart.global.firebase.firestore.DocumentSnapshot, "firebase.firestore.DocumentSnapshot"), this.jsObject.get(documentRef.jsObject)).then(firestore.DocumentSnapshot, C[1] || CT.C1);
-    }
-    set(documentRef, data, options = null) {
-      if (documentRef == null) dart.nullFailed(I[0], 594, 37, "documentRef");
-      if (data == null) dart.nullFailed(I[0], 594, 71, "data");
-      let jsObjectSet = options != null ? this.jsObject.set(documentRef.jsObject, utils$.jsify(data), options) : this.jsObject.set(documentRef.jsObject, utils$.jsify(data));
-      return firestore.Transaction.getInstance(jsObjectSet);
-    }
-    update(documentRef, data) {
-      if (documentRef == null) dart.nullFailed(I[0], 603, 29, "documentRef");
-      if (data == null) dart.nullFailed(I[0], 603, 63, "data");
-      return firestore.Transaction.getInstance(dart.lazyJSType(() => dart.global.firebase.firestore.Transaction, "firebase.firestore.Transaction").as(this[_wrapUpdateFunctionCall](dart.dynamic, this.jsObject, data, documentRef)));
-    }
-  };
-  (firestore.Transaction._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 583, 65, "jsObject");
-    firestore.Transaction.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = firestore.Transaction.prototype;
-  dart.addTypeTests(firestore.Transaction);
-  dart.addTypeCaches(firestore.Transaction);
-  dart.setMethodSignature(firestore.Transaction, () => ({
-    __proto__: dart.getMethods(firestore.Transaction.__proto__),
-    delete: dart.fnType(firestore.Transaction, [firestore.DocumentReference]),
-    get: dart.fnType(async.Future$(firestore.DocumentSnapshot), [firestore.DocumentReference]),
-    set: dart.fnType(firestore.Transaction, [firestore.DocumentReference, core.Map$(core.String, dart.dynamic)], [dart.nullable(dart.anonymousJSType("SetOptions"))]),
-    update: dart.fnType(firestore.Transaction, [firestore.DocumentReference, core.Map$(core.String, dart.dynamic)])
-  }));
-  dart.setLibraryUri(firestore.Transaction, I[1]);
-  dart.defineLazy(firestore.Transaction, {
-    /*firestore.Transaction._expando*/get _expando() {
-      return new (T$.ExpandoOfTransaction()).new();
-    }
-  }, false);
-  var _jsify = dart.privateName(firestore, "_jsify");
-  firestore._FieldValueDelete = class _FieldValueDelete extends core.Object {
-    [_jsify]() {
-      return dart.global.firebase.firestore.FieldValue.delete();
-    }
-    toString() {
-      return "FieldValue.delete()";
-    }
-  };
-  (firestore._FieldValueDelete.new = function() {
-    ;
-  }).prototype = firestore._FieldValueDelete.prototype;
-  dart.addTypeTests(firestore._FieldValueDelete);
-  dart.addTypeCaches(firestore._FieldValueDelete);
-  firestore._FieldValueDelete[dart.implements] = () => [firestore.FieldValue];
-  dart.setMethodSignature(firestore._FieldValueDelete, () => ({
-    __proto__: dart.getMethods(firestore._FieldValueDelete.__proto__),
-    [_jsify]: dart.fnType(dart.anonymousJSType("FieldValue"), [])
-  }));
-  dart.setLibraryUri(firestore._FieldValueDelete, I[1]);
-  dart.defineExtensionMethods(firestore._FieldValueDelete, ['toString']);
-  firestore._FieldValueServerTimestamp = class _FieldValueServerTimestamp extends core.Object {
-    [_jsify]() {
-      return dart.global.firebase.firestore.FieldValue.serverTimestamp();
-    }
-    toString() {
-      return "FieldValue.serverTimestamp()";
-    }
-  };
-  (firestore._FieldValueServerTimestamp.new = function() {
-    ;
-  }).prototype = firestore._FieldValueServerTimestamp.prototype;
-  dart.addTypeTests(firestore._FieldValueServerTimestamp);
-  dart.addTypeCaches(firestore._FieldValueServerTimestamp);
-  firestore._FieldValueServerTimestamp[dart.implements] = () => [firestore.FieldValue];
-  dart.setMethodSignature(firestore._FieldValueServerTimestamp, () => ({
-    __proto__: dart.getMethods(firestore._FieldValueServerTimestamp.__proto__),
-    [_jsify]: dart.fnType(dart.anonymousJSType("FieldValue"), [])
-  }));
-  dart.setLibraryUri(firestore._FieldValueServerTimestamp, I[1]);
-  dart.defineExtensionMethods(firestore._FieldValueServerTimestamp, ['toString']);
-  firestore._FieldValueArray = class _FieldValueArray extends core.Object {};
-  (firestore._FieldValueArray.new = function(elements) {
-    this.elements = elements;
-    ;
-  }).prototype = firestore._FieldValueArray.prototype;
-  dart.addTypeTests(firestore._FieldValueArray);
-  dart.addTypeCaches(firestore._FieldValueArray);
-  firestore._FieldValueArray[dart.implements] = () => [firestore.FieldValue];
-  dart.setLibraryUri(firestore._FieldValueArray, I[1]);
-  dart.setFieldSignature(firestore._FieldValueArray, () => ({
-    __proto__: dart.getFields(firestore._FieldValueArray.__proto__),
-    elements: dart.finalFieldType(dart.nullable(core.List))
-  }));
-  firestore._FieldValueArrayUnion = class _FieldValueArrayUnion extends firestore._FieldValueArray {
-    [_jsify]() {
-      return dart.nullable(dart.anonymousJSType("FieldValue")).as(utils.callMethod(core.Object.as(dart.global.firebase.firestore.FieldValue), "arrayUnion", core.List.as(utils$.jsify(this.elements))));
-    }
-    toString() {
-      return "FieldValue.arrayUnion(" + dart.str(this.elements) + ")";
-    }
-  };
-  (firestore._FieldValueArrayUnion.new = function(elements) {
-    firestore._FieldValueArrayUnion.__proto__.new.call(this, elements);
-    ;
-  }).prototype = firestore._FieldValueArrayUnion.prototype;
-  dart.addTypeTests(firestore._FieldValueArrayUnion);
-  dart.addTypeCaches(firestore._FieldValueArrayUnion);
-  dart.setMethodSignature(firestore._FieldValueArrayUnion, () => ({
-    __proto__: dart.getMethods(firestore._FieldValueArrayUnion.__proto__),
-    [_jsify]: dart.fnType(dart.nullable(dart.anonymousJSType("FieldValue")), [])
-  }));
-  dart.setLibraryUri(firestore._FieldValueArrayUnion, I[1]);
-  dart.defineExtensionMethods(firestore._FieldValueArrayUnion, ['toString']);
-  firestore._FieldValueArrayRemove = class _FieldValueArrayRemove extends firestore._FieldValueArray {
-    [_jsify]() {
-      return dart.nullable(dart.anonymousJSType("FieldValue")).as(utils.callMethod(core.Object.as(dart.global.firebase.firestore.FieldValue), "arrayRemove", core.List.as(utils$.jsify(this.elements))));
-    }
-    toString() {
-      return "FieldValue.arrayRemove(" + dart.str(this.elements) + ")";
-    }
-  };
-  (firestore._FieldValueArrayRemove.new = function(elements) {
-    firestore._FieldValueArrayRemove.__proto__.new.call(this, elements);
-    ;
-  }).prototype = firestore._FieldValueArrayRemove.prototype;
-  dart.addTypeTests(firestore._FieldValueArrayRemove);
-  dart.addTypeCaches(firestore._FieldValueArrayRemove);
-  dart.setMethodSignature(firestore._FieldValueArrayRemove, () => ({
-    __proto__: dart.getMethods(firestore._FieldValueArrayRemove.__proto__),
-    [_jsify]: dart.fnType(dart.nullable(dart.anonymousJSType("FieldValue")), [])
-  }));
-  dart.setLibraryUri(firestore._FieldValueArrayRemove, I[1]);
-  dart.defineExtensionMethods(firestore._FieldValueArrayRemove, ['toString']);
-  firestore._FieldValueIncrement = class _FieldValueIncrement extends core.Object {
-    [_jsify]() {
-      return dart.global.firebase.firestore.FieldValue.increment(this.n);
-    }
-    toString() {
-      return "FieldValue.increment(" + dart.str(this.n) + ")";
-    }
-  };
-  (firestore._FieldValueIncrement.new = function(n) {
-    if (n == null) dart.nullFailed(I[0], 680, 29, "n");
-    this.n = n;
-    ;
-  }).prototype = firestore._FieldValueIncrement.prototype;
-  dart.addTypeTests(firestore._FieldValueIncrement);
-  dart.addTypeCaches(firestore._FieldValueIncrement);
-  firestore._FieldValueIncrement[dart.implements] = () => [firestore.FieldValue];
-  dart.setMethodSignature(firestore._FieldValueIncrement, () => ({
-    __proto__: dart.getMethods(firestore._FieldValueIncrement.__proto__),
-    [_jsify]: dart.fnType(dart.anonymousJSType("FieldValue"), [])
-  }));
-  dart.setLibraryUri(firestore._FieldValueIncrement, I[1]);
-  dart.setFieldSignature(firestore._FieldValueIncrement, () => ({
-    __proto__: dart.getFields(firestore._FieldValueIncrement.__proto__),
-    n: dart.finalFieldType(core.num)
-  }));
-  dart.defineExtensionMethods(firestore._FieldValueIncrement, ['toString']);
-  firestore.FieldValue = class FieldValue extends core.Object {
-    [_jsify]() {
-      dart.throw(new core.UnimplementedError.new("_jsify() has not been implemented"));
-    }
-    static serverTimestamp() {
-      return firestore.FieldValue._serverTimestamp;
-    }
-    static delete() {
-      return firestore.FieldValue._delete;
-    }
-    static arrayUnion(elements) {
-      return new firestore._FieldValueArrayUnion.new(elements);
-    }
-    static arrayRemove(elements) {
-      return new firestore._FieldValueArrayRemove.new(elements);
-    }
-    static increment(n) {
-      if (n == null) dart.nullFailed(I[0], 715, 35, "n");
-      return new firestore._FieldValueIncrement.new(n);
-    }
-  };
-  (firestore.FieldValue.__ = function() {
-    ;
-  }).prototype = firestore.FieldValue.prototype;
-  dart.addTypeTests(firestore.FieldValue);
-  dart.addTypeCaches(firestore.FieldValue);
-  dart.setMethodSignature(firestore.FieldValue, () => ({
-    __proto__: dart.getMethods(firestore.FieldValue.__proto__),
-    [_jsify]: dart.fnType(dart.nullable(dart.anonymousJSType("FieldValue")), [])
-  }));
-  dart.setLibraryUri(firestore.FieldValue, I[1]);
-  dart.defineLazy(firestore.FieldValue, {
-    /*firestore.FieldValue._serverTimestamp*/get _serverTimestamp() {
-      return new firestore._FieldValueServerTimestamp.new();
+  dart.setLibraryUri(firebase_core_platform_interface.FirebasePlatform, I[1]);
+  dart.defineLazy(firebase_core_platform_interface.FirebasePlatform, {
+    /*firebase_core_platform_interface.FirebasePlatform._token*/get _token() {
+      return new core.Object.new();
     },
-    /*firestore.FieldValue._delete*/get _delete() {
-      return new firestore._FieldValueDelete.new();
+    /*firebase_core_platform_interface.FirebasePlatform._instance*/get _instance() {
+      return new firebase_core_platform_interface.MethodChannelFirebase.new();
+    },
+    set _instance(_) {}
+  }, false);
+  var MethodChannel__binaryMessenger = dart.privateName(platform_channel, "MethodChannel._binaryMessenger");
+  var StandardMethodCodec_messageCodec = dart.privateName(message_codecs, "StandardMethodCodec.messageCodec");
+  var MethodChannel_codec = dart.privateName(platform_channel, "MethodChannel.codec");
+  var MethodChannel_name = dart.privateName(platform_channel, "MethodChannel.name");
+  firebase_core_platform_interface.MethodChannelFirebase = class MethodChannelFirebase extends firebase_core_platform_interface.FirebasePlatform {
+    [_initializeCore]() {
+      return async.async(dart.void, (function* _initializeCore() {
+        let apps = dart.nullCheck(yield firebase_core_platform_interface.MethodChannelFirebase.channel.invokeListMethod(core.Map, "Firebase#initializeCore"));
+        apps[$forEach](dart.bind(this, _initializeFirebaseAppFromMap));
+        firebase_core_platform_interface.MethodChannelFirebase.isCoreInitialized = true;
+      }).bind(this));
+    }
+    [_initializeFirebaseAppFromMap](map) {
+      if (map == null) dart.nullFailed(I[5], 40, 60, "map");
+      let methodChannelFirebaseApp = new firebase_core_platform_interface.MethodChannelFirebaseApp.new(core.String.as(map[$_get]("name")), new firebase_core_platform_interface.FirebaseOptions.fromMap(core.Map.as(map[$_get]("options"))), {isAutomaticDataCollectionEnabled: map[$_get]("isAutomaticDataCollectionEnabled")});
+      firebase_core_platform_interface.MethodChannelFirebase.appInstances[$_set](methodChannelFirebaseApp.name, methodChannelFirebaseApp);
+      firebase_core_platform_interface.FirebasePluginPlatform._constantsForPluginApps[$_set](methodChannelFirebaseApp.name, map[$_get]("pluginConstants"));
+    }
+    get apps() {
+      return firebase_core_platform_interface.MethodChannelFirebase.appInstances[$values][$toList]({growable: false});
+    }
+    initializeApp(opts) {
+      let name = opts && 'name' in opts ? opts.name : null;
+      let options = opts && 'options' in opts ? opts.options : null;
+      return async.async(firebase_core_platform_interface.FirebaseAppPlatform, (function* initializeApp() {
+        if (name === "[DEFAULT]") {
+          dart.throw(firebase_core_platform_interface.noDefaultAppInitialization());
+        }
+        if (!dart.test(firebase_core_platform_interface.MethodChannelFirebase.isCoreInitialized)) {
+          yield this[_initializeCore]();
+        }
+        if (name == null) {
+          let defaultApp = firebase_core_platform_interface.MethodChannelFirebase.appInstances[$_get]("[DEFAULT]");
+          if (defaultApp == null) {
+            dart.throw(firebase_core_platform_interface.coreNotInitialized());
+          }
+          return dart.nullCheck(firebase_core_platform_interface.MethodChannelFirebase.appInstances[$_get]("[DEFAULT]"));
+        }
+        if (!(options != null)) dart.assertFailed("FirebaseOptions cannot be null when creating a secondary Firebase app.", I[5], 95, 7, "options != null");
+        if (dart.test(firebase_core_platform_interface.MethodChannelFirebase.appInstances[$containsKey](name))) {
+          dart.throw(firebase_core_platform_interface.duplicateApp(name));
+        }
+        this[_initializeFirebaseAppFromMap](dart.nullCheck(yield firebase_core_platform_interface.MethodChannelFirebase.channel.invokeMapMethod(dart.dynamic, dart.dynamic, "Firebase#initializeApp", new (T.IdentityMapOfString$dynamic()).from(["appName", name, "options", dart.nullCheck(options).asMap]))));
+        return dart.nullCheck(firebase_core_platform_interface.MethodChannelFirebase.appInstances[$_get](name));
+      }).bind(this));
+    }
+    app(name = "[DEFAULT]") {
+      if (name == null) dart.nullFailed(I[5], 117, 35, "name");
+      if (dart.test(firebase_core_platform_interface.MethodChannelFirebase.appInstances[$containsKey](name))) {
+        return dart.nullCheck(firebase_core_platform_interface.MethodChannelFirebase.appInstances[$_get](name));
+      }
+      dart.throw(firebase_core_platform_interface.noAppExists(name));
+    }
+  };
+  (firebase_core_platform_interface.MethodChannelFirebase.new = function() {
+    firebase_core_platform_interface.MethodChannelFirebase.__proto__.new.call(this);
+    ;
+  }).prototype = firebase_core_platform_interface.MethodChannelFirebase.prototype;
+  dart.addTypeTests(firebase_core_platform_interface.MethodChannelFirebase);
+  dart.addTypeCaches(firebase_core_platform_interface.MethodChannelFirebase);
+  dart.setMethodSignature(firebase_core_platform_interface.MethodChannelFirebase, () => ({
+    __proto__: dart.getMethods(firebase_core_platform_interface.MethodChannelFirebase.__proto__),
+    [_initializeCore]: dart.fnType(async.Future$(dart.void), []),
+    [_initializeFirebaseAppFromMap]: dart.fnType(dart.void, [core.Map])
+  }));
+  dart.setLibraryUri(firebase_core_platform_interface.MethodChannelFirebase, I[1]);
+  dart.defineLazy(firebase_core_platform_interface.MethodChannelFirebase, {
+    /*firebase_core_platform_interface.MethodChannelFirebase.appInstances*/get appInstances() {
+      return new (T.IdentityMapOfString$MethodChannelFirebaseApp()).new();
+    },
+    set appInstances(_) {},
+    /*firebase_core_platform_interface.MethodChannelFirebase.isCoreInitialized*/get isCoreInitialized() {
+      return false;
+    },
+    set isCoreInitialized(_) {},
+    /*firebase_core_platform_interface.MethodChannelFirebase.channel*/get channel() {
+      return C[2] || CT.C2;
     }
   }, false);
-  firestore.getFirestoreInstance = function getFirestoreInstance(app = null) {
-    return firestore.Firestore.getInstance(app != null ? dart.global.firebase.firestore(app.jsObject) : dart.global.firebase.firestore());
+  var _appName$ = dart.privateName(firebase_core_platform_interface, "_appName");
+  var _methodChannelName$ = dart.privateName(firebase_core_platform_interface, "_methodChannelName");
+  firebase_core_platform_interface.FirebasePluginPlatform = class FirebasePluginPlatform extends plugin_platform_interface.PlatformInterface {
+    static verifyExtends(instance) {
+      if (instance == null) dart.nullFailed(I[7], 31, 52, "instance");
+      plugin_platform_interface.PlatformInterface.verifyToken(instance, firebase_core_platform_interface.FirebasePluginPlatform._token);
+    }
+    get pluginConstants() {
+      if (firebase_core_platform_interface.FirebasePluginPlatform._constantsForPluginApps[$_get](this[_appName$]) != null && dart.dsend(firebase_core_platform_interface.FirebasePluginPlatform._constantsForPluginApps[$_get](this[_appName$]), '_get', [this[_methodChannelName$]]) != null) {
+        return core.Map.as(dart.dsend(firebase_core_platform_interface.FirebasePluginPlatform._constantsForPluginApps[$_get](this[_appName$]), '_get', [this[_methodChannelName$]]));
+      }
+      return new _js_helper.LinkedMap.new();
+    }
   };
-  firestore.jsifyFieldValue = function jsifyFieldValue(fieldValue) {
-    if (fieldValue == null) dart.nullFailed(I[0], 690, 36, "fieldValue");
-    return fieldValue[_jsify]();
+  (firebase_core_platform_interface.FirebasePluginPlatform.new = function(_appName, _methodChannelName) {
+    if (_appName == null) dart.nullFailed(I[7], 13, 31, "_appName");
+    if (_methodChannelName == null) dart.nullFailed(I[7], 13, 46, "_methodChannelName");
+    this[_appName$] = _appName;
+    this[_methodChannelName$] = _methodChannelName;
+    firebase_core_platform_interface.FirebasePluginPlatform.__proto__.new.call(this, {token: firebase_core_platform_interface.FirebasePluginPlatform._token});
+    ;
+  }).prototype = firebase_core_platform_interface.FirebasePluginPlatform.prototype;
+  dart.addTypeTests(firebase_core_platform_interface.FirebasePluginPlatform);
+  dart.addTypeCaches(firebase_core_platform_interface.FirebasePluginPlatform);
+  dart.setGetterSignature(firebase_core_platform_interface.FirebasePluginPlatform, () => ({
+    __proto__: dart.getGetters(firebase_core_platform_interface.FirebasePluginPlatform.__proto__),
+    pluginConstants: core.Map
+  }));
+  dart.setLibraryUri(firebase_core_platform_interface.FirebasePluginPlatform, I[1]);
+  dart.setFieldSignature(firebase_core_platform_interface.FirebasePluginPlatform, () => ({
+    __proto__: dart.getFields(firebase_core_platform_interface.FirebasePluginPlatform.__proto__),
+    [_appName$]: dart.finalFieldType(core.String),
+    [_methodChannelName$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineLazy(firebase_core_platform_interface.FirebasePluginPlatform, {
+    /*firebase_core_platform_interface.FirebasePluginPlatform._constantsForPluginApps*/get _constantsForPluginApps() {
+      return new _js_helper.LinkedMap.new();
+    },
+    set _constantsForPluginApps(_) {},
+    /*firebase_core_platform_interface.FirebasePluginPlatform._token*/get _token() {
+      return new core.Object.new();
+    }
+  }, false);
+  firebase_core_platform_interface.noAppExists = function noAppExists(appName) {
+    if (appName == null) dart.nullFailed(I[8], 9, 38, "appName");
+    return new firebase_core_platform_interface.FirebaseException.new({plugin: "core", code: "no-app", message: "No Firebase App '" + dart.str(appName) + "' has been created - call Firebase.initializeApp()"});
   };
-  dart.trackLibraries("packages/cloud_firestore_web/src/interop/utils/utils.dart", {
-    "package:cloud_firestore_web/src/interop/utils/utils.dart": utils$,
-    "package:cloud_firestore_web/src/interop/firestore_interop.dart": firestore_interop,
-    "package:cloud_firestore_web/src/interop/firebase_interop.dart": firebase_interop,
-    "package:cloud_firestore_web/src/interop/firestore.dart": firestore
+  firebase_core_platform_interface.duplicateApp = function duplicateApp(appName) {
+    if (appName == null) dart.nullFailed(I[8], 19, 39, "appName");
+    return new firebase_core_platform_interface.FirebaseException.new({plugin: "core", code: "duplicate-app", message: "A Firebase App named \"" + dart.str(appName) + "\" already exists"});
+  };
+  firebase_core_platform_interface.noDefaultAppInitialization = function noDefaultAppInitialization() {
+    return new firebase_core_platform_interface.FirebaseException.new({plugin: "core", message: "The " + "[DEFAULT]" + " app cannot be initialized here. " + "To initialize the default app, follow the installation instructions " + "for the specific platform you are developing with."});
+  };
+  firebase_core_platform_interface.coreNotInitialized = function coreNotInitialized() {
+    let message = null;
+    if (true) {
+      message = "Firebase has not been correctly initialized. Have you added the Firebase import scripts to your index.html file? \n    \nView the Web Installation documentation for more information: https://firebase.flutter.dev/docs/installation/web\n    ";
+    } else if (platform.defaultTargetPlatform == platform.TargetPlatform.android) {
+      message = "Firebase has not been correctly initialized. Have you added the \"google-services.json\" file to the project? \n    \nView the Android Installation documentation for more information: https://firebase.flutter.dev/docs/installation/android\n";
+    } else if (platform.defaultTargetPlatform == platform.TargetPlatform.iOS) {
+      message = "Firebase has not been correctly initialized. Have you added the \"GoogleService-Info.plist\" file to the project? \n    \nView the iOS Installation documentation for more information: https://firebase.flutter.dev/docs/installation/ios\n";
+    } else {
+      message = "Firebase has not been initialized. " + "Please check the documentation for your platform.";
+    }
+    return new firebase_core_platform_interface.FirebaseException.new({plugin: "core", code: "not-initialized", message: message});
+  };
+  firebase_core_platform_interface.noDefaultAppDelete = function noDefaultAppDelete() {
+    return new firebase_core_platform_interface.FirebaseException.new({plugin: "core", message: "The default Firebase app instance cannot be deleted."});
+  };
+  dart.defineLazy(firebase_core_platform_interface, {
+    /*firebase_core_platform_interface.defaultFirebaseAppName*/get defaultFirebaseAppName() {
+      return "[DEFAULT]";
+    }
+  }, false);
+  dart.trackLibraries("packages/firebase_core_platform_interface/firebase_core_platform_interface.dart", {
+    "package:firebase_core_platform_interface/firebase_core_platform_interface.dart": firebase_core_platform_interface
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["utils.dart","../firestore.dart","../../../../../firebase_core_web-1.1.0/lib/src/interop/utils/js.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../packages/cloud_firestore_web/src/interop/utils/utils.dart.lib.js"}');
+    "package:firebase_core_platform_interface/firebase_core_platform_interface.dart": ["src/firebase_core_exceptions.dart", "src/firebase_exception.dart", "src/firebase_options.dart", "src/method_channel/method_channel_firebase_app.dart", "src/method_channel/method_channel_firebase.dart", "src/platform_interface/platform_interface_firebase_app.dart", "src/platform_interface/platform_interface_firebase.dart", "src/platform_interface/platform_interface_firebase_plugin.dart"]
+  }, '{"version":3,"sourceRoot":"","sources":["src/firebase_exception.dart","src/firebase_options.dart","src/platform_interface/platform_interface_firebase_app.dart","src/method_channel/method_channel_firebase_app.dart","src/platform_interface/platform_interface_firebase.dart","src/method_channel/method_channel_firebase.dart","src/platform_interface/platform_interface_firebase_plugin.dart","src/firebase_core_exceptions.dart","firebase_core_platform_interface.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/firebase_core_platform_interface/firebase_core_platform_interface.dart.lib.js"}');
   // Exports:
   return {
-    src__interop__utils__utils: utils$,
-    src__interop__firestore_interop: firestore_interop,
-    src__interop__firebase_interop: firebase_interop,
-    src__interop__firestore: firestore
+    firebase_core_platform_interface: firebase_core_platform_interface
   };
 }));
 
-//# sourceMappingURL=utils.dart.lib.js.map
+//# sourceMappingURL=firebase_core_platform_interface.dart.lib.js.map

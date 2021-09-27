@@ -15,6 +15,12 @@ class HomePageNotifier extends ChangeNotifier {
     getImageURL();
   }
 
+  void reload() async {
+    isBusy(true);
+    notes = await db.readAllNotes();
+    isBusy(false);
+  }
+
   void allNotes() async {
     db.notesStream.listen((event) {
       isBusy(true);

@@ -1,51 +1,44 @@
-define(['dart_sdk', 'packages/firebase_core_web/src/interop/app.dart', 'packages/firebase_core_web/src/interop/utils/js.dart', 'packages/firebase_core_web/src/interop/utils/utils.dart'], (function load__packages__firebase_storage_web__src__interop__storage_dart(dart_sdk, packages__firebase_core_web__src__interop__app$46dart, packages__firebase_core_web__src__interop__utils__js$46dart, packages__firebase_core_web__src__interop__utils__utils$46dart) {
+define(['dart_sdk', 'packages/image_picker_platform_interface/src/types/camera_device.dart', 'packages/image_picker_platform_interface/src/types/picked_file/html.dart', 'packages/image_picker_platform_interface/src/types/lost_data_response.dart', 'packages/image_picker_platform_interface/src/types/retrieve_type.dart', 'packages/flutter/src/services/system_channels.dart', 'packages/cross_file/src/types/html.dart', 'packages/plugin_platform_interface/plugin_platform_interface.dart', 'packages/image_picker_platform_interface/src/types/image_source.dart'], (function load__packages__image_picker_platform_interface__src__method_channel__method_channel_image_picker_dart(dart_sdk, packages__image_picker_platform_interface__src__types__camera_device$46dart, packages__image_picker_platform_interface__src__types__picked_file__html$46dart, packages__image_picker_platform_interface__src__types__lost_data_response$46dart, packages__image_picker_platform_interface__src__types__retrieve_type$46dart, packages__flutter__src__services__system_channels$46dart, packages__cross_file__src__types__html$46dart, packages__plugin_platform_interface__plugin_platform_interface$46dart, packages__image_picker_platform_interface__src__types__image_source$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const async = dart_sdk.async;
-  const collection = dart_sdk.collection;
   const _js_helper = dart_sdk._js_helper;
-  const _internal = dart_sdk._internal;
-  const js = dart_sdk.js;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const app = packages__firebase_core_web__src__interop__app$46dart.src__interop__app;
-  const js$ = packages__firebase_core_web__src__interop__utils__js$46dart.src__interop__utils__js;
-  const utils = packages__firebase_core_web__src__interop__utils__utils$46dart.src__interop__utils__utils;
-  var storage = Object.create(dart.library);
+  const camera_device = packages__image_picker_platform_interface__src__types__camera_device$46dart.src__types__camera_device;
+  const html = packages__image_picker_platform_interface__src__types__picked_file__html$46dart.src__types__picked_file__html;
+  const lost_data = packages__image_picker_platform_interface__src__types__lost_data_response$46dart.src__types__picked_file__lost_data;
+  const lost_data_response = packages__image_picker_platform_interface__src__types__lost_data_response$46dart.src__types__lost_data_response;
+  const retrieve_type = packages__image_picker_platform_interface__src__types__retrieve_type$46dart.src__types__retrieve_type;
+  const message_codec = packages__flutter__src__services__system_channels$46dart.src__services__message_codec;
+  const platform_channel = packages__flutter__src__services__system_channels$46dart.src__services__platform_channel;
+  const html$ = packages__cross_file__src__types__html$46dart.src__types__html;
+  const plugin_platform_interface = packages__plugin_platform_interface__plugin_platform_interface$46dart.plugin_platform_interface;
+  const image_source = packages__image_picker_platform_interface__src__types__image_source$46dart.src__types__image_source;
+  var method_channel_image_picker = Object.create(dart.library);
+  var image_picker_platform = Object.create(dart.library);
+  var image_picker_platform_interface = Object.create(dart.library);
   var $map = dartx.map;
   var $toList = dartx.toList;
+  var $containsKey = dartx.containsKey;
+  var $_get = dartx._get;
   dart._checkModuleNullSafetyMode(false);
-  var T$ = {
-    TaskStateL: () => (T$.TaskStateL = dart.constFn(dart.legacy(storage.TaskState)))(),
-    ExpandoOfStorage: () => (T$.ExpandoOfStorage = dart.constFn(core.Expando$(storage.Storage)))(),
-    FullMetadataJsImplToFullMetadata: () => (T$.FullMetadataJsImplToFullMetadata = dart.constFn(dart.fnType(storage.FullMetadata, [dart.anonymousJSType("FullMetadataJsImpl")])))(),
-    ListResultJsImplToListResult: () => (T$.ListResultJsImplToListResult = dart.constFn(dart.fnType(storage.ListResult, [dart.anonymousJSType("ListResultJsImpl")])))(),
-    ObjectN: () => (T$.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
-    ExpandoOfStorageReference: () => (T$.ExpandoOfStorageReference = dart.constFn(core.Expando$(storage.StorageReference)))(),
-    MapOfString$dynamic: () => (T$.MapOfString$dynamic = dart.constFn(core.Map$(core.String, dart.dynamic)))(),
-    MapNOfString$dynamic: () => (T$.MapNOfString$dynamic = dart.constFn(dart.nullable(T$.MapOfString$dynamic())))(),
-    LinkedHashMapOfString$String: () => (T$.LinkedHashMapOfString$String = dart.constFn(collection.LinkedHashMap$(core.String, core.String)))(),
-    IdentityMapOfString$String: () => (T$.IdentityMapOfString$String = dart.constFn(_js_helper.IdentityMap$(core.String, core.String)))(),
-    ExpandoOfFullMetadata: () => (T$.ExpandoOfFullMetadata = dart.constFn(core.Expando$(storage.FullMetadata)))(),
-    UploadTaskSnapshotJsImplToUploadTaskSnapshot: () => (T$.UploadTaskSnapshotJsImplToUploadTaskSnapshot = dart.constFn(dart.fnType(storage.UploadTaskSnapshot, [dart.anonymousJSType("UploadTaskSnapshotJsImpl")])))(),
-    StreamControllerOfUploadTaskSnapshot: () => (T$.StreamControllerOfUploadTaskSnapshot = dart.constFn(async.StreamController$(storage.UploadTaskSnapshot)))(),
-    VoidToStreamControllerOfUploadTaskSnapshot: () => (T$.VoidToStreamControllerOfUploadTaskSnapshot = dart.constFn(dart.fnType(T$.StreamControllerOfUploadTaskSnapshot(), [])))(),
-    StreamControllerOfUploadTaskSnapshotTodynamic: () => (T$.StreamControllerOfUploadTaskSnapshotTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T$.StreamControllerOfUploadTaskSnapshot()])))(),
-    VoidTodynamic: () => (T$.VoidTodynamic = dart.constFn(dart.fnType(dart.dynamic, [])))(),
-    VoidToFn: () => (T$.VoidToFn = dart.constFn(dart.fnType(T$.VoidTodynamic(), [])))(),
-    FnTodynamic: () => (T$.FnTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T$.VoidTodynamic()])))(),
-    UploadTaskSnapshotJsImplToNull: () => (T$.UploadTaskSnapshotJsImplToNull = dart.constFn(dart.fnType(core.Null, [dart.anonymousJSType("UploadTaskSnapshotJsImpl")])))(),
-    dynamicTovoid: () => (T$.dynamicTovoid = dart.constFn(dart.fnType(dart.void, [dart.dynamic])))(),
-    VoidToNull: () => (T$.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
-    VoidTovoid: () => (T$.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    ExpandoOfUploadTask: () => (T$.ExpandoOfUploadTask = dart.constFn(core.Expando$(storage.UploadTask)))(),
-    ExpandoOfUploadTaskSnapshot: () => (T$.ExpandoOfUploadTaskSnapshot = dart.constFn(core.Expando$(storage.UploadTaskSnapshot)))(),
-    dynamicToStorageReference: () => (T$.dynamicToStorageReference = dart.constFn(dart.fnType(storage.StorageReference, [dart.dynamic])))(),
-    ExpandoOfListResult: () => (T$.ExpandoOfListResult = dart.constFn(core.Expando$(storage.ListResult)))()
+  var T = {
+    PickedFileN: () => (T.PickedFileN = dart.constFn(dart.nullable(html.PickedFile)))(),
+    dynamicToPickedFile: () => (T.dynamicToPickedFile = dart.constFn(dart.fnType(html.PickedFile, [dart.dynamic])))(),
+    ListOfPickedFile: () => (T.ListOfPickedFile = dart.constFn(core.List$(html.PickedFile)))(),
+    ListNOfPickedFile: () => (T.ListNOfPickedFile = dart.constFn(dart.nullable(T.ListOfPickedFile())))(),
+    ListN: () => (T.ListN = dart.constFn(dart.nullable(core.List)))(),
+    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    XFileN: () => (T.XFileN = dart.constFn(dart.nullable(html$.XFile)))(),
+    dynamicToXFile: () => (T.dynamicToXFile = dart.constFn(dart.fnType(html$.XFile, [dart.dynamic])))(),
+    ListOfXFile: () => (T.ListOfXFile = dart.constFn(core.List$(html$.XFile)))(),
+    ListNOfXFile: () => (T.ListNOfXFile = dart.constFn(dart.nullable(T.ListOfXFile())))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
-  }, T$);
+  }, T);
   var S = {
     _: () => S
   };
@@ -58,745 +51,310 @@ define(['dart_sdk', 'packages/firebase_core_web/src/interop/app.dart', 'packages
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: storage.TaskState.prototype,
-        [_name$]: "TaskState.RUNNING",
+        __proto__: camera_device.CameraDevice.prototype,
+        [_name]: "CameraDevice.rear",
         index: 0
       });
-    },
-    get C1() {
-      return C[1] = dart.const({
-        __proto__: storage.TaskState.prototype,
-        [_name$]: "TaskState.PAUSED",
-        index: 1
-      });
-    },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: storage.TaskState.prototype,
-        [_name$]: "TaskState.SUCCESS",
-        index: 2
-      });
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: storage.TaskState.prototype,
-        [_name$]: "TaskState.CANCELED",
-        index: 3
-      });
-    },
-    get C4() {
-      return C[4] = dart.const({
-        __proto__: storage.TaskState.prototype,
-        [_name$]: "TaskState.ERROR",
-        index: 4
-      });
-    },
-    get C5() {
-      return C[5] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4], T$.TaskStateL());
-    },
-    get C6() {
-      return C[6] = dart.fn(storage.FullMetadata.getInstance, T$.FullMetadataJsImplToFullMetadata());
-    },
-    get C7() {
-      return C[7] = dart.fn(storage.ListResult.getInstance, T$.ListResultJsImplToListResult());
-    },
-    get C8() {
-      return C[8] = dart.fn(storage.UploadTaskSnapshot.getInstance, T$.UploadTaskSnapshotJsImplToUploadTaskSnapshot());
     }
   }, false);
-  var C = Array(9).fill(void 0);
+  var C = [void 0];
   var I = [
-    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage_web-3.0.0/lib/src/interop/storage.dart",
-    "package:firebase_storage_web/src/interop/storage.dart"
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_platform_interface-2.2.0/lib/src/method_channel/method_channel_image_picker.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_platform_interface-2.2.0/lib/src/platform_interface/image_picker_platform.dart",
+    "package:image_picker_platform_interface/src/platform_interface/image_picker_platform.dart",
+    "package:image_picker_platform_interface/src/method_channel/method_channel_image_picker.dart"
   ];
-  var _name$ = dart.privateName(storage, "_name");
-  storage.TaskState = class TaskState extends core.Object {
-    toString() {
-      return this[_name$];
+  var _name = dart.privateName(camera_device, "_name");
+  var _getImagePath = dart.privateName(method_channel_image_picker, "_getImagePath");
+  var _getMultiImagePath = dart.privateName(method_channel_image_picker, "_getMultiImagePath");
+  var _getVideoPath = dart.privateName(method_channel_image_picker, "_getVideoPath");
+  image_picker_platform.ImagePickerPlatform = class ImagePickerPlatform extends plugin_platform_interface.PlatformInterface {
+    static get instance() {
+      return image_picker_platform.ImagePickerPlatform._instance;
+    }
+    static set instance(instance) {
+      if (instance == null) dart.nullFailed(I[1], 36, 43, "instance");
+      plugin_platform_interface.PlatformInterface.verifyToken(instance, image_picker_platform.ImagePickerPlatform._token);
+      image_picker_platform.ImagePickerPlatform._instance = instance;
+    }
+    pickImage(opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[1], 72, 26, "source");
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[1], 76, 18, "preferredCameraDevice");
+      dart.throw(new core.UnimplementedError.new("pickImage() has not been implemented."));
+    }
+    pickMultiImage(opts) {
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      dart.throw(new core.UnimplementedError.new("pickMultiImage() has not been implemented."));
+    }
+    pickVideo(opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[1], 124, 26, "source");
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[1], 125, 18, "preferredCameraDevice");
+      let maxDuration = opts && 'maxDuration' in opts ? opts.maxDuration : null;
+      dart.throw(new core.UnimplementedError.new("pickVideo() has not been implemented."));
+    }
+    retrieveLostData() {
+      dart.throw(new core.UnimplementedError.new("retrieveLostData() has not been implemented."));
+    }
+    getImage(opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[1], 177, 26, "source");
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[1], 181, 18, "preferredCameraDevice");
+      dart.throw(new core.UnimplementedError.new("getImage() has not been implemented."));
+    }
+    getMultiImage(opts) {
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      dart.throw(new core.UnimplementedError.new("getMultiImage() has not been implemented."));
+    }
+    getVideo(opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[1], 229, 26, "source");
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[1], 230, 18, "preferredCameraDevice");
+      let maxDuration = opts && 'maxDuration' in opts ? opts.maxDuration : null;
+      dart.throw(new core.UnimplementedError.new("getVideo() has not been implemented."));
+    }
+    getLostData() {
+      dart.throw(new core.UnimplementedError.new("getLostData() has not been implemented."));
     }
   };
-  (storage.TaskState.new = function(index, _name) {
-    if (index == null) dart.nullFailed(I[0], 21, 6, "index");
-    if (_name == null) dart.nullFailed(I[0], 21, 6, "_name");
-    this.index = index;
-    this[_name$] = _name;
+  (image_picker_platform.ImagePickerPlatform.new = function() {
+    image_picker_platform.ImagePickerPlatform.__proto__.new.call(this, {token: image_picker_platform.ImagePickerPlatform._token});
     ;
-  }).prototype = storage.TaskState.prototype;
-  dart.addTypeTests(storage.TaskState);
-  dart.addTypeCaches(storage.TaskState);
-  dart.setLibraryUri(storage.TaskState, I[1]);
-  dart.setFieldSignature(storage.TaskState, () => ({
-    __proto__: dart.getFields(storage.TaskState.__proto__),
-    index: dart.finalFieldType(core.int),
-    [_name$]: dart.finalFieldType(core.String)
+  }).prototype = image_picker_platform.ImagePickerPlatform.prototype;
+  dart.addTypeTests(image_picker_platform.ImagePickerPlatform);
+  dart.addTypeCaches(image_picker_platform.ImagePickerPlatform);
+  dart.setMethodSignature(image_picker_platform.ImagePickerPlatform, () => ({
+    __proto__: dart.getMethods(image_picker_platform.ImagePickerPlatform.__proto__),
+    pickImage: dart.fnType(async.Future$(dart.nullable(html.PickedFile)), [], {imageQuality: dart.nullable(core.int), maxHeight: dart.nullable(core.double), maxWidth: dart.nullable(core.double), preferredCameraDevice: camera_device.CameraDevice}, {source: image_source.ImageSource}),
+    pickMultiImage: dart.fnType(async.Future$(dart.nullable(core.List$(html.PickedFile))), [], {imageQuality: dart.nullable(core.int), maxHeight: dart.nullable(core.double), maxWidth: dart.nullable(core.double)}, {}),
+    pickVideo: dart.fnType(async.Future$(dart.nullable(html.PickedFile)), [], {maxDuration: dart.nullable(core.Duration), preferredCameraDevice: camera_device.CameraDevice}, {source: image_source.ImageSource}),
+    retrieveLostData: dart.fnType(async.Future$(lost_data.LostData), []),
+    getImage: dart.fnType(async.Future$(dart.nullable(html$.XFile)), [], {imageQuality: dart.nullable(core.int), maxHeight: dart.nullable(core.double), maxWidth: dart.nullable(core.double), preferredCameraDevice: camera_device.CameraDevice}, {source: image_source.ImageSource}),
+    getMultiImage: dart.fnType(async.Future$(dart.nullable(core.List$(html$.XFile))), [], {imageQuality: dart.nullable(core.int), maxHeight: dart.nullable(core.double), maxWidth: dart.nullable(core.double)}, {}),
+    getVideo: dart.fnType(async.Future$(dart.nullable(html$.XFile)), [], {maxDuration: dart.nullable(core.Duration), preferredCameraDevice: camera_device.CameraDevice}, {source: image_source.ImageSource}),
+    getLostData: dart.fnType(async.Future$(lost_data_response.LostDataResponse), [])
   }));
-  dart.defineExtensionMethods(storage.TaskState, ['toString']);
-  storage.TaskState.RUNNING = C[0] || CT.C0;
-  storage.TaskState.PAUSED = C[1] || CT.C1;
-  storage.TaskState.SUCCESS = C[2] || CT.C2;
-  storage.TaskState.CANCELED = C[3] || CT.C3;
-  storage.TaskState.ERROR = C[4] || CT.C4;
-  storage.TaskState.values = C[5] || CT.C5;
-  storage.Storage = class Storage extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.storage.Storage, "firebase.storage.Storage")) {
-    get app() {
-      return app.App.getInstance(this.jsObject.app);
-    }
-    get maxOperationRetryTime() {
-      return this.jsObject.maxOperationRetryTime;
-    }
-    get maxUploadRetryTime() {
-      return this.jsObject.maxUploadRetryTime;
-    }
-    static getInstance(jsObject) {
-      let t3, t2, t1, t0;
-      if (jsObject == null) dart.nullFailed(I[0], 53, 60, "jsObject");
-      t0 = storage.Storage._expando;
-      t1 = jsObject;
-      t2 = t0._get(t1);
-      return t2 == null ? (t3 = new storage.Storage._fromJsObject(jsObject), t0._set(t1, t3), t3) : t2;
-    }
-    ref(path = null) {
-      return storage.StorageReference.getInstance(this.jsObject.ref(path));
-    }
-    refFromURL(url) {
-      if (url == null) dart.nullFailed(I[0], 62, 38, "url");
-      return storage.StorageReference.getInstance(this.jsObject.refFromURL(url));
-    }
-    setMaxOperationRetryTime(time) {
-      if (time == null) dart.nullFailed(I[0], 66, 37, "time");
-      return this.jsObject.setMaxOperationRetryTime(time);
-    }
-    setMaxUploadRetryTime(time) {
-      if (time == null) dart.nullFailed(I[0], 70, 34, "time");
-      return this.jsObject.setMaxUploadRetryTime(time);
-    }
-    useStorageEmulator(host, port) {
-      if (host == null) dart.nullFailed(I[0], 76, 34, "host");
-      if (port == null) dart.nullFailed(I[0], 76, 44, "port");
-      return this.jsObject.useEmulator(host, port);
-    }
-  };
-  (storage.Storage._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 37, 55, "jsObject");
-    storage.Storage.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = storage.Storage.prototype;
-  dart.addTypeTests(storage.Storage);
-  dart.addTypeCaches(storage.Storage);
-  dart.setMethodSignature(storage.Storage, () => ({
-    __proto__: dart.getMethods(storage.Storage.__proto__),
-    ref: dart.fnType(storage.StorageReference, [], [dart.nullable(core.String)]),
-    refFromURL: dart.fnType(storage.StorageReference, [core.String]),
-    setMaxOperationRetryTime: dart.fnType(dart.void, [core.int]),
-    setMaxUploadRetryTime: dart.fnType(dart.void, [core.int]),
-    useStorageEmulator: dart.fnType(dart.void, [core.String, core.int])
-  }));
-  dart.setGetterSignature(storage.Storage, () => ({
-    __proto__: dart.getGetters(storage.Storage.__proto__),
-    app: app.App,
-    maxOperationRetryTime: core.int,
-    maxUploadRetryTime: core.int
-  }));
-  dart.setLibraryUri(storage.Storage, I[1]);
-  dart.defineLazy(storage.Storage, {
-    /*storage.Storage._expando*/get _expando() {
-      return new (T$.ExpandoOfStorage()).new();
-    }
+  dart.setLibraryUri(image_picker_platform.ImagePickerPlatform, I[2]);
+  dart.defineLazy(image_picker_platform.ImagePickerPlatform, {
+    /*image_picker_platform.ImagePickerPlatform._token*/get _token() {
+      return new core.Object.new();
+    },
+    /*image_picker_platform.ImagePickerPlatform._instance*/get _instance() {
+      return new method_channel_image_picker.MethodChannelImagePicker.new();
+    },
+    set _instance(_) {}
   }, false);
-  storage.StorageReference = class StorageReference extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.storage.Reference, "firebase.storage.Reference")) {
-    get bucket() {
-      return this.jsObject.bucket;
+  method_channel_image_picker.MethodChannelImagePicker = class MethodChannelImagePicker extends image_picker_platform.ImagePickerPlatform {
+    get channel() {
+      return method_channel_image_picker._channel;
     }
-    get fullPath() {
-      return this.jsObject.fullPath;
-    }
-    get name() {
-      return this.jsObject.name;
-    }
-    get parent() {
-      return storage.StorageReference.getInstance(this.jsObject.parent);
-    }
-    get root() {
-      return storage.StorageReference.getInstance(this.jsObject.root);
-    }
-    get storage() {
-      return storage.Storage.getInstance(this.jsObject.storage);
-    }
-    static getInstance(jsObject) {
-      let t3, t2, t1, t0;
-      if (jsObject == null) dart.nullFailed(I[0], 113, 39, "jsObject");
-      t0 = storage.StorageReference._expando;
-      t1 = jsObject;
-      t2 = t0._get(t1);
-      return t2 == null ? (t3 = new storage.StorageReference._fromJsObject(jsObject), t0._set(t1, t3), t3) : t2;
-    }
-    child(path) {
-      if (path == null) dart.nullFailed(I[0], 119, 33, "path");
-      return storage.StorageReference.getInstance(this.jsObject.child(path));
-    }
-    delete() {
-      return utils.handleThenable(dart.dynamic, this.jsObject.delete());
-    }
-    getDownloadURL() {
-      return async.async(core.Uri, (function* getDownloadURL() {
-        let uriString = (yield utils.handleThenable(core.String, this.jsObject.getDownloadURL()));
-        return core.Uri.parse(uriString);
+    pickImage(opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[0], 23, 26, "source");
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[0], 27, 18, "preferredCameraDevice");
+      return async.async(T.PickedFileN(), (function* pickImage() {
+        let path = (yield this[_getImagePath]({source: source, maxWidth: maxWidth, maxHeight: maxHeight, imageQuality: imageQuality, preferredCameraDevice: preferredCameraDevice}));
+        return path != null ? new html.PickedFile.new(path) : null;
       }).bind(this));
     }
-    getMetadata() {
-      return utils.handleThenable(dart.anonymousJSType("FullMetadataJsImpl"), this.jsObject.getMetadata()).then(storage.FullMetadata, C[6] || CT.C6);
-    }
-    list(options) {
-      let t0;
-      return utils.handleThenable(dart.anonymousJSType("ListResultJsImpl"), this.jsObject.list((t0 = options, t0 == null ? null : t0.jsObject))).then(storage.ListResult, C[7] || CT.C7);
-    }
-    listAll() {
-      return utils.handleThenable(dart.anonymousJSType("ListResultJsImpl"), this.jsObject.listAll()).then(storage.ListResult, C[7] || CT.C7);
-    }
-    put(blob, metadata = null) {
-      let taskImpl = null;
-      if (metadata != null) {
-        taskImpl = this.jsObject.put(blob, metadata.jsObject);
-      } else {
-        taskImpl = this.jsObject.put(blob);
-      }
-      return storage.UploadTask.getInstance(taskImpl);
-    }
-    putString(data, format = null, metadata = null) {
-      if (data == null) dart.nullFailed(I[0], 183, 31, "data");
-      let taskImpl = null;
-      if (metadata != null) {
-        taskImpl = this.jsObject.putString(data, format, metadata.jsObject);
-      } else if (format != null) {
-        taskImpl = this.jsObject.putString(data, format);
-      } else {
-        taskImpl = this.jsObject.putString(data);
-      }
-      return storage.UploadTask.getInstance(taskImpl);
-    }
-    toString() {
-      return dart.toString(this.jsObject);
-    }
-    updateMetadata(metadata) {
-      if (metadata == null) dart.nullFailed(I[0], 202, 56, "metadata");
-      return async.async(storage.FullMetadata, (function* updateMetadata() {
-        yield utils.handleThenable(T$.ObjectN(), this.jsObject.updateMetadata(metadata.jsObject));
-        return this.getMetadata();
+    pickMultiImage(opts) {
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      return async.async(T.ListNOfPickedFile(), (function* pickMultiImage() {
+        let paths = (yield this[_getMultiImagePath]({maxWidth: maxWidth, maxHeight: maxHeight, imageQuality: imageQuality}));
+        if (paths == null) return null;
+        return paths[$map](html.PickedFile, dart.fn(path => new html.PickedFile.new(core.String.as(path)), T.dynamicToPickedFile()))[$toList]();
       }).bind(this));
     }
-  };
-  (storage.StorageReference._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 87, 66, "jsObject");
-    storage.StorageReference.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = storage.StorageReference.prototype;
-  dart.addTypeTests(storage.StorageReference);
-  dart.addTypeCaches(storage.StorageReference);
-  dart.setMethodSignature(storage.StorageReference, () => ({
-    __proto__: dart.getMethods(storage.StorageReference.__proto__),
-    child: dart.fnType(storage.StorageReference, [core.String]),
-    delete: dart.fnType(async.Future, []),
-    getDownloadURL: dart.fnType(async.Future$(core.Uri), []),
-    getMetadata: dart.fnType(async.Future$(storage.FullMetadata), []),
-    list: dart.fnType(async.Future$(storage.ListResult), [dart.nullable(storage.ListOptions)]),
-    listAll: dart.fnType(async.Future$(storage.ListResult), []),
-    put: dart.fnType(storage.UploadTask, [dart.dynamic], [dart.nullable(storage.UploadMetadata)]),
-    putString: dart.fnType(storage.UploadTask, [core.String], [dart.nullable(core.String), dart.nullable(storage.UploadMetadata)]),
-    updateMetadata: dart.fnType(async.Future$(storage.FullMetadata), [storage.SettableMetadata])
-  }));
-  dart.setGetterSignature(storage.StorageReference, () => ({
-    __proto__: dart.getGetters(storage.StorageReference.__proto__),
-    bucket: core.String,
-    fullPath: core.String,
-    name: core.String,
-    parent: dart.nullable(storage.StorageReference),
-    root: storage.StorageReference,
-    storage: storage.Storage
-  }));
-  dart.setLibraryUri(storage.StorageReference, I[1]);
-  dart.defineExtensionMethods(storage.StorageReference, ['toString']);
-  dart.defineLazy(storage.StorageReference, {
-    /*storage.StorageReference._expando*/get _expando() {
-      return new (T$.ExpandoOfStorageReference()).new();
-    }
-  }, false);
-  const _is__SettableMetadataBase_default = Symbol('_is__SettableMetadataBase_default');
-  storage._SettableMetadataBase$ = dart.generic(T => {
-    class _SettableMetadataBase extends js$.JsObjectWrapper$(T) {
-      get cacheControl() {
-        return this.jsObject.cacheControl;
+    [_getMultiImagePath](opts) {
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      if (imageQuality != null && (dart.notNull(imageQuality) < 0 || dart.notNull(imageQuality) > 100)) {
+        dart.throw(new core.ArgumentError.value(imageQuality, "imageQuality", "must be between 0 and 100"));
       }
-      set cacheControl(s) {
-        if (s == null) dart.nullFailed(I[0], 460, 27, "s");
-        this.jsObject.cacheControl = s;
+      if (maxWidth != null && dart.notNull(maxWidth) < 0) {
+        dart.throw(new core.ArgumentError.value(maxWidth, "maxWidth", "cannot be negative"));
       }
-      get contentDisposition() {
-        return this.jsObject.contentDisposition;
+      if (maxHeight != null && dart.notNull(maxHeight) < 0) {
+        dart.throw(new core.ArgumentError.value(maxHeight, "maxHeight", "cannot be negative"));
       }
-      set contentDisposition(s) {
-        if (s == null) dart.nullFailed(I[0], 467, 33, "s");
-        this.jsObject.contentDisposition = s;
+      return method_channel_image_picker._channel.invokeMethod(T.ListN(), "pickMultiImage", new (T.IdentityMapOfString$dynamic()).from(["maxWidth", maxWidth, "maxHeight", maxHeight, "imageQuality", imageQuality]));
+    }
+    [_getImagePath](opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[0], 84, 26, "source");
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[0], 88, 18, "preferredCameraDevice");
+      if (imageQuality != null && (dart.notNull(imageQuality) < 0 || dart.notNull(imageQuality) > 100)) {
+        dart.throw(new core.ArgumentError.value(imageQuality, "imageQuality", "must be between 0 and 100"));
       }
-      get contentEncoding() {
-        return this.jsObject.contentEncoding;
+      if (maxWidth != null && dart.notNull(maxWidth) < 0) {
+        dart.throw(new core.ArgumentError.value(maxWidth, "maxWidth", "cannot be negative"));
       }
-      set contentEncoding(s) {
-        if (s == null) dart.nullFailed(I[0], 474, 30, "s");
-        this.jsObject.contentEncoding = s;
+      if (maxHeight != null && dart.notNull(maxHeight) < 0) {
+        dart.throw(new core.ArgumentError.value(maxHeight, "maxHeight", "cannot be negative"));
       }
-      get contentLanguage() {
-        return this.jsObject.contentLanguage;
-      }
-      set contentLanguage(s) {
-        if (s == null) dart.nullFailed(I[0], 481, 30, "s");
-        this.jsObject.contentLanguage = s;
-      }
-      get contentType() {
-        return this.jsObject.contentType;
-      }
-      set contentType(s) {
-        if (s == null) dart.nullFailed(I[0], 488, 26, "s");
-        this.jsObject.contentType = s;
-      }
-      get customMetadata() {
-        let metadata = T$.MapNOfString$dynamic().as(utils.dartify(this.jsObject.customMetadata));
-        if (metadata != null) {
-          return T$.LinkedHashMapOfString$String().from(metadata);
-        } else {
-          return new (T$.IdentityMapOfString$String()).new();
-        }
-      }
-      set customMetadata(m) {
-        if (m == null) dart.nullFailed(I[0], 502, 42, "m");
-        this.jsObject.customMetadata = utils.jsify(m);
-      }
+      return method_channel_image_picker._channel.invokeMethod(core.String, "pickImage", new (T.IdentityMapOfString$dynamic()).from(["source", source.index, "maxWidth", maxWidth, "maxHeight", maxHeight, "imageQuality", imageQuality, "cameraDevice", preferredCameraDevice.index]));
     }
-    (_SettableMetadataBase.fromJsObject = function(jsObject) {
-      if (jsObject == null) dart.nullFailed(I[0], 455, 40, "jsObject");
-      _SettableMetadataBase.__proto__.fromJsObject.call(this, jsObject);
-      ;
-    }).prototype = _SettableMetadataBase.prototype;
-    dart.addTypeTests(_SettableMetadataBase);
-    _SettableMetadataBase.prototype[_is__SettableMetadataBase_default] = true;
-    dart.addTypeCaches(_SettableMetadataBase);
-    dart.setGetterSignature(_SettableMetadataBase, () => ({
-      __proto__: dart.getGetters(_SettableMetadataBase.__proto__),
-      cacheControl: core.String,
-      contentDisposition: core.String,
-      contentEncoding: core.String,
-      contentLanguage: core.String,
-      contentType: core.String,
-      customMetadata: core.Map$(core.String, core.String)
-    }));
-    dart.setSetterSignature(_SettableMetadataBase, () => ({
-      __proto__: dart.getSetters(_SettableMetadataBase.__proto__),
-      cacheControl: core.String,
-      contentDisposition: core.String,
-      contentEncoding: core.String,
-      contentLanguage: core.String,
-      contentType: core.String,
-      customMetadata: core.Map$(core.String, core.String)
-    }));
-    dart.setLibraryUri(_SettableMetadataBase, I[1]);
-    return _SettableMetadataBase;
-  });
-  storage._SettableMetadataBase = storage._SettableMetadataBase$();
-  dart.addTypeTests(storage._SettableMetadataBase, _is__SettableMetadataBase_default);
-  const _is__UploadMetadataBase_default = Symbol('_is__UploadMetadataBase_default');
-  storage._UploadMetadataBase$ = dart.generic(T => {
-    class _UploadMetadataBase extends storage._SettableMetadataBase$(T) {
-      get md5Hash() {
-        return this.jsObject.md5Hash;
-      }
-      set md5Hash(s) {
-        if (s == null) dart.nullFailed(I[0], 289, 22, "s");
-        this.jsObject.md5Hash = s;
-      }
+    pickVideo(opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[0], 117, 26, "source");
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[0], 118, 18, "preferredCameraDevice");
+      let maxDuration = opts && 'maxDuration' in opts ? opts.maxDuration : null;
+      return async.async(T.PickedFileN(), (function* pickVideo() {
+        let path = (yield this[_getVideoPath]({source: source, maxDuration: maxDuration, preferredCameraDevice: preferredCameraDevice}));
+        return path != null ? new html.PickedFile.new(path) : null;
+      }).bind(this));
     }
-    (_UploadMetadataBase.fromJsObject = function(jsObject) {
-      if (jsObject == null) dart.nullFailed(I[0], 284, 38, "jsObject");
-      _UploadMetadataBase.__proto__.fromJsObject.call(this, jsObject);
-      ;
-    }).prototype = _UploadMetadataBase.prototype;
-    dart.addTypeTests(_UploadMetadataBase);
-    _UploadMetadataBase.prototype[_is__UploadMetadataBase_default] = true;
-    dart.addTypeCaches(_UploadMetadataBase);
-    dart.setGetterSignature(_UploadMetadataBase, () => ({
-      __proto__: dart.getGetters(_UploadMetadataBase.__proto__),
-      md5Hash: core.String
-    }));
-    dart.setSetterSignature(_UploadMetadataBase, () => ({
-      __proto__: dart.getSetters(_UploadMetadataBase.__proto__),
-      md5Hash: core.String
-    }));
-    dart.setLibraryUri(_UploadMetadataBase, I[1]);
-    return _UploadMetadataBase;
-  });
-  storage._UploadMetadataBase = storage._UploadMetadataBase$();
-  dart.addTypeTests(storage._UploadMetadataBase, _is__UploadMetadataBase_default);
-  storage.FullMetadata = class FullMetadata extends storage._UploadMetadataBase$(dart.anonymousJSType("FullMetadataJsImpl")) {
-    get bucket() {
-      return this.jsObject.bucket;
-    }
-    get fullPath() {
-      return this.jsObject.fullPath;
-    }
-    get generation() {
-      return this.jsObject.generation;
-    }
-    get metageneration() {
-      return this.jsObject.metageneration;
-    }
-    get name() {
-      return this.jsObject.name;
-    }
-    get size() {
-      return this.jsObject.size;
-    }
-    get timeCreated() {
-      return this.jsObject.timeCreated == null ? null : core.DateTime.parse(dart.nullCheck(this.jsObject.timeCreated));
-    }
-    get updated() {
-      return this.jsObject.updated == null ? null : core.DateTime.parse(dart.nullCheck(this.jsObject.updated));
-    }
-    static getInstance(jsObject) {
-      let t3, t2, t1, t0;
-      if (jsObject == null) dart.nullFailed(I[0], 245, 70, "jsObject");
-      t0 = storage.FullMetadata._expando;
-      t1 = jsObject;
-      t2 = t0._get(t1);
-      return t2 == null ? (t3 = new storage.FullMetadata._fromJsObject(jsObject), t0._set(t1, t3), t3) : t2;
-    }
-  };
-  (storage.FullMetadata._fromJsObject = function(jsObject) {
-    storage.FullMetadata.__proto__.fromJsObject.call(this, dart.anonymousJSType("FullMetadataJsImpl").as(jsObject));
-    ;
-  }).prototype = storage.FullMetadata.prototype;
-  dart.addTypeTests(storage.FullMetadata);
-  dart.addTypeCaches(storage.FullMetadata);
-  dart.setGetterSignature(storage.FullMetadata, () => ({
-    __proto__: dart.getGetters(storage.FullMetadata.__proto__),
-    bucket: core.String,
-    fullPath: dart.nullable(core.String),
-    generation: dart.nullable(core.String),
-    metageneration: dart.nullable(core.String),
-    name: dart.nullable(core.String),
-    size: dart.nullable(core.int),
-    timeCreated: dart.nullable(core.DateTime),
-    updated: dart.nullable(core.DateTime)
-  }));
-  dart.setLibraryUri(storage.FullMetadata, I[1]);
-  dart.defineLazy(storage.FullMetadata, {
-    /*storage.FullMetadata._expando*/get _expando() {
-      return new (T$.ExpandoOfFullMetadata()).new();
-    }
-  }, false);
-  storage.UploadMetadata = class UploadMetadata extends storage._UploadMetadataBase$(dart.anonymousJSType("UploadMetadataJsImpl")) {
-    static new(opts) {
-      let md5Hash = opts && 'md5Hash' in opts ? opts.md5Hash : null;
-      let cacheControl = opts && 'cacheControl' in opts ? opts.cacheControl : null;
-      let contentDisposition = opts && 'contentDisposition' in opts ? opts.contentDisposition : null;
-      let contentEncoding = opts && 'contentEncoding' in opts ? opts.contentEncoding : null;
-      let contentLanguage = opts && 'contentLanguage' in opts ? opts.contentLanguage : null;
-      let contentType = opts && 'contentType' in opts ? opts.contentType : null;
-      let customMetadata = opts && 'customMetadata' in opts ? opts.customMetadata : null;
-      return new storage.UploadMetadata.fromJsObject({md5Hash: md5Hash, cacheControl: cacheControl, contentDisposition: contentDisposition, contentEncoding: contentEncoding, contentLanguage: contentLanguage, contentType: contentType, customMetadata: customMetadata != null ? utils.jsify(customMetadata) : null});
-    }
-  };
-  (storage.UploadMetadata.fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 275, 68, "jsObject");
-    storage.UploadMetadata.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = storage.UploadMetadata.prototype;
-  dart.addTypeTests(storage.UploadMetadata);
-  dart.addTypeCaches(storage.UploadMetadata);
-  dart.setLibraryUri(storage.UploadMetadata, I[1]);
-  var _future = dart.privateName(storage, "_future");
-  storage.UploadTask = class UploadTask extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.storage.UploadTask, "firebase.storage.UploadTask")) {
-    get future() {
+    [_getVideoPath](opts) {
       let t0;
-      t0 = this[_future];
-      return t0 == null ? this[_future] = utils.handleThenable(dart.anonymousJSType("UploadTaskSnapshotJsImpl"), this.jsObject).then(storage.UploadTaskSnapshot, C[8] || CT.C8) : t0;
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[0], 130, 26, "source");
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[0], 131, 18, "preferredCameraDevice");
+      let maxDuration = opts && 'maxDuration' in opts ? opts.maxDuration : null;
+      return method_channel_image_picker._channel.invokeMethod(core.String, "pickVideo", new (T.IdentityMapOfString$dynamic()).from(["source", source.index, "maxDuration", (t0 = maxDuration, t0 == null ? null : t0.inSeconds), "cameraDevice", preferredCameraDevice.index]));
     }
-    get snapshot() {
-      return storage.UploadTaskSnapshot.getInstance(this.jsObject.snapshot);
+    retrieveLostData() {
+      return async.async(lost_data.LostData, function* retrieveLostData() {
+        let result = (yield method_channel_image_picker._channel.invokeMapMethod(core.String, dart.dynamic, "retrieve"));
+        if (result == null) {
+          return new lost_data.LostData.empty();
+        }
+        if (!(result[$containsKey]("path") != result[$containsKey]("errorCode"))) dart.assertFailed(null, I[0], 153, 12, "result.containsKey('path') != result.containsKey('errorCode')");
+        let type = T.StringN().as(result[$_get]("type"));
+        if (!(type === "image" || type === "video")) dart.assertFailed(null, I[0], 156, 12, "type == kTypeImage || type == kTypeVideo");
+        let retrieveType = null;
+        if (type === "image") {
+          retrieveType = retrieve_type.RetrieveType.image;
+        } else if (type === "video") {
+          retrieveType = retrieve_type.RetrieveType.video;
+        }
+        let exception = null;
+        if (dart.test(result[$containsKey]("errorCode"))) {
+          exception = new message_codec.PlatformException.new({code: core.String.as(result[$_get]("errorCode")), message: T.StringN().as(result[$_get]("errorMessage"))});
+        }
+        let path = T.StringN().as(result[$_get]("path"));
+        return new lost_data.LostData.new({file: path != null ? new html.PickedFile.new(path) : null, exception: exception, type: retrieveType});
+      });
     }
-    static getInstance(jsObject) {
-      let t3, t2, t1, t0;
-      if (jsObject == null) dart.nullFailed(I[0], 317, 66, "jsObject");
-      t0 = storage.UploadTask._expando;
-      t1 = jsObject;
-      t2 = t0._get(t1);
-      return t2 == null ? (t3 = new storage.UploadTask._fromJsObject(jsObject), t0._set(t1, t3), t3) : t2;
+    getImage(opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[0], 182, 26, "source");
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[0], 186, 18, "preferredCameraDevice");
+      return async.async(T.XFileN(), (function* getImage() {
+        let path = (yield this[_getImagePath]({source: source, maxWidth: maxWidth, maxHeight: maxHeight, imageQuality: imageQuality, preferredCameraDevice: preferredCameraDevice}));
+        return path != null ? new html$.XFile.new(path) : null;
+      }).bind(this));
     }
-    cancel() {
-      return this.jsObject.cancel();
+    getMultiImage(opts) {
+      let maxWidth = opts && 'maxWidth' in opts ? opts.maxWidth : null;
+      let maxHeight = opts && 'maxHeight' in opts ? opts.maxHeight : null;
+      let imageQuality = opts && 'imageQuality' in opts ? opts.imageQuality : null;
+      return async.async(T.ListNOfXFile(), (function* getMultiImage() {
+        let paths = (yield this[_getMultiImagePath]({maxWidth: maxWidth, maxHeight: maxHeight, imageQuality: imageQuality}));
+        if (paths == null) return null;
+        return paths[$map](html$.XFile, dart.fn(path => new html$.XFile.new(core.String.as(path)), T.dynamicToXFile()))[$toList]();
+      }).bind(this));
     }
-    get onStateChanged() {
-      let changeController = null;
-      let changeController$35isSet = false;
-      function changeController$35get() {
-        return changeController$35isSet ? changeController : dart.throw(new _internal.LateError.localNI("changeController"));
-      }
-      dart.fn(changeController$35get, T$.VoidToStreamControllerOfUploadTaskSnapshot());
-      function changeController$35set(t3) {
-        if (t3 == null) dart.nullFailed(I[0], 327, 47, "null");
-        changeController$35isSet = true;
-        return changeController = t3;
-      }
-      dart.fn(changeController$35set, T$.StreamControllerOfUploadTaskSnapshotTodynamic());
-      let onStateChangedUnsubscribe = null;
-      let onStateChangedUnsubscribe$35isSet = false;
-      function onStateChangedUnsubscribe$35get() {
-        return onStateChangedUnsubscribe$35isSet ? onStateChangedUnsubscribe : dart.throw(new _internal.LateError.localNI("onStateChangedUnsubscribe"));
-      }
-      dart.fn(onStateChangedUnsubscribe$35get, T$.VoidToFn());
-      function onStateChangedUnsubscribe$35set(t8) {
-        if (t8 == null) dart.nullFailed(I[0], 328, 23, "null");
-        onStateChangedUnsubscribe$35isSet = true;
-        return onStateChangedUnsubscribe = t8;
-      }
-      dart.fn(onStateChangedUnsubscribe$35set, T$.FnTodynamic());
-      let nextWrapper = js.allowInterop(T$.UploadTaskSnapshotJsImplToNull(), dart.fn(data => {
-        if (data == null) dart.nullFailed(I[0], 331, 64, "data");
-        changeController$35get().add(storage.UploadTaskSnapshot.getInstance(data));
-      }, T$.UploadTaskSnapshotJsImplToNull()));
-      let errorWrapper = js.allowInterop(T$.dynamicTovoid(), dart.fn(e => changeController$35get().addError(core.Object.as(e)), T$.dynamicTovoid()));
-      let onCompletion = js.allowInterop(T$.VoidToNull(), dart.fn(() => {
-        changeController$35get().close();
-      }, T$.VoidToNull()));
-      const startListen = () => {
-        onStateChangedUnsubscribe$35set(this.jsObject.on(dart.global.firebase.storage.TaskEvent.STATE_CHANGED, dart.assertInterop(nextWrapper), dart.assertInterop(errorWrapper), dart.assertInterop(onCompletion)));
-      };
-      dart.fn(startListen, T$.VoidTovoid());
-      function stopListen() {
-        onStateChangedUnsubscribe$35get()();
-        changeController$35get().close();
-      }
-      dart.fn(stopListen, T$.VoidTovoid());
-      changeController$35set(T$.StreamControllerOfUploadTaskSnapshot().broadcast({onListen: startListen, onCancel: stopListen, sync: true}));
-      return changeController$35get().stream;
+    getVideo(opts) {
+      let source = opts && 'source' in opts ? opts.source : null;
+      if (source == null) dart.nullFailed(I[0], 216, 26, "source");
+      let preferredCameraDevice = opts && 'preferredCameraDevice' in opts ? opts.preferredCameraDevice : C[0] || CT.C0;
+      if (preferredCameraDevice == null) dart.nullFailed(I[0], 217, 18, "preferredCameraDevice");
+      let maxDuration = opts && 'maxDuration' in opts ? opts.maxDuration : null;
+      return async.async(T.XFileN(), (function* getVideo() {
+        let path = (yield this[_getVideoPath]({source: source, maxDuration: maxDuration, preferredCameraDevice: preferredCameraDevice}));
+        return path != null ? new html$.XFile.new(path) : null;
+      }).bind(this));
     }
-    pause() {
-      return this.jsObject.pause();
-    }
-    resume() {
-      return this.jsObject.resume();
+    getLostData() {
+      return async.async(lost_data_response.LostDataResponse, function* getLostData() {
+        let result = (yield method_channel_image_picker._channel.invokeMapMethod(core.String, dart.dynamic, "retrieve"));
+        if (result == null) {
+          return new lost_data_response.LostDataResponse.empty();
+        }
+        if (!(result[$containsKey]("path") != result[$containsKey]("errorCode"))) dart.assertFailed(null, I[0], 237, 12, "result.containsKey('path') != result.containsKey('errorCode')");
+        let type = T.StringN().as(result[$_get]("type"));
+        if (!(type === "image" || type === "video")) dart.assertFailed(null, I[0], 240, 12, "type == kTypeImage || type == kTypeVideo");
+        let retrieveType = null;
+        if (type === "image") {
+          retrieveType = retrieve_type.RetrieveType.image;
+        } else if (type === "video") {
+          retrieveType = retrieve_type.RetrieveType.video;
+        }
+        let exception = null;
+        if (dart.test(result[$containsKey]("errorCode"))) {
+          exception = new message_codec.PlatformException.new({code: core.String.as(result[$_get]("errorCode")), message: T.StringN().as(result[$_get]("errorMessage"))});
+        }
+        let path = T.StringN().as(result[$_get]("path"));
+        return new lost_data_response.LostDataResponse.new({file: path != null ? new html$.XFile.new(path) : null, exception: exception, type: retrieveType});
+      });
     }
   };
-  (storage.UploadTask._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 299, 61, "jsObject");
-    this[_future] = null;
-    storage.UploadTask.__proto__.fromJsObject.call(this, jsObject);
+  (method_channel_image_picker.MethodChannelImagePicker.new = function() {
+    method_channel_image_picker.MethodChannelImagePicker.__proto__.new.call(this);
     ;
-  }).prototype = storage.UploadTask.prototype;
-  dart.addTypeTests(storage.UploadTask);
-  dart.addTypeCaches(storage.UploadTask);
-  dart.setMethodSignature(storage.UploadTask, () => ({
-    __proto__: dart.getMethods(storage.UploadTask.__proto__),
-    cancel: dart.fnType(core.bool, []),
-    pause: dart.fnType(core.bool, []),
-    resume: dart.fnType(core.bool, [])
+  }).prototype = method_channel_image_picker.MethodChannelImagePicker.prototype;
+  dart.addTypeTests(method_channel_image_picker.MethodChannelImagePicker);
+  dart.addTypeCaches(method_channel_image_picker.MethodChannelImagePicker);
+  dart.setMethodSignature(method_channel_image_picker.MethodChannelImagePicker, () => ({
+    __proto__: dart.getMethods(method_channel_image_picker.MethodChannelImagePicker.__proto__),
+    [_getMultiImagePath]: dart.fnType(async.Future$(dart.nullable(core.List)), [], {imageQuality: dart.nullable(core.int), maxHeight: dart.nullable(core.double), maxWidth: dart.nullable(core.double)}, {}),
+    [_getImagePath]: dart.fnType(async.Future$(dart.nullable(core.String)), [], {imageQuality: dart.nullable(core.int), maxHeight: dart.nullable(core.double), maxWidth: dart.nullable(core.double), preferredCameraDevice: camera_device.CameraDevice}, {source: image_source.ImageSource}),
+    [_getVideoPath]: dart.fnType(async.Future$(dart.nullable(core.String)), [], {maxDuration: dart.nullable(core.Duration), preferredCameraDevice: camera_device.CameraDevice}, {source: image_source.ImageSource})
   }));
-  dart.setGetterSignature(storage.UploadTask, () => ({
-    __proto__: dart.getGetters(storage.UploadTask.__proto__),
-    future: async.Future$(storage.UploadTaskSnapshot),
-    snapshot: storage.UploadTaskSnapshot,
-    onStateChanged: async.Stream$(storage.UploadTaskSnapshot)
+  dart.setGetterSignature(method_channel_image_picker.MethodChannelImagePicker, () => ({
+    __proto__: dart.getGetters(method_channel_image_picker.MethodChannelImagePicker.__proto__),
+    channel: platform_channel.MethodChannel
   }));
-  dart.setLibraryUri(storage.UploadTask, I[1]);
-  dart.setFieldSignature(storage.UploadTask, () => ({
-    __proto__: dart.getFields(storage.UploadTask.__proto__),
-    [_future]: dart.fieldType(dart.nullable(async.Future$(storage.UploadTaskSnapshot)))
-  }));
-  dart.defineLazy(storage.UploadTask, {
-    /*storage.UploadTask._expando*/get _expando() {
-      return new (T$.ExpandoOfUploadTask()).new();
+  dart.setLibraryUri(method_channel_image_picker.MethodChannelImagePicker, I[3]);
+  dart.defineLazy(method_channel_image_picker, {
+    /*method_channel_image_picker._channel*/get _channel() {
+      return new platform_channel.MethodChannel.new("plugins.flutter.io/image_picker");
     }
   }, false);
-  storage.UploadTaskSnapshot = class UploadTaskSnapshot extends js$.JsObjectWrapper$(dart.anonymousJSType("UploadTaskSnapshotJsImpl")) {
-    get bytesTransferred() {
-      return this.jsObject.bytesTransferred;
-    }
-    get metadata() {
-      return storage.FullMetadata.getInstance(this.jsObject.metadata);
-    }
-    get ref() {
-      return storage.StorageReference.getInstance(this.jsObject.ref);
-    }
-    get state() {
-      switch (this.jsObject.state) {
-        case "running":
-        {
-          return storage.TaskState.RUNNING;
-        }
-        case "paused":
-        {
-          return storage.TaskState.PAUSED;
-        }
-        case "success":
-        {
-          return storage.TaskState.SUCCESS;
-        }
-        case "canceled":
-        {
-          return storage.TaskState.CANCELED;
-        }
-        case "error":
-        {
-          return storage.TaskState.ERROR;
-        }
-        default:
-        {
-          dart.throw(new core.UnsupportedError.new("Unknown state '" + dart.str(this.jsObject.state) + "' please file a bug."));
-        }
-      }
-    }
-    get task() {
-      return storage.UploadTask.getInstance(this.jsObject.task);
-    }
-    get totalBytes() {
-      return this.jsObject.totalBytes;
-    }
-    static getInstance(jsObject) {
-      let t13, t12, t11, t10;
-      if (jsObject == null) dart.nullFailed(I[0], 420, 48, "jsObject");
-      t10 = storage.UploadTaskSnapshot._expando;
-      t11 = jsObject;
-      t12 = t10._get(t11);
-      return t12 == null ? (t13 = new storage.UploadTaskSnapshot._fromJsObject(jsObject), t10._set(t11, t13), t13) : t12;
-    }
-  };
-  (storage.UploadTaskSnapshot._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 377, 48, "jsObject");
-    storage.UploadTaskSnapshot.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = storage.UploadTaskSnapshot.prototype;
-  dart.addTypeTests(storage.UploadTaskSnapshot);
-  dart.addTypeCaches(storage.UploadTaskSnapshot);
-  dart.setGetterSignature(storage.UploadTaskSnapshot, () => ({
-    __proto__: dart.getGetters(storage.UploadTaskSnapshot.__proto__),
-    bytesTransferred: core.int,
-    metadata: storage.FullMetadata,
-    ref: storage.StorageReference,
-    state: storage.TaskState,
-    task: storage.UploadTask,
-    totalBytes: core.int
-  }));
-  dart.setLibraryUri(storage.UploadTaskSnapshot, I[1]);
-  dart.defineLazy(storage.UploadTaskSnapshot, {
-    /*storage.UploadTaskSnapshot._expando*/get _expando() {
-      return new (T$.ExpandoOfUploadTaskSnapshot()).new();
-    }
-  }, false);
-  storage.SettableMetadata = class SettableMetadata extends storage._SettableMetadataBase$(dart.anonymousJSType("SettableMetadataJsImpl")) {
-    static new(opts) {
-      let cacheControl = opts && 'cacheControl' in opts ? opts.cacheControl : null;
-      let contentDisposition = opts && 'contentDisposition' in opts ? opts.contentDisposition : null;
-      let contentEncoding = opts && 'contentEncoding' in opts ? opts.contentEncoding : null;
-      let contentLanguage = opts && 'contentLanguage' in opts ? opts.contentLanguage : null;
-      let contentType = opts && 'contentType' in opts ? opts.contentType : null;
-      let customMetadata = opts && 'customMetadata' in opts ? opts.customMetadata : null;
-      return new storage.SettableMetadata.fromJsObject({cacheControl: cacheControl, contentDisposition: contentDisposition, contentEncoding: contentEncoding, contentLanguage: contentLanguage, contentType: contentType, customMetadata: customMetadata != null ? utils.jsify(customMetadata) : null});
-    }
-  };
-  (storage.SettableMetadata.fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 448, 72, "jsObject");
-    storage.SettableMetadata.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = storage.SettableMetadata.prototype;
-  dart.addTypeTests(storage.SettableMetadata);
-  dart.addTypeCaches(storage.SettableMetadata);
-  dart.setLibraryUri(storage.SettableMetadata, I[1]);
-  storage.ListOptions = class ListOptions extends js$.JsObjectWrapper$(dart.anonymousJSType("ListOptionsJsImpl")) {
-    static new(opts) {
-      let maxResults = opts && 'maxResults' in opts ? opts.maxResults : null;
-      let pageToken = opts && 'pageToken' in opts ? opts.pageToken : null;
-      return new storage.ListOptions._fromJsObject({maxResults: maxResults, pageToken: pageToken});
-    }
-    get maxResults() {
-      return this.jsObject.maxResults;
-    }
-    set maxResults(n) {
-      if (n == null) dart.nullFailed(I[0], 521, 22, "n");
-      return this.jsObject.maxResults = n;
-    }
-    get pageToken() {
-      return this.jsObject.pageToken;
-    }
-    set pageToken(t) {
-      if (t == null) dart.nullFailed(I[0], 528, 24, "t");
-      return this.jsObject.pageToken = t;
-    }
-  };
-  (storage.ListOptions._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 514, 63, "jsObject");
-    storage.ListOptions.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = storage.ListOptions.prototype;
-  dart.addTypeTests(storage.ListOptions);
-  dart.addTypeCaches(storage.ListOptions);
-  dart.setGetterSignature(storage.ListOptions, () => ({
-    __proto__: dart.getGetters(storage.ListOptions.__proto__),
-    maxResults: core.int,
-    pageToken: core.String
-  }));
-  dart.setSetterSignature(storage.ListOptions, () => ({
-    __proto__: dart.getSetters(storage.ListOptions.__proto__),
-    maxResults: core.int,
-    pageToken: core.String
-  }));
-  dart.setLibraryUri(storage.ListOptions, I[1]);
-  storage.ListResult = class ListResult extends js$.JsObjectWrapper$(dart.anonymousJSType("ListResultJsImpl")) {
-    get items() {
-      return this.jsObject.items[$map](storage.StorageReference, dart.fn(data => new storage.StorageReference._fromJsObject(dart.lazyJSType(() => dart.global.firebase.storage.Reference, "firebase.storage.Reference").as(data)), T$.dynamicToStorageReference()))[$toList]();
-    }
-    get nextPageToken() {
-      return this.jsObject.nextPageToken;
-    }
-    get prefixes() {
-      return this.jsObject.prefixes[$map](storage.StorageReference, dart.fn(data => new storage.StorageReference._fromJsObject(dart.lazyJSType(() => dart.global.firebase.storage.Reference, "firebase.storage.Reference").as(data)), T$.dynamicToStorageReference()))[$toList]();
-    }
-    static getInstance(jsObject) {
-      let t13, t12, t11, t10;
-      if (jsObject == null) dart.nullFailed(I[0], 558, 66, "jsObject");
-      t10 = storage.ListResult._expando;
-      t11 = jsObject;
-      t12 = t10._get(t11);
-      return t12 == null ? (t13 = new storage.ListResult._fromJsObject(jsObject), t10._set(t11, t13), t13) : t12;
-    }
-  };
-  (storage.ListResult._fromJsObject = function(jsObject) {
-    if (jsObject == null) dart.nullFailed(I[0], 533, 61, "jsObject");
-    storage.ListResult.__proto__.fromJsObject.call(this, jsObject);
-    ;
-  }).prototype = storage.ListResult.prototype;
-  dart.addTypeTests(storage.ListResult);
-  dart.addTypeCaches(storage.ListResult);
-  dart.setGetterSignature(storage.ListResult, () => ({
-    __proto__: dart.getGetters(storage.ListResult.__proto__),
-    items: core.List$(storage.StorageReference),
-    nextPageToken: core.String,
-    prefixes: core.List$(storage.StorageReference)
-  }));
-  dart.setLibraryUri(storage.ListResult, I[1]);
-  dart.defineLazy(storage.ListResult, {
-    /*storage.ListResult._expando*/get _expando() {
-      return new (T$.ExpandoOfListResult()).new();
-    }
-  }, false);
-  storage.getStorageInstance = function getStorageInstance(app = null, bucket = null) {
-    let appImpl = app != null ? dart.global.firebase.app(app.name) : dart.global.firebase.app();
-    return storage.Storage.getInstance(bucket != null ? appImpl.storage(bucket) : appImpl.storage());
-  };
-  dart.trackLibraries("packages/firebase_storage_web/src/interop/storage.dart", {
-    "package:firebase_storage_web/src/interop/storage.dart": storage
+  dart.trackLibraries("packages/image_picker_platform_interface/src/method_channel/method_channel_image_picker.dart", {
+    "package:image_picker_platform_interface/src/method_channel/method_channel_image_picker.dart": method_channel_image_picker,
+    "package:image_picker_platform_interface/src/platform_interface/image_picker_platform.dart": image_picker_platform,
+    "package:image_picker_platform_interface/image_picker_platform_interface.dart": image_picker_platform_interface
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["storage.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../packages/firebase_storage_web/src/interop/storage.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["../platform_interface/image_picker_platform.dart","method_channel_image_picker.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../packages/image_picker_platform_interface/src/method_channel/method_channel_image_picker.dart.lib.js"}');
   // Exports:
   return {
-    src__interop__storage: storage
+    src__method_channel__method_channel_image_picker: method_channel_image_picker,
+    src__platform_interface__image_picker_platform: image_picker_platform,
+    image_picker_platform_interface: image_picker_platform_interface
   };
 }));
 
-//# sourceMappingURL=storage.dart.lib.js.map
+//# sourceMappingURL=method_channel_image_picker.dart.lib.js.map

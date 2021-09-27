@@ -49,7 +49,8 @@ class NoteCard extends StatelessWidget {
     }
 
     if (searchText != "") {
-      if (!text.toLowerCase().contains(searchText)) return Container();
+      if (!text.toLowerCase().contains(searchText) &&
+          !note.title.toLowerCase().contains(searchText)) return Container();
     }
 
     String imagePath = "";
