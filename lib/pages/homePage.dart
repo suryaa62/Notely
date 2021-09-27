@@ -105,6 +105,8 @@ class _HomePageState extends State<HomePage> {
                               Padding(
                                 padding: const EdgeInsets.only(top: 25),
                                 child: TextField(
+                                  decoration: InputDecoration(
+                                      prefixIcon: Icon(Icons.search)),
                                   controller: _search,
                                   autofocus: false,
                                   onChanged: (s) {
@@ -266,6 +268,7 @@ class _AdaptiveHomePageState extends State<AdaptiveHomePage> {
   void ChangeCurrentNote(NotesModel n) {
     setState(() {
       currentNote = n;
+      print(currentNote);
     });
   }
 
@@ -281,20 +284,15 @@ class _AdaptiveHomePageState extends State<AdaptiveHomePage> {
             flex: 30,
           ),
           Expanded(
-            flex: 40,
-            child: (currentNote == null)
-                ? Scaffold(
-                    body: Center(
-                      child: Text("No Note Selcted!"),
-                    ),
-                  )
-                : ChangeNotifierProvider(
-                    create: (context) =>
-                        DetailsPageNotifier.showNote(currentNote),
-                    builder: (context, child) => Consumer<DetailsPageNotifier>(
-                        builder: (context, value, child) =>
-                            DetailsPage(value, ChangeCurrentNote))),
-          ),
+              flex: 40,
+              child: (currentNote == null)
+                  ? Scaffold(
+                      body: Center(
+                        child: Text("No Note Selcted!"),
+                      ),
+                    )
+                  : DetailsPage(DetailsPageNotifier.showNote(currentNote),
+                      ChangeCurrentNote)),
           Expanded(
             flex: 30,
             child: ChangeNotifierProvider<ProfilePageNotifier>(

@@ -127,6 +127,8 @@ class DetailsPage extends StatelessWidget {
                                 status.display();
                                 if (MediaQuery.of(context).size.width < 600)
                                   Navigator.of(context).pop();
+                                else
+                                  webFunc(null);
                               }),
                         ],
                       ),

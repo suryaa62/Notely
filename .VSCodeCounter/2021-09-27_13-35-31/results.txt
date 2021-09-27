@@ -1,0 +1,55 @@
+Date : 2021-09-27 13:35:31
+Directory : c:\Users\surya\practice projects\flutter\notes_app\lib
+Total : 23 files,  2303 codes, 76 comments, 208 blanks, all 2587 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Dart     |         23 |      2,303 |         76 |        208 |      2,587 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                           | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                              |         23 |      2,303 |         76 |        208 |      2,587 |
+| core                                                                                                           |         10 |        655 |         20 |        105 |        780 |
+| core\Notifiers                                                                                                 |          6 |        380 |          8 |         66 |        454 |
+| core\Notifiers\widgets                                                                                         |          2 |         72 |          0 |         14 |         86 |
+| core\models                                                                                                    |          2 |         60 |          0 |         12 |         72 |
+| core\services                                                                                                  |          2 |        215 |         12 |         27 |        254 |
+| pages                                                                                                          |          4 |        744 |          8 |         33 |        785 |
+| themeData                                                                                                      |          1 |        128 |          0 |          7 |        135 |
+| widgets                                                                                                        |          5 |        697 |         38 |         50 |        785 |
++----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                                       | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\Users\surya\practice projects\flutter\notes_app\lib\core\Notifiers\detailsPageNotifier.dart                 | Dart     |        119 |          5 |         21 |        145 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\core\Notifiers\homePageNotifier.dart                    | Dart     |         37 |          0 |          8 |         45 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\core\Notifiers\loginPageNotifier.dart                   | Dart     |         79 |          1 |         14 |         94 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\core\Notifiers\profilePageNotifier.dart                 | Dart     |         73 |          2 |          9 |         84 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\core\Notifiers\widgets\detailsPageWidgetsNotifier.dart  | Dart     |          7 |          0 |          2 |          9 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\core\Notifiers\widgets\profilePageWidgetsNotifiers.dart | Dart     |         65 |          0 |         12 |         77 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\core\models\notesModel.dart                             | Dart     |         36 |          0 |          8 |         44 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\core\models\userModel.dart                              | Dart     |         24 |          0 |          4 |         28 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\core\services\FAuth.dart                                | Dart     |         68 |          9 |          9 |         86 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\core\services\Fstore.dart                               | Dart     |        147 |          3 |         18 |        168 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\generated_plugin_registrant.dart                        | Dart     |         16 |          5 |          5 |         26 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\locator.dart                                            | Dart     |         16 |          0 |          4 |         20 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\main.dart                                               | Dart     |         47 |          5 |          4 |         56 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\pages\detailsPage.dart                                  | Dart     |        222 |          2 |          4 |        228 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\pages\homePage.dart                                     | Dart     |        288 |          6 |         13 |        307 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\pages\loginPage.dart                                    | Dart     |        135 |          0 |         12 |        147 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\pages\profilePage.dart                                  | Dart     |         99 |          0 |          4 |        103 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\themeData\theme_data.dart                               | Dart     |        128 |          0 |          7 |        135 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\widgets\customFAB.dart                                  | Dart     |         31 |          0 |          3 |         34 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\widgets\detailPageWidgets.dart                          | Dart     |        324 |         29 |         20 |        373 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\widgets\homepageNotecard.dart                           | Dart     |         99 |          0 |          9 |        108 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\widgets\profilePageWidgets.dart                         | Dart     |        211 |          9 |         14 |        234 |
+| c:\Users\surya\practice projects\flutter\notes_app\lib\widgets\progressIndicator.dart                          | Dart     |         32 |          0 |          4 |         36 |
+| Total                                                                                                          |          |      2,303 |         76 |        208 |      2,587 |
++----------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
