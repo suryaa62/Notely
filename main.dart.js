@@ -73393,8 +73393,8 @@ if(p.f.b.test(n)||o.a.a==="1234567890"){n=p.a.c
 n.t1(o.a.a,n.glU(n))
 o.sbl(0,"")
 p.Y(new O.afA(p))}else{o.sbl(0,"")
-p.Y(new O.afB(p))}}else if(n===C.r4)o.tu(p.d.a.a)
-return P.E(null,r)}})
+p.Y(new O.afB(p))}}else if(n===C.r4){p=p.d.a.a
+if(p.length===6)o.tu(p)}return P.E(null,r)}})
 return P.F($async$$0,r)},
 $S:51}
 O.afA.prototype={
