@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
         builder: (context, theme, child) => MaterialApp(
-              title: 'Flutter Demo',
+              title: 'Notely',
               theme: theme.currentTheme,
               home:
                   Consumer<LoginPageNotifier>(builder: (context, value, child) {
